@@ -3,9 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MaintenanceController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/clear-all', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
 });
 
 // Admin Routes
@@ -23,5 +32,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Client Reports CRUD
         Route::resource('client-reports', \App\Http\Controllers\Admin\ClientReportController::class);
+
+        // Maintenance - single route to clear all caches
+        Route::get('/maintenance/clear-all', [MaintenanceController::class, 'clearAll'])
+            ->name('maintenance.clear-all');
     });
 });

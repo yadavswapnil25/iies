@@ -273,6 +273,9 @@
             <a href="{{ route('admin.client-reports.index') }}" class="nav-item {{ request()->routeIs('admin.client-reports.*') ? 'active' : '' }}">
                 📄 Client Reports
             </a>
+            <a href="{{ route('admin.maintenance.clear-all') }}" class="nav-item">
+                🧹 Clear All Cache
+            </a>
         </nav>
     </aside>
     <!-- Main Content -->
