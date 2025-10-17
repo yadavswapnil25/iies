@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Call the AdminUserSeeder
+        // Call the seeders
         $this->call([
             AdminUserSeeder::class,
+            AgentSeeder::class,
         ]);
 
         // Optionally create additional test users

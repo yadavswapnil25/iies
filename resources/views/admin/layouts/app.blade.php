@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Admin Panel')</title>
+    <title>@yield('title', 'IIES Admin Panel')</title>
     
     <style>
         * {
@@ -41,9 +41,35 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 24px;
             font-weight: 700;
-            color: #4f46e5;
+            color: #1a365d;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            font-weight: 500;
+            color: #4a5568;
         }
 
         .user-menu {
@@ -245,6 +271,37 @@
             background: #e5e7eb;
             color: #374151;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                gap: 8px;
+            }
+            
+            .logo img {
+                height: 32px;
+            }
+            
+            .logo-main {
+                font-size: 18px;
+            }
+            
+            .logo-sub {
+                font-size: 10px;
+            }
+            
+            .user-menu {
+                gap: 10px;
+            }
+            
+            .user-name {
+                display: none;
+            }
+        }
     </style>
 
     @stack('styles')
@@ -253,7 +310,13 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="logo">Admin Panel</div>
+            <div class="logo">
+                <img src="{{ asset('uploads/main-logo.png') }}" alt="IIES Logo" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <div class="logo-main">IIES</div>
+                    <div class="logo-sub">Admin Panel</div>
+                </div>
+            </div>
             <div class="user-menu">
                 <span class="user-name">{{ auth()->user()->name }}</span>
                 <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
@@ -272,6 +335,18 @@
             </a>
             <a href="{{ route('admin.client-reports.index') }}" class="nav-item {{ request()->routeIs('admin.client-reports.*') ? 'active' : '' }}">
                 📄 Client Reports
+            </a>
+            <a href="{{ route('admin.contact-messages.index') }}" class="nav-item {{ request()->routeIs('admin.contact-messages.*') ? 'active' : '' }}">
+                💬 Contact Messages
+            </a>
+            <a href="{{ route('admin.enquiry-forms.index') }}" class="nav-item {{ request()->routeIs('admin.enquiry-forms.*') ? 'active' : '' }}">
+                📋 Enquiry Forms
+            </a>
+            <a href="{{ route('admin.hire-agent-requests.index') }}" class="nav-item {{ request()->routeIs('admin.hire-agent-requests.*') ? 'active' : '' }}">
+                🤝 Hire Agent Requests
+            </a>
+            <a href="{{ route('admin.agents.index') }}" class="nav-item {{ request()->routeIs('admin.agents.*') ? 'active' : '' }}">
+                👥 Agents Management
             </a>
             <a href="{{ route('admin.maintenance.clear-all') }}" class="nav-item">
                 🧹 Clear All Cache
