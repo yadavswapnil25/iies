@@ -250,66 +250,66 @@
  
 </div>
 
-<!-- Login Modal -->
-<div class="login-modal" id="loginModal">
-  <div class="login-modal-content">
-    <div class="login-modal-header">
-      <h3>
-        <span class="english-text">Login to IIES Portal</span>
-        <span class="hindi-text">IIES पोर्टल में लॉगिन करें</span>
-      </h3>
-      <button class="close-btn" id="closeLoginModal">&times;</button>
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+      <div class="login-modal-content">
+        <div class="login-modal-header">
+          <h3>
+            <span class="english-text">Login to IIES Portal</span>
+            <span class="hindi-text">IIES पोर्टल में लॉगिन करें</span>
+          </h3>
+          <button class="close-btn" id="closeLoginModal">&times;</button>
+        </div>
+        <div class="login-modal-body">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">
+                <span class="english-text">Email / Unique ID</span>
+                <span class="hindi-text">ईमेल / यूनिक आईडी</span>
+              </label>
+              <input 
+                type="text" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="Enter your email or unique ID"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="password">
+                <span class="english-text">Password</span>
+                <span class="hindi-text">पासवर्ड</span>
+              </label>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required 
+                placeholder="Enter your password"
+              >
+            </div>
+            
+            <div class="form-options">
+              <label class="checkbox-group">
+                <input type="checkbox" id="rememberMe">
+                <span class="english-text">Remember me</span>
+                <span class="hindi-text">मुझे याद रखें</span>
+              </label>
+              <a href="#" class="forgot-password">
+                <span class="english-text">Forgot Password?</span>
+                <span class="hindi-text">पासवर्ड भूल गए?</span>
+              </a>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span class="english-text">Login</span>
+              <span class="hindi-text">लॉगिन करें</span>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="login-modal-body">
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="email">
-            <span class="english-text">Email / Unique ID</span>
-            <span class="hindi-text">ईमेल / यूनिक आईडी</span>
-          </label>
-          <input 
-            type="text" 
-            id="email" 
-            name="email" 
-            required 
-            placeholder="Enter your email or unique ID"
-          >
-        </div>
-        
-        <div class="form-group">
-          <label for="password">
-            <span class="english-text">Password</span>
-            <span class="hindi-text">पासवर्ड</span>
-          </label>
-          <input 
-            type="password" 
-            id="password" 
-            name="password" 
-            required 
-            placeholder="Enter your password"
-          >
-        </div>
-        
-        <div class="form-options">
-          <label class="checkbox-group">
-            <input type="checkbox" id="rememberMe">
-            <span class="english-text">Remember me</span>
-            <span class="hindi-text">मुझे याद रखें</span>
-          </label>
-          <a href="#" class="forgot-password">
-            <span class="english-text">Forgot Password?</span>
-            <span class="hindi-text">पासवर्ड भूल गए?</span>
-          </a>
-        </div>
-        
-        <button type="submit" class="submit-btn">
-          <span class="english-text">Login</span>
-          <span class="hindi-text">लॉगिन करें</span>
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
       </aside>
 
       <!-- RIGHT: DEPARTMENTS / CARDS -->
@@ -323,7 +323,7 @@
           <article class="dept-card" aria-labelledby="d1">
             <div class="dept-thumb">
               <img
-                src="uploads/International-Taxation.png"
+                src="uploads/International-Taxation1.png"
                 alt="International Taxation"
               />
             </div>
@@ -368,7 +368,7 @@
           <article class="dept-card" aria-labelledby="d2">
             <div class="dept-thumb">
               <img
-                src="uploads/Enforcement-Directorate.png"
+                src="uploads/Enforcement-Directorate1.png"
                 alt="Enforcement Directorate"
               />
             </div>
@@ -390,12 +390,7 @@
                     <span class="hindi-text">अधिनियम और नियम</span>
                   </a>
                 </li>
-                <li>
-                  <a href="#" target="_blank">
-                    <span class="english-text">File Verification</span>
-                    <span class="hindi-text">अधिनियम और नियम</span>
-                  </a>
-                </li>
+               
               </ul>
             </div>
           </article>
@@ -458,7 +453,7 @@
             </div>
           </article>
 
-          <article class="dept-card" aria-labelledby="d1">
+          <!-- <article class="dept-card" aria-labelledby="d1">
             <div class="dept-body">
               <h4 id="d1" class="english-text">Press Release</h4>
               <h4 id="d1" class="hindi-text">प्रेस विज्ञप्ति</h4>
@@ -514,10 +509,10 @@
                 </li>
               </ul>
             </div>
-          </article>
+          </article> -->
 
           <!-- Department Card 6 -->
-          <article class="dept-card" aria-labelledby="d2">
+          <!-- <article class="dept-card" aria-labelledby="d2">
             <div class="dept-body">
               <h4 id="d2" class="english-text">Tender</h4>
               <h4 id="d2" class="hindi-text">निविदा</h4>
@@ -548,10 +543,60 @@
                 </li>
               </ul>
             </div>
-          </article>
+          </article> -->
         </div>
       </div>
     </main>
+
+    <!-- press release -->
+<section class="key-offerings">
+  <!-- LEFT COLUMN: Tenders -->
+  <div class="tenders-section">
+    <div class="tenders-tabs">
+           <button class="active">Tenders</button>
+    </div>
+    <div class="tenders-list">
+      <a href="#">Bid Document for Automatic Box Strapping Machine <i class="fas fa-chevron-right"></i></a>
+      <a href="#">Bid Document For Printing Machine and Equipment <i class="fas fa-chevron-right"></i></a>
+      <a href="#">Tender for Page Setting And Printing of Economic Survey 2023-24 <i class="fas fa-chevron-right"></i></a>
+      <a href="#">Tender for Supply of Binding Material and Paper <i class="fas fa-chevron-right"></i></a>
+      <a href="#">E-Tender for Office Stationery Supply <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN: Press Release -->
+  <div class="press-release">
+    <h3><i class="fas fa-star"></i> Press Release</h3>
+    <div class="press-list">
+      <div class="press-list-inner">
+        <div class="press-item">
+          <span class="date"><i class="far fa-calendar-alt"></i> 26/09/2025</span><br>
+          <a href="#">Press Communique: Government’s Borrowing Plan for the Second Half of FY 2025-26</a>
+        </div>
+        <div class="press-item">
+          <span class="date"><i class="far fa-calendar-alt"></i> 22/09/2025</span><br>
+          <a href="#">Update on Fiscal Deficit and Economic Outlook Q3 FY 2025</a>
+        </div>
+        <div class="press-item">
+          <span class="date"><i class="far fa-calendar-alt"></i> 18/09/2025</span><br>
+          <a href="#">Government Launches Digital Finance Awareness Campaign</a>
+        </div>
+        <div class="press-item">
+          <span class="date"><i class="far fa-calendar-alt"></i> 14/09/2025</span><br>
+          <a href="#">Finance Ministry Introduces E-Payment Policy for MSMEs</a>
+        </div>
+        <div class="press-item">
+          <span class="date"><i class="far fa-calendar-alt"></i> 10/09/2025</span><br>
+          <a href="#">Union Budget Preparations Begin for FY 2026-27</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- press release end -->
     <!-- UPCOMING EVENTS CTA SECTION -->
     <section
       class="events-cta-section"
@@ -747,71 +792,81 @@
 
       <div class="services-grid">
         <!-- Service 1 -->
+         <a href="https://www.indiacode.nic.in/bitstream/123456789/1988/1/A1999_42.pdf">
         <div class="service-card">
           <div class="service-icon">
             <img
               src="uploads/Foreign-Exchange-Management.png"
               alt="Foreign Exchange Management"
+              target="_blank"
             />
           </div>
           <div class="service-content">
             <h3 class="english-text">Foreign Exchange Management</h3>
             <h3 class="hindi-text">विदेशी मुद्रा प्रबंधन</h3>
           </div>
-        </div>
+        </div></a>
 
         <!-- Service 2 -->
+         <a href="https://fiuindia.gov.in/">
         <div class="service-card">
           <div class="service-icon">
             <img
               src="uploads/Prevention-Money-Laundering.png"
               alt="Prevention Money Laundering"
+              target="_blank"
             />
           </div>
-          <div class="service-content">
+          <div class="service-content" >
             <h3 class="english-text">Prevention Money Laundering</h3>
             <h3 class="hindi-text">मनी लॉन्ड्रिंग रोकथाम</h3>
           </div>
-        </div>
+        </div></a>
 
         <!-- Service 3 -->
+         <a href="">
         <div class="service-card">
           <div class="service-icon">
             <img
               src="uploads/No-objection-certificate.png"
               alt="No Objection Certificate"
+              target="_blank"
             />
           </div>
           <div class="service-content">
             <h3 class="english-text">No Objection Certificate</h3>
             <h3 class="hindi-text">कोई आपत्ति प्रमाणपत्र</h3>
           </div>
-        </div>
+        </div></a>
 
         <!-- Service 4 -->
+         <a href="https://www.cbic.gov.in/">
         <div class="service-card">
           <div class="service-icon">
-            <img src="uploads/Central-Tax.png" alt="Central Tax" />
+            <img src="uploads/Central-Tax.png" alt="Central Tax" target="_blank" />
           </div>
           <div class="service-content">
             <h3 class="english-text">Central Tax</h3>
             <h3 class="hindi-text">केंद्रीय कर</h3>
           </div>
-        </div>
+        </div></a>
 
         <!-- Service 5 -->
+         <a href="">
         <div class="service-card">
           <div class="service-icon">
             <img
               src="uploads/Central-Economic.png"
               alt="Central Economic Intelligence Bureau"
+              target="_blank"
             />
           </div>
           <div class="service-content">
             <h3 class="english-text">Central Economic Intelligence Bureau</h3>
             <h3 class="hindi-text">केंद्रीय आर्थिक खुफिया ब्यूरो</h3>
           </div>
-        </div>
+        </div></a>
+
       </div>
     </section>
     <!-- SOCIAL MEDIA & X SECTION -->
@@ -1030,17 +1085,23 @@
       <img src="uploads/web-info-manager.png" alt="Web Information Manager" />
     </div> -->
 
-    <!-- Logo strip -->
-    <div class="logo-strip">
-      <div class="logo-inner">
-        <img src="uploads/digital-India-logo.png" alt="logo1" />
-        <img src="uploads/mygov.png" alt="logo2" />
-        <img src="uploads/pmnrf.png" alt="logo3" />
-        <img src="uploads/e-gazette_0.png" alt="logo4" />
-        <img src="uploads/makeinindia.png" alt="logo5" />
-        <img src="uploads/data-gov.png" alt="logo6" />
-      </div>
-    </div>
+    <!-- Logo Strip -->
+<div class="logo-strip">
+  <button class="logo-nav prev" aria-label="Previous">&#10094;</button>
+  
+  <div class="logo-inner" id="logoSlider">
+    <div class="logo-item"><img src="uploads/02-my-gov-in.jpg" alt="MyGov" /></div>
+    <!-- <div class="logo-item"><img src="uploads/india-gov-in.png" alt="India.gov.in" /></div> -->
+    <div class="logo-item"><img src="uploads/01-national-portal-of-india.jpg" alt="India.gov.in" /></div>
+    <div class="logo-item"><img src="uploads/06-make-in-india.jpg" alt="Make in India" /></div>
+    <div class="logo-item"><img src="uploads/data-gov.png" alt="Data.gov.in" /></div>
+    <div class="logo-item"><img src="uploads/eci.png" alt="Election Commission" /></div>
+    <div class="logo-item"><img src="uploads/digital-india-logo1.png" alt="Digital India" /></div>
+  </div>
+
+  <button class="logo-nav next" aria-label="Next">&#10095;</button>
+</div>
+
 
     <!-- FOOTER -->
    @include('partials.footer')
@@ -1422,5 +1483,47 @@ document.addEventListener('DOMContentLoaded', function() {
 });
       
     </script>
+    <script>
+  const logoSlider = document.getElementById("logoSlider");
+  const prevBtn = document.querySelector(".logo-nav.prev");
+  const nextBtn = document.querySelector(".logo-nav.next");
+
+  // Manual scroll
+  nextBtn.addEventListener("click", () => {
+    logoSlider.scrollBy({ left: 250, behavior: "smooth" });
+  });
+  prevBtn.addEventListener("click", () => {
+    logoSlider.scrollBy({ left: -250, behavior: "smooth" });
+  });
+
+  // Auto-scroll
+  let autoScroll = setInterval(() => {
+    logoSlider.scrollBy({ left: 1, behavior: "smooth" });
+    if (logoSlider.scrollLeft + logoSlider.clientWidth >= logoSlider.scrollWidth) {
+      logoSlider.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, 30);
+
+  // Pause on hover
+  logoSlider.addEventListener("mouseenter", () => clearInterval(autoScroll));
+  logoSlider.addEventListener("mouseleave", () => {
+    autoScroll = setInterval(() => {
+      logoSlider.scrollBy({ left: 1, behavior: "smooth" });
+      if (logoSlider.scrollLeft + logoSlider.clientWidth >= logoSlider.scrollWidth) {
+        logoSlider.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 30);
+  });
+</script>
+<!-- Auto-scroll duplicator script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const pressList = document.querySelector(".press-list-inner");
+    if (pressList) {
+      const clone = pressList.cloneNode(true);
+      pressList.parentElement.appendChild(clone);
+    }
+  });
+</script>
   </body>
 </html>

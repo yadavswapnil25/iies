@@ -6,8 +6,7 @@
           <strong class="footer-title">Ministry of Finance</strong>
           <p class="footer-description">
             Official website of the Ministry of Finance. Website content managed
-            by Ministry of Finance, Government of India. Designed, Developed and
-            Hosted by NIC.
+            by Ministry of Finance Design and Developed By Indian International Economic Service
           </p>
           <div class="footer-updated">Last Updated: Oct 11, 2025</div>
         </div>

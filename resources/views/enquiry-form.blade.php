@@ -69,7 +69,7 @@
                 <h3 class="section-title">Personal Information</h3>
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="fullName">Full Name *</label>
+                    <label for="fullName">Full Name </label>
                     <input
                       type="text"
                       id="fullName"
@@ -79,7 +79,7 @@
                     />
                   </div>
                   <div class="form-group">
-                    <label for="email">Email Address *</label>
+                    <label for="email">Email Address </label>
                     <input
                       type="email"
                       id="email"
@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="phone">Phone Number *</label>
+                    <label for="phone">Phone Number </label>
                     <input
                       type="tel"
                       id="phone"
@@ -136,7 +136,7 @@
               <div class="form-section">
                 <h3 class="section-title">Enquiry Details</h3>
                 <div class="form-group">
-                  <label for="enquiryType">Type of Enquiry *</label>
+                  <label for="enquiryType">Type of Enquiry </label>
                   <select id="enquiryType" name="enquiryType" required>
                     <option value="">Select enquiry type</option>
                     <option value="noc">No Objection Certificate (NOC)</option>
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="enquirySubject">Enquiry Subject *</label>
+                  <label for="enquirySubject">Enquiry Subject </label>
                   <input
                     type="text"
                     id="enquirySubject"
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="enquiryDescription">Detailed Description *</label>
+                  <label for="enquiryDescription">Detailed Description </label>
                   <textarea
                     id="enquiryDescription"
                     name="enquiryDescription"
@@ -172,27 +172,6 @@
                   ></textarea>
                 </div>
 
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="priority">Priority Level</label>
-                    <select id="priority" name="priority">
-                      <option value="normal">Normal</option>
-                      <option value="high">High</option>
-                      <option value="urgent">Urgent</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="referenceNumber"
-                      >Reference Number (If any)</label
-                    >
-                    <input
-                      type="text"
-                      id="referenceNumber"
-                      name="referenceNumber"
-                      placeholder="Enter reference number"
-                    />
-                  </div>
-                </div>
               </div>
 
               <!-- Document Upload Section -->
@@ -587,63 +566,21 @@
           event.preventDefault();
 
           if (validateForm()) {
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
+            // Generate reference number
+            const referenceNumber = "ENQ-" + Date.now().toString().slice(-8);
+            referenceDisplay.textContent = referenceNumber;
 
-            // Prepare form data
-            const formData = new FormData(form);
-            
-            // Add uploaded files to form data
-            uploadedFiles.forEach((file, index) => {
-              formData.append('documents[]', file);
-            });
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show the success message
 
-            // Send data to server
-            fetch(form.action, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-              }
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success) {
-                // Show success message with reference ID
-                referenceDisplay.textContent = data.reference_id;
-                successMessage.style.display = "flex";
-                
-                // Reset form after successful submission
-                setTimeout(() => {
-                  form.reset();
-                  uploadedFiles = [];
-                  fileList.innerHTML = "";
-                }, 1000);
-              } else {
-                // Handle validation errors
-                if (data.errors) {
-                  let errorMessage = 'Please fix the following errors:\n';
-                  Object.values(data.errors).forEach(error => {
-                    errorMessage += '- ' + error[0] + '\n';
-                  });
-                  alert(errorMessage);
-                } else {
-                  alert('An error occurred. Please try again.');
-                }
-              }
-            })
-            .catch(error => {
-              console.error('Error:', error);
-              alert('An error occurred. Please try again.');
-            })
-            .finally(() => {
-              // Reset button state
-              submitBtn.textContent = originalText;
-              submitBtn.disabled = false;
-            });
+            successMessage.style.display = "flex";
+
+            // Reset form after successful submission
+            setTimeout(() => {
+              form.reset();
+              uploadedFiles = [];
+              fileList.innerHTML = "";
+            }, 1000);
           }
         });
 

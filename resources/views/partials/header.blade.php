@@ -95,7 +95,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="">Document ▾</a>
+            <a href="#" class="">Guidelines ▾</a>
             <ul class="dropdown-menu">
               <li>
                 <a href="/issuance-noc">Guideline for Issuance NOC</a>
@@ -105,6 +105,9 @@
               </li>
               <li>
                 <a href="/super-agent">Guideline for Support Agent </a>
+              </li>
+              <li>
+                <a href="files/announcements_documents/Guideline_for_NOC_Applicants.pdf" target="_blank">Guideline for NOC Applicants</a>
               </li>
             </ul>
           </li>

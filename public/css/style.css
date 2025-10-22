@@ -876,100 +876,87 @@ aside.left-aside {
 }
 
 /* LOGO STRIP CAROUSEL - GOVERNMENT STYLE */
+/* Logo Strip Carousel */
 .logo-strip {
-  background: #f8f9fa;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 25px 0;
-  margin: 20px 0;
-  overflow: hidden;
-  position: relative;
-}
-
-.logo-inner {
+  background: #f9fafb;
+  padding: 30px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 80px;
-  animation: scrollLogos 90s linear infinite;
-  padding: 0 30px;
-  width: max-content;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
 }
 
-.logo-inner img {
-  height: 55px;
+.logo-strip .logo-inner {
+  display: flex;
+  gap: 25px;
+  max-width: 1000px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 15px;
+  scrollbar-width: none;
+  /* hide scrollbar for Firefox */
+}
+
+.logo-strip .logo-inner::-webkit-scrollbar {
+  display: none;
+  /* hide scrollbar for Chrome/Safari */
+}
+
+.logo-strip .logo-item {
+  flex: 0 0 auto;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-strip .logo-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo-strip img {
+  height: 50px;
   width: auto;
   object-fit: contain;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
-.logo-inner img:hover {
-  transform: translateY(-2px);
-  filter: grayscale(0%);
+.logo-strip img:hover {
   opacity: 1;
 }
 
-/* Very slow continuous scroll */
-@keyframes scrollLogos {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(calc(-100% - 80px));
-  }
+/* Arrows */
+.logo-nav {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 22px;
+  width: 36px;
+  height: 36px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-/* Subtle fade edges */
-.logo-strip::before,
-.logo-strip::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+.logo-nav:hover {
+  background: #f0f0f0;
+  color: #000;
 }
 
-.logo-strip::before {
-  left: 0;
-  background: linear-gradient(90deg, #f8f9fa 0%, transparent 100%);
-}
 
-.logo-strip::after {
-  right: 0;
-  background: linear-gradient(270deg, #f8f9fa 0%, transparent 100%);
-}
-
-/* Pause on hover for better readability */
-.logo-strip:hover .logo-inner {
-  animation-play-state: paused;
-}
-
-/* Duplicate logos for seamless loop */
-.logo-inner {
-  animation: scrollLogos 120s linear infinite;
-}
-
-/* Alternative: Use JavaScript clone method for better performance */
-.logo-strip .logo-inner::after {
-  content: '';
-  display: none;
-  /* We'll handle duplication via JavaScript */
-}
-
-.logo-inner {
-  gap: 70px;
-  animation-duration: 100s;
-}
-
-.logo-inner img {
-  height: 50px;
-}
 
 /* FOOTER - UPDATED WITH 4 EQUAL COLUMNS */
 footer.page-footer {
@@ -3060,7 +3047,7 @@ footer.page-footer {
 .service-card {
   background: #fff;
   border-radius: 12px;
-  padding: 25px 15px;
+  padding: 10px 15px;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--panel-border);
@@ -3793,6 +3780,93 @@ footer.page-footer {
   padding: 30px;
 }
 
+
+/*quik scrtion right hand side*/
+
+/* Updated RIGHT: DEPARTMENTS / CARDS section */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* Make Press Release and Tender cards span full width */
+.dept-card[aria-labelledby="d1"]:nth-last-child(2),
+.dept-card[aria-labelledby="d2"]:last-child {
+  grid-column: 1 / -1;
+  /* Span across all columns */
+}
+
+.dept-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-top: 10px solid var(--brand);
+  padding: 12px;
+  border-radius: 3px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.dept-thumb {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.dept-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dept-body {
+  flex: 1;
+}
+
+.dept-body h4 {
+  font-size: 22px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.dept-body ul {
+  list-style: disc;
+  margin-left: 18px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.dept-body li {
+  margin-bottom: 8px;
+}
+
+.dept-body a {
+  color: var(--brand-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 4px 0;
+}
+
+.dept-body a:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+/* Language text styling */
+.english-text,
+.hindi-text {
+  display: block;
+}
+
 /* LOGIN FORM STYLES */
 #loginForm {
   display: flex;
@@ -3902,6 +3976,169 @@ footer.page-footer {
   }
 }
 
+/* ============================
+   KEY OFFERINGS: TENDERS + PRESS RELEASE
+   ✅ Fully Responsive + Auto Scroll
+============================ */
+.key-offerings {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* LEFT SIDE - Tenders Section */
+.tenders-section {
+  /* background: #f0f3ff; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tenders-tabs {
+  display: flex;
+  background: #b4c6f8;
+  flex-wrap: wrap;
+}
+
+.tenders-tabs button {
+  flex: 1;
+  padding: 15px 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: #b4c6f8;
+  color: #1a237e;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.tenders-tabs button.active {
+  background: #0b1e6d;
+  color: #fff;
+}
+
+.tenders-list {
+  background: #fff;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+}
+
+.tenders-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  transition: color 0.2s;
+}
+
+.tenders-list a:hover {
+  color: var(--brand-dark);
+}
+
+.tenders-list a i {
+  font-size: 18px;
+  color: #999;
+}
+
+/* Scrollbar Styling */
+.tenders-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tenders-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+/* RIGHT SIDE - Press Release Section */
+.press-release {
+  background: #0b1e6d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.press-release h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+}
+
+/* Auto Scroll Press Release */
+.press-list {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.press-list-inner {
+  /* display: flex; */
+  /* flex-direction: column; */
+  gap: 15px;
+  animation: scrollPress 15s linear infinite;
+}
+
+@keyframes scrollPress {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Pause on hover */
+.press-list:hover .press-list-inner {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar */
+.press-list::-webkit-scrollbar {
+  display: none;
+}
+
+.press-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 0;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.press-item:hover {
+  opacity: 0.8;
+}
+
+.press-item span.date {
+  /* display: flex; */
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.press-item a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  line-height: 2.4;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
@@ -4049,6 +4286,16 @@ footer.page-footer {
     padding: 20px 25px;
   }
 
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* On tablet, all cards become full width */
+  .dept-card {
+    grid-column: 1 / -1 !important;
+  }
+
   /* cta */
   .events-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -4080,6 +4327,7 @@ footer.page-footer {
   .logo-strip::after {
     width: 80px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -4605,6 +4853,28 @@ footer.page-footer {
     font-size: 1rem;
   }
 
+
+  .dept-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dept-thumb {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .dept-body h4 {
+    font-size: 20px;
+  }
+
+  .dept-body ul {
+    font-size: 15px;
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
   /* cta */
   .events-cta-section {
     /* padding: 60px 0; */
@@ -4723,6 +4993,20 @@ footer.page-footer {
 
   .forgot-password {
     align-self: flex-end;
+  }
+
+  .logo-strip {
+    padding: 20px 0;
+  }
+
+  .logo-item {
+    min-width: 140px;
+    padding: 10px;
+  }
+
+  .logo-nav {
+    display: none;
+    /* hide arrows on small screens */
   }
 }
 
@@ -6061,5 +6345,220 @@ body[lang="hi"] .about-image p {
 
   body[lang="hi"] .about-content p {
     font-size: 13px;
+  }
+}
+
+
+
+
+/* Schemes and Services Section Styles */
+.schemes-services-section {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.schemes-container {
+  background: #fff;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.schemes-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--brand-dark);
+}
+
+.schemes-header h2 {
+  color: var(--brand-dark);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Careers Subsection */
+.careers-subsection {
+  margin-bottom: 30px;
+}
+
+.careers-subsection h3 {
+  color: var(--brand-dark);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--accent-gray);
+}
+
+.schemes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scheme-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.scheme-bullet {
+  color: var(--brand-dark);
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right,
+      transparent,
+      var(--panel-border),
+      transparent);
+  margin: 30px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schemes-services-section {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .schemes-container {
+    padding: 20px;
+  }
+
+  .schemes-header h2 {
+    font-size: 24px;
+  }
+
+  .careers-subsection h3 {
+    font-size: 20px;
+  }
+
+  .press-communique-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .press-date {
+    align-self: flex-start;
+  }
+
+  .scheme-item,
+  .press-item {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schemes-container {
+    padding: 15px;
+  }
+
+  .schemes-header h2 {
+    font-size: 22px;
+  }
+
+  .careers-subsection h3 {
+    font-size: 18px;
+  }
+
+  .scheme-item,
+  .press-item {
+    font-size: 14px;
+  }
+
+  .press-content h4 {
+    font-size: 16px;
+  }
+}
+
+/* Hindi Language Support */
+body[lang="hi"] .schemes-header h2 {
+  font-size: 26px;
+}
+
+body[lang="hi"] .careers-subsection h3 {
+  font-size: 20px;
+}
+
+body[lang="hi"] .scheme-item,
+body[lang="hi"] .press-item {
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  body[lang="hi"] .schemes-header h2 {
+    font-size: 22px;
+  }
+
+  body[lang="hi"] .careers-subsection h3 {
+    font-size: 18px;
+  }
+
+  body[lang="hi"] .scheme-item,
+  body[lang="hi"] .press-item {
+    font-size: 14px;
+  }
+}
+
+
+/* 00 */
+
+
+/* Responsive Layouts */
+@media (max-width: 992px) {
+  .key-offerings {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tenders-tabs button {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+
+  .press-release h3 {
+    font-size: 20px;
+  }
+
+  .tenders-list a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .key-offerings {
+    padding: 0 8px;
+  }
+
+  .tenders-tabs button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .tenders-list,
+  .press-release {
+    padding: 15px;
+  }
+
+  .press-release h3 {
+    font-size: 18px;
+  }
+
+  .press-item a {
+    font-size: 14px;
   }
 }
