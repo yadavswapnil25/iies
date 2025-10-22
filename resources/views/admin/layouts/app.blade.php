@@ -348,6 +348,15 @@
             <a href="{{ route('admin.agents.index') }}" class="nav-item {{ request()->routeIs('admin.agents.*') ? 'active' : '' }}">
                 👥 Agents Management
             </a>
+            <a href="{{ route('admin.news.index') }}" class="nav-item {{ request()->routeIs('admin.news.*') ? 'active' : '' }}">
+                📰 News Management
+            </a>
+            <a href="{{ route('admin.tenders.index') }}" class="nav-item {{ request()->routeIs('admin.tenders.*') ? 'active' : '' }}">
+                📋 Tender Management
+            </a>
+            <a href="{{ route('admin.press-releases.index') }}" class="nav-item {{ request()->routeIs('admin.press-releases.*') ? 'active' : '' }}">
+                📰 Press Release Management
+            </a>
             <a href="{{ route('admin.maintenance.clear-all') }}" class="nav-item">
                 🧹 Clear All Cache
             </a>

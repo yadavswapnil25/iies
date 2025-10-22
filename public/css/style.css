@@ -6562,3 +6562,320 @@ body[lang="hi"] .press-item {
     font-size: 14px;
   }
 }
+
+/* NOC Fee Table Styles */
+.noc-fee-container {
+  margin: 30px 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.noc-fee-container .table-header {
+  background: #f8f9fa;
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.noc-fee-container .table-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.noc-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+}
+
+.noc-fee-table thead {
+  background: #28a745;
+  color: white;
+}
+
+.noc-fee-table thead th {
+  padding: 15px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  white-space: nowrap;
+}
+
+.noc-fee-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.noc-fee-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.noc-fee-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.noc-fee-table tbody tr:nth-child(even):hover {
+  background-color: #e9ecef;
+}
+
+.noc-fee-table td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.noc-fee-table td:first-child,
+.noc-fee-table td:nth-child(2),
+.noc-fee-table td:last-child {
+  text-align: left;
+}
+
+.noc-fee-table td:nth-child(3),
+.noc-fee-table td:nth-child(4),
+.noc-fee-table td:nth-child(5),
+.noc-fee-table td:nth-child(6) {
+  text-align: right;
+  font-weight: 500;
+}
+
+.noc-fee-table td:nth-child(3),
+.noc-fee-table td:nth-child(5) {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.noc-fee-table td:nth-child(4),
+.noc-fee-table td:nth-child(6) {
+  color: #6c757d;
+}
+
+/* Responsive Design for NOC Fee Table */
+@media (max-width: 1200px) {
+  .noc-fee-table {
+    font-size: 13px;
+  }
+  
+  .noc-fee-table thead th,
+  .noc-fee-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .noc-fee-container {
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  
+  .noc-fee-container .table-header {
+    padding: 15px;
+  }
+  
+  .noc-fee-container .table-header h2 {
+    font-size: 20px;
+  }
+  
+  .noc-fee-table {
+    font-size: 12px;
+  }
+  
+  .noc-fee-table thead th,
+  .noc-fee-table td {
+    padding: 8px 6px;
+  }
+  
+  .noc-fee-table thead th {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .noc-fee-table {
+    font-size: 11px;
+  }
+  
+  .noc-fee-table thead th,
+  .noc-fee-table td {
+    padding: 6px 4px;
+  }
+  
+  .noc-fee-table td:nth-child(2) {
+    max-width: 120px;
+    word-wrap: break-word;
+  }
+}
+
+/* Progress Tracker Table Styles */
+.progress-tracker-table {
+  margin: 20px 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.progress-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px 1fr;
+  background: #28a745;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.progress-col-no,
+.progress-col-stage,
+.progress-col-status,
+.progress-col-notes {
+  padding: 15px 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.progress-col-stage {
+  text-align: left;
+}
+
+.progress-col-notes {
+  border-right: none;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px 1fr;
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s ease;
+}
+
+.progress-row:hover {
+  background-color: #f8f9fa;
+}
+
+.progress-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.progress-row:nth-child(even):hover {
+  background-color: #e9ecef;
+}
+
+.progress-row > div {
+  padding: 12px;
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+}
+
+.progress-row > div:last-child {
+  border-right: none;
+}
+
+.progress-row .progress-col-no {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  justify-content: center;
+}
+
+.progress-row .progress-col-stage {
+  font-weight: 500;
+  color: #495057;
+}
+
+.progress-row .progress-col-status select,
+.progress-row .progress-col-notes input {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  background: white;
+}
+
+.progress-row .progress-col-status select:focus,
+.progress-row .progress-col-notes input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+/* Responsive Design for Progress Tracker */
+@media (max-width: 1200px) {
+  .progress-header,
+  .progress-row {
+    grid-template-columns: 50px 1fr 180px 1fr;
+  }
+  
+  .progress-col-no,
+  .progress-col-stage,
+  .progress-col-status,
+  .progress-col-notes {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-header,
+  .progress-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .progress-header {
+    display: none;
+  }
+  
+  .progress-row {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+  
+  .progress-row > div {
+    border: none;
+    padding: 8px 0;
+    display: block;
+  }
+  
+  .progress-row .progress-col-no {
+    background: none;
+    font-weight: 600;
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .progress-row .progress-col-stage {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 10px;
+  }
+  
+  .progress-row .progress-col-status,
+  .progress-row .progress-col-notes {
+    margin-bottom: 10px;
+  }
+  
+  .progress-row .progress-col-status::before {
+    content: "Status: ";
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .progress-row .progress-col-notes::before {
+    content: "Notes: ";
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+}

@@ -160,25 +160,17 @@
                       
                 </div>  <!--law end-->
 
- <!-- IIES NOC Fee Policy & Enforcement — Session 2025–20261 -->
-          <div class="agents-directory-container">
+ <!-- NOC Fee Table -->
+          <div class="noc-fee-container">
         <div class="table-header">
-            <h2>IIES NOC Fee Policy & Enforcement — Session 2025–2026</h2>
-            <h3>Fee Category</h3>
-            <div class="search-container">
-                <input
-                    type="text"
-                    id="agentSearch"
-                    placeholder="Search by Name, Code, or Experience (e.g., 'Anand' or '45783220' or '8')"
-                />
-            </div>
+            <h2>NOC Fee</h2>
         </div>
 
         <div class="table-responsive">
-            <table class="agents-table" id="agentsTable">
+            <table class="noc-fee-table" id="nocFeeTable">
                 <thead>
                     <tr>
-                        <th>SLNo.</th>
+                        <th>Sl. No</th>
                         <th>Fund Bracket</th>
                         <th>Base NOC Fee</th>
                         <th>Surcharge</th>
@@ -187,128 +179,99 @@
                         <th>Depositor</th>
                     </tr>
                 </thead>
-                <tbody id="agentsTableBody1">
+                <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Up to ₹50,000</td>
-                        <td>₹2,500</td>
-                        <td>₹500</td>
-                        <td>₹3,000</td>
-                        <td>₹250</td>
-                        <td>Individual</td>
+                        <td>01</td>
+                        <td>Up to 2 Crore to 100 Crore</td>
+                        <td>₹217,500.00</td>
+                        <td>5%</td>
+                        <td>₹228,375.00</td>
+                        <td>50%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>₹50,001 - ₹1,00,000</td>
-                        <td>₹5,000</td>
-                        <td>₹1,000</td>
-                        <td>₹6,000</td>
-                        <td>₹500</td>
-                        <td>Individual</td>
+                        <td>02</td>
+                        <td>Up to 101 Crore to 200 Crore</td>
+                        <td>₹290,000.00</td>
+                        <td>7%</td>
+                        <td>₹310,300.00</td>
+                        <td>50%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>₹1,00,001 - ₹2,50,000</td>
-                        <td>₹7,500</td>
-                        <td>₹1,500</td>
-                        <td>₹9,000</td>
-                        <td>₹750</td>
-                        <td>Individual</td>
+                        <td>03</td>
+                        <td>Up to 201 Crore to 400 Crore</td>
+                        <td>₹435,000.00</td>
+                        <td>8%</td>
+                        <td>₹469,800.00</td>
+                        <td>45%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>₹2,50,001 - ₹5,00,000</td>
-                        <td>₹10,000</td>
-                        <td>₹2,000</td>
-                        <td>₹12,000</td>
-                        <td>₹1,000</td>
-                        <td>Corporate</td>
+                        <td>04</td>
+                        <td>Up to 401 Crore to 499 Crore</td>
+                        <td>₹725,000.00</td>
+                        <td>10%</td>
+                        <td>₹797,500.00</td>
+                        <td>10%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>₹5,00,001 - ₹10,00,000</td>
-                        <td>₹15,000</td>
-                        <td>₹3,000</td>
-                        <td>₹18,000</td>
-                        <td>₹1,500</td>
-                        <td>Corporate</td>
+                        <td>05</td>
+                        <td>Up to 500 Crore to 999 Crore</td>
+                        <td>₹10,15,000.00</td>
+                        <td>15%</td>
+                        <td>₹11,67,250.00</td>
+                        <td>15%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td>₹10,00,001 - ₹25,00,000</td>
-                        <td>₹20,000</td>
-                        <td>₹4,000</td>
-                        <td>₹24,000</td>
-                        <td>₹2,000</td>
-                        <td>Corporate</td>
+                        <td>06</td>
+                        <td>Up to 1000 Crore to 2500 Crore</td>
+                        <td>₹13,77,500.00</td>
+                        <td>20%</td>
+                        <td>₹16,53,000.00</td>
+                        <td>30%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>7</td>
-                        <td>₹25,00,001 - ₹50,00,000</td>
-                        <td>₹25,000</td>
-                        <td>₹5,000</td>
-                        <td>₹30,000</td>
-                        <td>₹2,500</td>
-                        <td>Corporate</td>
+                        <td>07</td>
+                        <td>Up to 2501 Crore to 4999 Crore</td>
+                        <td>₹26,10,000.00</td>
+                        <td>30%</td>
+                        <td>₹33,93,000.00</td>
+                        <td>25%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>8</td>
-                        <td>₹50,00,001 - ₹1,00,00,000</td>
-                        <td>₹35,000</td>
-                        <td>₹7,000</td>
-                        <td>₹42,000</td>
-                        <td>₹3,500</td>
-                        <td>Corporate</td>
+                        <td>08</td>
+                        <td>Up to 5000 Crore to 10000 Crore</td>
+                        <td>₹40,60,000.00</td>
+                        <td>35%</td>
+                        <td>₹54,81,000.00</td>
+                        <td>25%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
-                        <td>9</td>
-                        <td>Above ₹1,00,00,000</td>
-                        <td>₹50,000</td>
-                        <td>₹10,000</td>
-                        <td>₹60,000</td>
-                        <td>₹5,000</td>
-                        <td>Corporate</td>
+                        <td>09</td>
+                        <td>Up to 10001 Crore to 15000 Crore</td>
+                        <td>₹75,00,000.00</td>
+                        <td>45%</td>
+                        <td>₹1,05,00,000.00</td>
+                        <td>20%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td>Educational Institutions</td>
-                        <td>₹5,000</td>
-                        <td>₹0</td>
-                        <td>₹5,000</td>
-                        <td>₹5,000</td>
-                        <td>Institution</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Government Entities</td>
-                        <td>₹2,500</td>
-                        <td>₹0</td>
-                        <td>₹2,500</td>
-                        <td>₹2,500</td>
-                        <td>Government</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>NGOs & Non-profits</td>
-                        <td>₹3,000</td>
-                        <td>₹0</td>
-                        <td>₹3,000</td>
-                        <td>₹3,000</td>
-                        <td>Organization</td>
+                        <td>Up to 15001 Crore to 25000 Crore</td>
+                        <td>₹92,40,00,000.00</td>
+                        <td>50%</td>
+                        <td>₹1,38,60,000.00</td>
+                        <td>10%</td>
+                        <td>Agent / Main File Holder</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-
-        <div class="table-footer">
-            <div class="pagination-info" id="paginationInfo">Showing 1 to 12 of 12 entries</div>
-            <div class="pagination-controls">
-                <button id="prevPage" class="pagination-btn" disabled>Previous</button>
-                <div id="paginationNumbers" class="pagination-numbers">
-                    <span class="page-number active">1</span>
-                </div>
-                <button id="nextPage" class="pagination-btn" disabled>Next</button>
-            </div>
         </div>
     </div>
 

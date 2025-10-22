@@ -3,7 +3,26 @@
         <h2 class="card-title" style="margin: 0;">Client Work Progress Report</h2>
         <img src="/data_entry.pdf" alt="IIES Logo" style="height: 60px;" onerror="this.style.display='none'">
     </div>
+    <div class="container">
+    <p>This progress report has been prepared by the <strong>Indian International Economic Service (IIES)</strong> to reflect 
+the current status of a client's application or task. It provides detailed updates from the initial submission 
+to the final stage of completion. The purpose of this report is to maintain transparency and ensure that 
+every process is completed efficiently within the prescribed timeline.</p>
 
+    <p><strong>Brief Introductory Description:</strong><br>
+    This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective 
+of presenting the current status of a client's or applicant's work. It includes detailed progress information 
+from the receipt of the application to the completion of the process, ensuring transparency and timely 
+execution of all tasks.</p>
+
+    <p><strong>Brief Introductory Description:</strong><br>
+    This report is prepared by the Indian International Economic Service 
+(IIES) to record and present the current status of an applicant/client's work. The report includes the 
+client's complete information, the nature of the work, details of the fund for which NOC is sought 
+(amount, currency, purpose), the beneficiary bank where funds were received, the origin country of the 
+funds, and a step-by-step progress record of the process.</p>
+</div>
+<br>
     <!-- Section 1: File Information -->
     <div class="form-section">
         <h3 class="section-title">1) File Information</h3>
@@ -95,10 +114,139 @@
                     value="{{ old('date_of_birth', isset($clientReport) && $clientReport->date_of_birth ? $clientReport->date_of_birth->format('Y-m-d') : '') }}"
                 >
             </div>
+
+            <div class="form-group">
+                <label for="contact_number" class="form-label">Contact Number</label>
+                <input 
+                    type="tel" 
+                    id="contact_number" 
+                    name="contact_number" 
+                    class="form-input" 
+                    value="{{ old('contact_number', isset($clientReport) ? $clientReport->contact_number : '') }}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email_id" class="form-label">Email Id</label>
+                <input 
+                    type="email" 
+                    id="email_id" 
+                    name="email_id" 
+                    class="form-input" 
+                    value="{{ old('email_id', isset($clientReport) ? $clientReport->email_id : '') }}"
+                >
+            </div>
+
+            <div class="form-group full-width">
+                <label for="permanent_address" class="form-label">Permanent Address</label>
+                <textarea 
+                    id="permanent_address" 
+                    name="permanent_address" 
+                    class="form-input" 
+                    rows="3"
+                >{{ old('permanent_address', isset($clientReport) ? $clientReport->permanent_address : '') }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pan_number" class="form-label">PAN Number</label>
+                <input 
+                    type="text" 
+                    id="pan_number" 
+                    name="pan_number" 
+                    class="form-input" 
+                    value="{{ old('pan_number', isset($clientReport) ? $clientReport->pan_number : '') }}"
+                    placeholder="ABCDE1234F"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar_number" class="form-label">Aadhar Number</label>
+                <input 
+                    type="text" 
+                    id="aadhar_number" 
+                    name="aadhar_number" 
+                    class="form-input" 
+                    value="{{ old('aadhar_number', isset($clientReport) ? $clientReport->aadhar_number : '') }}"
+                    placeholder="1234 5678 9012"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="passport_number" class="form-label">Passport Number</label>
+                <input 
+                    type="text" 
+                    id="passport_number" 
+                    name="passport_number" 
+                    class="form-input" 
+                    value="{{ old('passport_number', isset($clientReport) ? $clientReport->passport_number : '') }}"
+                >
+            </div>
         </div>
     </div>
 
-    <!-- Section 3: Fund & NOC Details -->
+    <!-- Section 3: Application & Work Details -->
+    <div class="form-section">
+        <h3 class="section-title">3) Application & Work Details</h3>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="application_type" class="form-label">Application Type / Service</label>
+                <select id="application_type" name="application_type" class="form-input">
+                    <option value="">Select Application Type</option>
+                    <option value="noc_application" {{ old('application_type', isset($clientReport) ? $clientReport->application_type : '') == 'noc_application' ? 'selected' : '' }}>NOC Application</option>
+                    <option value="fund_verification" {{ old('application_type', isset($clientReport) ? $clientReport->application_type : '') == 'fund_verification' ? 'selected' : '' }}>Fund Verification</option>
+                    <option value="compliance_check" {{ old('application_type', isset($clientReport) ? $clientReport->application_type : '') == 'compliance_check' ? 'selected' : '' }}>Compliance Check</option>
+                    <option value="document_verification" {{ old('application_type', isset($clientReport) ? $clientReport->application_type : '') == 'document_verification' ? 'selected' : '' }}>Document Verification</option>
+                    <option value="other" {{ old('application_type', isset($clientReport) ? $clientReport->application_type : '') == 'other' ? 'selected' : '' }}>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="submission_date" class="form-label">Submission Date</label>
+                <input 
+                    type="date" 
+                    id="submission_date" 
+                    name="submission_date" 
+                    class="form-input" 
+                    value="{{ old('submission_date', isset($clientReport) && $clientReport->submission_date ? $clientReport->submission_date->format('Y-m-d') : '') }}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="reference_application_no" class="form-label">Reference / Application No.</label>
+                <input 
+                    type="text" 
+                    id="reference_application_no" 
+                    name="reference_application_no" 
+                    class="form-input" 
+                    value="{{ old('reference_application_no', isset($clientReport) ? $clientReport->reference_application_no : '') }}"
+                >
+            </div>
+
+            <div class="form-group full-width">
+                <label for="nature_of_work" class="form-label">Nature of Work (Description)</label>
+                <textarea 
+                    id="nature_of_work" 
+                    name="nature_of_work" 
+                    class="form-input" 
+                    rows="3"
+                    placeholder="Describe the nature of work or service being provided..."
+                >{{ old('nature_of_work', isset($clientReport) ? $clientReport->nature_of_work : '') }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="verification_level" class="form-label">Verification Level</label>
+                <select id="verification_level" name="verification_level" class="form-input">
+                    <option value="">Select Verification Level</option>
+                    <option value="basic" {{ old('verification_level', isset($clientReport) ? $clientReport->verification_level : '') == 'basic' ? 'selected' : '' }}>Basic</option>
+                    <option value="standard" {{ old('verification_level', isset($clientReport) ? $clientReport->verification_level : '') == 'standard' ? 'selected' : '' }}>Standard</option>
+                    <option value="comprehensive" {{ old('verification_level', isset($clientReport) ? $clientReport->verification_level : '') == 'comprehensive' ? 'selected' : '' }}>Comprehensive</option>
+                    <option value="detailed" {{ old('verification_level', isset($clientReport) ? $clientReport->verification_level : '') == 'detailed' ? 'selected' : '' }}>Detailed</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: Fund & NOC Details -->
     <div class="form-section">
         <h3 class="section-title">4) Fund & NOC Details</h3>
         <div class="form-grid">
@@ -474,7 +622,148 @@
         </div>
     </div>
 
-    <!-- Section 8: Approval & Signature -->
+    <!-- Section 8: Progress Tracker -->
+    <div class="form-section">
+        <h3 class="section-title">9) Progress Tracker</h3>
+        <div class="progress-tracker-table">
+            <div class="progress-header">
+                <div class="progress-col-no">No.</div>
+                <div class="progress-col-stage">Stage</div>
+                <div class="progress-col-status">Status</div>
+                <div class="progress-col-notes">Notes / Reason</div>
+            </div>
+            
+            <!-- Stage 01: KYC / Compliance Review -->
+            <div class="progress-row">
+                <div class="progress-col-no">01</div>
+                <div class="progress-col-stage">KYC / Compliance Review</div>
+                <div class="progress-col-status">
+                    <select name="kyc_compliance_status" class="form-input">
+                        <option value="pending" {{ old('kyc_compliance_status', $clientReport->kyc_compliance_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="completed" {{ old('kyc_compliance_status', $clientReport->kyc_compliance_status ?? '') == 'completed' ? 'selected' : '' }}>Completed</option>
+                        <option value="in_progress" {{ old('kyc_compliance_status', $clientReport->kyc_compliance_status ?? '') == 'in_progress' ? 'selected' : '' }}>In Progress</option>
+                        <option value="hold" {{ old('kyc_compliance_status', $clientReport->kyc_compliance_status ?? '') == 'hold' ? 'selected' : '' }}>Hold</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="kyc_compliance_notes" class="form-input" 
+                           value="{{ old('kyc_compliance_notes', $clientReport->kyc_compliance_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 02: Bank Verification -->
+            <div class="progress-row">
+                <div class="progress-col-no">02</div>
+                <div class="progress-col-stage">Bank Verification</div>
+                <div class="progress-col-status">
+                    <select name="bank_verification_status" class="form-input">
+                        <option value="pending" {{ old('bank_verification_status', $clientReport->bank_verification_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="completed" {{ old('bank_verification_status', $clientReport->bank_verification_status ?? '') == 'completed' ? 'selected' : '' }}>Completed</option>
+                        <option value="in_progress" {{ old('bank_verification_status', $clientReport->bank_verification_status ?? '') == 'in_progress' ? 'selected' : '' }}>In Progress</option>
+                        <option value="hold" {{ old('bank_verification_status', $clientReport->bank_verification_status ?? '') == 'hold' ? 'selected' : '' }}>Hold</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="bank_verification_notes" class="form-input" 
+                           value="{{ old('bank_verification_notes', $clientReport->bank_verification_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 03: Departmental Approval -->
+            <div class="progress-row">
+                <div class="progress-col-no">03</div>
+                <div class="progress-col-stage">Departmental Approval</div>
+                <div class="progress-col-status">
+                    <select name="departmental_approval_status" class="form-input">
+                        <option value="pending" {{ old('departmental_approval_status', $clientReport->departmental_approval_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="approved" {{ old('departmental_approval_status', $clientReport->departmental_approval_status ?? '') == 'approved' ? 'selected' : '' }}>Approved</option>
+                        <option value="rejected" {{ old('departmental_approval_status', $clientReport->departmental_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="departmental_approval_notes" class="form-input" 
+                           value="{{ old('departmental_approval_notes', $clientReport->departmental_approval_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 04: NOC Draft & Conditions -->
+            <div class="progress-row">
+                <div class="progress-col-no">04</div>
+                <div class="progress-col-stage">NOC Draft & Conditions</div>
+                <div class="progress-col-status">
+                    <select name="noc_draft_status" class="form-input">
+                        <option value="pending" {{ old('noc_draft_status', $clientReport->noc_draft_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="drafted" {{ old('noc_draft_status', $clientReport->noc_draft_status ?? '') == 'drafted' ? 'selected' : '' }}>Drafted</option>
+                        <option value="revised" {{ old('noc_draft_status', $clientReport->noc_draft_status ?? '') == 'revised' ? 'selected' : '' }}>Revised</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="noc_draft_notes" class="form-input" 
+                           value="{{ old('noc_draft_notes', $clientReport->noc_draft_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 05: NOC Issuance -->
+            <div class="progress-row">
+                <div class="progress-col-no">05</div>
+                <div class="progress-col-stage">NOC Issuance</div>
+                <div class="progress-col-status">
+                    <select name="noc_issuance_status" class="form-input">
+                        <option value="pending" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="issued" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? '') == 'issued' ? 'selected' : '' }}>Issued</option>
+                        <option value="conditional" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? '') == 'conditional' ? 'selected' : '' }}>Conditional</option>
+                        <option value="not_issued" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? '') == 'not_issued' ? 'selected' : '' }}>Not Issued</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="noc_issuance_notes" class="form-input" 
+                           value="{{ old('noc_issuance_notes', $clientReport->noc_issuance_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 06: Information Grant -->
+            <div class="progress-row">
+                <div class="progress-col-no">06</div>
+                <div class="progress-col-stage">Information Grant</div>
+                <div class="progress-col-status">
+                    <select name="information_grant_status" class="form-input">
+                        <option value="pending" {{ old('information_grant_status', $clientReport->information_grant_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="granted" {{ old('information_grant_status', $clientReport->information_grant_status ?? '') == 'granted' ? 'selected' : '' }}>Granted</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="information_grant_notes" class="form-input" 
+                           value="{{ old('information_grant_notes', $clientReport->information_grant_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+
+            <!-- Stage 07: Follow-up / Closure -->
+            <div class="progress-row">
+                <div class="progress-col-no">07</div>
+                <div class="progress-col-stage">Follow-up / Closure</div>
+                <div class="progress-col-status">
+                    <select name="followup_closure_status" class="form-input">
+                        <option value="pending" {{ old('followup_closure_status', $clientReport->followup_closure_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="closed" {{ old('followup_closure_status', $clientReport->followup_closure_status ?? '') == 'closed' ? 'selected' : '' }}>Closed</option>
+                        <option value="followup_required" {{ old('followup_closure_status', $clientReport->followup_closure_status ?? '') == 'followup_required' ? 'selected' : '' }}>Follow-up Required</option>
+                    </select>
+                </div>
+                <div class="progress-col-notes">
+                    <input type="text" name="followup_closure_notes" class="form-input" 
+                           value="{{ old('followup_closure_notes', $clientReport->followup_closure_notes ?? '') }}" 
+                           placeholder="Notes or reason">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 9: Approval & Signature -->
     <div class="form-section">
         <h3 class="section-title">14) Approval & Signature</h3>
         <div class="form-grid">

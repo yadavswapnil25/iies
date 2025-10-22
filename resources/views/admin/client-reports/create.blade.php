@@ -6,6 +6,7 @@
 <div class="page-header">
     <h1 class="page-title">Create New Client Report</h1>
 </div>
+<br>
 
 <form method="POST" action="{{ route('admin.client-reports.store') }}">
     @csrf

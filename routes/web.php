@@ -14,9 +14,7 @@ use App\Http\Controllers\AgentListController;
 use App\Http\Controllers\Admin\AgentController as AdminAgentController;
 use Illuminate\Support\Facades\Artisan;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 Route::get('/about', function () {
     return view('about');
 });
@@ -109,6 +107,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Agents Management
         Route::resource('agents', AdminAgentController::class);
+
+        // News Management
+        Route::resource('news', \App\Http\Controllers\Admin\NewsController::class);
+
+        // Tender Management
+        Route::resource('tenders', \App\Http\Controllers\Admin\TenderController::class);
+
+        // Press Release Management
+        Route::resource('press-releases', \App\Http\Controllers\Admin\PressReleaseController::class);
 
         // Maintenance - single route to clear all caches
         Route::get('/maintenance/clear-all', [MaintenanceController::class, 'clearAll'])

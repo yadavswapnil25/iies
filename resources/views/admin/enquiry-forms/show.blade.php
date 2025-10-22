@@ -6,7 +6,7 @@
         <a href="{{ route('admin.enquiry-forms.index') }}" class="btn-back">← Back to Enquiries</a>
     </div>
     <h1>Enquiry Form Details</h1>
-    <p>Reference ID: <strong>{{ $enquiry->reference_id }}</strong></p>
+    <p>Reference ID: <strong>{{ $enquiryForm->reference_id }}</strong></p>
 </div>
 
 <div class="content-body">
@@ -15,50 +15,50 @@
         <h2>Enquiry Information</h2>
         <div class="info-grid">
             <div class="info-item">
-                <strong>Name:</strong> {{ $enquiry->full_name }}
+                <strong>Name:</strong> {{ $enquiryForm->full_name }}
             </div>
             <div class="info-item">
-                <strong>Email:</strong> {{ $enquiry->email }}
+                <strong>Email:</strong> {{ $enquiryForm->email }}
             </div>
             <div class="info-item">
-                <strong>Phone:</strong> {{ $enquiry->phone }}
+                <strong>Phone:</strong> {{ $enquiryForm->phone }}
             </div>
-            @if($enquiry->organization)
+            @if($enquiryForm->organization)
             <div class="info-item">
-                <strong>Organization:</strong> {{ $enquiry->organization }}
+                <strong>Organization:</strong> {{ $enquiryForm->organization }}
             </div>
             @endif
-            @if($enquiry->designation)
+            @if($enquiryForm->designation)
             <div class="info-item">
-                <strong>Designation:</strong> {{ $enquiry->designation }}
+                <strong>Designation:</strong> {{ $enquiryForm->designation }}
             </div>
             @endif
-            @if($enquiry->address)
+            @if($enquiryForm->address)
             <div class="info-item full-width">
-                <strong>Address:</strong> {{ $enquiry->address }}
+                <strong>Address:</strong> {{ $enquiryForm->address }}
             </div>
             @endif
             <div class="info-item">
-                <strong>Enquiry Type:</strong> {{ $enquiry->enquiry_type_display }}
+                <strong>Enquiry Type:</strong> {{ $enquiryForm->enquiry_type_display }}
             </div>
             <div class="info-item">
                 <strong>Priority:</strong> 
-                <span class="priority-badge priority-{{ $enquiry->priority }}">
-                    {{ ucfirst($enquiry->priority) }}
+                <span class="priority-badge priority-{{ $enquiryForm->priority }}">
+                    {{ ucfirst($enquiryForm->priority) }}
                 </span>
             </div>
             <div class="info-item">
                 <strong>Status:</strong> 
-                <span class="status-badge status-{{ $enquiry->status }}">
-                    {{ ucfirst(str_replace('_', ' ', $enquiry->status)) }}
+                <span class="status-badge status-{{ $enquiryForm->status }}">
+                    {{ ucfirst(str_replace('_', ' ', $enquiryForm->status)) }}
                 </span>
             </div>
             <div class="info-item">
-                <strong>Submitted:</strong> {{ $enquiry->created_at->format('F d, Y \a\t H:i') }}
+                <strong>Submitted:</strong> {{ $enquiryForm->created_at->format('F d, Y \a\t H:i') }}
             </div>
-            @if($enquiry->resolved_at)
+            @if($enquiryForm->resolved_at)
             <div class="info-item">
-                <strong>Resolved:</strong> {{ $enquiry->resolved_at->format('F d, Y \a\t H:i') }}
+                <strong>Resolved:</strong> {{ $enquiryForm->resolved_at->format('F d, Y \a\t H:i') }}
             </div>
             @endif
         </div>
@@ -69,28 +69,28 @@
         <h2>Enquiry Details</h2>
         <div class="detail-item">
             <strong>Subject:</strong>
-            <p>{{ $enquiry->enquiry_subject }}</p>
+            <p>{{ $enquiryForm->enquiry_subject }}</p>
         </div>
         <div class="detail-item">
             <strong>Description:</strong>
             <div class="description-content">
-                {{ $enquiry->enquiry_description }}
+                {{ $enquiryForm->enquiry_description }}
             </div>
         </div>
-        @if($enquiry->reference_number)
+        @if($enquiryForm->reference_number)
         <div class="detail-item">
             <strong>Reference Number:</strong>
-            <p>{{ $enquiry->reference_number }}</p>
+            <p>{{ $enquiryForm->reference_number }}</p>
         </div>
         @endif
     </div>
 
     <!-- Supporting Documents -->
-    @if($enquiry->documents && count($enquiry->documents) > 0)
+    @if($enquiryForm->documents && count($enquiryForm->documents) > 0)
     <div class="documents-section">
         <h2>Supporting Documents</h2>
         <div class="documents-list">
-            @foreach($enquiry->documents as $document)
+            @foreach($enquiryForm->documents as $document)
             <div class="document-item">
                 <span class="document-icon">📎</span>
                 <a href="{{ Storage::url($document) }}" target="_blank" class="document-link">
@@ -108,14 +108,14 @@
         <div class="preferences-grid">
             <div class="preference-item">
                 <strong>Email Updates:</strong> 
-                <span class="preference-status {{ $enquiry->email_updates ? 'enabled' : 'disabled' }}">
-                    {{ $enquiry->email_updates ? 'Enabled' : 'Disabled' }}
+                <span class="preference-status {{ $enquiryForm->email_updates ? 'enabled' : 'disabled' }}">
+                    {{ $enquiryForm->email_updates ? 'Enabled' : 'Disabled' }}
                 </span>
             </div>
             <div class="preference-item">
                 <strong>SMS Updates:</strong> 
-                <span class="preference-status {{ $enquiry->sms_updates ? 'enabled' : 'disabled' }}">
-                    {{ $enquiry->sms_updates ? 'Enabled' : 'Disabled' }}
+                <span class="preference-status {{ $enquiryForm->sms_updates ? 'enabled' : 'disabled' }}">
+                    {{ $enquiryForm->sms_updates ? 'Enabled' : 'Disabled' }}
                 </span>
             </div>
         </div>
@@ -124,7 +124,7 @@
     <!-- Admin Actions -->
     <div class="admin-actions">
         <h2>Admin Actions</h2>
-        <form method="POST" action="{{ route('admin.enquiry-forms.update', $enquiry) }}" class="admin-form">
+        <form method="POST" action="{{ route('admin.enquiry-forms.update', $enquiryForm) }}" class="admin-form">
             @csrf
             @method('PUT')
             
@@ -132,19 +132,19 @@
                 <div class="form-group">
                     <label for="status">Status:</label>
                     <select name="status" id="status" class="form-select">
-                        <option value="new" {{ $enquiry->status == 'new' ? 'selected' : '' }}>New</option>
-                        <option value="in_progress" {{ $enquiry->status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
-                        <option value="resolved" {{ $enquiry->status == 'resolved' ? 'selected' : '' }}>Resolved</option>
-                        <option value="closed" {{ $enquiry->status == 'closed' ? 'selected' : '' }}>Closed</option>
+                        <option value="new" {{ $enquiryForm->status == 'new' ? 'selected' : '' }}>New</option>
+                        <option value="in_progress" {{ $enquiryForm->status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
+                        <option value="resolved" {{ $enquiryForm->status == 'resolved' ? 'selected' : '' }}>Resolved</option>
+                        <option value="closed" {{ $enquiryForm->status == 'closed' ? 'selected' : '' }}>Closed</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="priority">Priority:</label>
                     <select name="priority" id="priority" class="form-select">
-                        <option value="normal" {{ $enquiry->priority == 'normal' ? 'selected' : '' }}>Normal</option>
-                        <option value="high" {{ $enquiry->priority == 'high' ? 'selected' : '' }}>High</option>
-                        <option value="urgent" {{ $enquiry->priority == 'urgent' ? 'selected' : '' }}>Urgent</option>
+                        <option value="normal" {{ $enquiryForm->priority == 'normal' ? 'selected' : '' }}>Normal</option>
+                        <option value="high" {{ $enquiryForm->priority == 'high' ? 'selected' : '' }}>High</option>
+                        <option value="urgent" {{ $enquiryForm->priority == 'urgent' ? 'selected' : '' }}>Urgent</option>
                     </select>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                     rows="4" 
                     class="form-textarea"
                     placeholder="Add internal notes about this enquiry..."
-                >{{ old('admin_notes', $enquiry->admin_notes) }}</textarea>
+                >{{ old('admin_notes', $enquiryForm->admin_notes) }}</textarea>
             </div>
 
             <div class="form-actions">
@@ -167,11 +167,11 @@
     </div>
 
     <!-- Admin Notes Display -->
-    @if($enquiry->admin_notes)
+    @if($enquiryForm->admin_notes)
     <div class="admin-notes-section">
         <h2>Admin Notes</h2>
         <div class="admin-notes-content">
-            {{ $enquiry->admin_notes }}
+            {{ $enquiryForm->admin_notes }}
         </div>
     </div>
     @endif

@@ -238,8 +238,8 @@
           <ul style="padding-left: 18px; color: #333">
                   <!-- Login Button -->
              <button class="login-btn" id="loginBtn">
-    <span class="english-text">NOC Progress Details</span>
-    <span class="hindi-text">बजट मुख्य बिंदु (PDF)</span>
+    <span class="english-text">Track NOC Application</span>
+    <span class="hindi-text">नोसी आवेदन पंजीकरण ट्रैकिंग</span>
   </button>
             <!-- <li class="english-text">NOC Progress Details </li>
             <li class="hindi-text"></li> -->
@@ -290,7 +290,7 @@
               >
             </div>
             
-            <div class="form-options">
+            <!-- <div class="form-options">
               <label class="checkbox-group">
                 <input type="checkbox" id="rememberMe">
                 <span class="english-text">Remember me</span>
@@ -300,7 +300,7 @@
                 <span class="english-text">Forgot Password?</span>
                 <span class="hindi-text">पासवर्ड भूल गए?</span>
               </a>
-            </div>
+            </div> -->
             
             <button type="submit" class="submit-btn">
               <span class="english-text">Login</span>
@@ -332,7 +332,7 @@
               <h4 id="d1" class="hindi-text">प्रेस विज्ञप्ति</h4>
               <ul>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/dtaa.aspx" target="_blank">
                     <span class="english-text">Tax Treaties | </span>
                     <span class="hindi-text"
                       >मंत्रिमंडल ने कम मूल्य की भीम-यूपीआई लेनदेन (पी2एम) को
@@ -341,7 +341,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/treaty-comparison.aspx" target="_blank">
                     <span class="english-text">Treaty Comparison | </span>
                     <span class="hindi-text"
                       >वित्तीय सेवा विभाग (डीएफएस) ने "विनियामक, निवेश, और
@@ -351,7 +351,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/transfer-pricing.aspx" target="_blank">
                     <span class="english-text">Transfer Pricing |</span>
                     <span class="hindi-text"
                       >सरकार ने सूक्ष्म, लघु और मध्यम उद्यम (एमएसएमई) विनिर्माण
@@ -370,6 +370,9 @@
               <img
                 src="uploads/Enforcement-Directorate1.png"
                 alt="Enforcement Directorate"
+                style="
+    width: auto;
+"
               />
             </div>
             <div class="dept-body">
@@ -377,7 +380,7 @@
               <h4 id="d2" class="hindi-text">निविदा</h4>
               <ul>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="https://enforcementdirectorate.gov.in/red-corner-notice" target="_blank">
                     <span class="english-text">Red Corner Notice</span>
                     <span class="hindi-text"
                       >निविदा के लिए इन वेबसाइट पर लॉगिन करें</span
@@ -385,7 +388,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="https://enforcementdirectorate.gov.in/fema" target="_blank">
                     <span class="english-text">FEMA Rule</span>
                     <span class="hindi-text">अधिनियम और नियम</span>
                   </a>
@@ -401,32 +404,27 @@
               <h4 id="d3" class="english-text">What's News</h4>
               <h4 id="d3" class="hindi-text">ताज़ा खबर</h4>
               <ul>
-                <li>
-                  <a
-                    href="https://financialservices.gov.in/beta/sites/default/files/Advertisment-English-DG-RBI.pdf"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >APPLICATIONS INVITED FOR THE POST OF DEPUTY GOVERNOR,
-                      RESERVE BANK OF INDIA</span
-                    >
-                    <span class="hindi-text"
-                      >भारतीय रिजर्व बैंक में उप गवर्नर के पद के लिए आवेदन
-                      आमंत्रित</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://financialservices.gov.in/beta/en/events"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >Upcoming Events of the Department ​</span
-                    >
-                    <span class="hindi-text">विभाग की आगामी घटनाएँ</span>
-                  </a>
-                </li>
+                @forelse($news as $newsItem)
+                  <li>
+                    <a href="{{ $newsItem->url }}" target="_blank">
+                      <span class="english-text">{{ $newsItem->title }}</span>
+                      <span class="hindi-text">{{ $newsItem->title }}</span>
+                    </a>
+                  </li>
+                @empty
+                  <li>
+                    <a href="https://financialservices.gov.in/beta/sites/default/files/Advertisment-English-DG-RBI.pdf" target="_blank">
+                      <span class="english-text">APPLICATIONS INVITED FOR THE POST OF DEPUTY GOVERNOR, RESERVE BANK OF INDIA</span>
+                      <span class="hindi-text">भारतीय रिजर्व बैंक में उप गवर्नर के पद के लिए आवेदन आमंत्रित</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://financialservices.gov.in/beta/en/events" target="_blank">
+                      <span class="english-text">Upcoming Events of the Department</span>
+                      <span class="hindi-text">विभाग की आगामी घटनाएँ</span>
+                    </a>
+                  </li>
+                @endforelse
               </ul>
             </div>
           </article>
@@ -556,11 +554,15 @@
            <button class="active">Tenders</button>
     </div>
     <div class="tenders-list">
-      <a href="#">Bid Document for Automatic Box Strapping Machine <i class="fas fa-chevron-right"></i></a>
-      <a href="#">Bid Document For Printing Machine and Equipment <i class="fas fa-chevron-right"></i></a>
-      <a href="#">Tender for Page Setting And Printing of Economic Survey 2023-24 <i class="fas fa-chevron-right"></i></a>
-      <a href="#">Tender for Supply of Binding Material and Paper <i class="fas fa-chevron-right"></i></a>
-      <a href="#">E-Tender for Office Stationery Supply <i class="fas fa-chevron-right"></i></a>
+      @forelse($tenders as $tender)
+        <a href="{{ $tender->url }}" target="_blank">{{ $tender->title }} <i class="fas fa-chevron-right"></i></a>
+      @empty
+        <a href="#">Bid Document for Automatic Box Strapping Machine <i class="fas fa-chevron-right"></i></a>
+        <a href="#">Bid Document For Printing Machine and Equipment <i class="fas fa-chevron-right"></i></a>
+        <a href="#">Tender for Page Setting And Printing of Economic Survey 2023-24 <i class="fas fa-chevron-right"></i></a>
+        <a href="#">Tender for Supply of Binding Material and Paper <i class="fas fa-chevron-right"></i></a>
+        <a href="#">E-Tender for Office Stationery Supply <i class="fas fa-chevron-right"></i></a>
+      @endforelse
     </div>
   </div>
 
@@ -569,26 +571,33 @@
     <h3><i class="fas fa-star"></i> Press Release</h3>
     <div class="press-list">
       <div class="press-list-inner">
-        <div class="press-item">
-          <span class="date"><i class="far fa-calendar-alt"></i> 26/09/2025</span><br>
-          <a href="#">Press Communique: Government’s Borrowing Plan for the Second Half of FY 2025-26</a>
-        </div>
-        <div class="press-item">
-          <span class="date"><i class="far fa-calendar-alt"></i> 22/09/2025</span><br>
-          <a href="#">Update on Fiscal Deficit and Economic Outlook Q3 FY 2025</a>
-        </div>
-        <div class="press-item">
-          <span class="date"><i class="far fa-calendar-alt"></i> 18/09/2025</span><br>
-          <a href="#">Government Launches Digital Finance Awareness Campaign</a>
-        </div>
-        <div class="press-item">
-          <span class="date"><i class="far fa-calendar-alt"></i> 14/09/2025</span><br>
-          <a href="#">Finance Ministry Introduces E-Payment Policy for MSMEs</a>
-        </div>
-        <div class="press-item">
-          <span class="date"><i class="far fa-calendar-alt"></i> 10/09/2025</span><br>
-          <a href="#">Union Budget Preparations Begin for FY 2026-27</a>
-        </div>
+        @forelse($pressReleases as $pressRelease)
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> {{ $pressRelease->created_at->format('d/m/Y') }}</span><br>
+            <a href="{{ $pressRelease->url }}" target="_blank">{{ $pressRelease->title }}</a>
+          </div>
+        @empty
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> 26/09/2025</span><br>
+            <a href="#">Press Communique: Government's Borrowing Plan for the Second Half of FY 2025-26</a>
+          </div>
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> 22/09/2025</span><br>
+            <a href="#">Update on Fiscal Deficit and Economic Outlook Q3 FY 2025</a>
+          </div>
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> 18/09/2025</span><br>
+            <a href="#">Government Launches Digital Finance Awareness Campaign</a>
+          </div>
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> 14/09/2025</span><br>
+            <a href="#">Finance Ministry Introduces E-Payment Policy for MSMEs</a>
+          </div>
+          <div class="press-item">
+            <span class="date"><i class="far fa-calendar-alt"></i> 10/09/2025</span><br>
+            <a href="#">Union Budget Preparations Begin for FY 2026-27</a>
+          </div>
+        @endforelse
       </div>
     </div>
   </div>
@@ -601,11 +610,11 @@
     <section
       class="events-cta-section"
       role="region"
-      aria-label="Upcoming Events"
+      aria-label="Events"
     >
       <div class="events-container">
         <div class="events-header">
-          <h2 class="english-text">Upcoming Events</h2>
+          <h2 class="english-text">Events</h2>
           <h2 class="hindi-text">आगामी कार्यक्रम</h2>
           <!-- <p class="english-text">
             Stay updated with important financial events and conferences
@@ -753,18 +762,6 @@
 
         <div class="events-cta-footer">
           <div class="cta-content">
-            <h3 class="english-text">Never Miss an Important Event</h3>
-            <br />
-            <h3 class="hindi-text">कोई महत्वपूर्ण कार्यक्रम न चूकें</h3>
-            <br />
-            <!-- <p class="english-text">
-              Subscribe to our events calendar and get notifications for all
-              important financial events
-            </p>
-            <p class="hindi-text">
-              हमारे इवेंट्स कैलेंडर को सब्सक्राइब करें और सभी महत्वपूर्ण वित्तीय
-              कार्यक्रमों के लिए नोटिफिकेशन प्राप्त करें
-            </p> -->
           </div>
           <div class="cta-buttons">
            
@@ -824,7 +821,7 @@
         </div></a>
 
         <!-- Service 3 -->
-         <a href="">
+         <a href="/no-objection-certificate">
         <div class="service-card">
           <div class="service-icon">
             <img
@@ -852,7 +849,7 @@
         </div></a>
 
         <!-- Service 5 -->
-         <a href="">
+         <a href="https://ceib.gov.in/" target="_blank">
         <div class="service-card">
           <div class="service-icon">
             <img
