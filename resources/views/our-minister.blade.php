@@ -7,7 +7,7 @@
     <title>Our Minister</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -134,7 +134,7 @@
                         <div class="minister-card-full">
                             <div class="minister-image">
                                 <img
-                                    src="uploads/nirmal-sitaraman-finance-minister_0 (1).jpg"
+                                    src="/uploads/nirmal-sitaraman-finance-minister_0.jpg"
                                     alt="Smt. Nirmala Sitharaman" />
                             </div>
                             <div class="minister-details">
@@ -167,7 +167,7 @@
                         <div class="minister-card-full">
                             <div class="minister-image">
                                 <img
-                                    src="uploads/pankaj-chaudhary.png"
+                                    src="/uploads/pankaj-chaudhary.png"
                                     alt="Shri Pankaj Chaudhary" />
                             </div>
                             <div class="minister-details">
@@ -271,39 +271,7 @@
             });
         });
 
-        // Language dropdown functionality
-        const languageBtn = document.getElementById("languageBtn");
-        const languageMenu = document.getElementById("languageMenu");
-
-        // Toggle dropdown
-        languageBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            languageMenu.parentElement.classList.toggle("show");
-        });
-
-        // When user selects a language
-        languageMenu.querySelectorAll("div").forEach((item) => {
-            item.addEventListener("click", () => {
-                const lang = item.dataset.lang;
-
-                // Apply language to entire page
-                if (lang === "hi") {
-                    document.body.classList.add("hindi");
-                } else {
-                    document.body.classList.remove("hindi");
-                }
-
-                // Close the dropdown
-                languageMenu.parentElement.classList.remove("show");
-            });
-        });
-
-        // Close dropdown if clicked outside
-        document.addEventListener("click", (e) => {
-            if (!languageMenu.parentElement.contains(e.target)) {
-                languageMenu.parentElement.classList.remove("show");
-            }
-        });
+        // Language functionality is handled by common language-switcher.js
 
         // Mobile menu toggle
         const menuToggle = document.getElementById("menuToggle");
@@ -327,6 +295,7 @@
             });
         });
     </script>
+    <script src="/js/language-switcher.js"></script>
 </body>
 
 </html>

@@ -86,17 +86,32 @@ class ClientReport extends Model
     public static function generateUniqueId()
     {
         $prefix = 'IIES-' . date('Y');
-        $lastReport = self::where('unique_id', 'like', $prefix . '%')
-            ->orderBy('id', 'desc')
-            ->first();
-
-        if ($lastReport) {
-            $lastNumber = (int) substr($lastReport->unique_id, -4);
-            $newNumber = str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
-        } else {
-            $newNumber = '0001';
+        
+        // Get all reports for this year and find the highest number
+        $reports = self::where('unique_id', 'like', $prefix . '%')
+            ->get();
+        
+        $maxNumber = 0;
+        
+        foreach ($reports as $report) {
+            // Extract number from various formats
+            $uniqueId = $report->unique_id;
+            
+            // Handle format like IIES-2025-XXXX
+            if (preg_match('/' . preg_quote($prefix) . '-(\d+)$/', $uniqueId, $matches)) {
+                $number = (int) $matches[1];
+                $maxNumber = max($maxNumber, $number);
+            }
+            // Handle format like IIES-2025-TEST-001
+            elseif (preg_match('/' . preg_quote($prefix) . '-[A-Z]+-(\d+)$/', $uniqueId, $matches)) {
+                $number = (int) $matches[1];
+                $maxNumber = max($maxNumber, $number);
+            }
         }
-
+        
+        // Generate next number
+        $newNumber = str_pad($maxNumber + 1, 4, '0', STR_PAD_LEFT);
+        
         return $prefix . '-' . $newNumber;
     }
 

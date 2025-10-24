@@ -7,7 +7,7 @@
     <title>Guidelines for NOC Applicants - IIES</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <link rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -301,6 +301,7 @@
 
     <!-- JavaScript -->
     <script src="js/app.js"></script>
+    <script src="/js/language-switcher.js"></script>
 </body>
 
 </html>

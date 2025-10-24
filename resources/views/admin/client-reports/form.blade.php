@@ -3,7 +3,18 @@
         <h2 class="card-title" style="margin: 0;">NOC Progress Report</h2>
         <img src="/data_entry.pdf" alt="IIES Logo" style="height: 60px;" onerror="this.style.display='none'">
     </div>
-  
+    <div class="brand" aria-label="Ministry of Finance" style="display: flex; align-items: center; justify-content: center;">
+          <img src="/uploads/main-logo.jpg" alt="Emblem / Logo" onerror="this.style.background='#eee'" width="150px" height="150px"   >
+          <div class="titles">
+            <h1>
+              भारतीय अंतर्राष्ट्रीय आर्थिक सेवा<br><span>Indian International Economic Service
+              </span>
+            </h1>
+            <p class="hindi-text">वित्त मंत्रालय, भारत सरकार</p>
+            <p class="english-text">Ministry of Finance, Government of India</p>
+          </div>
+        </div>
+        <br>
     <!-- Section 1: File Information -->
     <div class="form-section">
         <h3 class="section-title">1) File Information</h3>
@@ -17,7 +28,9 @@
                     class="form-input @error('unique_id') error @enderror"
                     value="{{ old('unique_id', isset($clientReport) && $clientReport->exists ? $clientReport->unique_id : ($uniqueId ?? '')) }}"
                     required
-                    {{ isset($clientReport) && $clientReport->exists ? 'readonly' : '' }}>
+                    readonly
+                    style="background-color: #f8f9fa; color: #6c757d;">
+                <small class="form-text text-muted">Auto-generated unique identifier</small>
                 @error('unique_id')<span class="error-message">{{ $message }}</span>@enderror
             </div>
 
@@ -483,9 +496,19 @@
                      value="{{ old('payment_book_notes', $clientReport->payment_book_notes ?? '') }}"
                      placeholder="Notes or reason">
              </div>
+             <div class="form-group">
+                 <label for="payment_book_status_approval" class="form-label">02 - Payment Book Approval</label>
+                 <select id="payment_book_status_approval" name="payment_book_status_approval" class="form-input">
+                     <option value="approved" {{ old('payment_book_status_approval', $clientReport->payment_book_status_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
+                     <option value="rejected" {{ old('payment_book_status_approval', $clientReport->payment_book_status_approval ?? 'rejected') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                 </select>
+                 <input type="text" name="payment_book_status_approval_notes" class="form-input" style="margin-top: 8px;"
+                     value="{{ old('payment_book_status_approval_notes', $clientReport->payment_book_status_approval_notes ?? '') }}"
+                     placeholder="Notes or reason">
+             </div>
 
             <div class="form-group">
-                <label for="nfra_application_status" class="form-label">02 - NFRA Application Processing</label>
+                <label for="nfra_application_status" class="form-label">03 - NFRA Application Processing</label>
                 <select id="nfra_application_status" name="nfra_application_status" class="form-input">
                     <option value="applied" {{ old('nfra_application_status', $clientReport->nfra_application_status ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
                     <option value="not_applied" {{ old('nfra_application_status', $clientReport->nfra_application_status ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
@@ -496,10 +519,10 @@
             </div>
 
             <div class="form-group">
-                <label for="nfra_approval_status" class="form-label">03 - NFRA Approval</label>
+                <label for="nfra_approval_status" class="form-label">04 - NFRA Approval</label>
                 <select id="nfra_approval_status" name="nfra_approval_status" class="form-input">
-                    <option value="applied" {{ old('nfra_approval_status', $clientReport->nfra_approval_status ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
-                    <option value="not_applied" {{ old('nfra_approval_status', $clientReport->nfra_approval_status ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
+                    <option value="approved" {{ old('nfra_approval_status', $clientReport->nfra_approval_status ?? '') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('nfra_approval_status', $clientReport->nfra_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
                 </select>
                 <input type="text" name="nfra_approval_notes" class="form-input" style="margin-top: 8px;"
                     value="{{ old('nfra_approval_notes', $clientReport->nfra_approval_notes ?? '') }}"
@@ -507,7 +530,7 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28_application_processing" class="form-label">04 -Form 28 Application Processing </label>
+                <label for="form_28_application_processing" class="form-label">05 -Form 28 Application Processing </label>
                 <select id="form_28_application_processing" name="form_28_application_processing" class="form-input">
                     <option value="applied" {{ old('form_28_application_processing', $clientReport->form_28_application_processing ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
                     <option value="not_applied" {{ old('form_28_application_processing', $clientReport->form_28_application_processing ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
@@ -518,10 +541,10 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28_approval" class="form-label">05 - FORM 28 Approval </label>
+                <label for="form_28_approval" class="form-label">06 - FORM 28 Approval </label>
                 <select id="form_28_approval" name="form_28_approval" class="form-input">
-                    <option value="applied" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
-                    <option value="not_applied" {{ old('form_28_approval', $clientReport->form_28_approval ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
+                    <option value="approved" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'rejected') == 'rejected' ? 'selected' : '' }}>Rejected</option>
                 </select>
                 <input type="text" name="form_28_approval_notes" class="form-input" style="margin-top: 8px;"
                     value="{{ old('form_28_approval_notes', $clientReport->form_28_approval_notes ?? '') }}"
@@ -529,7 +552,7 @@
             </div>
 
             <div class="form-group">
-                <label for="noc_fee" class="form-label">06 - NOC Fee</label>
+                <label for="noc_fee" class="form-label">07 - NOC Fee</label>
                 <select id="noc_fee" name="noc_fee" class="form-input">
                     <option value="applied" {{ old('noc_fee', $clientReport->noc_fee ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
                     <option value="not_applied" {{ old('noc_fee', $clientReport->noc_fee ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
@@ -540,7 +563,7 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28b_application_processing" class="form-label">07 - Form 28B Application Processing</label>
+                <label for="form_28b_application_processing" class="form-label">08 - Form 28B Application Processing</label>
                 <select id="form_28b_application_processing" name="form_28b_application_processing" class="form-input">
                     <option value="applied" {{ old('form_28b_application_processing', $clientReport->form_28b_application_processing ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
                     <option value="not_applied" {{ old('form_28b_application_processing', $clientReport->form_28b_application_processing ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
@@ -551,10 +574,10 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28b_approval" class="form-label">08 - Form 28 B Approval </label>
+                <label for="form_28b_approval" class="form-label">09 - Form 28 B Approval </label>
                 <select id="form_28b_approval" name="form_28b_approval" class="form-input">
-                    <option value="applied" {{ old('form_28b_approval', $clientReport->form_28b_approval ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
-                    <option value="not_applied" {{ old('form_28b_approval', $clientReport->form_28b_approval ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
+                    <option value="approved " {{ old('form_28b_approval', $clientReport->form_28b_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('form_28b_approval', $clientReport->form_28b_approval ?? 'rejected') == 'rejected' ? 'selected' : '' }}>Rejected</option>
                 </select>
                 <input type="text" name="form_28b_approval_notes" class="form-input" style="margin-top: 8px;"
                     value="{{ old('form_28b_approval_notes', $clientReport->form_28b_approval_notes ?? '') }}"
@@ -736,113 +759,12 @@
         </div>
     </div>
 
-    <!-- Section 9: Approval & Signature -->
-    <div class="form-section">
-        <h3 class="section-title">14) Approval & Signature</h3>
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="technical_team_approval" class="form-label">Technical Team</label>
-                <input
-                    type="text"
-                    id="technical_team_approval"
-                    name="technical_team_approval"
-                    class="form-input"
-                    value="{{ old('technical_team_approval', $clientReport->technical_team_approval ?? '') }}"
-                    placeholder="Approver name or status">
-            </div>
-
-            <div class="form-group">
-                <label for="legal_compliance_approval" class="form-label">Legal Compliance Team</label>
-                <input
-                    type="text"
-                    id="legal_compliance_approval"
-                    name="legal_compliance_approval"
-                    class="form-input"
-                    value="{{ old('legal_compliance_approval', $clientReport->legal_compliance_approval ?? '') }}"
-                    placeholder="Approver name or status">
-            </div>
-
-            <div class="form-group">
-                <label for="final_authoriser_approval" class="form-label">Final Authoriser</label>
-                <input
-                    type="text"
-                    id="final_authoriser_approval"
-                    name="final_authoriser_approval"
-                    class="form-input"
-                    value="{{ old('final_authoriser_approval', $clientReport->final_authoriser_approval ?? '') }}"
-                    placeholder="Approver name or status">
-            </div>
-        </div>
-    </div>
+  
 
     <!-- Section 9: General Notes & Remarks -->
-    <div class="form-section">
-        <h3 class="section-title">15) General Notes & Officer Remarks</h3>
-        <div class="form-grid">
-            <div class="form-group full-width">
-                <label for="general_notes" class="form-label">General Notes</label>
-                <textarea
-                    id="general_notes"
-                    name="general_notes"
-                    class="form-input"
-                    rows="3"
-                    placeholder="Group applications may require additional time (1-2 months) for review when applicable. Sensitive information should only be shared with authorised personnel.">{{ old('general_notes', $clientReport->general_notes ?? '') }}</textarea>
-            </div>
-
-            <div class="form-group full-width">
-                <label for="officer_remarks" class="form-label">Officer Remarks</label>
-                <textarea
-                    id="officer_remarks"
-                    name="officer_remarks"
-                    class="form-input"
-                    rows="3"
-                    placeholder="Officer to provide concise remarks about the particular stages, missing documents, or any additional conditions required.">{{ old('officer_remarks', $clientReport->officer_remarks ?? '') }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="status" class="form-label">Overall Status</label>
-                <select id="status" name="status" class="form-input">
-                    <option value="draft" {{ old('status', $clientReport->status ?? 'draft') == 'draft' ? 'selected' : '' }}>Draft</option>
-                    <option value="in_progress" {{ old('status', $clientReport->status ?? '') == 'in_progress' ? 'selected' : '' }}>In Progress</option>
-                    <option value="completed" {{ old('status', $clientReport->status ?? '') == 'completed' ? 'selected' : '' }}>Completed</option>
-                    <option value="on_hold" {{ old('status', $clientReport->status ?? '') == 'on_hold' ? 'selected' : '' }}>On Hold</option>
-                    <option value="rejected" {{ old('status', $clientReport->status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="brand" aria-label="Ministry of Finance" style="display: flex; align-items: center; justify-content: center;">
-          <img src="/uploads/main-logo.jpg" alt="Emblem / Logo" onerror="this.style.background='#eee'" width="100px" height="100px"   >
-          <div class="titles">
-            <h1>
-              भारतीय अंतर्राष्ट्रीय आर्थिक सेवा<br><span>Indian International Economic Service
-              </span>
-            </h1>
-            <p class="hindi-text">वित्त मंत्रालय, भारत सरकार</p>
-            <p class="english-text">Ministry of Finance, Government of India</p>
-          </div>
-        </div>
-        <br>
-    <div class="container">
-        <p>This progress report has been prepared by the <strong>Indian International Economic Service (IIES)</strong> to reflect
-            the current status of a client's application or task. It provides detailed updates from the initial submission
-            to the final stage of completion. The purpose of this report is to maintain transparency and ensure that
-            every process is completed efficiently within the prescribed timeline.</p>
-
-        <p><strong>Brief Introductory Description:</strong><br>
-            This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective
-            of presenting the current status of a client's or applicant's work. It includes detailed progress information
-            from the receipt of the application to the completion of the process, ensuring transparency and timely
-            execution of all tasks.</p>
-
-        <p><strong>Brief Introductory Description:</strong><br>
-            This report is prepared by the Indian International Economic Service
-            (IIES) to record and present the current status of an applicant/client's work. The report includes the
-            client's complete information, the nature of the work, details of the fund for which NOC is sought
-            (amount, currency, purpose), the beneficiary bank where funds were received, the origin country of the
-            funds, and a step-by-step progress record of the process.</p>
-     </div>
-     <br>
+   
+    
+   
 
      <!-- Section 10: Status Codes & Definitions -->
      <div class="form-section">
@@ -889,12 +811,104 @@
          <h3 class="section-title">13)  Officer Remarks</h3>
          <p>(Officer to provide concise remarks about the particular stages, missing documents, or any 
          additional conditions required.)</p>
+         <div class="form-section">
+        <div class="form-grid">
+            <div class="form-group full-width">
+                <label for="general_notes" class="form-label">General Notes</label>
+                <textarea
+                    id="general_notes"
+                    name="general_notes"
+                    class="form-input"
+                    rows="3"
+                    placeholder="Group applications may require additional time (1-2 months) for review when applicable. Sensitive information should only be shared with authorised personnel.">{{ old('general_notes', $clientReport->general_notes ?? '') }}</textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="officer_remarks" class="form-label">Officer Remarks</label>
+                <textarea
+                    id="officer_remarks"
+                    name="officer_remarks"
+                    class="form-input"
+                    rows="3"
+                    placeholder="Officer to provide concise remarks about the particular stages, missing documents, or any additional conditions required.">{{ old('officer_remarks', $clientReport->officer_remarks ?? '') }}</textarea>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="status" class="form-label">Overall Status</label>
+                <select id="status" name="status" class="form-input">
+                    <option value="draft" {{ old('status', $clientReport->status ?? 'draft') == 'draft' ? 'selected' : '' }}>Draft</option>
+                    <option value="in_progress" {{ old('status', $clientReport->status ?? '') == 'in_progress' ? 'selected' : '' }}>In Progress</option>
+                    <option value="completed" {{ old('status', $clientReport->status ?? '') == 'completed' ? 'selected' : '' }}>Completed</option>
+                    <option value="on_hold" {{ old('status', $clientReport->status ?? '') == 'on_hold' ? 'selected' : '' }}>On Hold</option>
+                    <option value="rejected" {{ old('status', $clientReport->status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                </select>
+            </div> -->
+        </div>
+    </div>
      </div>
+       <!-- Section 9: Approval & Signature -->
+    <div class="form-section">
+        <h3 class="section-title">14) Approval & Signature</h3>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="technical_team_approval" class="form-label">Technical Team</label>
+                <input
+                    type="text"
+                    id="technical_team_approval"
+                    name="technical_team_approval"
+                    class="form-input"
+                    value="{{ old('technical_team_approval', $clientReport->technical_team_approval ?? '') }}"
+                    placeholder="Approver name or status">
+            </div>
+
+            <div class="form-group">
+                <label for="legal_compliance_approval" class="form-label">Legal Compliance Team</label>
+                <input
+                    type="text"
+                    id="legal_compliance_approval"
+                    name="legal_compliance_approval"
+                    class="form-input"
+                    value="{{ old('legal_compliance_approval', $clientReport->legal_compliance_approval ?? '') }}"
+                    placeholder="Approver name or status">
+            </div>
+
+            <div class="form-group">
+                <label for="final_authoriser_approval" class="form-label">Final Authoriser</label>
+                <input
+                    type="text"
+                    id="final_authoriser_approval"
+                    name="final_authoriser_approval"
+                    class="form-input"
+                    value="{{ old('final_authoriser_approval', $clientReport->final_authoriser_approval ?? '') }}"
+                    placeholder="Approver name or status">
+            </div>
+        </div>
+    </div>
      <div class="form-section">
          <h3 class="section-title">15)   General Notes </h3>
          <p>Group applications may require additional time (1-2 months) for review when applicable. 
          Sensitive information should only be shared with authorised personnel.</p>
      </div>
+     <div class="container">
+        <p>This progress report has been prepared by the <strong>Indian International Economic Service (IIES)</strong> to reflect
+            the current status of a client's application or task. It provides detailed updates from the initial submission
+            to the final stage of completion. The purpose of this report is to maintain transparency and ensure that
+            every process is completed efficiently within the prescribed timeline.</p>
+
+        <p><strong>Brief Introductory Description:</strong><br>
+            This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective
+            of presenting the current status of a client's or applicant's work. It includes detailed progress information
+            from the receipt of the application to the completion of the process, ensuring transparency and timely
+            execution of all tasks.</p>
+
+        <p><strong>Brief Introductory Description:</strong><br>
+            This report is prepared by the Indian International Economic Service
+            (IIES) to record and present the current status of an applicant/client's work. The report includes the
+            client's complete information, the nature of the work, details of the fund for which NOC is sought
+            (amount, currency, purpose), the beneficiary bank where funds were received, the origin country of the
+            funds, and a step-by-step progress record of the process.</p>
+     </div>
+     <br>
      <!-- Form Actions -->
      <div style="display: flex; gap: 15px; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb;">
         <button type="submit" class="btn btn-primary" style="padding: 12px 30px;">

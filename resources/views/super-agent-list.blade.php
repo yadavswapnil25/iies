@@ -6,7 +6,7 @@
     <title>List of Support Agent</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
       <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -21,7 +21,7 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Registered Facilitation Agent</h1>
+          <h1>List of Registered Facilitation Agent</h1>
 
           <div class="hero-tabs">
             <a href="/super-agent-role" class="hero-tab "

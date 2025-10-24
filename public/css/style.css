@@ -892,7 +892,6 @@ aside.left-aside {
 .logo-strip .logo-inner {
   display: flex;
   gap: 25px;
-  max-width: 1000px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px 15px;

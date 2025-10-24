@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Law & Act - Law Before Issuing NOC</title>
-       <link rel="stylesheet" href="css/style.css" />
+       <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -21,7 +21,7 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Law & Act</h1>
+          <h1>Law Before Issuing NOC</h1>
 
           <div class="hero-tabs">
             <a href="/law-act-policy" class="hero-tab">Act & Policy</a>

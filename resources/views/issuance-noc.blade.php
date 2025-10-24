@@ -6,7 +6,7 @@
     <title>Guidelines for Issuance NOC</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
       <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -20,7 +20,7 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Documents</h1>
+          <h1>Guideline for Issuance NOC</h1>
 
           <div class="hero-tabs">
             <a href="/issuance-noc" class="hero-tab active"
@@ -43,7 +43,7 @@
         <div class="breadcrumb">
           <a href="/">Home</a>
           <span class="separator">/</span>
-          <a href="#">Documents</a>
+          <a href="#">Guidelines</a>
           <span class="separator">/</span>
           <span>Guideline for Issuance NOC</span>
         </div>

@@ -40,7 +40,7 @@
       <div class="header-inner" role="banner">
         <div class="brand" aria-label="Ministry of Finance">
           <img
-            src="uploads/main-logo.jpg"
+            src="/uploads/main-logo.jpg"
             alt="Emblem / Logo"
             onerror="this.style.background='#eee'"
           />
@@ -56,8 +56,8 @@
         </div>
 
         <div class="header-actions">
-          <img src="uploads/swach-bharat.png" alt="swach-bharat" />
-          <img src="uploads/Beti_Bachao_Beti_Padhao_logo.jpg" alt="beti-bachao-beti-padhao" style="width: 100px;"/>
+          <img src="/uploads/swach-bharat.png" alt="swach-bharat" />
+          <img src="/uploads/Beti_Bachao_Beti_Padhao_logo.jpg" alt="beti-bachao-beti-padhao" style="width: 100px;"/>
         </div>
       </div>
     </header>
@@ -73,11 +73,11 @@
           <li class="dropdown">
             <a href="#" class="">About Us ▾</a>
             <ul class="dropdown-menu">
-              <li><a href="/about">About IIES</a></li>
-              <li><a href="/our-minister">Our Minister</a></li>
-              <li><a href="/our-performance">Our Performance</a></li>
+              <li><a href="/about/iies">About IIES</a></li>
+              <li><a href="/about/our-minister">Our Minister</a></li>
+              <li><a href="/about/our-performance">Our Performance</a></li>
               <li>
-                <a href="/our-fin-min">Office of The Finance Minister</a>
+                <a href="/about/our-fin-min">Office of The Finance Minister</a>
               </li>
             </ul>
           </li>
@@ -85,10 +85,10 @@
           <li class="dropdown">
             <a href="#" class="">Services ▾</a>
             <ul class="dropdown-menu">
-              <li><a href="/noc-process">NOC Process</a></li>
-              <li><a href="/proc-guide">Procedure &amp; Guidelines</a></li>
+              <li><a href="/services/noc-process">NOC Process</a></li>
+              <li><a href="/services/proc-guide">Procedure &amp; Guidelines</a></li>
               <li>
-                <a href="/object-certificate"
+                <a href="/services/object-certificate"
                   >Fee of No Objection Certificate</a>
               </li>
             </ul>
@@ -98,16 +98,16 @@
             <a href="#" class="">Guidelines ▾</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="/noc-guidelines">Guidelines for NOC Applicants</a>
+                <a href="/guidelines/noc-guidelines">Guidelines for NOC Applicants</a>
               </li>
               <li>
-                <a href="/issuance-noc">Guideline for Issuance NOC</a>
+                <a href="/guidelines/issuance-noc">Guideline for Issuance NOC</a>
               </li>
               <li>
-                <a href="/iies-officials">Guidelines for IIES Officials</a>
+                <a href="/guidelines/iies-officials">Guidelines for IIES Officials</a>
               </li>
               <li>
-                <a href="/super-agent">Guidelines for Registered Facilitation A </a>
+                <a href="/guidelines/super-agent">Guidelines for Registered Facilitation Agent </a>
               </li>
             </ul>
           </li>
@@ -115,14 +115,14 @@
             <a href="#" class="">Registered Facilitation Agent ▾</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="/super-agent-role" class="active"
+                <a href="/register-fac-agent/super-agent-role" class="active"
                   >Role of Registered Facilitation Agent</a>
               </li> 
               <li>
-                <a href="/super-agent-list">List of Registered Facilitation Agent</a>
+                <a href="/register-fac-agent/super-agent-list">List of Registered Facilitation Agent</a>
               </li>
               <li>
-                <a href="/super-agent-hire">Engage a Registered Facilitation Agent </a>
+                <a href="/register-fac-agent/super-agent-hire">Engage a Registered Facilitation Agent </a>
               </li>
             </ul>
           </li>

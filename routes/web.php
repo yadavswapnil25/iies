@@ -13,47 +13,48 @@ use App\Http\Controllers\HireAgentRequestController;
 use App\Http\Controllers\Admin\HireAgentRequestController as AdminHireAgentRequestController;
 use App\Http\Controllers\AgentListController;
 use App\Http\Controllers\Admin\AgentController as AdminAgentController;
+use App\Http\Controllers\UserLoginController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
-Route::get('/noc-guidelines', [\App\Http\Controllers\NocGuidelinesController::class, 'index']);
-Route::get('/about', function () {
+Route::get('/guidelines/noc-guidelines', [\App\Http\Controllers\NocGuidelinesController::class, 'index']);
+Route::get('/about/iies', function () {
     return view('about');
 });
-Route::get('/our-minister', function () {
+Route::get('/about/our-minister', function () {
     return view('our-minister');
 });
-Route::get('/our-performance', function () {
+Route::get('/about/our-performance', function () {
     return view('our-performance');
 });
-Route::get('/noc-process', function () {
+Route::get('/services/noc-process', function () {
     return view('noc-process');
 });
-Route::get('/our-fin-min', function () {
+Route::get('/about/our-fin-min', function () {
     return view('our-fin-min');
 });
-Route::get('/proc-guide', function () {
+Route::get('/services/proc-guide', function () {
     return view('proc-guide');
 });
-Route::get('/object-certificate', function () {
+Route::get('/services/object-certificate', function () {
     return view('object-certificate');
 });
-Route::get('/issuance-noc', function () {
+Route::get('/guidelines/issuance-noc', function () {
     return view('issuance-noc');
 });
-Route::get('/iies-officials', function () {
+Route::get('/guidelines/iies-officials', function () {
     return view('iies-officials');
 });
-Route::get('/super-agent', function () {
+Route::get('/guidelines/super-agent', function () {
     return view('super-agent');
 });
-Route::get('/super-agent-role', function () {
+Route::get('/register-fac-agent/super-agent-role', function () {
     return view('super-agent-role');
 });
-Route::get('/super-agent-list', function () {
+Route::get('/register-fac-agent/super-agent-list', function () {
     return view('super-agent-list');
 });
-Route::get('/super-agent-hire', function () {
+Route::get('/register-fac-agent/super-agent-hire', function () {
     return view('super-agent-hire');
 });
 Route::get('/law-act-policy', function () {
@@ -145,3 +146,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
             ->name('maintenance.clear-all');
     });
 });
+
+// User Login Routes for NOC Application Tracking
+Route::get('/user/login', [UserLoginController::class, 'showLoginForm'])->name('user.login');
+Route::post('/user/login', [UserLoginController::class, 'login'])->name('user.login');
+Route::get('/user/dashboard', [UserLoginController::class, 'dashboard'])->name('user.dashboard');
+Route::get('/user/logout', [UserLoginController::class, 'logout'])->name('user.logout');

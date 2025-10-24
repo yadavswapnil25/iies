@@ -6,7 +6,7 @@
     <title>NOC Process</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
       <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -20,7 +20,7 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-        <h1>Services</h1>
+        <h1>NOC Process</h1>
 
                     
           <div class="hero-tabs">
@@ -38,6 +38,8 @@
       <div class="breadcrumb-inner">
         <div class="breadcrumb">
           <a href="/">Home</a>
+          <span class="separator">/</span>
+          <span>Services</span>
           <span class="separator">/</span>
           <span>NOC Process</span>
         </div>

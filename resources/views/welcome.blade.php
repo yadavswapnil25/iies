@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ministry of Finance</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
@@ -323,10 +323,10 @@
           </h4>
           <ul style="padding-left: 18px; color: #333">
                   <!-- Login Button -->
-             <button class="login-btn" id="loginBtn">
+             <a href="{{ route('user.login') }}" class="login-btn" style="display: inline-block; text-decoration: none;">
     <span class="english-text">Track NOC Application</span>
     <span class="hindi-text">एन ओ सी आवेदन ट्रैकिंग</span>
-  </button>
+  </a>
             <!-- <li class="english-text">NOC Progress Details </li>
             <li class="hindi-text"></li> -->
           </ul>
@@ -336,66 +336,6 @@
  
 </div>
 
-    <!-- Login Modal -->
-    <div class="login-modal" id="loginModal">
-      <div class="login-modal-content">
-        <div class="login-modal-header">
-          <h3>
-            <span class="english-text">Login to IIES Portal</span>
-            <span class="hindi-text">IIES पोर्टल में लॉगिन करें</span>
-          </h3>
-          <button class="close-btn" id="closeLoginModal">&times;</button>
-        </div>
-        <div class="login-modal-body">
-          <form id="loginForm">
-            <div class="form-group">
-              <label for="email">
-                <span class="english-text">Email / Unique ID</span>
-                <span class="hindi-text">ईमेल / यूनिक आईडी</span>
-              </label>
-              <input 
-                type="text" 
-                id="email" 
-                name="email" 
-                required 
-                placeholder="Enter your email or unique ID"
-              >
-            </div>
-            
-            <div class="form-group">
-              <label for="password">
-                <span class="english-text">Password</span>
-                <span class="hindi-text">पासवर्ड</span>
-              </label>
-              <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                required 
-                placeholder="Enter your password"
-              >
-            </div>
-            
-            <!-- <div class="form-options">
-              <label class="checkbox-group">
-                <input type="checkbox" id="rememberMe">
-                <span class="english-text">Remember me</span>
-                <span class="hindi-text">मुझे याद रखें</span>
-              </label>
-              <a href="#" class="forgot-password">
-                <span class="english-text">Forgot Password?</span>
-                <span class="hindi-text">पासवर्ड भूल गए?</span>
-              </a>
-            </div> -->
-            
-            <button type="submit" class="submit-btn">
-              <span class="english-text">Login</span>
-              <span class="hindi-text">लॉगिन करें</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
       </aside>
 
       <!-- RIGHT: DEPARTMENTS / CARDS -->
@@ -1393,79 +1333,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })();
 
 
-// Login Modal Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const loginBtn = document.getElementById('loginBtn');
-  const loginModal = document.getElementById('loginModal');
-  const closeLoginModal = document.getElementById('closeLoginModal');
-  const loginForm = document.getElementById('loginForm');
-
-  // Open modal when login button is clicked
-  if (loginBtn) {
-    loginBtn.addEventListener('click', function() {
-      if (loginModal) {
-        loginModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      }
-    });
-  }
-
-  // Close modal when close button is clicked
-  if (closeLoginModal) {
-    closeLoginModal.addEventListener('click', function() {
-      if (loginModal) {
-        loginModal.style.display = 'none';
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-    });
-  }
-
-  // Close modal when clicking outside the modal content
-  if (loginModal) {
-    loginModal.addEventListener('click', function(e) {
-      if (e.target === loginModal) {
-        loginModal.style.display = 'none';
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-    });
-  }
-
-  // Handle form submission
-  if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      
-      // Basic validation
-      if (!email || !password) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      
-      // Here you would typically send the data to your server
-      console.log('Login attempt:', { email, password });
-      
-      // Simulate login process
-      alert('Login functionality would be implemented here. This is a demo.');
-      
-      // Close modal after "login"
-      if (loginModal) {
-        loginModal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && loginModal && loginModal.style.display === 'flex') {
-      loginModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-  });
-});
+// Login functionality removed - now redirects to separate login page
       
     </script>
     <script>
@@ -1510,5 +1378,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 </script>
+<script src="/js/language-switcher.js"></script>
   </body>
 </html>
