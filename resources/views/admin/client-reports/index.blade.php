@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
-    <h1 class="page-title">Client Work Progress Reports</h1>
+    <h1 class="page-title">NOC Progress Reports</h1>
     <a href="{{ route('admin.client-reports.create') }}" class="btn btn-primary">+ Create New Report</a>
 </div>
 

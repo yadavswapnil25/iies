@@ -5,13 +5,14 @@
     <div class="header-actions">
         <a href="{{ route('admin.agents.index') }}" class="btn-back">← Back to Agents</a>
     </div>
-    <h1>Add New Agent</h1>
-    <p>Register a new facilitation agent</p>
+    <h1>Edit Agent</h1>
+    <p>Update agent information</p>
 </div>
 
 <div class="content-body">
-    <form method="POST" action="{{ route('admin.agents.store') }}" class="agent-form">
+    <form method="POST" action="{{ route('admin.agents.update', $agent) }}" class="agent-form">
         @csrf
+        @method('PUT')
         
         <div class="form-section">
             <h2>Basic Information</h2>
@@ -19,7 +20,7 @@
                 <div class="form-group">
                     <label for="name">Agent Name *</label>
                     <input type="text" id="name" name="name" class="form-input @error('name') error @enderror" 
-                           value="{{ old('name') }}" required>
+                           value="{{ old('name', $agent->name) }}" required>
                     @error('name')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -27,7 +28,7 @@
                 <div class="form-group">
                     <label for="agent_code">Agent Code *</label>
                     <input type="text" id="agent_code" name="agent_code" class="form-input @error('agent_code') error @enderror" 
-                           value="{{ old('agent_code') }}" required>
+                           value="{{ old('agent_code', $agent->agent_code) }}" required>
                     @error('agent_code')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -38,7 +39,7 @@
                 <div class="form-group">
                     <label for="experience_years">Experience (Years) *</label>
                     <input type="number" id="experience_years" name="experience_years" class="form-input @error('experience_years') error @enderror" 
-                           value="{{ old('experience_years') }}" min="0" required>
+                           value="{{ old('experience_years', $agent->experience_years) }}" min="0" required>
                     @error('experience_years')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -52,7 +53,7 @@
                 <div class="form-group">
                     <label for="phone">Phone</label>
                     <input type="tel" id="phone" name="phone" class="form-input @error('phone') error @enderror" 
-                           value="{{ old('phone') }}">
+                           value="{{ old('phone', $agent->phone) }}">
                     @error('phone')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -60,7 +61,7 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" class="form-input @error('email') error @enderror" 
-                           value="{{ old('email') }}">
+                           value="{{ old('email', $agent->email) }}">
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -69,7 +70,7 @@
             
             <div class="form-group">
                 <label for="address">Address</label>
-                <textarea id="address" name="address" class="form-textarea @error('address') error @enderror" rows="3">{{ old('address') }}</textarea>
+                <textarea id="address" name="address" class="form-textarea @error('address') error @enderror" rows="3">{{ old('address', $agent->address) }}</textarea>
                 @error('address')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
@@ -81,7 +82,7 @@
             <div class="form-group">
                 <label for="specialization">Specialization</label>
                 <textarea id="specialization" name="specialization" class="form-textarea @error('specialization') error @enderror" 
-                          rows="3" placeholder="Describe the agent's areas of expertise...">{{ old('specialization') }}</textarea>
+                          rows="3" placeholder="Describe the agent's areas of expertise...">{{ old('specialization', $agent->specialization) }}</textarea>
                 @error('specialization')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
@@ -92,7 +93,7 @@
                     <label for="service_fee_percentage">Service Fee Percentage</label>
                     <input type="number" id="service_fee_percentage" name="service_fee_percentage" 
                            class="form-input @error('service_fee_percentage') error @enderror" 
-                           value="{{ old('service_fee_percentage', 2.00) }}" step="0.01" min="0" max="100">
+                           value="{{ old('service_fee_percentage', $agent->service_fee_percentage) }}" step="0.01" min="0" max="100">
                     @error('service_fee_percentage')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -101,7 +102,7 @@
                     <label for="sbi_account_number">SBI Account Number</label>
                     <input type="text" id="sbi_account_number" name="sbi_account_number" 
                            class="form-input @error('sbi_account_number') error @enderror" 
-                           value="{{ old('sbi_account_number') }}" placeholder="DEA1234567890">
+                           value="{{ old('sbi_account_number', $agent->sbi_account_number) }}" placeholder="DEA1234567890">
                     @error('sbi_account_number')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -113,7 +114,7 @@
                     <label for="daily_fee_min">Daily Fee Minimum (₹)</label>
                     <input type="number" id="daily_fee_min" name="daily_fee_min" 
                            class="form-input @error('daily_fee_min') error @enderror" 
-                           value="{{ old('daily_fee_min', 3500) }}" step="0.01" min="0">
+                           value="{{ old('daily_fee_min', $agent->daily_fee_min) }}" step="0.01" min="0">
                     @error('daily_fee_min')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -122,7 +123,7 @@
                     <label for="daily_fee_max">Daily Fee Maximum (₹)</label>
                     <input type="number" id="daily_fee_max" name="daily_fee_max" 
                            class="form-input @error('daily_fee_max') error @enderror" 
-                           value="{{ old('daily_fee_max', 10000) }}" step="0.01" min="0">
+                           value="{{ old('daily_fee_max', $agent->daily_fee_max) }}" step="0.01" min="0">
                     @error('daily_fee_max')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -134,7 +135,7 @@
             <h2>Status & Notes</h2>
             <div class="form-group">
                 <label class="checkbox-label">
-                    <input type="checkbox" name="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }}>
+                    <input type="checkbox" name="is_active" value="1" {{ old('is_active', $agent->is_active) ? 'checked' : '' }}>
                     <span class="checkmark"></span>
                     Active Agent
                 </label>
@@ -143,7 +144,7 @@
             <div class="form-group">
                 <label for="notes">Admin Notes</label>
                 <textarea id="notes" name="notes" class="form-textarea @error('notes') error @enderror" 
-                          rows="3" placeholder="Internal notes about this agent...">{{ old('notes') }}</textarea>
+                          rows="3" placeholder="Internal notes about this agent...">{{ old('notes', $agent->notes) }}</textarea>
                 @error('notes')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
@@ -151,7 +152,7 @@
         </div> -->
 
         <div class="form-actions">
-            <button type="submit" class="btn-primary">Create Agent</button>
+            <button type="submit" class="btn-primary">Update Agent</button>
             <a href="{{ route('admin.agents.index') }}" class="btn-secondary">Cancel</a>
         </div>
     </form>

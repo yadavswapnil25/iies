@@ -3,10 +3,10 @@
       <div class="footer-inner">
         <!-- Column 1: Ministry Info -->
         <div class="footer-col">
-          <strong class="footer-title">Ministry of Finance</strong>
+          <strong class="footer-title">Indian International Economic Service</strong>
           <p class="footer-description">
-            Official website of the Ministry of Finance. Website content managed
-            by Ministry of Finance Design and Developed By Indian International Economic Service
+          Official website of Indian International Economic Service, Ministry of Finance. Website content managed
+            by Indian International Economic Service Design and Developed By Indian International Economic Service
           </p>
           <div class="footer-updated">Last Updated: Oct 11, 2025</div>
         </div>
@@ -87,7 +87,7 @@
             <strong class="footer-title">Contact Info</strong>
             <div class="contact-details">
               <p>Phone: +91-11-23095555</p>
-              <p>Email: info@finance.gov.in</p>
+              <p>Email: finance@iies.org.in</p>
               <p>Address: North Block, New Delhi-110001</p>
             </div>
           </div>
@@ -98,7 +98,7 @@
       <div class="footer-bottom">
         <div class="footer-bottom-inner">
           <p>
-            &copy; 2025 Ministry of Finance, Government of India. All Rights
+            &copy; 2025 Indian International Economic Service, Government of India. All Rights
             Reserved.
           </p>
         </div>

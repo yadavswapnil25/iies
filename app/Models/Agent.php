@@ -13,7 +13,6 @@ class Agent extends Model
         'phone',
         'email',
         'address',
-        'category',
         'specialization',
         'service_fee_percentage',
         'daily_fee_min',
@@ -31,20 +30,6 @@ class Agent extends Model
         'is_active' => 'boolean',
     ];
 
-    /**
-     * Get the category display name
-     */
-    public function getCategoryDisplayAttribute()
-    {
-        return match($this->category) {
-            'category-a' => 'Category A - Individual & Small Business NOC',
-            'category-b' => 'Category B - Corporate & Large Business NOC',
-            'category-c' => 'Category C - International Trade NOC',
-            'category-d' => 'Category D - Investment & Financial NOC',
-            'category-e' => 'Category E - Special Projects NOC',
-            default => $this->category
-        };
-    }
 
     /**
      * Get the status color for display
@@ -62,11 +47,4 @@ class Agent extends Model
         return $query->where('is_active', true);
     }
 
-    /**
-     * Scope for category filtering
-     */
-    public function scopeByCategory($query, $category)
-    {
-        return $query->where('category', $category);
-    }
 }

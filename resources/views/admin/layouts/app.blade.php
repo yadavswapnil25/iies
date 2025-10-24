@@ -334,7 +334,7 @@
                 📊 Dashboard
             </a>
             <a href="{{ route('admin.client-reports.index') }}" class="nav-item {{ request()->routeIs('admin.client-reports.*') ? 'active' : '' }}">
-                📄 Client Reports
+                📄 NOC Progress Reports
             </a>
             <a href="{{ route('admin.contact-messages.index') }}" class="nav-item {{ request()->routeIs('admin.contact-messages.*') ? 'active' : '' }}">
                 💬 Contact Messages
@@ -356,6 +356,27 @@
             </a>
             <a href="{{ route('admin.press-releases.index') }}" class="nav-item {{ request()->routeIs('admin.press-releases.*') ? 'active' : '' }}">
                 📰 Press Release Management
+            </a>
+            <a href="{{ route('admin.announcements.index') }}" class="nav-item {{ request()->routeIs('admin.announcements.*') ? 'active' : '' }}">
+                📢 Announcements Management
+            </a>
+            <a href="{{ route('admin.vacancies.index') }}" class="nav-item {{ request()->routeIs('admin.vacancies.*') ? 'active' : '' }}">
+                💼 Vacancies Management
+            </a>
+            <a href="{{ route('admin.events.index') }}" class="nav-item {{ request()->routeIs('admin.events.*') ? 'active' : '' }}">
+                📅 Events Management
+            </a>
+            <a href="{{ route('admin.banners.index') }}" class="nav-item {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">
+                🖼️ Banners Management
+            </a>
+            <a href="{{ route('admin.enforcements.index') }}" class="nav-item {{ request()->routeIs('admin.enforcements.*') ? 'active' : '' }}">
+                ⚖️ Enforcement Directorate
+            </a>
+            <a href="{{ route('admin.finance-ministers.index') }}" class="nav-item {{ request()->routeIs('admin.finance-ministers.*') ? 'active' : '' }}">
+                👤 Finance Ministers
+            </a>
+            <a href="{{ route('admin.international-taxations.index') }}" class="nav-item {{ request()->routeIs('admin.international-taxations.*') ? 'active' : '' }}">
+                🌍 International Taxation Management
             </a>
             <a href="{{ route('admin.maintenance.clear-all') }}" class="nav-item">
                 🧹 Clear All Cache

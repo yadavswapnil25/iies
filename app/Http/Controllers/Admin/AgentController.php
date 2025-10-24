@@ -22,10 +22,6 @@ class AgentController extends Controller
             });
         }
 
-        // Filter by category
-        if ($request->filled('category')) {
-            $query->where('category', $request->category);
-        }
 
         // Filter by status
         if ($request->filled('status')) {
@@ -51,7 +47,6 @@ class AgentController extends Controller
             'phone' => 'nullable|string|max:20',
             'email' => 'nullable|email|max:255',
             'address' => 'nullable|string|max:500',
-            'category' => 'required|in:category-a,category-b,category-c,category-d,category-e',
             'specialization' => 'nullable|string|max:500',
             'service_fee_percentage' => 'nullable|numeric|min:0|max:100',
             'daily_fee_min' => 'nullable|numeric|min:0',
@@ -86,7 +81,6 @@ class AgentController extends Controller
             'phone' => 'nullable|string|max:20',
             'email' => 'nullable|email|max:255',
             'address' => 'nullable|string|max:500',
-            'category' => 'required|in:category-a,category-b,category-c,category-d,category-e',
             'specialization' => 'nullable|string|max:500',
             'service_fee_percentage' => 'nullable|numeric|min:0|max:100',
             'daily_fee_min' => 'nullable|numeric|min:0',

@@ -18,15 +18,28 @@
     <!-- SLIDER -->
     <section class="hero-slider" aria-label="Homepage carousel">
       <div class="slider-track" id="sliderTrack">
-        <div class="slide">
-          <img src="uploads/logo-1600x400-01.png" alt="Slider 1" />
-        </div>
-        <div class="slide">
-          <img src="uploads/slider1.png" alt="Slider 2" />
-        </div>
-        <div class="slide">
-          <img src="uploads/slider2.png" alt="Slider 3" />
-        </div>
+        @forelse($banners as $banner)
+          <div class="slide">
+            @if($banner->url)
+              <a href="{{ $banner->url }}" target="_blank">
+                <img src="{{ $banner->image_url }}" alt="{{ $banner->alt_text ?: $banner->title }}" />
+              </a>
+            @else
+              <img src="{{ $banner->image_url }}" alt="{{ $banner->alt_text ?: $banner->title }}" />
+            @endif
+          </div>
+        @empty
+          <!-- Default banners when no dynamic banners exist -->
+          <div class="slide">
+            <img src="uploads/logo-1600x400-01.png" alt="Slider 1" />
+          </div>
+          <div class="slide">
+            <img src="uploads/slider1.png" alt="Slider 2" />
+          </div>
+          <div class="slide">
+            <img src="uploads/slider2.png" alt="Slider 3" />
+          </div>
+        @endforelse
       </div>
 
       <button
@@ -41,25 +54,90 @@
       </button>
 
       <div class="slider-pager" id="pager">
-        <span class="pager-dot active" data-index="0"></span>
-        <span class="pager-dot" data-index="1"></span>
-        <span class="pager-dot" data-index="2"></span>
+        @forelse($banners as $index => $banner)
+          <span class="pager-dot {{ $index === 0 ? 'active' : '' }}" data-index="{{ $index }}"></span>
+        @empty
+          <span class="pager-dot active" data-index="0"></span>
+          <span class="pager-dot" data-index="1"></span>
+          <span class="pager-dot" data-index="2"></span>
+        @endforelse
       </div>
     </section>
 
     <!-- LATEST MARQUEE -->
     <div class="latest-wrap">
       <div class="latest" role="region" aria-label="Latest updates">
-        <strong class="english-text">Highlights:</strong>
+        <strong class="english-text">Announcements
+        :</strong>
         <strong class="hindi-text">मुख्य आकर्षण:</strong>
         <div class="marquee" aria-hidden="false">
           <div class="items" id="marqueeItems">
-            <!-- Content will be updated by JavaScript based on language -->
+            @forelse($announcements as $announcement)
+              <a href="{{ $announcement->url }}" 
+                 class="marquee-link" 
+                 title="{{ $announcement->title }}" 
+                 target="_blank">
+                {{ $announcement->title }}
+              </a>
+              @if(!$loop->last)
+                <span class="marquee-separator">•</span>
+              @endif
+            @empty
+              <a href="/files/announcements_documents/Monthly%20Economic%20Review%20August%202025.pdf" 
+                 class="marquee-link" 
+                 title="Monthly Economic Review August 2025" 
+                 target="_blank">
+                Monthly Economic Review August 2025
+              </a>
+              <span class="marquee-separator">•</span>
+              <a href="/files/announcements_documents/WTM_vacancy.pdf" 
+                 class="marquee-link" 
+                 title="WTM vacancy circular dated 4th September, 2025-DEA website" 
+                 target="_blank">
+                WTM vacancy circular dated 4th September, 2025
+              </a>
+            @endforelse
           </div>
         </div>
       </div>
     </div>
 
+    <!-- PM MODI QUOTES SECTION -->
+    <section class="pm-quotes-section" role="region" aria-label="PM Modi Quotes and Events">
+      <div class="pm-quotes-container">
+        <div class="pm-quotes-content">
+          <div class="pm-image-section">
+            <div class="pm-image">
+              <img src="uploads/narendra-modi-prime-minister.png" alt="Prime Minister Narendra Modi" />
+            </div>
+          </div>
+          
+          <div class="quote-event-section">
+            <div class="quote-content">
+              <div class="quote-icon"><img src="uploads/upper-quote.svg" alt="Quote" /></div>
+              <div class="quote-text">
+                <p class="english-text">
+                  This year's Union Budget paves the way for a stronger workforce and a growing economy.
+                </p>
+                <p class="hindi-text">
+                  इस वर्ष का केंद्रीय बजट एक मजबूत कार्यबल और बढ़ती अर्थव्यवस्था के लिए रास्ता प्रशस्त करता है।
+                </p>
+              </div>
+            </div>
+            
+            <div class="event-details">
+              <div class="event-header">
+                <h4 class="english-text">ADDRESSING A POST-BUDGET WEBINAR ON BOOSTING JOB CREATION.</h4>
+                <h4 class="hindi-text">रोजगार सृजन को बढ़ावा देने पर बजटोत्तर वेबिनार को संबोधित करना।</h4>
+                <br>
+                  <span>05.03.2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
     <!-- ABOUT SECTION -->
     <section
       class="about-section"
@@ -95,6 +173,27 @@
           </a>
         </div>
 
+        <!-- Dynamic Finance Ministers Section -->
+        @forelse($financeMinisters as $minister)
+        <div class="about-image">
+          <img
+            src="{{ $minister->image_url }}"
+            alt="{{ $minister->name }}"
+            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y0ZjZmNyIvPjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2YjZiNmIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5EZXBhcnRtZW50IG9mIEV4cGVuZGl0dXJlPC90ZXh0Pjwvc3ZnPg=='"
+          />
+       
+          <h4 class="english-text">{{ $minister->name }}</h4>
+          @if($minister->hindi_name)
+            <h4 class="hindi-text">{{ $minister->hindi_name }}</h4>
+          @endif
+      
+          <p class="english-text">{{ $minister->designation }}</p>
+          @if($minister->hindi_designation)
+            <p class="hindi-text">{{ $minister->hindi_designation }}</p>
+          @endif
+        </div>
+        @empty
+        <!-- Fallback static content if no ministers are configured -->
         <div class="about-image">
           <img
             src="uploads/nirmal-sitaraman-finance-minister_0 (1).jpg"
@@ -103,15 +202,9 @@
           />
        
           <h4 class="english-text">Smt. Nirmala Sitharaman</h4>
-    
           <h4 class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा विभाग</h4>
-      
-          <p class="english-text">
-          Finance Minister(Government of India)
-          </p>
-          <p class="hindi-text">
-            सार्वजनिक वित्तीय प्रबंधन प्रणाली और राज्य वित्त का पर्यवेक्षण
-          </p>
+          <p class="english-text">Finance Minister (Government of India)</p>
+          <p class="hindi-text">सार्वजनिक वित्तीय प्रबंधन प्रणाली और राज्य वित्त का पर्यवेक्षण</p>
         </div>
         <div class="about-image">
           <img
@@ -119,20 +212,12 @@
             alt="Department of Expenditure"
             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y0ZjZmNyIvPjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2YjZiNmIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5EZXBhcnRtZW50IG9mIEV4cGVuZGl0dXJlPC90ZXh0Pjwvc3ZnPg=='"
           />
-        
-          <h4 class="english-text"> Sri Pankaj Kumar</h4>
-  
+          <h4 class="english-text">Sri Pankaj Kumar</h4>
           <h4 class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा विभाग</h4>
-       
-          <p class="english-text">
-            Minister of State for Finance 
-
-(Government of India)
-          </p>
-          <p class="hindi-text">
-            सार्वजनिक वित्तीय प्रबंधन प्रणाली और राज्य वित्त का पर्यवेक्षण
-          </p>
+          <p class="english-text">Minister of State for Finance (Government of India)</p>
+          <p class="hindi-text">सार्वजनिक वित्तीय प्रबंधन प्रणाली और राज्य वित्त का पर्यवेक्षण</p>
         </div>
+        @endforelse
       </div>
     </section>
 
@@ -147,7 +232,8 @@
           </h4>
           <div class="quick-links">
             <a
-              href="#"
+              href="https://www.indiabudget.gov.in/economicsurvey/index.php"
+              target="_blank"
               class="quick-link budget"
               style="background-color: #4caf50"
             >
@@ -164,7 +250,8 @@
             </a>
 
             <a
-              href="#"
+              href="https://www.indiabudget.gov.in/economicsurvey/allpes.php"
+              target="_blank"
               class="quick-link acts"
               style="background-color: #2196f3"
             >
@@ -181,7 +268,8 @@
             </a>
 
             <a
-              href="#"
+              href="https://www.indiabudget.gov.in/previous_union_budget.php"
+              target="_blank"
               class="quick-link circulars"
               style="background-color: #ff9800"
             >
@@ -198,7 +286,8 @@
             </a>
 
             <a
-              href="#"
+              href="https://www.indiabudget.gov.in/bspeech.php"
+              target="_blank"
               class="quick-link tenders"
               style="background-color: #03a9f4"
             >
@@ -222,12 +311,9 @@
             <span class="hindi-text">महत्वपूर्ण डाउनलोड</span>
           </h4>
           <ul style="padding-left: 18px; color: #333">
-            <li class="english-text">Budget Highlights (PDF)</li>
-            <li class="hindi-text">बजट मुख्य बिंदु (PDF)</li>
-            <li class="english-text">Annual Report (PDF)</li>
-            <li class="hindi-text">वार्षिक रिपोर्ट (PDF)</li>
-            <li class="english-text">Forms & Templates</li>
-            <li class="hindi-text">फॉर्म और टेम्पलेट</li>
+          <a href="https://www.indiabudget.gov.in/doc/bh1.pdf" target="_blank">  <li class="english-text">Budget Highlights (Key Features) - PDF</li></a>
+          <a href="https://www.indiabudget.gov.in/doc/bh1.pdf" target="_blank">  <li class="hindi-text">बजट मुख्य बिंदु (की फीचर्स) - PDF</li></a>
+        
           </ul>
         </div>
         <div class="aside-box">
@@ -239,7 +325,7 @@
                   <!-- Login Button -->
              <button class="login-btn" id="loginBtn">
     <span class="english-text">Track NOC Application</span>
-    <span class="hindi-text">नोसी आवेदन पंजीकरण ट्रैकिंग</span>
+    <span class="hindi-text">एन ओ सी आवेदन ट्रैकिंग</span>
   </button>
             <!-- <li class="english-text">NOC Progress Details </li>
             <li class="hindi-text"></li> -->
@@ -329,37 +415,46 @@
             </div>
             <div class="dept-body">
               <h4 id="d1" class="english-text">International Taxation</h4>
-              <h4 id="d1" class="hindi-text">प्रेस विज्ञप्ति</h4>
+              <h4 id="d1" class="hindi-text">अंतर्राष्ट्रीय कराधान</h4>
               <ul>
-                <li>
-                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/dtaa.aspx" target="_blank">
-                    <span class="english-text">Tax Treaties | </span>
-                    <span class="hindi-text"
-                      >मंत्रिमंडल ने कम मूल्य की भीम-यूपीआई लेनदेन (पी2एम) को
-                      बढ़ावा देने के लिए प्रोत्साहन योजना को मंजूरी दी</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/treaty-comparison.aspx" target="_blank">
-                    <span class="english-text">Treaty Comparison | </span>
-                    <span class="hindi-text"
-                      >वित्तीय सेवा विभाग (डीएफएस) ने "विनियामक, निवेश, और
-                      व्यवसाय में आसानी (ईओडीबी) सुधार" विषय पर बजटोत्तर वेबिनार
-                      की मेजबानी की</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a href="https://incometaxindia.gov.in/Pages/international-taxation/transfer-pricing.aspx" target="_blank">
-                    <span class="english-text">Transfer Pricing |</span>
-                    <span class="hindi-text"
-                      >सरकार ने सूक्ष्म, लघु और मध्यम उद्यम (एमएसएमई) विनिर्माण
-                      क्षेत्र को मजबूत करने के लिए आपसी क्रेडिट गारंटी योजना को
-                      मंजूरी दी, जो 2024-25 की बजट घोषणा को पूरा करती है</span
-                    >
-                  </a>
-                </li>
+                @forelse($internationalTaxations as $taxation)
+                  <li>
+                    <a href="{{ $taxation->url }}" target="_blank">
+                      <span class="english-text">{{ $taxation->title }}</span>
+                      <span class="hindi-text">{{ $taxation->title }}</span>
+                    </a>
+                  </li>
+                @empty
+                  <li>
+                    <a href="https://incometaxindia.gov.in/Pages/international-taxation/dtaa.aspx" target="_blank">
+                      <span class="english-text">Tax Treaties | </span>
+                      <span class="hindi-text"
+                        >मंत्रिमंडल ने कम मूल्य की भीम-यूपीआई लेनदेन (पी2एम) को
+                        बढ़ावा देने के लिए प्रोत्साहन योजना को मंजूरी दी</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://incometaxindia.gov.in/Pages/international-taxation/treaty-comparison.aspx" target="_blank">
+                      <span class="english-text">Treaty Comparison | </span>
+                      <span class="hindi-text"
+                        >वित्तीय सेवा विभाग (डीएफएस) ने "विनियामक, निवेश, और
+                        व्यवसाय में आसानी (ईओडीबी) सुधार" विषय पर बजटोत्तर वेबिनार
+                        की मेजबानी की</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://incometaxindia.gov.in/Pages/international-taxation/transfer-pricing.aspx" target="_blank">
+                      <span class="english-text">Transfer Pricing |</span>
+                      <span class="hindi-text"
+                        >सरकार ने सूक्ष्म, लघु और मध्यम उद्यम (एमएसएमई) विनिर्माण
+                        क्षेत्र को मजबूत करने के लिए आपसी क्रेडिट गारंटी योजना को
+                        मंजूरी दी, जो 2024-25 की बजट घोषणा को पूरा करती है</span
+                      >
+                    </a>
+                  </li>
+                @endforelse
               </ul>
             </div>
           </article>
@@ -379,49 +474,24 @@
               <h4 id="d2" class="english-text">Enforcement Directorate</h4>
               <h4 id="d2" class="hindi-text">निविदा</h4>
               <ul>
-                <li>
-                  <a href="https://enforcementdirectorate.gov.in/red-corner-notice" target="_blank">
-                    <span class="english-text">Red Corner Notice</span>
-                    <span class="hindi-text"
-                      >निविदा के लिए इन वेबसाइट पर लॉगिन करें</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a href="https://enforcementdirectorate.gov.in/fema" target="_blank">
-                    <span class="english-text">FEMA Rule</span>
-                    <span class="hindi-text">अधिनियम और नियम</span>
-                  </a>
-                </li>
-               
-              </ul>
-            </div>
-          </article>
-
-          <!-- Department Card 3 -->
-          <article class="dept-card" aria-labelledby="d3">
-            <div class="dept-body">
-              <h4 id="d3" class="english-text">What's News</h4>
-              <h4 id="d3" class="hindi-text">ताज़ा खबर</h4>
-              <ul>
-                @forelse($news as $newsItem)
+                @forelse($enforcements as $enforcement)
                   <li>
-                    <a href="{{ $newsItem->url }}" target="_blank">
-                      <span class="english-text">{{ $newsItem->title }}</span>
-                      <span class="hindi-text">{{ $newsItem->title }}</span>
+                    <a href="{{ $enforcement->url }}" target="_blank">
+                      <span class="english-text">{{ $enforcement->title }}</span>
+                      <span class="hindi-text">{{ $enforcement->hindi_text ?: $enforcement->title }}</span>
                     </a>
                   </li>
                 @empty
                   <li>
-                    <a href="https://financialservices.gov.in/beta/sites/default/files/Advertisment-English-DG-RBI.pdf" target="_blank">
-                      <span class="english-text">APPLICATIONS INVITED FOR THE POST OF DEPUTY GOVERNOR, RESERVE BANK OF INDIA</span>
-                      <span class="hindi-text">भारतीय रिजर्व बैंक में उप गवर्नर के पद के लिए आवेदन आमंत्रित</span>
+                    <a href="https://enforcementdirectorate.gov.in/red-corner-notice" target="_blank">
+                      <span class="english-text">Red Corner Notice</span>
+                      <span class="hindi-text">निविदा के लिए इन वेबसाइट पर लॉगिन करें</span>
                     </a>
                   </li>
                   <li>
-                    <a href="https://financialservices.gov.in/beta/en/events" target="_blank">
-                      <span class="english-text">Upcoming Events of the Department</span>
-                      <span class="hindi-text">विभाग की आगामी घटनाएँ</span>
+                    <a href="https://enforcementdirectorate.gov.in/fema" target="_blank">
+                      <span class="english-text">FEMA Rule</span>
+                      <span class="hindi-text">अधिनियम और नियम</span>
                     </a>
                   </li>
                 @endforelse
@@ -429,125 +499,67 @@
             </div>
           </article>
 
+          <!-- Department Card 3 - News -->
+                <article class="dept-card" aria-labelledby="d3">
+                <div class="tenders-list">
+                <h4 id="d3" class="english-text">What's News</h4>
+                <h4 id="d3" class="hindi-text">समाचार</h4>
+                @forelse($news as $newsItem)
+              <a href="{{ $newsItem->url }}" target="_blank">{{ $newsItem->title }} <i class="fas fa-chevron-right"></i></a>
+            @empty
+            <li>
+              <a href="https://financialservices.gov.in/beta/sites/default/files/Advertisment-English-DG-RBI.pdf" target="_blank">
+                <span class="english-text">APPLICATIONS INVITED FOR THE POST OF DEPUTY GOVERNOR, RESERVE BANK OF INDIA</span>
+                <span class="hindi-text">रिजर्व बैंक ऑफ इंडिया के डिप्टी गवर्नर पद के लिए आवेदन आमंत्रित</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://financialservices.gov.in/beta/en/events" target="_blank">
+                <span class="english-text">Upcoming Events of the Department</span>
+                <span class="hindi-text">विभाग के आगामी कार्यक्रम</span>
+              </a>
+            </li>
+            @endforelse
+          </div>
+          </article>
           <!-- Department Card 5 -->
-          <article class="dept-card" aria-labelledby="d4">
-            <div class="dept-body">
+          <article class="dept-card" aria-labelledby="d3">
+            <div class="tenders-list">
               <h4 id="d4" class="english-text">Vacancies</h4>
               <h4 id="d4" class="hindi-text">रिक्तियां</h4>
               <ul>
-                <li>
-                  <a href="#">
-                    <span class="english-text"
-                      >Indian International Economic Service vacancies will
-                      start in August 2025</span
-                    >
-                    <span class="hindi-text"
-                      >भारतीय अंतर्राष्ट्रीय आर्थिक सेवा की रिक्तियां अगस्त 2025
-                      में शुरू होंगी</span
-                    >
-                  </a>
-                </li>
+                @forelse($vacancies as $vacancy)
+                  <!-- <li>
+                    <a href="{{ $vacancy->url }}" target="_blank">
+                      <span class="english-text">{{ $vacancy->title }}</span>
+                      <span class="hindi-text">{{ $vacancy->title }}</span>
+                    </a>
+                  </li> -->
+                  <a href="{{ $vacancy->url }}" target="_blank">{{ $vacancy->title }} <i class="fas fa-chevron-right"></i></a>
+
+                @empty
+                  <li>
+                    <a href="#">
+                      <span class="english-text"
+                        >Indian International Economic Service vacancies will
+                        start in August 2025</span
+                      >
+                      <span class="hindi-text"
+                        >भारतीय अंतर्राष्ट्रीय आर्थिक सेवा की रिक्तियां अगस्त 2025
+                        में शुरू होंगी</span
+                      >
+                    </a>
+                  </li>
+                @endforelse
               </ul>
             </div>
           </article>
-
-          <!-- <article class="dept-card" aria-labelledby="d1">
-            <div class="dept-body">
-              <h4 id="d1" class="english-text">Press Release</h4>
-              <h4 id="d1" class="hindi-text">प्रेस विज्ञप्ति</h4>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2112771"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >Cabinet approves Incentive scheme for promotion of
-                      low-value BHIM-UPI transactions (P2M)</span
-                    >
-                    <span class="hindi-text"
-                      >मंत्रिमंडल ने कम मूल्य की भीम-यूपीआई लेनदेन (पी2एम) को
-                      बढ़ावा देने के लिए प्रोत्साहन योजना को मंजूरी दी</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2108360"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >Department Of Financial Services (DFS) Hosts a Post
-                      Budget Webinar On Theme "Regulatory, Investment, And Ease
-                      Of Doing Business (EODB) Reforms"</span
-                    >
-                    <span class="hindi-text"
-                      >वित्तीय सेवा विभाग (डीएफएस) ने "विनियामक, निवेश, और
-                      व्यवसाय में आसानी (ईओडीबी) सुधार" विषय पर बजटोत्तर वेबिनार
-                      की मेजबानी की</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2097455"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >Government Approves Mutual Credit Guarantee Scheme to
-                      Strengthen MSME Manufacturing Sector, fulfilling the
-                      budget announcement of 2024-25</span
-                    >
-                    <span class="hindi-text"
-                      >सरकार ने सूक्ष्म, लघु और मध्यम उद्यम (एमएसएमई) विनिर्माण
-                      क्षेत्र को मजबूत करने के लिए आपसी क्रेडिट गारंटी योजना को
-                      मंजूरी दी, जो 2024-25 की बजट घोषणा को पूरा करती है</span
-                    >
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </article> -->
-
-          <!-- Department Card 6 -->
-          <!-- <article class="dept-card" aria-labelledby="d2">
-            <div class="dept-body">
-              <h4 id="d2" class="english-text">Tender</h4>
-              <h4 id="d2" class="hindi-text">निविदा</h4>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2112771"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >For Tender Login to these website</span
-                    >
-                    <span class="hindi-text"
-                      >निविदा के लिए इन वेबसाइट पर लॉगिन करें</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://financialservices.gov.in/beta/index.php/en/tenders"
-                    target="_blank"
-                  >
-                    <span class="english-text"
-                      >https://financialservices.gov.in/beta/index.php/en/tenders</span
-                    >
-                    <span class="hindi-text">अधिनियम और नियम</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </article> -->
         </div>
       </div>
     </main>
 
     <!-- press release -->
-<section class="key-offerings">
+    <section class="key-offerings">
   <!-- LEFT COLUMN: Tenders -->
   <div class="tenders-section">
     <div class="tenders-tabs">
@@ -606,7 +618,7 @@
 
 
     <!-- press release end -->
-    <!-- UPCOMING EVENTS CTA SECTION -->
+    <!-- UPCOMING EVENTS SECTION -->
     <section
       class="events-cta-section"
       role="region"
@@ -625,139 +637,102 @@
         </div>
 
         <div class="events-grid">
-          <!-- Event 1 -->
-          <div class="event-card">
-            <div class="event-date">
-              <div class="date-day">15</div>
-              <div class="date-month english-text">JAN</div>
-              <div class="date-month hindi-text">जनवरी</div>
-              <div class="date-year">2025</div>
-            </div>
-            <div class="event-content">
-              <h3 class="english-text">Union Budget 2025-26 Presentation</h3>
-              <h3 class="hindi-text">केंद्रीय बजट 2025-26 प्रस्तुति</h3>
-              <p class="english-text">
-                Presentation of Union Budget in Parliament by Finance Minister
-              </p>
-              <p class="hindi-text">
-                वित्त मंत्री द्वारा संसद में केंद्रीय बजट की प्रस्तुति
-              </p>
-              <div class="event-meta">
-                <span class="event-time">🕒 11:00 AM</span>
-                <span class="event-location english-text"
-                  >Parliament House, New Delhi</span
-                >
-                <span class="event-location hindi-text"
-                  >संसद भवन, नई दिल्ली</span
-                >
+          @forelse($events as $event)
+            <div class="event-card">
+              <div class="event-date">
+                <div class="date-day">{{ $event->event_date->format('d') }}</div>
+                <div class="date-month english-text">{{ $event->event_date->format('M') }}</div>
+                <div class="date-month hindi-text">{{ $event->event_date->format('M') }}</div>
+                <div class="date-year">{{ $event->event_date->format('Y') }}</div>
               </div>
-              <button class="event-reminder-btn">
-                <span class="english-text">Set Reminder</span>
-                <span class="hindi-text">अनुस्मारक सेट करें</span>
-              </button>
+              <div class="event-content">
+                <h3 class="english-text">{{ $event->title }}</h3>
+                <h3 class="hindi-text">{{ $event->title }}</h3>
+                @if($event->description)
+                  <p class="english-text">{{ $event->description }}</p>
+                  <p class="hindi-text">{{ $event->description }}</p>
+                @endif
+                <div class="event-meta">
+                  @if($event->event_time)
+                    <span class="event-time">🕒 {{ $event->event_time }}</span>
+                  @endif
+                  @if($event->location)
+                    <span class="event-location english-text">{{ $event->location }}</span>
+                    <span class="event-location hindi-text">{{ $event->location }}</span>
+                  @endif
+                </div>
+                @if($event->url)
+                  <a href="{{ $event->url }}" target="_blank" class="event-reminder-btn">
+                    <span class="english-text">View Details</span>
+                    <span class="hindi-text">विवरण देखें</span>
+                  </a>
+                @else
+                  <button class="event-reminder-btn">
+                    <span class="english-text">Set Reminder</span>
+                    <span class="hindi-text">अनुस्मारक सेट करें</span>
+                  </button>
+                @endif
+              </div>
             </div>
-          </div>
+          @empty
+            <!-- Default Event 1 -->
+            <div class="event-card">
+              <div class="event-date">
+                <div class="date-day">15</div>
+                <div class="date-month english-text">JAN</div>
+                <div class="date-month hindi-text">जनवरी</div>
+                <div class="date-year">2025</div>
+              </div>
+              <div class="event-content">
+                <h3 class="english-text">Union Budget 2025-26 Presentation</h3>
+                <h3 class="hindi-text">केंद्रीय बजट 2025-26 प्रस्तुति</h3>
+                <p class="english-text">
+                  Presentation of Union Budget in Parliament by Finance Minister
+                </p>
+                <p class="hindi-text">
+                  वित्त मंत्री द्वारा संसद में केंद्रीय बजट की प्रस्तुति
+                </p>
+                <div class="event-meta">
+                  <span class="event-time">🕒 11:00 AM</span>
+                  <span class="event-location english-text">Parliament House, New Delhi</span>
+                  <span class="event-location hindi-text">संसद भवन, नई दिल्ली</span>
+                </div>
+                <button class="event-reminder-btn">
+                  <span class="english-text">Set Reminder</span>
+                  <span class="hindi-text">अनुस्मारक सेट करें</span>
+                </button>
+              </div>
+            </div>
 
-          <!-- Event 2 -->
-          <div class="event-card">
-            <div class="event-date">
-              <div class="date-day">28</div>
-              <div class="date-month english-text">JAN</div>
-              <div class="date-month hindi-text">जनवरी</div>
-              <div class="date-year">2025</div>
-            </div>
-            <div class="event-content">
-              <h3 class="english-text">Economic Survey 2024-25 Release</h3>
-              <h3 class="hindi-text">आर्थिक सर्वेक्षण 2024-25 जारी</h3>
-              <p class="english-text">
-                Official release of the Economic Survey document
-              </p>
-              <p class="hindi-text">
-                आर्थिक सर्वेक्षण दस्तावेज की आधिकारिक रिलीज
-              </p>
-              <div class="event-meta">
-                <span class="event-time">🕒 2:00 PM</span>
-                <span class="event-location english-text"
-                  >North Block, Finance Ministry</span
-                >
-                <span class="event-location hindi-text"
-                  >नॉर्थ ब्लॉक, वित्त मंत्रालय</span
-                >
+            <!-- Default Event 2 -->
+            <div class="event-card">
+              <div class="event-date">
+                <div class="date-day">28</div>
+                <div class="date-month english-text">JAN</div>
+                <div class="date-month hindi-text">जनवरी</div>
+                <div class="date-year">2025</div>
               </div>
-              <button class="event-reminder-btn">
-                <span class="english-text">Set Reminder</span>
-                <span class="hindi-text">अनुस्मारक सेट करें</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Event 3 -->
-          <div class="event-card">
-            <div class="event-date">
-              <div class="date-day">05</div>
-              <div class="date-month english-text">FEB</div>
-              <div class="date-month hindi-text">फरवरी</div>
-              <div class="date-year">2025</div>
-            </div>
-            <div class="event-content">
-              <h3 class="english-text">G20 Finance Ministers Meeting</h3>
-              <h3 class="hindi-text">G20 वित्त मंत्रियों की बैठक</h3>
-              <p class="english-text">
-                International meeting of G20 Finance Ministers and Central Bank
-                Governors
-              </p>
-              <p class="hindi-text">
-                G20 वित्त मंत्रियों और केंद्रीय बैंक गवर्नरों की अंतर्राष्ट्रीय
-                बैठक
-              </p>
-              <div class="event-meta">
-                <span class="event-time">🕒 9:30 AM</span>
-                <span class="event-location english-text"
-                  >Virtual Conference</span
-                >
-                <span class="event-location hindi-text"
-                  >वर्चुअल कॉन्फ्रेंस</span
-                >
+              <div class="event-content">
+                <h3 class="english-text">Economic Survey 2024-25 Release</h3>
+                <h3 class="hindi-text">आर्थिक सर्वेक्षण 2024-25 जारी</h3>
+                <p class="english-text">
+                  Official release of the Economic Survey document
+                </p>
+                <p class="hindi-text">
+                  आर्थिक सर्वेक्षण दस्तावेज की आधिकारिक रिलीज
+                </p>
+                <div class="event-meta">
+                  <span class="event-time">🕒 2:00 PM</span>
+                  <span class="event-location english-text">North Block, Finance Ministry</span>
+                  <span class="event-location hindi-text">नॉर्थ ब्लॉक, वित्त मंत्रालय</span>
+                </div>
+                <button class="event-reminder-btn">
+                  <span class="english-text">Set Reminder</span>
+                  <span class="hindi-text">अनुस्मारक सेट करें</span>
+                </button>
               </div>
-              <button class="event-reminder-btn">
-                <span class="english-text">Join Event</span>
-                <span class="hindi-text">कार्यक्रम में शामिल हों</span>
-              </button>
             </div>
-          </div>
-
-          <!-- Event 4 -->
-          <div class="event-card">
-            <div class="event-date">
-              <div class="date-day">20</div>
-              <div class="date-month english-text">FEB</div>
-              <div class="date-month hindi-text">फरवरी</div>
-              <div class="date-year">2025</div>
-            </div>
-            <div class="event-content">
-              <h3 class="english-text">Taxpayers Awareness Conference</h3>
-              <h3 class="hindi-text">करदाता जागरूकता सम्मेलन</h3>
-              <p class="english-text">
-                National conference on taxpayer rights and new tax regulations
-              </p>
-              <p class="hindi-text">
-                करदाता अधिकारों और नए कर विनियमों पर राष्ट्रीय सम्मेलन
-              </p>
-              <div class="event-meta">
-                <span class="event-time">🕒 10:00 AM</span>
-                <span class="event-location english-text"
-                  >Vigyan Bhawan, New Delhi</span
-                >
-                <span class="event-location hindi-text"
-                  >विज्ञान भवन, नई दिल्ली</span
-                >
-              </div>
-              <button class="event-reminder-btn">
-                <span class="english-text">Register Now</span>
-                <span class="hindi-text">अभी पंजीकरण करें</span>
-              </button>
-            </div>
-          </div>
+          @endforelse
         </div>
 
         <div class="events-cta-footer">
@@ -821,7 +796,7 @@
         </div></a>
 
         <!-- Service 3 -->
-         <a href="/no-objection-certificate">
+         <a href="/object-certificate">
         <div class="service-card">
           <div class="service-icon">
             <img
@@ -870,7 +845,7 @@
     <section class="social-media-section" role="region" aria-label="Social Media Updates">
         <div class="social-container">
             <!-- Social Media Links -->
-            <div class="social-links-container">
+            <div class="social-links-container" style="height: 670px;">
                 <div class="social-header">
                     <h2 class="english-text">Connect With Us</h2>
                     <h2 class="hindi-text">हमसे जुड़ें</h2>
@@ -897,7 +872,7 @@
                     </a>
 
                     <!-- Facebook -->
-                    <a href="https://facebook.com/FinMinIndia" class="social-platform-card" target="_blank" rel="noopener">
+                    <a href="https://www.facebook.com/finmin.goi/" class="social-platform-card" target="_blank" rel="noopener">
                         <div class="platform-icon facebook-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -906,8 +881,8 @@
                         <div class="platform-info">
                             <h3 class="english-text">Facebook</h3>
                             <h3 class="hindi-text">फेसबुक</h3>
-                            <p class="english-text">FinMinIndia</p>
-                            <p class="hindi-text">FinMinIndia</p>
+                            <p class="english-text">finmin.goi</p>
+                            <p class="hindi-text">finmin.goi</p>
                         </div>
                         <div class="follow-btn">
                             <span class="english-text">Like</span>
@@ -916,7 +891,7 @@
                     </a>
 
                     <!-- YouTube -->
-                    <a href="https://youtube.com/FinMinIndia" class="social-platform-card" target="_blank" rel="noopener">
+                    <a href="https://www.youtube.com/c/MinistryofFinanceGovernmentofIndia" class="social-platform-card" target="_blank" rel="noopener">
                         <div class="platform-icon youtube-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -925,7 +900,7 @@
                         <div class="platform-info">
                             <h3 class="english-text">YouTube</h3>
                             <h3 class="hindi-text">यूट्यूब</h3>
-                            <p class="english-text">Finance Ministry</p>
+                            <p class="english-text">MinistryofFinanceGovernmentofIndia</p>
                             <p class="hindi-text">वित्त मंत्रालय</p>
                         </div>
                         <div class="follow-btn">
@@ -935,7 +910,7 @@
                     </a>
 
                     <!-- Instagram -->
-                    <a href="https://instagram.com/FinMinIndia" class="social-platform-card" target="_blank" rel="noopener">
+                    <a href="https://www.instagram.com/finminindia/" class="social-platform-card" target="_blank" rel="noopener">
                         <div class="platform-icon instagram-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -944,8 +919,8 @@
                         <div class="platform-info">
                             <h3 class="english-text">Instagram</h3>
                             <h3 class="hindi-text">इंस्टाग्राम</h3>
-                            <p class="english-text">@FinMinIndia</p>
-                            <p class="hindi-text">@FinMinIndia</p>
+                            <p class="english-text">@finminindia</p>
+                            <p class="hindi-text">@finminindia</p>
                         </div>
                         <div class="follow-btn">
                             <span class="english-text">Follow</span>
@@ -1084,7 +1059,6 @@
 
     <!-- Logo Strip -->
 <div class="logo-strip">
-  <button class="logo-nav prev" aria-label="Previous">&#10094;</button>
   
   <div class="logo-inner" id="logoSlider">
     <div class="logo-item"><img src="uploads/02-my-gov-in.jpg" alt="MyGov" /></div>
@@ -1096,7 +1070,6 @@
     <div class="logo-item"><img src="uploads/digital-india-logo1.png" alt="Digital India" /></div>
   </div>
 
-  <button class="logo-nav next" aria-label="Next">&#10095;</button>
 </div>
 
 
@@ -1164,6 +1137,21 @@
         // Set the lang attribute on the body
         document.body.setAttribute("lang", lang);
         document.documentElement.lang = lang;
+
+        // Update language button text
+        const languageBtn = document.getElementById("languageBtn");
+        if (languageBtn) {
+          const englishText = languageBtn.querySelector('.english-text');
+          const hindiText = languageBtn.querySelector('.hindi-text');
+          
+          if (lang === 'en') {
+            if (englishText) englishText.textContent = 'English';
+            if (hindiText) hindiText.textContent = 'English';
+          } else if (lang === 'hi') {
+            if (englishText) englishText.textContent = 'हिन्दी';
+            if (hindiText) hindiText.textContent = 'हिन्दी';
+          }
+        }
 
         // Update any dynamic content that needs translation
         updateDynamicContent(lang);

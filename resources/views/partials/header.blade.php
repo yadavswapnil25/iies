@@ -2,9 +2,9 @@
     <div class="gov-strip" role="banner">
       <div class="gov-inner">
         <div class="gov-left">
-          <div class="india">भारत सरकार</div>
+          <a href="https://www.india.gov.in/" target="_blank"><div class="india">भारत सरकार</div></a>
           <div style="color: #bbb">|</div>
-          <div>GOVERNMENT OF INDIA</div>
+          <a href="https://www.india.gov.in/" target="_blank"><div>GOVERNMENT OF INDIA</div></a>
         </div>
 
         <div class="gov-right">
@@ -57,7 +57,7 @@
 
         <div class="header-actions">
           <img src="uploads/swach-bharat.png" alt="swach-bharat" />
-          <img src="uploads/beti-bachao-beti-padhao.png" alt="beti-bachao-beti-padhao" style="width: 100px;"/>
+          <img src="uploads/Beti_Bachao_Beti_Padhao_logo.jpg" alt="beti-bachao-beti-padhao" style="width: 100px;"/>
         </div>
       </div>
     </header>
@@ -98,16 +98,16 @@
             <a href="#" class="">Guidelines ▾</a>
             <ul class="dropdown-menu">
               <li>
+                <a href="/noc-guidelines">Guidelines for NOC Applicants</a>
+              </li>
+              <li>
                 <a href="/issuance-noc">Guideline for Issuance NOC</a>
               </li>
               <li>
                 <a href="/iies-officials">Guidelines for IIES Officials</a>
               </li>
               <li>
-                <a href="/super-agent">Guideline for Support Agent </a>
-              </li>
-              <li>
-                <a href="files/announcements_documents/Guideline_for_NOC_Applicants.pdf" target="_blank">Guideline for NOC Applicants</a>
+                <a href="/super-agent">Guidelines for Registered Facilitation A </a>
               </li>
             </ul>
           </li>

@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="content-header">
-    <h1>Agents Management</h1>
-    <p>Manage registered facilitation agents</p>
+    <h1>Finance Ministers Management</h1>
+    <p>Manage Finance Minister and Minister of State information</p>
 </div>
 
 <div class="content-body">
@@ -14,11 +14,16 @@
                 <input 
                     type="text" 
                     name="search" 
-                    placeholder="Search agents..." 
+                    placeholder="Search ministers..." 
                     value="{{ request('search') }}"
                     class="search-input"
                 >
                 
+                <select name="designation" class="filter-select">
+                    <option value="">All Designations</option>
+                    <option value="Finance Minister" {{ request('designation') == 'Finance Minister' ? 'selected' : '' }}>Finance Minister</option>
+                    <option value="Minister of State" {{ request('designation') == 'Minister of State' ? 'selected' : '' }}>Minister of State</option>
+                </select>
 
                 <select name="status" class="filter-select">
                     <option value="">All Status</option>
@@ -27,64 +32,80 @@
                 </select>
 
                 <button type="submit" class="btn-search">Search</button>
-                <a href="{{ route('admin.agents.index') }}" class="btn-clear">Clear</a>
-                <a href="{{ route('admin.agents.create') }}" class="btn-create">Add Agent</a>
+                <a href="{{ route('admin.finance-ministers.index') }}" class="btn-clear">Clear</a>
+                <a href="{{ route('admin.finance-ministers.create') }}" class="btn-create">Add Minister</a>
             </div>
         </form>
     </div>
 
-    <!-- Agents Table -->
+    <!-- Ministers Table -->
     <div class="table-container">
         <table class="data-table">
             <thead>
                 <tr>
+                    <th>Image</th>
                     <th>Name</th>
-                    <th>Agent Code</th>
-                    <th>Experience</th>
-                    <th>Contact</th>
+                    <th>Designation</th>
+                    <th>Bio</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse($agents as $agent)
+                @forelse($ministers as $minister)
                 <tr>
                     <td>
-                        <strong>{{ $agent->name }}</strong>
-                        @if($agent->specialization)
-                            <br><small class="text-muted">{{ $agent->specialization }}</small>
+                        @if($minister->image_path)
+                            <img src="{{ $minister->image_url }}" alt="{{ $minister->name }}" class="minister-thumb">
+                        @else
+                            <div class="no-image">No Image</div>
                         @endif
                     </td>
                     <td>
-                        <code>{{ $agent->agent_code }}</code>
-                    </td>
-                    <td>{{ $agent->experience_years }} years</td>
-                    <td>
-                        @if($agent->phone)
-                            <div>{{ $agent->phone }}</div>
-                        @endif
-                        @if($agent->email)
-                            <div><small>{{ $agent->email }}</small></div>
+                        <strong>{{ $minister->name }}</strong>
+                        @if($minister->hindi_name)
+                            <br><small class="text-muted">{{ $minister->hindi_name }}</small>
                         @endif
                     </td>
                     <td>
-                        <span class="status-badge status-{{ $agent->is_active ? 'active' : 'inactive' }}">
-                            {{ $agent->is_active ? 'Active' : 'Inactive' }}
+                        <span class="designation-badge designation-{{ strtolower(str_replace(' ', '-', $minister->designation)) }}">
+                            {{ $minister->designation }}
+                        </span>
+                        @if($minister->hindi_designation)
+                            <br><small class="text-muted">{{ $minister->hindi_designation }}</small>
+                        @endif
+                    </td>
+                    <td>
+                        @if($minister->bio)
+                            <div class="bio-preview">{{ Str::limit($minister->bio, 100) }}</div>
+                        @else
+                            <span class="text-muted">No bio available</span>
+                        @endif
+                    </td>
+                    <td>
+                        <span class="status-badge status-{{ $minister->is_active ? 'active' : 'inactive' }}">
+                            {{ $minister->is_active ? 'Active' : 'Inactive' }}
                         </span>
                     </td>
                     <td>
-                        <a href="{{ route('admin.agents.show', $agent) }}" class="btn-view">View</a>
-                        <a href="{{ route('admin.agents.edit', $agent) }}" class="btn-edit">Edit</a>
+                        <a href="{{ route('admin.finance-ministers.show', $minister) }}" class="btn-view">View</a>
+                        <a href="{{ route('admin.finance-ministers.edit', $minister) }}" class="btn-edit">Edit</a>
+                        <form method="POST" action="{{ route('admin.finance-ministers.destroy', $minister) }}" 
+                              style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this minister?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty
                 <tr>
                     <td colspan="6" class="no-data">
                         <div class="no-data-content">
-                            <div class="no-data-icon">👥</div>
-                            <h3>No Agents Found</h3>
-                            <p>No agents match your current search criteria.</p>
-                            <a href="{{ route('admin.agents.create') }}" class="btn-create">Add First Agent</a>
+                            <div class="no-data-icon">👤</div>
+                            <h3>No Ministers Found</h3>
+                            <p>No ministers match your current search criteria.</p>
+                            <a href="{{ route('admin.finance-ministers.create') }}" class="btn-create">Add First Minister</a>
                         </div>
                     </td>
                 </tr>
@@ -94,9 +115,9 @@
     </div>
 
     <!-- Pagination -->
-    @if($agents->hasPages())
+    @if($ministers->hasPages())
     <div class="pagination-container">
-        {{ $agents->links() }}
+        {{ $ministers->links() }}
     </div>
     @endif
 </div>
@@ -182,12 +203,38 @@
     vertical-align: top;
 }
 
-.status-badge {
+.minister-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.no-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #6c757d;
+    border: 2px solid #ddd;
+}
+
+.designation-badge, .status-badge {
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+.designation-badge {
+    background: #e3f2fd;
+    color: #1976d2;
 }
 
 .status-badge.status-active {
@@ -200,13 +247,15 @@
     color: #dc2626;
 }
 
-.btn-view, .btn-edit {
+.btn-view, .btn-edit, .btn-delete {
     padding: 6px 12px;
     margin: 2px;
     border-radius: 4px;
     font-size: 12px;
     text-decoration: none;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-view {
@@ -217,6 +266,17 @@
 .btn-edit {
     background: #6c757d;
     color: white;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.bio-preview {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
 }
 
 .no-data {
@@ -242,14 +302,6 @@
 .text-muted {
     color: #6c757d;
     font-style: italic;
-}
-
-code {
-    background: #f8f9fa;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: monospace;
-    font-size: 12px;
 }
 </style>
 @endsection

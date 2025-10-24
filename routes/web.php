@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MaintenanceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NocGuidelinesController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\EnquiryFormController;
 use App\Http\Controllers\Admin\EnquiryFormController as AdminEnquiryFormController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Admin\AgentController as AdminAgentController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('/noc-guidelines', [\App\Http\Controllers\NocGuidelinesController::class, 'index']);
 Route::get('/about', function () {
     return view('about');
 });
@@ -116,6 +118,27 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Press Release Management
         Route::resource('press-releases', \App\Http\Controllers\Admin\PressReleaseController::class);
+
+        // Announcement Management
+        Route::resource('announcements', \App\Http\Controllers\Admin\AnnouncementController::class);
+
+        // Vacancy Management
+        Route::resource('vacancies', \App\Http\Controllers\Admin\VacancyController::class);
+
+        // Event Management
+        Route::resource('events', \App\Http\Controllers\Admin\EventController::class);
+
+        // Banner Management
+        Route::resource('banners', \App\Http\Controllers\Admin\BannerController::class);
+
+        // Enforcement Directorate Management
+        Route::resource('enforcements', \App\Http\Controllers\Admin\EnforcementController::class);
+        
+        // Finance Ministers Management
+        Route::resource('finance-ministers', \App\Http\Controllers\Admin\FinanceMinisterController::class);
+
+        // International Taxation Management
+        Route::resource('international-taxations', \App\Http\Controllers\Admin\InternationalTaxationController::class);
 
         // Maintenance - single route to clear all caches
         Route::get('/maintenance/clear-all', [MaintenanceController::class, 'clearAll'])
