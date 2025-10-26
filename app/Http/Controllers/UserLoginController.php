@@ -22,18 +22,20 @@ class UserLoginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|string',
             'password' => 'required|string|min:8'
         ]);
 
-        $email = $request->email;
+        $emailOrUniqueId = $request->email;
         $password = $request->password;
 
-        // Find client report by email
-        $clientReport = ClientReport::where('email_id', $email)->first();
+        // Find client report by email OR unique_id
+        $clientReport = ClientReport::where('email_id', $emailOrUniqueId)
+            ->orWhere('unique_id', $emailOrUniqueId)
+            ->first();
 
         if (!$clientReport) {
-            return back()->withErrors(['email' => 'No NOC application found with this email address.'])->withInput();
+            return back()->withErrors(['email' => 'No NOC application found with this email address or Unique ID.'])->withInput();
         }
 
         // Generate expected password: PAN + last 4 digits of Aadhar

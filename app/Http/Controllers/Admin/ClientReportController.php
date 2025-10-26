@@ -50,32 +50,39 @@ class ClientReportController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'unique_id' => 'required|unique:client_reports',
-            'full_name' => 'required|string|max:255',
-            'date_of_birth' => 'nullable|date',
-            'contact_number' => 'nullable|string|max:20',
-            'email_id' => 'nullable|email|max:255',
-            'permanent_address' => 'nullable|string',
-            'pan_number' => 'nullable|string|max:10|regex:/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/',
-            'aadhar_number' => 'nullable|string|max:12|regex:/^[0-9]{12}$/',
-            'passport_number' => 'nullable|string|max:20',
-            'application_type' => 'nullable|string|max:50',
-            'submission_date' => 'nullable|date',
-            'reference_application_no' => 'nullable|string|max:100',
-            'nature_of_work' => 'nullable|string',
-            'verification_level' => 'nullable|string|max:20',
-            'kyc_compliance_notes' => 'nullable|string',
-            'bank_verification_notes' => 'nullable|string',
-            'departmental_approval_notes' => 'nullable|string',
-            'noc_draft_notes' => 'nullable|string',
-            'noc_issuance_notes' => 'nullable|string',
-            'information_grant_notes' => 'nullable|string',
-            'followup_closure_notes' => 'nullable|string',
-            'amount' => 'nullable|numeric',
-            'total_amount' => 'nullable|numeric',
-        ]);
-
+        try {
+            $validated = $request->validate([
+                'unique_id' => 'required|unique:client_reports',
+                'full_name' => 'required|string|max:255',
+                'date_of_birth' => 'nullable|date',
+                'contact_number' => 'nullable|string|max:20',
+                'email_id' => 'nullable|email|max:255',
+                'permanent_address' => 'nullable|string',
+                'pan_number' => 'nullable|string|max:10|regex:/^[A-Z]{5}[0-9]{3,4}[A-Z]{1,2}$/',
+                'aadhar_number' => 'nullable|string|max:12|regex:/^[0-9]{12}$/',
+                'passport_number' => 'nullable|string|max:20',
+                'application_type' => 'nullable|string|max:50',
+                'submission_date' => 'nullable|date',
+                'reference_application_no' => 'nullable|string|max:100',
+                'nature_of_work' => 'nullable|string',
+                'verification_level' => 'nullable|string|max:20',
+                'kyc_compliance_notes' => 'nullable|string',
+                'bank_verification_notes' => 'nullable|string',
+                'departmental_approval_notes' => 'nullable|string',
+                'noc_draft_notes' => 'nullable|string',
+                'noc_issuance_notes' => 'nullable|string',
+                'information_grant_notes' => 'nullable|string',
+                'followup_closure_notes' => 'nullable|string',
+                'amount' => 'nullable|numeric',
+                'total_amount' => 'nullable|numeric',
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            \Log::error('Validation failed:', $e->errors());
+            return redirect()->back()
+                ->withErrors($e->errors())
+                ->withInput();
+        }
+        
         $report = ClientReport::create($request->all());
 
         return redirect()

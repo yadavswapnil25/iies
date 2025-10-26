@@ -211,8 +211,8 @@
                 @csrf
                 
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" value="{{ old('email') }}" required placeholder="Enter your email address">
+                    <label for="email">Email Address or Unique ID *</label>
+                    <input type="text" id="email" name="email" value="{{ old('email') }}" required placeholder="Enter your email address or Unique ID">
                     @error('email')
                         <div class="error-message">{{ $message }}</div>
                     @enderror

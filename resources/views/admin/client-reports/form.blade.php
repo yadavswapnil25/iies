@@ -28,9 +28,7 @@
                     class="form-input @error('unique_id') error @enderror"
                     value="{{ old('unique_id', isset($clientReport) && $clientReport->exists ? $clientReport->unique_id : ($uniqueId ?? '')) }}"
                     required
-                    readonly
-                    style="background-color: #f8f9fa; color: #6c757d;">
-                <small class="form-text text-muted">Auto-generated unique identifier</small>
+                    placeholder="Auto-generated or enter manually">
                 @error('unique_id')<span class="error-message">{{ $message }}</span>@enderror
             </div>
 
