@@ -3,9 +3,10 @@
         <h2 class="card-title" style="margin: 0;">NOC Progress Report</h2>
         <img src="/data_entry.pdf" alt="IIES Logo" style="height: 60px;" onerror="this.style.display='none'">
     </div>
-    <div class="brand" aria-label="Ministry of Finance" style="display: flex; align-items: center; justify-content: center;">
-          <img src="/uploads/main-logo.jpg" alt="Emblem / Logo" onerror="this.style.background='#eee'" width="150px" height="150px"   >
-          <div class="titles">
+    <div class="brand" aria-label="Ministry of Finance" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="/uploads/main-logo.jpg" alt="Emblem / Logo" onerror="this.style.background='#eee'" width="150px" height="150px" style="margin-top: 20px;">
+      
+    <div class="titles">
             <h1>
               भारतीय अंतर्राष्ट्रीय आर्थिक सेवा<br><span>Indian International Economic Service
               </span>
@@ -552,8 +553,9 @@
             <div class="form-group">
                 <label for="noc_fee" class="form-label">07 - NOC Fee</label>
                 <select id="noc_fee" name="noc_fee" class="form-input">
-                    <option value="applied" {{ old('noc_fee', $clientReport->noc_fee ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
-                    <option value="not_applied" {{ old('noc_fee', $clientReport->noc_fee ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
+                    <option value="paid" {{ old('noc_fee', $clientReport->noc_fee ?? 'paid') == 'paid' ? 'selected' : '' }}>Paid</option>
+                    <option value="not_paid" {{ old('noc_fee', $clientReport->noc_fee ?? '') == 'not_paid' ? 'selected' : '' }}>Not Paid</option>
+                    <option value="payment_not_received" {{ old('noc_fee', $clientReport->noc_fee ?? '') == 'payment_not_received' ? 'selected' : '' }}>Payment not received</option>
                 </select>
                 <input type="text" name="noc_fee_notes" class="form-input" style="margin-top: 8px;"
                     value="{{ old('noc_fee_notes', $clientReport->noc_fee_notes ?? '') }}"

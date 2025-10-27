@@ -370,7 +370,7 @@
     </main>
 
     <!-- FOOTER -->
-   @include('partials.footer')
+   @include('partials.footer')\n    <script src="/js/language-switcher.js"></script>
     <script>
       // Font size dropdown functionality
       const fontBtn = document.getElementById("fontSizeBtn");

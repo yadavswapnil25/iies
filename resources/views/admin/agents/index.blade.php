@@ -75,6 +75,11 @@
                     <td>
                         <a href="{{ route('admin.agents.show', $agent) }}" class="btn-view">View</a>
                         <a href="{{ route('admin.agents.edit', $agent) }}" class="btn-edit">Edit</a>
+                        <form method="POST" action="{{ route('admin.agents.destroy', $agent) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this agent? This action cannot be undone.');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty
@@ -200,13 +205,15 @@
     color: #dc2626;
 }
 
-.btn-view, .btn-edit {
+.btn-view, .btn-edit, .btn-delete {
     padding: 6px 12px;
     margin: 2px;
     border-radius: 4px;
     font-size: 12px;
     text-decoration: none;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-view {
@@ -217,6 +224,15 @@
 .btn-edit {
     background: #6c757d;
     color: white;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c82333;
 }
 
 .no-data {

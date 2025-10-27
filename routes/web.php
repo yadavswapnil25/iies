@@ -14,9 +14,13 @@ use App\Http\Controllers\Admin\HireAgentRequestController as AdminHireAgentReque
 use App\Http\Controllers\AgentListController;
 use App\Http\Controllers\Admin\AgentController as AdminAgentController;
 use App\Http\Controllers\UserLoginController;
+use App\Http\Controllers\SiteMapController;
+use App\Http\Controllers\PrivacyPolicyController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('/sitemap', [\App\Http\Controllers\SiteMapController::class, 'index'])->name('sitemap');
+Route::get('/privacy-policy', [\App\Http\Controllers\PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 Route::get('/guidelines/noc-guidelines', [\App\Http\Controllers\NocGuidelinesController::class, 'index']);
 Route::get('/about/iies', function () {
     return view('about');

@@ -21,10 +21,10 @@
         <div class="hero-content">
           <h1>Our Performance</h1>
           <div class="hero-tabs">
-            <a href="/about" class="hero-tab "> About IIES</a>
-            <a href="/our-minister" class="hero-tab">Our Minister</a>
-            <a href="/our-performance" class="hero-tab active">Our Performance</a>
-            <a href="/our-fin-min" class="hero-tab"
+            <a href="/about/iies" class="hero-tab "> About IIES</a>
+            <a href="/about/our-minister" class="hero-tab">Our Minister</a>
+            <a href="/about/our-performance" class="hero-tab active">Our Performance</a>
+            <a href="/about/our-fin-min" class="hero-tab"
               >Office of The Finance Minister</a
             >
           </div>
@@ -139,6 +139,7 @@
       </div>
     </main>
     @include('partials.footer')
+    <script src="/js/language-switcher.js"></script>
     <script>
       // Font size dropdown functionality
       const fontBtn = document.getElementById("fontSizeBtn");

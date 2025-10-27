@@ -24,13 +24,13 @@
           <h1>Guideline for Support Agent</h1>
 
           <div class="hero-tabs">
-            <a href="/issuance-noc" class="hero-tab"
+            <a href="/guidelines/issuance-noc" class="hero-tab"
               >Guideline for Issuance NOC</a
             >
-            <a href="/iies-officials" class="hero-tab"
+            <a href="/guidelines/iies-officials" class="hero-tab"
               >Guidelines for IIES Officials</a
             >
-            <a href="/super-agent" class="hero-tab active"
+            <a href="/guidelines/super-agent" class="hero-tab active"
               >Guideline for Support Agent</a
             >
           </div>
@@ -212,7 +212,7 @@
     </main>
 
         <!-- FOOTER -->
-    @include('partials.footer')
+    @include('partials.footer')\n    <script src="/js/language-switcher.js"></script>
 
 
     <script>

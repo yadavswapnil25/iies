@@ -75,6 +75,8 @@ class ClientReportController extends Controller
                 'followup_closure_notes' => 'nullable|string',
                 'amount' => 'nullable|numeric',
                 'total_amount' => 'nullable|numeric',
+                'noc_fee' => 'nullable|string|in:paid,not_paid,payment_not_received',
+                'noc_fee_notes' => 'nullable|string',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             \Log::error('Validation failed:', $e->errors());

@@ -24,14 +24,14 @@
           <h1>List of Registered Facilitation Agent</h1>
 
           <div class="hero-tabs">
-            <a href="/super-agent-role" class="hero-tab "
+            <a href="/register-fac-agent/super-agent-role" class="hero-tab "
               >
 Role of Registered Facilitation Agent</a
             >
-            <a href="/super-agent-list" class="hero-tab active"
+            <a href="/register-fac-agent/super-agent-list" class="hero-tab active"
               >List of Registered Facilitation Agent</a
             >
-            <a href="/super-agent-hire" class="hero-tab"
+            <a href="/register-fac-agent/super-agent-hire" class="hero-tab"
               >Engage a Registered Facilitation Agent</a
             >
           </div>
@@ -128,7 +128,7 @@ Role of Registered Facilitation Agent</a
     </main>
 
        <!-- FOOTER -->
-    @include('partials.footer')
+    @include('partials.footer')\n    <script src="/js/language-switcher.js"></script>
 
 
     <script>

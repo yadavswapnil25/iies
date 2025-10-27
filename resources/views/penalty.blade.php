@@ -234,7 +234,7 @@
    
 
      <!-- FOOTER -->
-    @include('partials.footer')
+    @include('partials.footer')\n    <script src="/js/language-switcher.js"></script>
 
 
 

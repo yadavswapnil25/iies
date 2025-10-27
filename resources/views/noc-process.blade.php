@@ -24,9 +24,9 @@
 
                     
           <div class="hero-tabs">
-            <a href="/noc-process" class="hero-tab active">NOC Process</a>
-            <a href="/proc-guide" class="hero-tab">Procedure &amp; Guidelines</a>
-            <a href="/object-certificate" class="hero-tab">Fee of No Objection Certificate</a>
+            <a href="/services/noc-process" class="hero-tab active">NOC Process</a>
+            <a href="/services/proc-guide" class="hero-tab">Procedure &amp; Guidelines</a>
+            <a href="/services/object-certificate" class="hero-tab">Fee of No Objection Certificate</a>
            
           </div>
         </div>
@@ -135,8 +135,7 @@
       </div>
     </main>
     @include('partials.footer')
-
-
+    <script src="/js/language-switcher.js"></script>
 
     <script>
       // Font size dropdown functionality

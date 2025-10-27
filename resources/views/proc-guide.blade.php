@@ -21,11 +21,11 @@
           <h1>Procedure & Guidelines</h1>
 
           <div class="hero-tabs">
-                <a href="/noc-process" class="hero-tab">NOC Process</a>
-            <a href="/proc-guide" class="hero-tab active"
+                <a href="/services/noc-process" class="hero-tab">NOC Process</a>
+            <a href="/services/proc-guide" class="hero-tab active"
               >Procedure &amp; Guidelines</a
             >
-            <a href="/object-certificate" class="hero-tab"
+            <a href="/services/object-certificate" class="hero-tab"
               >Fee of No Objection Certificate</a
             >
           </div>
@@ -223,7 +223,7 @@
     </main>
    
     @include('partials.footer')
-
+    <script src="/js/language-switcher.js"></script>
 
     <script>
       // Font size dropdown functionality

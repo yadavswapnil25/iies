@@ -68,19 +68,19 @@
                     <span class="hindi-text" style="font-size: 2.5rem">हमारे मंत्री</span>
                 </h1>
                 <div class="hero-tabs">
-                    <a href="/about" class="hero-tab">
+                    <a href="/about/iies" class="hero-tab">
                         <span class="english-text">About IIES</span>
                         <span class="hindi-text">आईआईईएस के बारे में</span>
                     </a>
-                    <a href="/our-minister" class="hero-tab active">
+                    <a href="/about/our-minister" class="hero-tab active">
                         <span class="english-text">Our Minister</span>
                         <span class="hindi-text">हमारे मंत्री</span>
                     </a>
-                    <a href="/our-performance" class="hero-tab">
+                    <a href="/about/our-performance" class="hero-tab">
                         <span class="english-text">Our Performance</span>
                         <span class="hindi-text">हमारा प्रदर्शन</span>
                     </a>
-                    <a href="/our-fin-min" class="hero-tab">
+                    <a href="/about/our-fin-min" class="hero-tab">
                         <span class="english-text">Office of The Finance Minister</span>
                         <span class="hindi-text">वित्त मंत्री का कार्यालय</span>
                     </a>
