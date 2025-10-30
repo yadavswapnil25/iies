@@ -30,7 +30,10 @@
               >Guidelines for IIES Officials</a
             >
             <a href="/guidelines/super-agent" class="hero-tab"
-              >Guideline for Support Agent</a
+              >Guidelines for Registered Facilitation Agent </a
+            >
+            <a href="/guidelines/noc-guidelines" class="hero-tab"
+              >Guidelines for NOC Applicants</a
             >
           </div>
         </div>

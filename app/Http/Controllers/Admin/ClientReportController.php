@@ -77,6 +77,12 @@ class ClientReportController extends Controller
                 'total_amount' => 'nullable|numeric',
                 'noc_fee' => 'nullable|string|in:paid,not_paid,payment_not_received',
                 'noc_fee_notes' => 'nullable|string',
+                'cbdt_approval_status' => 'nullable|string|in:pending,approved,rejected',
+                'pfms_approval_status' => 'nullable|string|in:approved,rejected,pending',
+                'security_fee_deposit' => 'nullable|string|in:paid,not_paid,payment_not_received',
+                'cbdt_approval_notes' => 'nullable|string',
+                'pfms_approval_notes' => 'nullable|string',
+                'security_fee_deposit_notes' => 'nullable|string',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             \Log::error('Validation failed:', $e->errors());
@@ -120,7 +126,7 @@ class ClientReportController extends Controller
             'contact_number' => 'nullable|string|max:20',
             'email_id' => 'nullable|email|max:255',
             'permanent_address' => 'nullable|string',
-            'pan_number' => 'nullable|string|max:10|regex:/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/',
+            'pan_number' => 'nullable|string|max:10|regex:/^[A-Z]{5}[0-9]{3,4}[A-Z]{1,2}$/',
             'aadhar_number' => 'nullable|string|max:12|regex:/^[0-9]{12}$/',
             'passport_number' => 'nullable|string|max:20',
             'application_type' => 'nullable|string|max:50',
@@ -137,6 +143,12 @@ class ClientReportController extends Controller
             'followup_closure_notes' => 'nullable|string',
             'amount' => 'nullable|numeric',
             'total_amount' => 'nullable|numeric',
+            'cbdt_approval_status' => 'nullable|string|in:pending,approved,rejected',
+            'pfms_approval_status' => 'nullable|string|in:approved,rejected,pending',
+            'security_fee_deposit' => 'nullable|string|in:paid,not_paid,payment_not_received',
+            'cbdt_approval_notes' => 'nullable|string',
+            'pfms_approval_notes' => 'nullable|string',
+            'security_fee_deposit_notes' => 'nullable|string',
         ]);
 
         $clientReport->update($request->all());

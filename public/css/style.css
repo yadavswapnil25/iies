@@ -39,9 +39,12 @@ img {
 
 /* TOP GOV STRIP */
 .gov-strip {
-  background-color: #fff;
-  border-bottom: 1px solid #e9e9e9;
+  background-color: #0b3a7e; /* deep blue */
+  border-bottom: 1px solid #082b5d;
   font-size: 13px;
+  color: #fff;
+  position: relative;
+  z-index: 2000; /* keep dropdowns clickable above page content */
 }
 
 .gov-inner {
@@ -58,7 +61,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #222;
+  color: #fff;
 }
 
 .gov-left .india {
@@ -70,7 +73,7 @@ img {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #333;
+  color: #fff;
 }
 
 .gov-right .icons {
@@ -88,8 +91,8 @@ img {
 
 .font-size-dropdown button {
   background: transparent;
-  color: #333;
-  border: 1px solid #ccc;
+  color: #fff; /* visible on blue header */
+  border: 1px solid rgba(255,255,255,0.6);
   border-radius: 4px;
   padding: 2px 8px;
   font-weight: bold;
@@ -994,9 +997,9 @@ footer.page-footer {
 
 .footer-logo-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* align content in the same line */
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   background: transparent;
 }
 
@@ -1208,6 +1211,19 @@ footer.page-footer {
   color: #fff;
   padding: 8px;
   border-radius: 4px;
+}
+
+/* Make skip links visible in the top government strip */
+.gov-strip .skip-link {
+  position: static;
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  color: #fff;
+  text-decoration: underline;
+  margin-right: 12px;
 }
 
 /* BREADCRUMB SECTION */
@@ -6245,7 +6261,7 @@ footer.page-footer {
   background-color: #fff;
   min-width: 120px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 3000;
   border-radius: 4px;
   overflow: hidden;
 }

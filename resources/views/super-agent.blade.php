@@ -31,7 +31,10 @@
               >Guidelines for IIES Officials</a
             >
             <a href="/guidelines/super-agent" class="hero-tab active"
-              >Guideline for Support Agent</a
+              >Guidelines for Registered Facilitation Agent </a
+            >
+            <a href="/guidelines/noc-guidelines" class="hero-tab"
+              >Guidelines for NOC Applicants</a
             >
           </div>
         </div>
@@ -46,7 +49,7 @@
           <span class="separator">/</span>
           <a href="#">Guideline</a>
           <span class="separator">/</span>
-          <span>Guideline for Support Agent</span>
+          <span>Guidelines for Registered Facilitation Agent </span>
         </div>
       </div>
     </div>
@@ -56,7 +59,7 @@
       <div class="page-container">
         <div class="page-main otherpage">
           <div class="officials-content">
-            <h2>Guideline for Support Agent</h2>
+            <h2>Guidelines for Registered Facilitation Agent </h2>
 
             <!-- Code of Conduct Sections -->
             <div class="conduct-section">

@@ -9,9 +9,23 @@
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous" />
+  <style>
+    /* Enhanced PM section styles */
+    .pm-quotes-section { padding: 40px 0; background: #f5f7fb; }
+    .pm-quotes-container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    .pm-quotes-content { display: grid; grid-template-columns: 380px 1fr; gap: 36px; align-items: center; }
+    .pm-image img { width: 100%; height: auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,.15)); }
+    .quote-text p { font-size: 1.35rem; line-height: 1.6; color: #142b4d; }
+    .event-header h4 { font-size: 1.05rem; color: #3e4b63; }
+    .event-cta { margin-top: 14px; }
+    .event-cta-btn { display: inline-block; background: #1a365d; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 10px rgba(26,54,93,.25); transition: transform .08s ease, background .2s ease; }
+    .event-cta-btn:hover { background: #243e6e; transform: translateY(-1px); }
+    @media (max-width: 900px) { .pm-quotes-content { grid-template-columns: 1fr; } .quote-text p { font-size: 1.1rem; } }
+  </style>
 
   </head>
   <body lang="en">
+    <a class="skip-link" href="#maincontent">Skip to main content</a>
     <!-- TOP GOVERNMENT STRIP -->
     @include('partials.header')
 
@@ -131,6 +145,11 @@
                 <h4 class="hindi-text">रोजगार सृजन को बढ़ावा देने पर बजटोत्तर वेबिनार को संबोधित करना।</h4>
                 <br>
                   <span>05.03.2025</span>
+              </div>
+              <div class="event-cta">
+                <a href="https://dea.gov.in/" target="_blank" rel="noopener" class="event-cta-btn">
+                  View Event
+                </a>
               </div>
             </div>
           </div>
@@ -1046,59 +1065,7 @@
         }
       });
 
-      // Language dropdown functionality
-      const languageBtn = document.getElementById("languageBtn");
-      const languageMenu = document.getElementById("languageMenu");
-
-      // Toggle dropdown
-      languageBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        languageMenu.classList.toggle("show");
-      });
-
-      // When user selects a language
-      languageMenu.querySelectorAll("div").forEach((item) => {
-        item.addEventListener("click", () => {
-          const lang = item.dataset.lang;
-          switchLanguage(lang);
-          languageMenu.classList.remove("show");
-        });
-      });
-
-      // Close dropdown if clicked outside
-      document.addEventListener("click", (e) => {
-        if (!languageMenu.parentElement.contains(e.target)) {
-          languageMenu.classList.remove("show");
-        }
-      });
-
-      // Function to switch language
-      function switchLanguage(lang) {
-        // Set the lang attribute on the body
-        document.body.setAttribute("lang", lang);
-        document.documentElement.lang = lang;
-
-        // Update language button text
-        const languageBtn = document.getElementById("languageBtn");
-        if (languageBtn) {
-          const englishText = languageBtn.querySelector('.english-text');
-          const hindiText = languageBtn.querySelector('.hindi-text');
-          
-          if (lang === 'en') {
-            if (englishText) englishText.textContent = 'English';
-            if (hindiText) hindiText.textContent = 'English';
-          } else if (lang === 'hi') {
-            if (englishText) englishText.textContent = 'हिन्दी';
-            if (hindiText) hindiText.textContent = 'हिन्दी';
-          }
-        }
-
-        // Update any dynamic content that needs translation
-        updateDynamicContent(lang);
-
-        // Save preference to localStorage
-        localStorage.setItem("preferredLanguage", lang);
-      }
+      // Language dropdown logic is centralized in /js/language-switcher.js
 
     // Function to update dynamic content (like marquee, etc.)
 function updateDynamicContent(lang) {
@@ -1233,11 +1200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // marquee function end
-      // Initialize language on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
-        switchLanguage(savedLanguage);
-      });
+      // Language initialization handled by /js/language-switcher.js
 
       // Mobile menu toggle
       const menuToggle = document.getElementById("menuToggle");

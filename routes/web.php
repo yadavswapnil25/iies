@@ -136,6 +136,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Banner Management
         Route::resource('banners', \App\Http\Controllers\Admin\BannerController::class);
 
+        // Orders/Notices/Notifications Management
+        Route::resource('order-notices', \App\Http\Controllers\Admin\OrderNoticeController::class);
+
         // Enforcement Directorate Management
         Route::resource('enforcements', \App\Http\Controllers\Admin\EnforcementController::class);
         

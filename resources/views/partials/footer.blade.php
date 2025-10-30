@@ -8,10 +8,6 @@
             <div class="footer-logo-section">
               <div class="footer-logo">
                 <div class="brand" aria-label="Ministry of Finance">
-                  <img
-                    src="/uploads/main-logo.jpg"
-                    alt="Emblem / Logo"
-                    onerror="this.style.display='none'" />
                   <div class="titles">
                     <h1 style="color: #fff;">
                       भारतीय अंतर्राष्ट्रीय आर्थिक सेवा<br /><span>Indian International Economic Service

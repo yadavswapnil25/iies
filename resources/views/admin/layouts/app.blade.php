@@ -360,6 +360,9 @@
             <a href="{{ route('admin.announcements.index') }}" class="nav-item {{ request()->routeIs('admin.announcements.*') ? 'active' : '' }}">
                 📢 Announcements Management
             </a>
+            <a href="{{ route('admin.order-notices.index') }}" class="nav-item {{ request()->routeIs('admin.order-notices.*') ? 'active' : '' }}">
+                🔔 Orders / Notices / Notifications
+            </a>
             <a href="{{ route('admin.vacancies.index') }}" class="nav-item {{ request()->routeIs('admin.vacancies.*') ? 'active' : '' }}">
                 💼 Vacancies Management
             </a>

@@ -68,7 +68,7 @@
           
               <!--Key Points on IIES NOC Fees -->
               <h2>Key Points on IIES NOC Fees</h2>
-              <h3>Purpose of the Fee:</h3>
+              <h3>Fee Category:</h3>
 
               <table class="fee-table mobile-stack">
                 <tr>

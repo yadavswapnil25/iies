@@ -277,7 +277,6 @@
     </style>
 </head>
 <body>
-    @include('partials.header')
 
     <main id="maincontent" class="page-main" role="main">
         <div class="dashboard-container">
@@ -631,8 +630,6 @@
             </div>
         </div>
     </main>
-
-    @include('partials.footer')
 
     <script src="/js/language-switcher.js"></script>
 </body>

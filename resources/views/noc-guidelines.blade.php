@@ -21,16 +21,37 @@
 
     @include('partials.header')
 
-    <main id="maincontent" role="main">
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="page-header">
-                <h1 class="page-title">Guidelines for NOC Applicants</h1>
-                <p class="page-subtitle">Indian International Economic Service (IIES)</p>
+    <!-- HERO SECTION (aligned with other Guidelines pages) -->
+    <section class="page-hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1>Guidelines</h1>
+
+                <div class="hero-tabs">
+                    <a href="/guidelines/issuance-noc" class="hero-tab">Guideline for Issuance NOC</a>
+                    <a href="/guidelines/iies-officials" class="hero-tab">Guidelines for IIES Officials</a>
+                    <a href="/guidelines/super-agent" class="hero-tab">Guidelines for Registered Facilitation Agent</a>
+                    <a href="/guidelines/noc-guidelines" class="hero-tab active">Guidelines for NOC Applicants</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-section">
+        <div class="breadcrumb-inner">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">/</span>
+                <a href="#">Guidelines</a>
+                <span class="separator">/</span>
+                <span>Guidelines for NOC Applicants</span>
             </div>
         </div>
     </div>
+
+    <main id="maincontent" role="main">
+<div class="container">
 
     <div class="row">
         <div class="col-12">
@@ -307,26 +328,6 @@
 </html>
 
 <style>
-.page-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 30px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 10px;
-}
-
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
 .guidelines-content {
     background: white;
     padding: 40px;
@@ -542,10 +543,6 @@
 }
 
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2rem;
-    }
-    
     .guidelines-content {
         padding: 20px;
     }

@@ -540,6 +540,42 @@
             </div>
 
             <div class="form-group">
+                <label for="cbdt_approval_status" class="form-label">05A - CBDT Approval</label>
+                <select id="cbdt_approval_status" name="cbdt_approval_status" class="form-input">
+                    <option value="pending" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="approved" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                </select>
+                <input type="text" name="cbdt_approval_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('cbdt_approval_notes', $clientReport->cbdt_approval_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
+
+            <div class="form-group">
+                <label for="pfms_approval_status" class="form-label">05B - PFMS Approval</label>
+                <select id="pfms_approval_status" name="pfms_approval_status" class="form-input">
+                    <option value="approved" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                    <option value="pending" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'pending' ? 'selected' : '' }}>Pending</option>
+                </select>
+                <input type="text" name="pfms_approval_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('pfms_approval_notes', $clientReport->pfms_approval_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
+
+            <div class="form-group">
+                <label for="security_fee_deposit" class="form-label">05C - Security Fee Deposit</label>
+                <select id="security_fee_deposit" name="security_fee_deposit" class="form-input">
+                    <option value="paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? 'paid') == 'paid' ? 'selected' : '' }}>Paid</option>
+                    <option value="not_paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'not_paid' ? 'selected' : '' }}>Not Paid</option>
+                    <option value="payment_not_received" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'payment_not_received' ? 'selected' : '' }}>Payment not received</option>
+                </select>
+                <input type="text" name="security_fee_deposit_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('security_fee_deposit_notes', $clientReport->security_fee_deposit_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
+
+            <div class="form-group">
                 <label for="form_28_approval" class="form-label">06 - FORM 28 Approval </label>
                 <select id="form_28_approval" name="form_28_approval" class="form-input">
                     <option value="approved" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>

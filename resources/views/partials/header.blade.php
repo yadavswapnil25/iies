@@ -19,6 +19,7 @@
               <div data-size="0.8">A--</div>
             </div>
           </div>
+          <a class="skip-link" href="#maincontent">Skip to main content</a>
 
           <!-- Language Dropdown -->
           <div class="language-dropdown" title="Change Language">
@@ -36,7 +37,7 @@
     </div>
 
     <!-- HEADER -->
-    <header class="site-header">
+    <header id="site-header" class="site-header">
       <div class="header-inner" role="banner">
         <div class="brand" aria-label="Ministry of Finance">
           <img
@@ -98,9 +99,6 @@
             <a href="#" class="">Guidelines ▾</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="/guidelines/noc-guidelines">Guidelines for NOC Applicants</a>
-              </li>
-              <li>
                 <a href="/guidelines/issuance-noc">Guideline for Issuance NOC</a>
               </li>
               <li>
@@ -108,6 +106,9 @@
               </li>
               <li>
                 <a href="/guidelines/super-agent">Guidelines for Registered Facilitation Agent </a>
+              </li>
+              <li>
+                <a href="/guidelines/noc-guidelines">Guidelines for NOC Applicants</a>
               </li>
             </ul>
           </li>

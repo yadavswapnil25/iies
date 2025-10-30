@@ -33,7 +33,7 @@ class SiteMapController extends Controller
                         'description' => 'Performance reports and achievements'
                     ],
                     [
-                        'title' => 'Our Finance Minister',
+                        'title' => 'Office of The Finance Minister',
                         'url' => '/about/our-fin-min',
                         'description' => 'Finance Minister and Minister of State information'
                     ]
@@ -53,9 +53,9 @@ class SiteMapController extends Controller
                         'description' => 'Detailed procedures and guidelines'
                     ],
                     [
-                        'title' => 'Object Certificate',
+                        'title' => 'Fee of No Objection Certificate',
                         'url' => '/services/object-certificate',
-                        'description' => 'Object certificate services'
+                        'description' => 'Prescribed fee for the No Objection Certificate'
                     ],
                     [
                         'title' => 'Track NOC Application',
@@ -68,9 +68,9 @@ class SiteMapController extends Controller
                 'title' => 'Guidelines',
                 'pages' => [
                     [
-                        'title' => 'NOC Guidelines',
+                        'title' => 'Guidelines for NOC Applicants',
                         'url' => '/guidelines/noc-guidelines',
-                        'description' => 'Guidelines for NOC applicants'
+                        'description' => 'Guidelines for individuals and entities applying for NOC'
                     ],
                     [
                         'title' => 'Guideline for Issuance NOC',
@@ -78,34 +78,34 @@ class SiteMapController extends Controller
                         'description' => 'Guidelines for NOC issuance'
                     ],
                     [
-                        'title' => 'IIES Officials',
+                        'title' => 'Guidelines for IIES Officials',
                         'url' => '/guidelines/iies-officials',
                         'description' => 'Information about IIES officials'
                     ],
                     [
-                        'title' => 'Super Agent',
+                        'title' => 'Guidelines for Registered Facilitation Agent',
                         'url' => '/guidelines/super-agent',
-                        'description' => 'Super agent information and guidelines'
+                        'description' => 'Registered Facilitation Agent information and guidelines'
                     ]
                 ]
             ],
             'register' => [
-                'title' => 'Register Facilitating Agent',
+                'title' => 'Registered Facilitation Agent',
                 'pages' => [
                     [
-                        'title' => 'Super Agent Role',
+                        'title' => 'Role of Registered Facilitation Agent',
                         'url' => '/register-fac-agent/super-agent-role',
-                        'description' => 'Role and responsibilities of super agents'
+                        'description' => 'Role and responsibilities of Registered Facilitation Agents'
                     ],
                     [
-                        'title' => 'Super Agent List',
+                        'title' => 'List of Registered Facilitation Agent',
                         'url' => '/register-fac-agent/super-agent-list',
-                        'description' => 'List of registered super agents'
+                        'description' => 'Directory of Registered Facilitation Agents'
                     ],
                     [
-                        'title' => 'Super Agent Hire',
+                        'title' => 'Engage a Registered Facilitation Agent',
                         'url' => '/register-fac-agent/super-agent-hire',
-                        'description' => 'Hire a super agent for your needs'
+                        'description' => 'Engage a Registered Facilitation Agent for assistance'
                     ]
                 ]
             ],
@@ -113,12 +113,12 @@ class SiteMapController extends Controller
                 'title' => 'Legal & Policies',
                 'pages' => [
                     [
-                        'title' => 'Law Act Policy',
+                        'title' => 'Act & Policy',
                         'url' => '/law-act-policy',
                         'description' => 'Legal acts and policies'
                     ],
                     [
-                        'title' => 'Law Issue NOC',
+                        'title' => ' Law Before Issuing NOC',
                         'url' => '/law-issue-noc',
                         'description' => 'Legal issues related to NOC'
                     ],
@@ -144,56 +144,7 @@ class SiteMapController extends Controller
                     ]
                 ]
             ],
-            'dynamic_content' => [
-                'title' => 'Dynamic Content',
-                'pages' => [
-                    [
-                        'title' => 'Tenders',
-                        'url' => '/tenders',
-                        'description' => 'Current tenders and procurement opportunities'
-                    ],
-                    [
-                        'title' => 'Press Releases',
-                        'url' => '/press-releases',
-                        'description' => 'Latest press releases and announcements'
-                    ],
-                    [
-                        'title' => 'Vacancies',
-                        'url' => '/vacancies',
-                        'description' => 'Job vacancies and career opportunities'
-                    ],
-                    [
-                        'title' => 'What\'s News',
-                        'url' => '/news',
-                        'description' => 'Latest news and updates'
-                    ],
-                    [
-                        'title' => 'Events',
-                        'url' => '/events',
-                        'description' => 'Upcoming events and conferences'
-                    ],
-                    [
-                        'title' => 'Announcements',
-                        'url' => '/announcements',
-                        'description' => 'Important announcements and notices'
-                    ]
-                ]
-            ],
-            'admin' => [
-                'title' => 'Admin Panel',
-                'pages' => [
-                    [
-                        'title' => 'Admin Login',
-                        'url' => '/admin/login',
-                        'description' => 'Administrator login portal'
-                    ],
-                    [
-                        'title' => 'Admin Dashboard',
-                        'url' => '/admin/dashboard',
-                        'description' => 'Administrative dashboard (requires login)'
-                    ]
-                ]
-            ]
+        
         ];
 
         return view('sitemap', compact('siteMap'));
