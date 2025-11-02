@@ -61,7 +61,7 @@
             <!-- Notification Header -->
             <div class="notification-header">
               <h2>
-                Ministry of Finance<br />Indian International Economic Service
+                IIES<br />Indian International Economic Service
                 (IIES)
               </h2>
               <div class="notification-meta">

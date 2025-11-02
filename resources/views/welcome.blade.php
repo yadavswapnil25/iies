@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ministry of Finance</title>
+    <title>IIES</title>
     <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -16,11 +16,15 @@
     .pm-quotes-content { display: grid; grid-template-columns: 380px 1fr; gap: 36px; align-items: center; }
     .pm-image img { width: 100%; height: auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,.15)); }
     .quote-text p { font-size: 1.35rem; line-height: 1.6; color: #142b4d; }
-    .event-header h4 { font-size: 1.05rem; color: #3e4b63; }
-    .event-cta { margin-top: 14px; }
-    .event-cta-btn { display: inline-block; background: #1a365d; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 10px rgba(26,54,93,.25); transition: transform .08s ease, background .2s ease; }
-    .event-cta-btn:hover { background: #243e6e; transform: translateY(-1px); }
-    @media (max-width: 900px) { .pm-quotes-content { grid-template-columns: 1fr; } .quote-text p { font-size: 1.1rem; } }
+    .event-header-wrapper { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .event-header { flex: 1; }
+    .event-header h4 { font-size: 1.05rem; color: #3e4b63; margin-bottom: 10px; }
+    .event-date { color: #1a237e; font-size: 0.95rem; margin-top: 8px; }
+    .event-cta { flex-shrink: 0; align-self: flex-start; }
+    .event-cta-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: #1a365d; border: 2px solid #1a365d; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all .2s ease; }
+    .event-cta-btn:hover { background: #1a365d; color: #fff; transform: translateY(-1px); }
+    .event-cta-btn i { font-size: 0.85rem; }
+    @media (max-width: 900px) { .pm-quotes-content { grid-template-columns: 1fr; } .quote-text p { font-size: 1.1rem; } .event-header-wrapper { flex-direction: column; gap: 15px; } .event-cta { align-self: flex-start; } }
   </style>
 
   </head>
@@ -131,7 +135,7 @@
               <div class="quote-icon"><img src="uploads/upper-quote.svg" alt="Quote" /></div>
               <div class="quote-text">
                 <p class="english-text">
-                  This year's Union Budget paves the way for a stronger workforce and a growing economy.
+                This year's Union Budget paves the way for a stronger workforce and a growing economy.
                 </p>
                 <p class="hindi-text">
                   इस वर्ष का केंद्रीय बजट एक मजबूत कार्यबल और बढ़ती अर्थव्यवस्था के लिए रास्ता प्रशस्त करता है।
@@ -140,16 +144,19 @@
             </div>
             
             <div class="event-details">
-              <div class="event-header">
-                <h4 class="english-text">ADDRESSING A POST-BUDGET WEBINAR ON BOOSTING JOB CREATION.</h4>
-                <h4 class="hindi-text">रोजगार सृजन को बढ़ावा देने पर बजटोत्तर वेबिनार को संबोधित करना।</h4>
-                <br>
-                  <span>05.03.2025</span>
-              </div>
-              <div class="event-cta">
-                <a href="https://dea.gov.in/" target="_blank" rel="noopener" class="event-cta-btn">
-                  View Event
-                </a>
+              <div class="event-header-wrapper">
+                <div class="event-header">
+                 &nbsp; <h4 class="english-text">ADDRESSING A POST-BUDGET WEBINAR ON BOOSTING JOB CREATION.</h4>
+                  <h4 class="hindi-text">रोजगार सृजन को बढ़ावा देने पर बजटोत्तर वेबिनार को संबोधित करना।</h4>
+                  <div >
+                  &nbsp; <span>05.03.2025</span>
+                  </div>
+                </div>
+                <div class="event-cta">
+                  <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2108407" target="_blank" rel="noopener" class="event-cta-btn">
+                    <i class="fas fa-external-link-alt"></i> View Event
+                  </a>
+                </div>
               </div>
             </div>
           </div>

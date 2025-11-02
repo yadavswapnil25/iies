@@ -57,10 +57,6 @@
           <div class="footer-col">
             <strong class="footer-title">Useful Link</strong>
             <div class="footer-links">
-              <!-- <a href="/tenders">Tender</a>
-              <a href="/press-releases">Press Release</a>
-              <a href="/vacancies">Vacancies</a>
-              <a href="/news">What's News</a> -->
               <a href="/sitemap">Site Map</a>
             </div>
           </div>
@@ -71,8 +67,8 @@
             <div class="footer-links">
               <a href="/user/login">Track NOC Application</a>
               <a href="/privacy-policy">Privacy Policy</a>
-              <!-- <a href="/terms-conditions">Term & Conditions</a>
-              <a href="/website-domain-policy">Website & Domain Policy</a> -->
+              <a href="/terms-conditions">Terms & Conditions</a>
+              <a href="/website-domain-policy">Website & Domain Policy</a>
             </div>
           </div>
         </div>
@@ -83,7 +79,7 @@
             <h3 class="disclaimer-title">Disclaimer</h3>
             <div class="disclaimer-separator"></div>
             <p class="disclaimer-text">
-              The Indian International Economic Service (IIES) functions as a registered institution under the Trusts Act, 1882, Government of India, and operates under the Ministry of Finance. The information provided on this website is solely for official, informational, and foreign fund No Objection Certificate (NOC) issuance purposes. IIES shall not be held responsible for any inadvertent errors or omissions.
+              The Indian International Economic Service (IIES) functions as a registered institution under the Trusts Act, 1882, Government of India, and operates under the IIES. The information provided on this website is solely for official, informational, and foreign fund No Objection Certificate (NOC) issuance purposes. IIES shall not be held responsible for any inadvertent errors or omissions.
             </p>
             <div class="disclaimer-separator"></div>
           </div>

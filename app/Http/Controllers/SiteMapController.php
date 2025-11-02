@@ -84,7 +84,7 @@ class SiteMapController extends Controller
                     ],
                     [
                         'title' => 'Guidelines for Registered Facilitation Agent',
-                        'url' => '/guidelines/super-agent',
+                        'url' => '/guidelines/register-fac-agent',
                         'description' => 'Registered Facilitation Agent information and guidelines'
                     ]
                 ]
@@ -94,17 +94,17 @@ class SiteMapController extends Controller
                 'pages' => [
                     [
                         'title' => 'Role of Registered Facilitation Agent',
-                        'url' => '/register-fac-agent/super-agent-role',
+                        'url' => '/register-fac-agent/role-of-registered-facilitation-agent',
                         'description' => 'Role and responsibilities of Registered Facilitation Agents'
                     ],
                     [
                         'title' => 'List of Registered Facilitation Agent',
-                        'url' => '/register-fac-agent/super-agent-list',
+                        'url' => '/register-fac-agent/list-of-registered-facilitation-agent',
                         'description' => 'Directory of Registered Facilitation Agents'
                     ],
                     [
                         'title' => 'Engage a Registered Facilitation Agent',
-                        'url' => '/register-fac-agent/super-agent-hire',
+                        'url' => '/register-fac-agent/engage-a-registered-facilitation-agent',
                         'description' => 'Engage a Registered Facilitation Agent for assistance'
                     ]
                 ]

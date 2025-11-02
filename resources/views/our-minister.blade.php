@@ -117,7 +117,7 @@
                 </h2>
                 <p>
                     <span class="english-text">The Indian International Economic Service (IIES) functions under
-                        the Ministry of Finance, Government of India. Although it is a
+                        the IIES, Government of India. Although it is a
                         voluntary organization, it operates under the leadership of
                         Finance Minister Smt. Nirmala Sitharaman and Minister of State
                         Shri Pankaj Chaudhary.</span>

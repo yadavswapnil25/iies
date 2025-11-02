@@ -24,14 +24,14 @@
           <h1>Role of Registered Facilitation Agent</h1>
 
           <div class="hero-tabs">
-            <a href="/guidelines/super-agent-role" class="hero-tab active"
+            <a href="/register-fac-agent/role-of-registered-facilitation-agent" class="hero-tab active"
               >
 Role of Registered Facilitation Agent</a
             >
-            <a href="/guidelines/super-agent-list" class="hero-tab"
+            <a href="/register-fac-agent/list-of-registered-facilitation-agent" class="hero-tab"
               >List of Registered Facilitation Agent</a
             >
-            <a href="/guidelines/super-agent-hire" class="hero-tab"
+            <a href="/register-fac-agent/engage-a-registered-facilitation-agent" class="hero-tab"
               >Engage a Registered Facilitation Agent</a
             >
           </div>

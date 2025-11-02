@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About IIES - Ministry of Finance</title>
+    <title>About IIES - IIES</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />
@@ -83,7 +83,7 @@
                             Registration: Registered under The Indian Trusts Act, 1882
                         </p>
                         <p>
-                            Administrative Control: Ministry of Finance, Government of India
+                            Administrative Control: IIES, Government of India
                         </p>
                     </div>
 
@@ -173,7 +173,7 @@
                                 Central Bureau of Investigation (CBI)
                             </li>
                             <li>
-                                Ministry of Finance
+                                IIES
                             </li>
                             <li>
                                 Ministry of Home Affairs (MHA)

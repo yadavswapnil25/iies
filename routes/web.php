@@ -16,11 +16,17 @@ use App\Http\Controllers\Admin\AgentController as AdminAgentController;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\TermsConditionsController;
+use App\Http\Controllers\WebsitePolicyController;
+use App\Http\Controllers\OrderNoticeController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 Route::get('/sitemap', [\App\Http\Controllers\SiteMapController::class, 'index'])->name('sitemap');
 Route::get('/privacy-policy', [\App\Http\Controllers\PrivacyPolicyController::class, 'index'])->name('privacy-policy');
+Route::get('/terms-conditions', [\App\Http\Controllers\TermsConditionsController::class, 'index'])->name('terms-conditions');
+Route::get('/website-domain-policy', [\App\Http\Controllers\WebsitePolicyController::class, 'index'])->name('website-domain-policy');
 Route::get('/guidelines/noc-guidelines', [\App\Http\Controllers\NocGuidelinesController::class, 'index']);
 Route::get('/about/iies', function () {
     return view('about');
@@ -49,16 +55,16 @@ Route::get('/guidelines/issuance-noc', function () {
 Route::get('/guidelines/iies-officials', function () {
     return view('iies-officials');
 });
-Route::get('/guidelines/super-agent', function () {
+Route::get('/guidelines/register-fac-agent', function () {
     return view('super-agent');
 });
-Route::get('/register-fac-agent/super-agent-role', function () {
+Route::get('/register-fac-agent/role-of-registered-facilitation-agent', function () {
     return view('super-agent-role');
 });
-Route::get('/register-fac-agent/super-agent-list', function () {
+Route::get('/register-fac-agent/list-of-registered-facilitation-agent', function () {
     return view('super-agent-list');
 });
-Route::get('/register-fac-agent/super-agent-hire', function () {
+Route::get('/register-fac-agent/engage-a-registered-facilitation-agent', function () {
     return view('super-agent-hire');
 });
 Route::get('/law-act-policy', function () {
@@ -76,6 +82,8 @@ Route::get('/enquiry-form', function () {
 Route::get('/contact-us', function () {
     return view('contact-us');
 });
+Route::get('/order-notices', [OrderNoticeController::class, 'index'])->name('order-notices.index');
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/enquiry', [EnquiryFormController::class, 'store'])->name('enquiry.store');
 Route::post('/hire-agent', [HireAgentRequestController::class, 'store'])->name('hire-agent.store');

@@ -30,7 +30,7 @@
             <a href="/guidelines/iies-officials" class="hero-tab"
               >Guidelines for IIES Officials</a
             >
-            <a href="/guidelines/super-agent" class="hero-tab active"
+            <a href="/guidelines/register-fac-agent" class="hero-tab active"
               >Guidelines for Registered Facilitation Agent </a
             >
             <a href="/guidelines/noc-guidelines" class="hero-tab"

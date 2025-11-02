@@ -10,7 +10,7 @@
 
 <form method="POST" action="{{ route('admin.client-reports.store') }}">
     @csrf
-    @include('admin.client-reports.form', ['uniqueId' => $uniqueId])
+    @include('admin.client-reports.form', ['clientReport' => $clientReport ?? new \App\Models\ClientReport()])
 </form>
 @endsection
 

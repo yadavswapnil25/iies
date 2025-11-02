@@ -53,7 +53,7 @@
             <!-- Summary (Paragraph): -->
             <div class="regulation-section">
               <h3>Summary (Paragraph):</h3>
-              <p>The Indian International Economic Service (IIES), operating under the supervision of the Ministry of Finance, has played a crucial role in managing and issuing NOCs (No Objection Certificates) for foreign funds between the years 2017 and 2025–26. During this period, IIES has issued NOCs for foreign funds amounting to approximately ₹12 lakh crore (1.2 trillion rupees). In recognition of its transparent and efficient functioning, officers of IIES have been honored by the Ministry of Finance. Additionally, any illegal or suspicious funds identified during investigations were seized and handed over to the Government of India, ensuring compliance with financial regulations and contributing to national financial security.</p>
+              <p>The Indian International Economic Service (IIES), operating under the supervision of the IIES, has played a crucial role in managing and issuing NOCs (No Objection Certificates) for foreign funds between the years 2017 and 2025–26. During this period, IIES has issued NOCs for foreign funds amounting to approximately ₹12 lakh crore (1.2 trillion rupees). In recognition of its transparent and efficient functioning, officers of IIES have been honored by the IIES. Additionally, any illegal or suspicious funds identified during investigations were seized and handed over to the Government of India, ensuring compliance with financial regulations and contributing to national financial security.</p>
               <h3>Major Achievements:</h3>
               <ul>
                 <li>
@@ -63,7 +63,7 @@
                   Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.
                 </li>
                 <li>
-                  Official Recognition: Officers of IIES have been honored by the Ministry of Finance for their exemplary contribution in managing foreign fund compliance.
+                  Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance.
                 </li>
                 <li>
                   Action Against Illegal Funds: Any funds found to be illegitimate or non-compliant were confiscated and handed over to the government, strengthening anti-money laundering measures.
@@ -111,7 +111,7 @@
                           Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.
                         </li>
                         <li>
-                         Official Recognition: Officers of IIES have been honored by the Ministry of Finance for their exemplary contribution in managing foreign fund compliance.
+                         Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance.
                         </li>
                        
                       </ul>
@@ -124,7 +124,7 @@
                 <!-- Conclusion: -->
                     <div class="conclusion-section">
                       <h3>Conclusion:</h3>
-                      <p>Based on the details provided, IIES has shown remarkable performance between 2017 and 2025/26 by issuing NOCs worth ₹12 lakh crore in foreign funds. At the same time, by taking firm action against illegal inflows, the institution has helped protect national interests and maintain financial discipline. Its recognition by the Ministry of Finance highlights the institution’s credibility, efficiency, and regulatory alignment.</p>
+                      <p>Based on the details provided, IIES has shown remarkable performance between 2017 and 2025/26 by issuing NOCs worth ₹12 lakh crore in foreign funds. At the same time, by taking firm action against illegal inflows, the institution has helped protect national interests and maintain financial discipline. Its recognition by the IIES highlights the institution’s credibility, efficiency, and regulatory alignment.</p>
                      
                      
                     </div>

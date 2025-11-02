@@ -165,8 +165,8 @@
                   and guideline verification before NOC approval.
                 </li>
                 <li>
-                  <strong>Ministry of Finance:</strong> For very large amounts,
-                  approval from the Ministry of Finance may be obtained.
+                  <strong>IIES:</strong> For very large amounts,
+                  approval from the IIES may be obtained.
                 </li>
                 <li>
                   <strong

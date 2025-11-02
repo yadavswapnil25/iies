@@ -203,6 +203,56 @@
             color: #111827;
         }
 
+        /* Form Logo and Brand Styling */
+        .form-header-logo {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .form-logo-container {
+            margin-bottom: 20px;
+        }
+
+        .form-logo {
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .form-brand-text {
+            text-align: center;
+        }
+
+        .form-brand-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a365d;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .form-brand-title .hindi-text {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .form-brand-title .english-text {
+            display: block;
+            font-size: 20px;
+            color: #2c5282;
+        }
+
+        .form-brand-subtitle {
+            font-size: 14px;
+            color: #4a5568;
+            margin: 4px 0;
+            line-height: 1.5;
+        }
+
         /* Stats Grid */
         .stats-grid {
             display: grid;
@@ -300,6 +350,395 @@
             
             .user-name {
                 display: none;
+            }
+        }
+
+        /* Print Styles - Match PDF Layout */
+        @media print {
+            /* Hide admin elements */
+            .header,
+            .sidebar,
+            .user-menu,
+            .page-header,
+            .btn,
+            button,
+            form[method="POST"] button,
+            .alert {
+                display: none !important;
+            }
+
+            /* Reset margins and padding - allow multi-page */
+            body {
+                background: white !important;
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+                color: #000 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+
+            .main-content {
+                margin: 0 !important;
+                padding: 10px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                page-break-inside: auto !important;
+            }
+
+            /* Card styling for print - allow multi-page */
+            .card {
+                background: white !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 8px !important;
+                margin: 0 !important;
+                page-break-inside: auto !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                page-break-after: auto !important;
+            }
+
+            /* Header Logo Section */
+            .form-header-logo {
+                text-align: center;
+                padding: 8px 0;
+                margin-bottom: 8px;
+                border-bottom: 1px solid #000;
+                page-break-after: avoid;
+            }
+
+            .form-logo-container {
+                margin-bottom: 6px;
+            }
+
+            .form-logo {
+                max-width: 100px;
+                height: auto;
+            }
+
+            .form-brand-text {
+                text-align: center;
+            }
+
+            .form-brand-title {
+                font-size: 14px;
+                font-weight: 700;
+                margin-bottom: 2px;
+                line-height: 1.3;
+            }
+
+            .form-brand-title .hindi-text {
+                font-size: 14px;
+            }
+
+            .form-brand-title .english-text {
+                font-size: 12px;
+            }
+
+            .form-brand-subtitle {
+                font-size: 10px;
+                margin: 1px 0;
+            }
+
+            .card-title {
+                font-size: 14px;
+                font-weight: 700;
+                text-align: center;
+                margin: 8px 0;
+            }
+
+            /* Form Sections - Allow page breaks between sections */
+            .form-section {
+                margin-bottom: 12px !important;
+                padding-bottom: 8px !important;
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+                display: block !important;
+                visibility: visible !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                border-bottom: 1px solid #ddd !important;
+                orphans: 3 !important;
+                widows: 3 !important;
+            }
+
+            .section-title {
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                margin-bottom: 6px !important;
+                padding-bottom: 3px !important;
+                border-bottom: 1px solid #000 !important;
+                color: #000 !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+
+            /* Form Grid */
+            .form-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+
+            .form-group {
+                margin-bottom: 6px;
+            }
+
+            .form-group.full-width {
+                grid-column: 1 / -1;
+            }
+
+            /* Labels */
+            .form-label {
+                font-size: 9px;
+                font-weight: 600;
+                margin-bottom: 2px;
+                color: #000;
+                display: block;
+            }
+
+            .required {
+                color: #000;
+            }
+
+            /* Input fields - print as text */
+            .form-input,
+            input[type="text"],
+            input[type="date"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="number"],
+            select,
+            textarea {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #000;
+                background: transparent;
+                font-size: 9px;
+                padding: 2px 0;
+                margin: 0;
+                color: #000;
+                page-break-inside: avoid;
+            }
+
+            /* Hide placeholders in print */
+            ::placeholder {
+                color: transparent;
+            }
+
+            /* Select dropdowns - show selected value */
+            select {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                text-indent: 0;
+            }
+
+            /* Textareas */
+            textarea {
+                border: 1px solid #000;
+                min-height: 30px;
+                resize: none;
+            }
+
+            /* Error messages - hide in print */
+            .error-message,
+            .error {
+                display: none;
+            }
+
+            /* Static content sections - Status Codes, Document Checklist, etc. */
+            .status-codes,
+            .document-checklist,
+            .risks-conditions {
+                display: block !important;
+                visibility: visible !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 8px !important;
+            }
+
+            .status-codes ul,
+            .document-checklist ul {
+                list-style: disc !important;
+                padding-left: 20px !important;
+                margin: 8px 0 !important;
+                display: block !important;
+            }
+
+            .status-codes li,
+            .document-checklist li {
+                font-size: 9px !important;
+                color: #000 !important;
+                margin-bottom: 4px !important;
+                padding: 2px 0 !important;
+                display: list-item !important;
+                line-height: 1.3 !important;
+            }
+
+            .status-codes strong,
+            .document-checklist strong {
+                font-weight: 600 !important;
+                color: #000 !important;
+            }
+
+            .risks-conditions p {
+                font-size: 9px !important;
+                color: #000 !important;
+                padding: 6px !important;
+                margin: 0 !important;
+                background: white !important;
+                border: 1px solid #000 !important;
+                border-radius: 0 !important;
+                line-height: 1.4 !important;
+                display: block !important;
+            }
+
+            /* Container and other elements */
+            .container {
+                display: block !important;
+                visibility: visible !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 12px !important;
+            }
+
+            .container p {
+                font-size: 9px !important;
+                color: #000 !important;
+                margin-bottom: 6px !important;
+                line-height: 1.4 !important;
+                display: block !important;
+            }
+
+            .container strong {
+                font-weight: 600 !important;
+                color: #000 !important;
+            }
+
+            .container em {
+                font-style: italic !important;
+            }
+
+            /* Ensure all form elements are visible */
+            input,
+            select,
+            textarea,
+            label,
+            .form-group {
+                display: block !important;
+                visibility: visible !important;
+            }
+
+            /* Page break optimization */
+            .form-section:nth-of-type(even) {
+                page-break-after: auto !important;
+            }
+
+            /* Allow page breaks between sections if needed */
+            .form-section {
+                page-break-before: auto !important;
+            }
+
+            /* Remove background colors */
+            * {
+                background: white !important;
+                color: #000 !important;
+            }
+
+            /* Optimize spacing */
+            br {
+                line-height: 1;
+            }
+
+            /* Page setup for print - allow multiple pages */
+            @page {
+                margin: 0.5cm;
+                size: A4;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Remove any height restrictions */
+            html,
+            body,
+            .main-content,
+            .card,
+            .form-section,
+            div {
+                height: auto !important;
+                max-height: none !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+
+            /* Ensure content flows across pages */
+            * {
+                page-break-inside: auto !important;
+                page-break-after: auto !important;
+            }
+
+            /* Override any viewport height restrictions */
+            .main-content,
+            .card,
+            body,
+            html {
+                min-height: 0 !important;
+                height: auto !important;
+            }
+
+            /* Ensure tables and grids can break across pages */
+            table,
+            .form-grid,
+            .info-grid {
+                page-break-inside: auto !important;
+            }
+
+            /* Allow rows to break but keep header with first row */
+            tr {
+                page-break-inside: avoid !important;
+            }
+
+            /* Show form values clearly */
+            input[readonly],
+            input[disabled] {
+                border-bottom: 1px solid #000;
+                color: #000;
+            }
+
+            /* Ensure select values are visible */
+            select option:checked {
+                font-weight: bold;
+            }
+
+            /* Hide only UI elements, not form sections */
+            .error-message,
+            .alert,
+            .btn,
+            button[type="submit"],
+            button[type="button"],
+            a[href].btn,
+            a[href]:after,
+            div[style*="display: flex"][style*="gap: 15px"] {
+                display: none !important;
+            }
+
+            /* Ensure all sections print */
+            .card > * {
+                display: block !important;
+            }
+
+            /* Ensure form header logo prints */
+            .form-header-logo {
+                display: block !important;
+                visibility: visible !important;
             }
         }
     </style>

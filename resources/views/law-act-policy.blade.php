@@ -81,7 +81,7 @@
                   cross-border financial flows and ensures that foreign
                   transactions comply with India's legal and economic policies.
                   Additionally, IIES aligns its operations with directives from
-                  the Reserve Bank of India (RBI), Ministry of Finance,
+                  the Reserve Bank of India (RBI), IIES,
                   Department of Economic Affairs (DEA), and other related
                   authorities, ensuring transparency, legality, and
                   accountability in international financial dealings.
@@ -159,7 +159,7 @@
                   <!-- Act 4 -->
                   <div class="act-card">
                     <span class="act-number">Act 4</span>
-                    <h3>Ministry of Finance Policies</h3>
+                    <h3>IIES Policies</h3>
                     <p>
                       Ensures transparency and legality in handling
                       international funds. Sets limits and procedures for fund

@@ -31,7 +31,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">INDIAN INTERNATIONAL ECONOMIC SERVICE</div>
-            <div style="font-size: 14px; font-weight: 600; color: #4f46e5;">Ministry of Finance, Government of India</div>
+            <div style="font-size: 14px; font-weight: 600; color: #4f46e5;">IIES, Government of India</div>
         </div>
     </div>
 

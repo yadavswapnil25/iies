@@ -150,78 +150,492 @@
             border-radius: 5px;
         }
         
-        /* Print-specific styles */
+        /* Print-specific styles - Match PDF Layout */
         @media print {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
             body {
                 background: white !important;
-                font-size: 12px;
+                font-size: 9px;
+                line-height: 1.2;
+                color: #000 !important;
+                padding: 0;
+                margin: 0;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
             }
             
             main#maincontent {
                 display: block !important;
                 padding: 0 !important;
+                margin: 0 !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
             }
             
             .dashboard-container {
                 max-width: none !important;
                 width: 100% !important;
                 margin: 0 !important;
-                padding: 0 !important;
+                padding: 10px !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
+                background: white !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                page-break-inside: auto !important;
             }
-            
-            .dashboard-actions {
+
+            /* Hide dashboard header and buttons */
+            .dashboard-header,
+            .dashboard-actions,
+            .print-btn,
+            .logout-btn {
                 display: none !important;
             }
+
+            /* Show print header with logo */
+            .print-header {
+                display: block !important;
+                page-break-after: avoid;
+                margin-bottom: 8px;
+            }
+
+            .form-header-logo {
+                text-align: center !important;
+                padding: 8px 0 !important;
+                margin-bottom: 8px !important;
+                border-bottom: 1px solid #000 !important;
+            }
+
+            .form-logo {
+                max-width: 100px !important;
+                height: auto !important;
+            }
+
+            .form-brand-title {
+                font-size: 14px !important;
+                font-weight: 700 !important;
+                color: #000 !important;
+                margin: 0 0 2px 0 !important;
+                line-height: 1.3 !important;
+            }
+
+            .form-brand-title .english-text {
+                font-size: 12px !important;
+            }
+
+            .form-brand-subtitle {
+                font-size: 10px !important;
+                margin: 1px 0 !important;
+                color: #000 !important;
+            }
+
+            /* Report Title */
+            .dashboard-title {
+                text-align: center;
+                margin-bottom: 8px;
+                page-break-after: avoid;
+            }
+
+            .dashboard-title h1 {
+                font-size: 14px !important;
+                font-weight: 700;
+                color: #000 !important;
+                margin: 0 0 4px 0;
+            }
+
+            .dashboard-title p {
+                font-size: 10px !important;
+                color: #000 !important;
+                margin: 0;
+            }
             
+            /* Section Titles */
             .section-title {
-                background: #1a365d !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                background: transparent !important;
+                color: #000 !important;
+                padding: 6px 0 !important;
+                margin: 0 0 6px 0 !important;
+                border-radius: 0 !important;
+                font-size: 11px !important;
+                font-weight: 700;
+                border-bottom: 1px solid #000 !important;
+                page-break-after: avoid;
+            }
+
+            /* Report Sections */
+            .report-section {
+                margin-bottom: 12px !important;
+                page-break-inside: avoid;
+            }
+
+            /* Info Grid - Convert to Table Format for Sections 1-7 */
+            .report-section:nth-of-type(1) .info-grid,
+            .report-section:nth-of-type(2) .info-grid,
+            .report-section:nth-of-type(3) .info-grid,
+            .report-section:nth-of-type(4) .info-grid,
+            .report-section:nth-of-type(5) .info-grid,
+            .report-section:nth-of-type(6) .info-grid,
+            .report-section:nth-of-type(7) .info-grid {
+                display: table !important;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                margin-bottom: 6px !important;
+                font-size: 8px !important;
+                border: 1px solid #000 !important;
             }
             
+            .report-section:nth-of-type(1) .info-item,
+            .report-section:nth-of-type(2) .info-item,
+            .report-section:nth-of-type(3) .info-item,
+            .report-section:nth-of-type(4) .info-item,
+            .report-section:nth-of-type(5) .info-item,
+            .report-section:nth-of-type(6) .info-item,
+            .report-section:nth-of-type(7) .info-item {
+                display: table-row !important;
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                border-bottom: 1px solid #000 !important;
+                page-break-inside: avoid;
+            }
+
+            .report-section:nth-of-type(1) .info-item:last-child,
+            .report-section:nth-of-type(2) .info-item:last-child,
+            .report-section:nth-of-type(3) .info-item:last-child,
+            .report-section:nth-of-type(4) .info-item:last-child,
+            .report-section:nth-of-type(5) .info-item:last-child,
+            .report-section:nth-of-type(6) .info-item:last-child,
+            .report-section:nth-of-type(7) .info-item:last-child {
+                border-bottom: none !important;
+            }
+
+            .report-section:nth-of-type(1) .info-label,
+            .report-section:nth-of-type(2) .info-label,
+            .report-section:nth-of-type(3) .info-label,
+            .report-section:nth-of-type(4) .info-label,
+            .report-section:nth-of-type(5) .info-label,
+            .report-section:nth-of-type(6) .info-label,
+            .report-section:nth-of-type(7) .info-label {
+                display: table-cell !important;
+                font-size: 7px !important;
+                font-weight: 700;
+                color: #000 !important;
+                padding: 2px 4px !important;
+                border-right: 1px solid #000 !important;
+                width: 35% !important;
+                vertical-align: middle;
+                background: #f9f9f9 !important;
+            }
+
+            .report-section:nth-of-type(1) .info-value,
+            .report-section:nth-of-type(2) .info-value,
+            .report-section:nth-of-type(3) .info-value,
+            .report-section:nth-of-type(4) .info-value,
+            .report-section:nth-of-type(5) .info-value,
+            .report-section:nth-of-type(6) .info-value,
+            .report-section:nth-of-type(7) .info-value {
+                display: table-cell !important;
+                font-size: 8px !important;
+                color: #000 !important;
+                padding: 2px 4px !important;
+                width: 65% !important;
+                vertical-align: middle;
+            }
+
+            /* Optimize Sections 6 and 7 specifically */
+            .report-section:nth-of-type(6) .info-grid,
+            .report-section:nth-of-type(7) .info-grid {
+                margin-bottom: 4px !important;
+                font-size: 7px !important;
+            }
+
+            .report-section:nth-of-type(6) .info-label,
+            .report-section:nth-of-type(7) .info-label {
+                font-size: 7px !important;
+                padding: 2px 3px !important;
+                width: 38% !important;
+            }
+
+            .report-section:nth-of-type(6) .info-value,
+            .report-section:nth-of-type(7) .info-value {
+                font-size: 7px !important;
+                padding: 2px 3px !important;
+                width: 62% !important;
+            }
+
+            /* Full-width items (spanning both columns) */
+            .report-section:nth-of-type(1) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(2) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(3) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(4) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(5) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(6) .info-item[style*="grid-column: 1 / -1"],
+            .report-section:nth-of-type(7) .info-item[style*="grid-column: 1 / -1"] {
+                display: table-row !important;
+            }
+
+            .report-section:nth-of-type(1) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(2) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(3) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(4) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(5) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(6) .info-item[style*="grid-column: 1 / -1"] .info-label,
+            .report-section:nth-of-type(7) .info-item[style*="grid-column: 1 / -1"] .info-label {
+                width: 35% !important;
+            }
+
+            .report-section:nth-of-type(1) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(2) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(3) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(4) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(5) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(6) .info-item[style*="grid-column: 1 / -1"] .info-value,
+            .report-section:nth-of-type(7) .info-item[style*="grid-column: 1 / -1"] .info-value {
+                width: 65% !important;
+            }
+
+            /* Remove extra spacing in sections 6 and 7 */
+            .report-section:nth-of-type(6),
+            .report-section:nth-of-type(7) {
+                margin-bottom: 8px !important;
+                padding-bottom: 4px !important;
+            }
+
+            .report-section:nth-of-type(6) .section-title,
+            .report-section:nth-of-type(7) .section-title {
+                margin-bottom: 4px !important;
+                padding-bottom: 2px !important;
+            }
+
+            /* Sections 10 and 11 - Convert to Table Format */
+            .report-section:nth-of-type(10) .info-grid,
+            .report-section:nth-of-type(11) .info-grid {
+                display: table !important;
+                width: 100% !important;
+                border-collapse: collapse !important;
+                margin-bottom: 6px !important;
+                font-size: 7px !important;
+                border: 1px solid #000 !important;
+            }
+
+            .report-section:nth-of-type(10) .info-item,
+            .report-section:nth-of-type(11) .info-item {
+                display: table-row !important;
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                border-bottom: 1px solid #000 !important;
+                page-break-inside: avoid;
+            }
+
+            .report-section:nth-of-type(10) .info-item:last-child,
+            .report-section:nth-of-type(11) .info-item:last-child {
+                border-bottom: none !important;
+            }
+
+            /* Section 10 - Status Codes (has label and value) */
+            .report-section:nth-of-type(10) .info-label {
+                display: table-cell !important;
+                font-size: 7px !important;
+                font-weight: 700;
+                color: #000 !important;
+                padding: 2px 4px !important;
+                border-right: 1px solid #000 !important;
+                width: 30% !important;
+                vertical-align: middle;
+                background: white !important;
+            }
+
+            .report-section:nth-of-type(10) .info-value {
+                display: table-cell !important;
+                font-size: 7px !important;
+                color: #000 !important;
+                padding: 2px 4px !important;
+                width: 70% !important;
+                vertical-align: middle;
+            }
+
+            /* Section 11 - Document Checklist (only value, no label) */
+            .report-section:nth-of-type(11) .info-item {
+                display: table-row !important;
+            }
+
+            .report-section:nth-of-type(11) .info-value {
+                display: table-cell !important;
+                font-size: 7px !important;
+                color: #000 !important;
+                padding: 2px 4px !important;
+                width: 100% !important;
+                vertical-align: middle;
+            }
+
+            /* Override inline styles for sections 10 and 11 */
+            .report-section:nth-of-type(10) .info-item[style*="border-left"],
+            .report-section:nth-of-type(11) .info-item[style*="border-left"] {
+                border-left: none !important;
+            }
+
+            .report-section:nth-of-type(10) .info-item[style*="padding"],
+            .report-section:nth-of-type(11) .info-item[style*="padding"] {
+                padding: 0 !important;
+            }
+
+            .report-section:nth-of-type(10) .info-value[style*="font-size"],
+            .report-section:nth-of-type(11) .info-value[style*="font-size"] {
+                font-size: 7px !important;
+            }
+
+            .report-section:nth-of-type(10) .info-label[style*="font-weight"],
+            .report-section:nth-of-type(10) .info-label[style*="margin-bottom"] {
+                font-weight: 700 !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Remove extra spacing in sections 10 and 11 */
+            .report-section:nth-of-type(10),
+            .report-section:nth-of-type(11) {
+                margin-bottom: 8px !important;
+                padding-bottom: 4px !important;
+            }
+
+            .report-section:nth-of-type(10) .section-title,
+            .report-section:nth-of-type(11) .section-title {
+                margin-bottom: 4px !important;
+                padding-bottom: 2px !important;
+            }
+
+            /* Status Badges - Print as text */
             .status-badge {
-                border: 1px solid #333 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                color: #000 !important;
+                font-size: 9px !important;
+                font-weight: normal !important;
             }
             
+            /* Progress Tables */
             .progress-table {
                 border-collapse: collapse !important;
                 width: 100% !important;
+                margin-bottom: 8px !important;
+                font-size: 8px !important;
+                page-break-inside: avoid;
             }
             
             .progress-table th,
             .progress-table td {
-                border: 1px solid #333 !important;
-                padding: 8px !important;
+                border: 1px solid #000 !important;
+                padding: 4px 6px !important;
+                text-align: left !important;
+                color: #000 !important;
+                font-size: 8px !important;
             }
             
             .progress-table th {
-                background: #f0f0f0 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                background: white !important;
+                font-weight: 700;
+                color: #000 !important;
             }
-            
-            .info-grid {
-                display: block !important;
+
+            .progress-table td {
+                font-weight: normal;
             }
-            
-            .info-item {
-                margin-bottom: 10px !important;
+
+            .progress-table tr {
                 page-break-inside: avoid;
             }
             
-            .report-section {
-                page-break-inside: avoid;
-                margin-bottom: 20px !important;
+            /* Remove all colors in print - except table headers */
+            * {
+                background: white !important;
+                color: #000 !important;
             }
-            
+
+            /* Ensure table backgrounds are white */
+            .report-section:nth-of-type(1) .info-label,
+            .report-section:nth-of-type(2) .info-label,
+            .report-section:nth-of-type(3) .info-label,
+            .report-section:nth-of-type(4) .info-label,
+            .report-section:nth-of-type(5) .info-label,
+            .report-section:nth-of-type(6) .info-label,
+            .report-section:nth-of-type(7) .info-label {
+                background: white !important;
+            }
+
+            /* Page Setup - Allow multiple pages */
             @page {
-                margin: 1cm;
+                margin: 0.5cm;
                 size: A4;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Remove any height restrictions */
+            html,
+            body,
+            main,
+            .dashboard-container,
+            .report-section {
+                height: auto !important;
+                max-height: none !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+
+            /* Ensure content flows across pages */
+            * {
+                page-break-inside: auto !important;
+                page-break-after: auto !important;
+            }
+
+            .report-section {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Allow tables to break across pages */
+            .progress-table {
+                page-break-inside: auto !important;
+            }
+
+            .progress-table tr {
+                page-break-inside: avoid !important;
+            }
+
+            /* Hide unnecessary elements */
+            .info-item:empty,
+            br + br {
+                display: none !important;
+            }
+
+            /* Optimize spacing */
+            br {
+                line-height: 1;
+            }
+
+            /* Last updated footer */
+            div[style*="text-align: center"] {
+                margin-top: 12px !important;
+                padding-top: 8px !important;
+                border-top: 1px solid #000 !important;
+                font-size: 8px !important;
+                color: #000 !important;
+            }
+
+            /* Ensure all data fits */
+            .dashboard-container > *:last-child {
+                margin-bottom: 0 !important;
             }
         }
         
@@ -280,6 +694,26 @@
 
     <main id="maincontent" class="page-main" role="main">
         <div class="dashboard-container">
+            <!-- Print Header - Logo Section (hidden in screen, visible in print) -->
+            <div class="print-header" style="display: none;">
+                <div class="form-header-logo" style="text-align: center; padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid #000;">
+                    <div class="form-logo-container">
+                        <img src="/uploads/main-logo.jpg" alt="IIES Logo" class="form-logo" style="max-width: 100px; height: auto;" onerror="this.style.display='none'">
+                    </div>
+                    <div class="form-brand-text">
+                        <h1 class="form-brand-title" style="font-size: 14px; font-weight: 700; margin: 0; line-height: 1.3;">
+                            <span class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा</span><br>
+                            <span class="english-text" style="font-size: 12px;">Indian International Economic Service</span>
+                        </h1>
+                        <p class="form-brand-subtitle hindi-text" style="font-size: 10px; margin: 2px 0; color: #000;">वित्त मंत्रालय, भारत सरकार</p>
+                        <p class="form-brand-subtitle english-text" style="font-size: 10px; margin: 2px 0; color: #000;">IIES, Government of India</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-bottom: 8px;">
+                    <h2 style="font-size: 14px; font-weight: 700; margin: 0; color: #000;">NOC Progress Report</h2>
+                </div>
+            </div>
+
             <div class="dashboard-header">
                 <div class="dashboard-title">
                     <h1>NOC Progress Report</h1>
@@ -295,44 +729,234 @@
                 </div>
             </div>
 
-            <!-- Client Information -->
+            <!-- Section 1: File Information -->
             <div class="report-section">
-                <h2 class="section-title">Client Information</h2>
+                <h2 class="section-title">1) File Information</h2>
                 <div class="info-grid">
                     <div class="info-item">
-                        <div class="info-label">Full Name</div>
-                        <div class="info-value">{{ $clientReport->full_name }}</div>
+                        <div class="info-label">Unique ID</div>
+                        <div class="info-value">{{ $clientReport->unique_id ?: '-' }}</div>
                     </div>
                     <div class="info-item">
-                        <div class="info-label">Email</div>
-                        <div class="info-value">{{ $clientReport->email_id ?: 'Not provided' }}</div>
+                        <div class="info-label">File No.</div>
+                        <div class="info-value">{{ $clientReport->file_no ?: '-' }}</div>
                     </div>
                     <div class="info-item">
-                        <div class="info-label">Contact Number</div>
-                        <div class="info-value">{{ $clientReport->contact_number ?: 'Not provided' }}</div>
+                        <div class="info-label">Acknowledgement No.</div>
+                        <div class="info-value">{{ $clientReport->acknowledgement_no ?: '-' }}</div>
                     </div>
                     <div class="info-item">
-                        <div class="info-label">Application Type</div>
-                        <div class="info-value">{{ $clientReport->application_type ?: 'Not specified' }}</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Submission Date</div>
-                        <div class="info-value">{{ $clientReport->submission_date ? $clientReport->submission_date->format('d/m/Y') : 'Not specified' }}</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Current Status</div>
-                        <div class="info-value">
-                            <span class="status-badge status-{{ str_replace('_', '-', $clientReport->status ?: 'draft') }}">
-                                {{ ucfirst(str_replace('_', ' ', $clientReport->status ?: 'draft')) }}
-                            </span>
-                        </div>
+                        <div class="info-label">Prepared By (Officer / Department)</div>
+                        <div class="info-value">{{ $clientReport->prepared_by ?: '-' }}</div>
                     </div>
                 </div>
             </div>
 
-            <!-- File Processing Status -->
+            <!-- Section 2: Client Information -->
             <div class="report-section">
-                <h2 class="section-title">File Processing / File Movement Status</h2>
+                <h2 class="section-title">2) Client Information</h2>
+                <div class="info-grid">
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Full Name (First + Last)</div>
+                        <div class="info-value">{{ $clientReport->full_name ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Father / Husband Name</div>
+                        <div class="info-value">{{ $clientReport->father_husband_name ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date of Birth</div>
+                        <div class="info-value">{{ $clientReport->date_of_birth ? $clientReport->date_of_birth->format('d/m/Y') : '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Contact Number</div>
+                        <div class="info-value">{{ $clientReport->contact_number ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email Id</div>
+                        <div class="info-value">{{ $clientReport->email_id ?: '-' }}</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Permanent Address</div>
+                        <div class="info-value">{{ $clientReport->permanent_address ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">PAN Number</div>
+                        <div class="info-value">{{ $clientReport->pan_number ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Aadhar Number</div>
+                        <div class="info-value">{{ $clientReport->aadhar_number ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Passport Number</div>
+                        <div class="info-value">{{ $clientReport->passport_number ?: '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Application & Work Details -->
+            <div class="report-section">
+                <h2 class="section-title">3) Application & Work Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Application Type / Service</div>
+                        <div class="info-value">{{ $clientReport->application_type ? ucfirst(str_replace('_', ' ', $clientReport->application_type)) : '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Submission Date</div>
+                        <div class="info-value">{{ $clientReport->submission_date ? $clientReport->submission_date->format('d/m/Y') : '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Reference / Application No.</div>
+                        <div class="info-value">{{ $clientReport->reference_application_no ?: '-' }}</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Nature of Work (Description)</div>
+                        <div class="info-value">{{ $clientReport->nature_of_work ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Verification Level</div>
+                        <div class="info-value">{{ $clientReport->verification_level ? ucfirst($clientReport->verification_level) : '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Fund & NOC Details -->
+            <div class="report-section">
+                <h2 class="section-title">4) Fund & NOC Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Fund Type</div>
+                        <div class="info-value">{{ $clientReport->fund_type ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Amount</div>
+                        <div class="info-value">{{ $clientReport->amount ? number_format($clientReport->amount, 2) : '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Currency</div>
+                        <div class="info-value">{{ $clientReport->currency ?: '-' }}</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Purpose of Funds</div>
+                        <div class="info-value">{{ $clientReport->purpose_of_funds ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">NOC Type</div>
+                        <div class="info-value">{{ $clientReport->noc_type ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">NOC Reference No.</div>
+                        <div class="info-value">{{ $clientReport->noc_reference_no ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">NOC Deed No.</div>
+                        <div class="info-value">{{ $clientReport->noc_deed_no ?: '-' }}</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Conditions on NOC</div>
+                        <div class="info-value">{{ $clientReport->conditions_on_noc ?: '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Beneficiary Bank & Payment Details -->
+            <div class="report-section">
+                <h2 class="section-title">5) Beneficiary Bank & Payment Details</h2>
+                <div class="info-grid">
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Beneficiary Bank Name</div>
+                        <div class="info-value">{{ $clientReport->beneficiary_bank_name ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">IFSC Code</div>
+                        <div class="info-value">{{ $clientReport->ifsc_code ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">SWIFT Code</div>
+                        <div class="info-value">{{ $clientReport->swift_code ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Bank Account Number</div>
+                        <div class="info-value">{{ $clientReport->bank_account_number ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Bank Email ID</div>
+                        <div class="info-value">{{ $clientReport->bank_email ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Account Type</div>
+                        <div class="info-value">{{ $clientReport->account_type ?: '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Origin/Sender Details -->
+            <div class="report-section">
+                <h2 class="section-title">6) Origin/Sender Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Origin Country</div>
+                        <div class="info-value">{{ $clientReport->origin_country ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Sender Name / Institution</div>
+                        <div class="info-value">{{ $clientReport->sender_name ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">SWIFT Code / BIC</div>
+                        <div class="info-value">{{ $clientReport->sender_swift_code ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Transaction Reference / Transfer Trace</div>
+                        <div class="info-value">{{ $clientReport->transaction_reference ?: '-' }}</div>
+                    </div>
+                    @if($clientReport->sender_email)
+                    <div class="info-item">
+                        <div class="info-label">Sender Email</div>
+                        <div class="info-value">{{ $clientReport->sender_email }}</div>
+                    </div>
+                    @endif
+                    @if($clientReport->sender_contact)
+                    <div class="info-item">
+                        <div class="info-label">Sender Contact</div>
+                        <div class="info-value">{{ $clientReport->sender_contact }}</div>
+                    </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Section 7: Work Information of Client -->
+            <div class="report-section">
+                <h2 class="section-title">7) Work Information of Client</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Type of Work</div>
+                        <div class="info-value">{{ $clientReport->type_of_work ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">HSN Code</div>
+                        <div class="info-value">{{ $clientReport->hsn_code ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Broker/Agent's Name</div>
+                        <div class="info-value">{{ $clientReport->broker_agent_name ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Banking Partner</div>
+                        <div class="info-value">{{ $clientReport->banking_partner ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Total Amount</div>
+                        <div class="info-value">{{ $clientReport->total_amount ? number_format($clientReport->total_amount, 2) : '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: File Processing / File Movement -->
+            <div class="report-section">
+                <h2 class="section-title">8) File Processing / File Movement</h2>
                 <table class="progress-table">
                     <thead>
                         <tr>
@@ -359,20 +983,34 @@
                         </tr>
                         <tr>
                             <td>02</td>
-                            <td>NFRA Application Processing</td>
+                            <td>Payment Book Approval</td>
                             <td>
-                                @if($clientReport->nfra_application_processing_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->nfra_application_processing_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->nfra_application_processing_status)) }}
+                                @if($clientReport->payment_book_status_approval)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->payment_book_status_approval) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->payment_book_status_approval)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
                                 @endif
                             </td>
-                            <td>{{ $clientReport->nfra_application_processing_notes ?: '-' }}</td>
+                            <td>{{ $clientReport->payment_book_status_approval_notes ?: '-' }}</td>
                         </tr>
                         <tr>
                             <td>03</td>
+                            <td>NFRA Application Processing</td>
+                            <td>
+                                @if($clientReport->nfra_application_status)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->nfra_application_status) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->nfra_application_status)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->nfra_application_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
                             <td>NFRA Approval</td>
                             <td>
                                 @if($clientReport->nfra_approval_status)
@@ -386,12 +1024,12 @@
                             <td>{{ $clientReport->nfra_approval_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>04</td>
+                            <td>05</td>
                             <td>Form 28 Application Processing</td>
                             <td>
-                                @if($clientReport->form_28_application_processing_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28_application_processing_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28_application_processing_status)) }}
+                                @if($clientReport->form_28_application_processing)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28_application_processing) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28_application_processing)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
@@ -400,12 +1038,54 @@
                             <td>{{ $clientReport->form_28_application_processing_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>05</td>
-                            <td>Form 28 Approval</td>
+                            <td>06</td>
+                            <td>CBDT Approval</td>
                             <td>
-                                @if($clientReport->form_28_approval_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28_approval_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28_approval_status)) }}
+                                @if($clientReport->cbdt_approval_status)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->cbdt_approval_status) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->cbdt_approval_status)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->cbdt_approval_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>PFMS Approval</td>
+                            <td>
+                                @if($clientReport->pfms_approval_status)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->pfms_approval_status) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->pfms_approval_status)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->pfms_approval_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Security Fee Deposit</td>
+                            <td>
+                                @if($clientReport->security_fee_deposit)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->security_fee_deposit) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->security_fee_deposit)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->security_fee_deposit_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>FORM 28 Approval</td>
+                            <td>
+                                @if($clientReport->form_28_approval)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28_approval) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28_approval)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
@@ -414,12 +1094,12 @@
                             <td>{{ $clientReport->form_28_approval_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>06</td>
+                            <td>10</td>
                             <td>NOC Fee</td>
                             <td>
-                                @if($clientReport->noc_fee_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->noc_fee_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->noc_fee_status)) }}
+                                @if($clientReport->noc_fee)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->noc_fee) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->noc_fee)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
@@ -428,12 +1108,12 @@
                             <td>{{ $clientReport->noc_fee_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>07</td>
+                            <td>11</td>
                             <td>Form 28B Application Processing</td>
                             <td>
-                                @if($clientReport->form_28b_application_processing_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28b_application_processing_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_application_processing_status)) }}
+                                @if($clientReport->form_28b_application_processing)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28b_application_processing) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_application_processing)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
@@ -442,12 +1122,12 @@
                             <td>{{ $clientReport->form_28b_application_processing_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>08</td>
-                            <td>Form 28B Approval</td>
+                            <td>12</td>
+                            <td>Form 28 B Approval</td>
                             <td>
-                                @if($clientReport->form_28b_approval_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28b_approval_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_approval_status)) }}
+                                @if($clientReport->form_28b_approval)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->form_28b_approval) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_approval)) }}
                                     </span>
                                 @else
                                     <span class="status-badge status-pending">Pending</span>
@@ -459,9 +1139,9 @@
                 </table>
             </div>
 
-            <!-- Progress Tracker -->
+            <!-- Section 9: Progress Tracker -->
             <div class="report-section">
-                <h2 class="section-title">Progress Tracker</h2>
+                <h2 class="section-title">9) Progress Tracker</h2>
                 <table class="progress-table">
                     <thead>
                         <tr>
@@ -602,26 +1282,135 @@
                 </table>
             </div>
 
-            <!-- General Notes -->
-            @if($clientReport->general_notes || $clientReport->officer_remarks)
+            <!-- Section 10: Status Codes & Definitions -->
             <div class="report-section">
-                <h2 class="section-title">Additional Information</h2>
+                <h2 class="section-title">10) Status Codes & Definitions</h2>
+                <div class="info-grid" style="grid-template-columns: 1fr;">
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Received</div>
+                        <div class="info-value" style="font-size: 14px;">Application has been received and registered.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Pending Documents</div>
+                        <div class="info-value" style="font-size: 14px;">Required documents are missing from the applicant.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">In Progress / Under Review</div>
+                        <div class="info-value" style="font-size: 14px;">Processing is ongoing.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Hold</div>
+                        <div class="info-value" style="font-size: 14px;">Process is paused due to policy/technical reasons.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Approved</div>
+                        <div class="info-value" style="font-size: 14px;">Necessary approvals obtained (before NOC issuance).</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">NOC Issued</div>
+                        <div class="info-value" style="font-size: 14px;">NOC has been successfully issued.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Rejected</div>
+                        <div class="info-value" style="font-size: 14px;">Application invalid or rejected.</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: none; padding: 10px 0;">
+                        <div class="info-label" style="font-weight: 600; margin-bottom: 5px;">Closed</div>
+                        <div class="info-value" style="font-size: 14px;">Process completed and closed.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 11: Document Checklist -->
+            <div class="report-section">
+                <h2 class="section-title">11) Document Checklist</h2>
+                <div class="info-grid" style="grid-template-columns: 1fr;">
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">Signed Application Form</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">ID Proof (Passport / Aadhaar / PAN)</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">Bank Statement / Transaction Proof</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">Source of Funds Documents</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">Company / Organization Registration (if applicable)</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: 1px solid #e2e8f0; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">KYC / AML Related Documents</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1; border-left: none; border-bottom: none; padding: 10px 0;">
+                        <div class="info-value" style="font-size: 14px;">Any Other Statutory Approvals (if applicable)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 12: Risks & Special Conditions -->
+            <div class="report-section">
+                <h2 class="section-title">12) Risks & Special Conditions</h2>
+                <div class="info-item" style="background: #f9fafb; padding: 15px; border: 1px solid #e5e7eb; border-radius: 6px;">
+                    <div class="info-value" style="font-size: 14px; line-height: 1.6; color: #374151;">
+                        Notes about any regulatory constraints or banking restrictions. If the NOC is conditional upon specific requirements (e.g., escrow arrangement, tax clearance), list those conditions here.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 13: Officer Remarks -->
+            <div class="report-section">
+                <h2 class="section-title">13) Officer Remarks</h2>
                 <div class="info-grid">
                     @if($clientReport->general_notes)
-                    <div class="info-item">
+                    <div class="info-item" style="grid-column: 1 / -1;">
                         <div class="info-label">General Notes</div>
                         <div class="info-value">{{ $clientReport->general_notes }}</div>
                     </div>
                     @endif
                     @if($clientReport->officer_remarks)
-                    <div class="info-item">
+                    <div class="info-item" style="grid-column: 1 / -1;">
                         <div class="info-label">Officer Remarks</div>
                         <div class="info-value">{{ $clientReport->officer_remarks }}</div>
                     </div>
                     @endif
+                    @if(!$clientReport->general_notes && !$clientReport->officer_remarks)
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-value" style="color: #666; font-style: italic;">(Officer to provide concise remarks about the particular stages, missing documents, or any additional conditions required.)</div>
+                    </div>
+                    @endif
                 </div>
             </div>
-            @endif
+
+            <!-- Section 14: Approval & Signature -->
+            <div class="report-section">
+                <h2 class="section-title">14) Approval & Signature</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Technical Team</div>
+                        <div class="info-value">{{ $clientReport->technical_team_approval ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Legal Compliance Team</div>
+                        <div class="info-value">{{ $clientReport->legal_compliance_approval ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Final Authoriser</div>
+                        <div class="info-value">{{ $clientReport->final_authoriser_approval ?: '-' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 15: General Notes -->
+            <div class="report-section">
+                <h2 class="section-title">15) General Notes</h2>
+                <div class="info-item" style="grid-column: 1 / -1; background: #f9fafb; padding: 15px; border: 1px solid #e5e7eb; border-radius: 6px;">
+                    <div class="info-value" style="font-size: 14px; line-height: 1.6; color: #374151;">
+                        Group applications may require additional time (1-2 months) for review when applicable. Sensitive information should only be shared with authorised personnel.
+                    </div>
+                </div>
+            </div>
 
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
                 <p style="color: #666; margin: 0;">

@@ -30,7 +30,7 @@
                 <div class="hero-tabs">
                     <a href="/guidelines/issuance-noc" class="hero-tab">Guideline for Issuance NOC</a>
                     <a href="/guidelines/iies-officials" class="hero-tab">Guidelines for IIES Officials</a>
-                    <a href="/guidelines/super-agent" class="hero-tab">Guidelines for Registered Facilitation Agent</a>
+                    <a href="/guidelines/register-fac-agent" class="hero-tab">Guidelines for Registered Facilitation Agent</a>
                     <a href="/guidelines/noc-guidelines" class="hero-tab active">Guidelines for NOC Applicants</a>
                 </div>
             </div>

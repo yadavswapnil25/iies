@@ -95,7 +95,7 @@
                           Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.
                         </li>
                         <li>
-                         Official Recognition: Officers of IIES have been honored by the Ministry of Finance for their exemplary contribution in managing foreign fund compliance.
+                         Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance.
                         </li>                       
                       </ul>
                       <p>In addition, the office works closely with the <strong>Department of Economic Affairs (DEA)</strong>, the <strong>Reserve Bank of India (RBI)</strong>, and other financial institutions to ensure proper implementation of foreign fund policies under IIES supervision.</p>

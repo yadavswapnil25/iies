@@ -57,7 +57,7 @@
             <div class="preamble-section">
               <h3>Procedure for Issuance of No Objection Certificate (NOC) for International Funds by the Indian International Economic Service (IIES)</h3>
               <p>
-                As per the directives of the Ministry of Finance, Government of India, the Indian International Economic Service (IIES) has been authorized to issue a No Objection Certificate (NOC) to both Indian citizens and Persons of Indian Origin (PIOs) in respect of their international or foreign funds. This certificate serves as an official document certifying that there are no financial, legal, or regulatory objections from the Government of India or any financial authority regarding the said international amount, and that all statutory formalities have been duly completed for its withdrawal or utilization.
+                As per the directives of the IIES, Government of India, the Indian International Economic Service (IIES) has been authorized to issue a No Objection Certificate (NOC) to both Indian citizens and Persons of Indian Origin (PIOs) in respect of their international or foreign funds. This certificate serves as an official document certifying that there are no financial, legal, or regulatory objections from the Government of India or any financial authority regarding the said international amount, and that all statutory formalities have been duly completed for its withdrawal or utilization.
               </p>
             </div>
 
@@ -98,7 +98,7 @@
 
             <div class="role-section role-junior">
               <h3>Payment and Regulation of NOC Fees</h3>
-              <p>Once the Form-28 Certificate has been obtained, the applicant is required to pay the No Objection Certificate (NOC) Fee. This fee is determined annually based on the total value and category of the international funds (such as donation, grant, investment, etc.). The rate of NOC fee is revised periodically as per notifications published in the Gazette of the Ministry of Finance. The fee can be paid through the official portal of the Indian International Economic Service or directly via the IIFC Treasury Department.</p>
+              <p>Once the Form-28 Certificate has been obtained, the applicant is required to pay the No Objection Certificate (NOC) Fee. This fee is determined annually based on the total value and category of the international funds (such as donation, grant, investment, etc.). The rate of NOC fee is revised periodically as per notifications published in the Gazette of the IIES. The fee can be paid through the official portal of the Indian International Economic Service or directly via the IIFC Treasury Department.</p>
             </div>
 
               <div class="role-section role-junior">
@@ -123,7 +123,7 @@
             <div class="final-note">
               <h3>Conclusion</h3>
               <p>
-                The entire procedure aims to ensure that every international fund received in India adheres to the highest standards of financial transparency, legal compliance, and economic integrity. The Indian International Economic Service, under the supervision of the Ministry of Finance, continues to work diligently to strengthen, secure, and regulate international financial transactions in alignment with the economic policies of the Government of India.
+                The entire procedure aims to ensure that every international fund received in India adheres to the highest standards of financial transparency, legal compliance, and economic integrity. The Indian International Economic Service, under the supervision of the IIES, continues to work diligently to strengthen, secure, and regulate international financial transactions in alignment with the economic policies of the Government of India.
               </p>
             </div>
           </div>

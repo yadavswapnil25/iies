@@ -9,6 +9,8 @@
 
         <div class="gov-right">
           <!-- Font Size Dropdown -->
+          <a class="skip-link" href="#maincontent">Skip to main content</a>
+
           <div class="font-size-dropdown" title="Change Text Size">
             <button id="fontSizeBtn">A</button>
             <div class="dropdown-menu" id="fontSizeMenu">
@@ -19,7 +21,6 @@
               <div data-size="0.8">A--</div>
             </div>
           </div>
-          <a class="skip-link" href="#maincontent">Skip to main content</a>
 
           <!-- Language Dropdown -->
           <div class="language-dropdown" title="Change Language">
@@ -39,7 +40,7 @@
     <!-- HEADER -->
     <header id="site-header" class="site-header">
       <div class="header-inner" role="banner">
-        <div class="brand" aria-label="Ministry of Finance">
+        <div class="brand" aria-label="IIES">
           <img
             src="/uploads/main-logo.jpg"
             alt="Emblem / Logo"
@@ -52,7 +53,7 @@
               </span>
             </h1>
             <p class="hindi-text">वित्त मंत्रालय, भारत सरकार</p>
-            <p class="english-text">Ministry of Finance, Government of India</p>
+            <p class="english-text">IIES, Government of India</p>
           </div>
         </div>
 
@@ -72,7 +73,7 @@
 
           <!-- Dropdown for About Us -->
           <li class="dropdown">
-            <a href="#" class="">About Us ▾</a>
+            <a href="#" class="">About Us <span class="desktop-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li><a href="/about/iies">About IIES</a></li>
               <li><a href="/about/our-minister">Our Minister</a></li>
@@ -84,7 +85,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="">Services ▾</a>
+            <a href="#" class="">Services <span class="desktop-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li><a href="/services/noc-process">NOC Process</a></li>
               <li><a href="/services/proc-guide">Procedure &amp; Guidelines</a></li>
@@ -96,7 +97,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="">Guidelines ▾</a>
+            <a href="#" class="">Guidelines <span class="desktop-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li>
                 <a href="/guidelines/issuance-noc">Guideline for Issuance NOC</a>
@@ -105,7 +106,7 @@
                 <a href="/guidelines/iies-officials">Guidelines for IIES Officials</a>
               </li>
               <li>
-                <a href="/guidelines/super-agent">Guidelines for Registered Facilitation Agent </a>
+                <a href="/guidelines/register-fac-agent">Guidelines for Registered Facilitation Agent </a>
               </li>
               <li>
                 <a href="/guidelines/noc-guidelines">Guidelines for NOC Applicants</a>
@@ -113,23 +114,23 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="">Registered Facilitation Agent ▾</a>
+            <a href="#" class="">Registered Facilitation Agent <span class="desktop-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li>
-                <a href="/register-fac-agent/super-agent-role" class="active"
+                <a href="/register-fac-agent/role-of-registered-facilitation-agent" class="active"
                   >Role of Registered Facilitation Agent</a>
               </li> 
               <li>
-                <a href="/register-fac-agent/super-agent-list">List of Registered Facilitation Agent</a>
+                <a href="/register-fac-agent/list-of-registered-facilitation-agent">List of Registered Facilitation Agent</a>
               </li>
               <li>
-                <a href="/register-fac-agent/super-agent-hire">Engage a Registered Facilitation Agent </a>
+                <a href="/register-fac-agent/engage-a-registered-facilitation-agent">Engage a Registered Facilitation Agent </a>
               </li>
             </ul>
           </li>
 
           <li class="dropdown">
-            <a href="#" class=""> Law & Act ▾</a>
+            <a href="#" class=""> Law & Act <span class="desktop-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li><a href="/law-act-policy">Act & Policy</a></li>
               <li>
@@ -140,6 +141,7 @@
           <li><a href="/penalty">Penalty</a></li>
           <li><a href="/enquiry-form">Enquiry</a></li>
           <li><a href="/contact-us">Contact IIES</a></li>
+          <li><a href="/order-notices"><i class="fas fa-bell"></i></a></li>
         </ul>
       </div>
     </nav>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ClientReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ClientReportController extends Controller
 {
@@ -40,9 +41,8 @@ class ClientReportController extends Controller
      */
     public function create()
     {
-        $uniqueId = ClientReport::generateUniqueId();
         $clientReport = new ClientReport(); // Empty object for form
-        return view('admin.client-reports.create', compact('uniqueId', 'clientReport'));
+        return view('admin.client-reports.create', compact('clientReport'));
     }
 
     /**
@@ -85,7 +85,7 @@ class ClientReportController extends Controller
                 'security_fee_deposit_notes' => 'nullable|string',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            \Log::error('Validation failed:', $e->errors());
+            Log::error('Validation failed:', $e->errors());
             return redirect()->back()
                 ->withErrors($e->errors())
                 ->withInput();
