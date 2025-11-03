@@ -44,7 +44,7 @@
                             </span>
                         </td>
                         <td>{{ $item->sort_order }}</td>
-                        <td>{{ $item->created_at->format('M d, Y') }}</td>
+                        <td>{{ optional($item->created_at)->format('M d, Y') ?? '-' }}</td>
                         <td style="text-align: center;">
                             <div style="display: flex; gap: 8px; justify-content: center;">
                                 <a href="{{ route('admin.announcements.edit', $item) }}" class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">

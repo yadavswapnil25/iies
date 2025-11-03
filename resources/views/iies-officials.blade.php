@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guidelines for IIES Officials</title>
-
+    @include('partials.favicons')
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet"

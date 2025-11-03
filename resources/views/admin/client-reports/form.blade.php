@@ -16,9 +16,9 @@
         <h2 class="card-title" style="margin: 0; display: inline-block;">NOC Progress Report</h2>
     </div>
     <br>
-    <!-- Section 1: File Information -->
+    <!-- Section 1: File Details -->
     <div class="form-section">
-        <h3 class="section-title">1) File Information</h3>
+        <h3 class="section-title">1) File Details</h3>
         <div class="form-grid">
             <div class="form-group">
                 <label for="unique_id" class="form-label">Unique ID <span class="required">*</span></label>
@@ -65,9 +65,9 @@
         </div>
     </div>
 
-    <!-- Section 2: Client Information -->
+    <!-- Section 2: Personal Details of Applicant -->
     <div class="form-section">
-        <h3 class="section-title">2) Client Information</h3>
+        <h3 class="section-title">2) Personal Details of Applicant</h3>
         <div class="form-grid">
             <div class="form-group full-width">
                 <label for="full_name" class="form-label">Full Name (First + Last) <span class="required">*</span></label>
@@ -164,9 +164,9 @@
         </div>
     </div>
 
-    <!-- Section 3: Application & Work Details -->
+    <!-- Section 3: Application Type and Work Details -->
     <div class="form-section">
-        <h3 class="section-title">3) Application & Work Details</h3>
+        <h3 class="section-title">3) Application Type and Work Details</h3>
         <div class="form-grid">
             <div class="form-group">
                 <label for="application_type" class="form-label">Application Type / Service</label>
@@ -223,9 +223,9 @@
         </div>
     </div>
 
-    <!-- Section 4: Fund & NOC Details -->
+    <!-- Section 4: Details of Fund and NOC -->
     <div class="form-section">
-        <h3 class="section-title">4) Fund & NOC Details</h3>
+        <h3 class="section-title">4) Details of Fund and NOC</h3>
         <div class="form-grid">
             <div class="form-group">
                 <label for="fund_type" class="form-label">Fund Type</label>
@@ -311,9 +311,9 @@
         </div>
     </div>
 
-    <!-- Section 4: Beneficiary Bank & Payment Details -->
+    <!-- Section 4: Details of Beneficiary Bank -->
     <div class="form-section">
-        <h3 class="section-title">5) Beneficiary Bank & Payment Details</h3>
+        <h3 class="section-title">5) Details of Beneficiary Bank</h3>
         <div class="form-grid">
             <div class="form-group full-width">
                 <label for="beneficiary_bank_name" class="form-label">Beneficiary Bank Name</label>
@@ -378,9 +378,9 @@
         </div>
     </div>
 
-    <!-- Section 5: Origin/Sender Details -->
+    <!-- Section 5: Remitting Bank & Sender Details -->
     <div class="form-section">
-        <h3 class="section-title">6) Origin/Sender Details</h3>
+        <h3 class="section-title">6) Remitting Bank & Sender Details</h3>
         <div class="form-grid">
             <div class="form-group">
                 <label for="origin_country" class="form-label">Origin Country</label>
@@ -393,7 +393,7 @@
             </div>
 
             <div class="form-group">
-                <label for="sender_name" class="form-label">Sender Name / Institution</label>
+                <label for="sender_name" class="form-label">Sender Individual / Institution Name</label>
                 <input
                     type="text"
                     id="sender_name"
@@ -426,7 +426,7 @@
 
     <!-- Section 6: Work Information -->
     <div class="form-section">
-        <h3 class="section-title">7) Work Information of Client</h3>
+        <h3 class="section-title">7) Work Details of Applicant</h3>
         <div class="form-grid">
             <div class="form-group">
                 <label for="type_of_work" class="form-label">Type of Work</label>
@@ -539,44 +539,10 @@
                     placeholder="Notes or reason">
             </div>
 
-            <div class="form-group">
-                <label for="cbdt_approval_status" class="form-label">06 - CBDT Approval</label>
-                <select id="cbdt_approval_status" name="cbdt_approval_status" class="form-input">
-                    <option value="pending" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
-                    <option value="approved" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'approved' ? 'selected' : '' }}>Approved</option>
-                    <option value="rejected" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
-                </select>
-                <input type="text" name="cbdt_approval_notes" class="form-input" style="margin-top: 8px;"
-                    value="{{ old('cbdt_approval_notes', $clientReport->cbdt_approval_notes ?? '') }}"
-                    placeholder="Notes or reason">
-            </div>
+          
 
             <div class="form-group">
-                <label for="pfms_approval_status" class="form-label">07 - PFMS Approval</label>
-                <select id="pfms_approval_status" name="pfms_approval_status" class="form-input">
-                    <option value="approved" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
-                    <option value="rejected" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
-                    <option value="pending" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'pending' ? 'selected' : '' }}>Pending</option>
-                </select>
-                <input type="text" name="pfms_approval_notes" class="form-input" style="margin-top: 8px;"
-                    value="{{ old('pfms_approval_notes', $clientReport->pfms_approval_notes ?? '') }}"
-                    placeholder="Notes or reason">
-            </div>
-
-            <div class="form-group">
-                <label for="security_fee_deposit" class="form-label">08 - Security Fee Deposit</label>
-                <select id="security_fee_deposit" name="security_fee_deposit" class="form-input">
-                    <option value="paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? 'paid') == 'paid' ? 'selected' : '' }}>Paid</option>
-                    <option value="not_paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'not_paid' ? 'selected' : '' }}>Not Paid</option>
-                    <option value="payment_not_received" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'payment_not_received' ? 'selected' : '' }}>Payment not received</option>
-                </select>
-                <input type="text" name="security_fee_deposit_notes" class="form-input" style="margin-top: 8px;"
-                    value="{{ old('security_fee_deposit_notes', $clientReport->security_fee_deposit_notes ?? '') }}"
-                    placeholder="Notes or reason">
-            </div>
-
-            <div class="form-group">
-                <label for="form_28_approval" class="form-label">09 - FORM 28 Approval </label>
+                <label for="form_28_approval" class="form-label">06 - FORM 28 Approval </label>
                 <select id="form_28_approval" name="form_28_approval" class="form-input">
                     <option value="approved" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
                     <option value="rejected" {{ old('form_28_approval', $clientReport->form_28_approval ?? 'rejected') == 'rejected' ? 'selected' : '' }}>Rejected</option>
@@ -587,7 +553,7 @@
             </div>
 
             <div class="form-group">
-                <label for="noc_fee" class="form-label">10 - NOC Fee</label>
+                <label for="noc_fee" class="form-label">07 - NOC Fee</label>
                 <select id="noc_fee" name="noc_fee" class="form-input">
                     <option value="paid" {{ old('noc_fee', $clientReport->noc_fee ?? 'paid') == 'paid' ? 'selected' : '' }}>Paid</option>
                     <option value="not_paid" {{ old('noc_fee', $clientReport->noc_fee ?? '') == 'not_paid' ? 'selected' : '' }}>Not Paid</option>
@@ -599,7 +565,7 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28b_application_processing" class="form-label">11 - Form 28B Application Processing</label>
+                <label for="form_28b_application_processing" class="form-label">08 - Form 28B Application Processing</label>
                 <select id="form_28b_application_processing" name="form_28b_application_processing" class="form-input">
                     <option value="applied" {{ old('form_28b_application_processing', $clientReport->form_28b_application_processing ?? 'applied') == 'applied' ? 'selected' : '' }}>Applied</option>
                     <option value="not_applied" {{ old('form_28b_application_processing', $clientReport->form_28b_application_processing ?? '') == 'not_applied' ? 'selected' : '' }}>Not Applied</option>
@@ -610,7 +576,7 @@
             </div>
 
             <div class="form-group">
-                <label for="form_28b_approval" class="form-label">12 - Form 28 B Approval </label>
+                <label for="form_28b_approval" class="form-label">09 - Form 28 B Approval </label>
                 <select id="form_28b_approval" name="form_28b_approval" class="form-input">
                     <option value="approved " {{ old('form_28b_approval', $clientReport->form_28b_approval ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
                     <option value="rejected" {{ old('form_28b_approval', $clientReport->form_28b_approval ?? 'rejected') == 'rejected' ? 'selected' : '' }}>Rejected</option>
@@ -686,9 +652,43 @@
                     value="{{ old('departmental_approval_notes', $clientReport->departmental_approval_notes ?? '') }}"
                     placeholder="Notes or reason">
             </div>
+            <div class="form-group">
+                <label for="cbdt_approval_status" class="form-label">06 - CBDT Approval</label>
+                <select id="cbdt_approval_status" name="cbdt_approval_status" class="form-input">
+                    <option value="pending" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="approved" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('cbdt_approval_status', $clientReport->cbdt_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                </select>
+                <input type="text" name="cbdt_approval_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('cbdt_approval_notes', $clientReport->cbdt_approval_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
 
             <div class="form-group">
-                <label for="noc_draft_status" class="form-label">06 - NOC Draft & Conditions</label>
+                <label for="pfms_approval_status" class="form-label">07 - PFMS Approval</label>
+                <select id="pfms_approval_status" name="pfms_approval_status" class="form-input">
+                    <option value="approved" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? 'approved') == 'approved' ? 'selected' : '' }}>Approved</option>
+                    <option value="rejected" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                    <option value="pending" {{ old('pfms_approval_status', $clientReport->pfms_approval_status ?? '') == 'pending' ? 'selected' : '' }}>Pending</option>
+                </select>
+                <input type="text" name="pfms_approval_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('pfms_approval_notes', $clientReport->pfms_approval_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
+
+            <div class="form-group">
+                <label for="security_fee_deposit" class="form-label">08 - Security Fee Deposit</label>
+                <select id="security_fee_deposit" name="security_fee_deposit" class="form-input">
+                    <option value="paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? 'paid') == 'paid' ? 'selected' : '' }}>Paid</option>
+                    <option value="not_paid" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'not_paid' ? 'selected' : '' }}>Not Paid</option>
+                    <option value="payment_not_received" {{ old('security_fee_deposit', $clientReport->security_fee_deposit ?? '') == 'payment_not_received' ? 'selected' : '' }}>Payment not received</option>
+                </select>
+                <input type="text" name="security_fee_deposit_notes" class="form-input" style="margin-top: 8px;"
+                    value="{{ old('security_fee_deposit_notes', $clientReport->security_fee_deposit_notes ?? '') }}"
+                    placeholder="Notes or reason">
+            </div>
+            <div class="form-group">
+                <label for="noc_draft_status" class="form-label">09 - NOC Draft & Conditions</label>
                 <select id="noc_draft_status" name="noc_draft_status" class="form-input">
                     <option value="pending" {{ old('noc_draft_status', $clientReport->noc_draft_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="drafted" {{ old('noc_draft_status', $clientReport->noc_draft_status ?? '') == 'drafted' ? 'selected' : '' }}>Drafted</option>
@@ -700,7 +700,7 @@
             </div>
 
             <div class="form-group">
-                <label for="noc_issuance_status" class="form-label">07 - NOC Issuance</label>
+                <label for="noc_issuance_status" class="form-label">10 - NOC Issuance</label>
                 <select id="noc_issuance_status" name="noc_issuance_status" class="form-input">
                     <option value="pending" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="issued" {{ old('noc_issuance_status', $clientReport->noc_issuance_status ?? '') == 'issued' ? 'selected' : '' }}>Issued</option>
@@ -713,7 +713,7 @@
             </div>
 
             <div class="form-group">
-                <label for="information_grant_status" class="form-label">08 - Information Grant</label>
+                <label for="information_grant_status" class="form-label">11 - Information Grant</label>
                 <select id="information_grant_status" name="information_grant_status" class="form-input">
                     <option value="pending" {{ old('information_grant_status', $clientReport->information_grant_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="granted" {{ old('information_grant_status', $clientReport->information_grant_status ?? '') == 'granted' ? 'selected' : '' }}>Granted</option>
@@ -724,7 +724,7 @@
             </div>
 
             <div class="form-group">
-                <label for="followup_closure_status" class="form-label">09 - Follow-up / Closure</label>
+                <label for="followup_closure_status" class="form-label">12 - Follow-up / Closure</label>
                 <select id="followup_closure_status" name="followup_closure_status" class="form-input">
                     <option value="pending" {{ old('followup_closure_status', $clientReport->followup_closure_status ?? 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="closed" {{ old('followup_closure_status', $clientReport->followup_closure_status ?? '') == 'closed' ? 'selected' : '' }}>Closed</option>

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IIES</title>
+    @include('partials.favicons')
     <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -101,19 +102,6 @@
                 <span class="marquee-separator">•</span>
               @endif
             @empty
-              <a href="/files/announcements_documents/Monthly%20Economic%20Review%20August%202025.pdf" 
-                 class="marquee-link" 
-                 title="Monthly Economic Review August 2025" 
-                 target="_blank">
-                Monthly Economic Review August 2025
-              </a>
-              <span class="marquee-separator">•</span>
-              <a href="/files/announcements_documents/WTM_vacancy.pdf" 
-                 class="marquee-link" 
-                 title="WTM vacancy circular dated 4th September, 2025-DEA website" 
-                 target="_blank">
-                WTM vacancy circular dated 4th September, 2025
-              </a>
             @endforelse
           </div>
         </div>
@@ -606,48 +594,38 @@
           @forelse($events as $event)
             <div class="event-card">
               <div class="event-date">
-                <div class="date-day">{{ $event->event_date->format('d') }}</div>
-                <div class="date-month english-text">{{ $event->event_date->format('M') }}</div>
-                <div class="date-month hindi-text">{{ $event->event_date->format('M') }}</div>
-                <div class="date-year">{{ $event->event_date->format('Y') }}</div>
+                <div class="date-day" style="color:#fff;">{{ $event->event_date->format('d') }}</div>
+                <div class="date-month english-text" style="color:#fff;">{{ $event->event_date->format('M') }}</div>
+                <div class="date-month hindi-text" style="color:#fff;">{{ $event->event_date->format('M') }}</div>
+                <div class="date-year" style="color:#fff;">{{ $event->event_date->format('Y') }}</div>
               </div>
               <div class="event-content">
-                <h3 class="english-text">{{ $event->title }}</h3>
-                <h3 class="hindi-text">{{ $event->title }}</h3>
+                <h3 class="english-text" style="color:#1a365d;">{{ $event->title }}</h3>
+                <h3 class="hindi-text" style="color:#1a365d;">{{ $event->title }}</h3>
                 @if($event->description)
                   <p class="english-text">{{ $event->description }}</p>
                   <p class="hindi-text">{{ $event->description }}</p>
                 @endif
-                <div class="event-meta">
+                <div class="event-meta" style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:8px 0 0 0;padding:0;">
                   @if($event->event_time)
                     <span class="event-time">🕒 {{ $event->event_time }}</span>
                   @endif
                   @if($event->location)
-                    <span class="event-location english-text">{{ $event->location }}</span>
-                    <span class="event-location hindi-text">{{ $event->location }}</span>
+                    <span class="event-location english-text"><i class="fas fa-map-marker-alt"></i> {{ $event->location }}</span>
+                    <span class="event-location hindi-text"><i class="fas fa-map-marker-alt"></i> {{ $event->location }}</span>
                   @endif
                 </div>
-                @if($event->url)
-                  <a href="{{ $event->url }}" target="_blank" class="event-reminder-btn">
-                    <span class="english-text">View Details</span>
-                    <span class="hindi-text">विवरण देखें</span>
-                  </a>
-                @else
-                  <button class="event-reminder-btn">
-                    <span class="english-text">Set Reminder</span>
-                    <span class="hindi-text">अनुस्मारक सेट करें</span>
-                  </button>
-                @endif
+
               </div>
             </div>
           @empty
             <!-- Default Event 1 -->
             <div class="event-card">
               <div class="event-date">
-                <div class="date-day">15</div>
-                <div class="date-month english-text">JAN</div>
-                <div class="date-month hindi-text">जनवरी</div>
-                <div class="date-year">2025</div>
+                <div class="date-day" style="color:#fff;">15</div>
+                <div class="date-month english-text" style="color:#fff;">JAN</div>
+                <div class="date-month hindi-text" style="color:#fff;">जनवरी</div>
+                <div class="date-year" style="color:#fff;">2025</div>
               </div>
               <div class="event-content">
                 <h3 class="english-text">Union Budget 2025-26 Presentation</h3>
@@ -658,10 +636,10 @@
                 <p class="hindi-text">
                   वित्त मंत्री द्वारा संसद में केंद्रीय बजट की प्रस्तुति
                 </p>
-                <div class="event-meta">
+                <div class="event-meta" style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:8px 0 0 0;padding:0;">
                   <span class="event-time">🕒 11:00 AM</span>
-                  <span class="event-location english-text">Parliament House, New Delhi</span>
-                  <span class="event-location hindi-text">संसद भवन, नई दिल्ली</span>
+                  <span class="event-location english-text"><i class="fas fa-map-marker-alt"></i> Parliament House, New Delhi</span>
+                  <span class="event-location hindi-text"><i class="fas fa-map-marker-alt"></i> संसद भवन, नई दिल्ली</span>
                 </div>
                 <button class="event-reminder-btn">
                   <span class="english-text">Set Reminder</span>
@@ -673,10 +651,10 @@
             <!-- Default Event 2 -->
             <div class="event-card">
               <div class="event-date">
-                <div class="date-day">28</div>
-                <div class="date-month english-text">JAN</div>
-                <div class="date-month hindi-text">जनवरी</div>
-                <div class="date-year">2025</div>
+                <div class="date-day" style="color:#fff;">28</div>
+                <div class="date-month english-text" style="color:#fff;">JAN</div>
+                <div class="date-month hindi-text" style="color:#fff;">जनवरी</div>
+                <div class="date-year" style="color:#fff;">2025</div>
               </div>
               <div class="event-content">
                 <h3 class="english-text">Economic Survey 2024-25 Release</h3>
@@ -687,10 +665,10 @@
                 <p class="hindi-text">
                   आर्थिक सर्वेक्षण दस्तावेज की आधिकारिक रिलीज
                 </p>
-                <div class="event-meta">
+                <div class="event-meta" style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:8px 0 0 0;padding:0;">
                   <span class="event-time">🕒 2:00 PM</span>
-                  <span class="event-location english-text">North Block, Finance Ministry</span>
-                  <span class="event-location hindi-text">नॉर्थ ब्लॉक, वित्त मंत्रालय</span>
+                  <span class="event-location english-text"><i class="fas fa-map-marker-alt"></i> North Block, Finance Ministry</span>
+                  <span class="event-location hindi-text"><i class="fas fa-map-marker-alt"></i> नॉर्थ ब्लॉक, वित्त मंत्रालय</span>
                 </div>
                 <button class="event-reminder-btn">
                   <span class="english-text">Set Reminder</span>
@@ -706,10 +684,10 @@
           </div>
           <div class="cta-buttons">
            
-           <button class="cta-btn secondary" onclick="window.open('https://www.pib.gov.in/PressReleasePage.aspx?PRID=2108407', '_blank')">
+            <a href="/events" class="cta-btn secondary" style="display:inline-block;text-decoration:none;">
         <span class="english-text">View All Events</span>
         <span class="hindi-text">सभी कार्यक्रम देखें</span>
-    </button>
+     </a>
           </div>
         </div>
       </div>
@@ -1076,103 +1054,9 @@
 
     // Function to update dynamic content (like marquee, etc.)
 function updateDynamicContent(lang) {
-  const marqueeItems = document.getElementById("marqueeItems");
-  if (marqueeItems) {
-    if (lang === "hi") {
-      marqueeItems.innerHTML = `
-        <a href="/files/announcements_documents/Monthly%20Economic%20Review%20August%202025.pdf" 
-           class="marquee-link" 
-           title="Monthly Economic Review August 2025" 
-           target="_blank">
-          अगस्त 2025 की मासिक आर्थिक समीक्षा
-        </a><span class="marquee-separator">•</span>
-        <a href="/files/announcements_documents/WTM_vacancy.pdf" 
-           class="marquee-link" 
-           title="WTM vacancy circular dated 4th September, 2025-DEA website" 
-           target="_blank">
-          डब्ल्यूटीएम रिक्ति परिपत्र 4 सितंबर, 2025
-        </a><span class="marquee-separator">•</span>
-        <a href="/files/announcements_documents/ExDebtReport2024-25_Final.pdf" 
-           class="marquee-link" 
-           title="Indias External Debt: A Status Report 2024-25" 
-           target="_blank">
-          भारत का बाह्य ऋण: स्थिति रिपोर्ट 2024-25
-        </a><span class="marquee-separator">•</span>
-        <a href="/files/announcements_documents/GeM-Bidding-8206518.pdf" 
-           class="marquee-link" 
-           title="Bid Document for Automatic Box Strapping Machine" 
-           target="_blank">
-          स्वचालित बॉक्स स्ट्रैपिंग मशीन के लिए बोली दस्तावेज़
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/GeM-Bidding-8206228.pdf" 
-           class="marquee-link" 
-           title="Bid Document For Printing Machine and Equipment" 
-           target="_blank">
-          मुद्रण मशीन और उपकरण के लिए बोली दस्तावेज़
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/Budget_Circular202627.pdf" 
-           class="marquee-link" 
-           title="Budget Circular 2026-27" 
-           target="_blank">
-          बजट परिपत्र 2026-27
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/FinalMER_July2025.pdf" 
-           class="marquee-link" 
-           title="Monthly Economic Review July 2025" 
-           target="_blank">
-          जुलाई 2025 की मासिक आर्थिक समीक्षा
-        </a>
-      `;
-    } else {
-      marqueeItems.innerHTML = `
-        <a href="files/announcements_documents/Monthly%20Economic%20Review%20August%202025.pdf" 
-           class="marquee-link" 
-           title="Monthly Economic Review August 2025" 
-           target="_blank">
-          Monthly Economic Review August 2025
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/WTM_vacancy.pdf" 
-           class="marquee-link" 
-           title="WTM vacancy circular dated 4th September, 2025-DEA website" 
-           target="_blank">
-          WTM vacancy circular dated 4th September, 2025
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/ExDebtReport2024-25_Final.pdf" 
-           class="marquee-link" 
-           title="Indias External Debt: A Status Report 2024-25" 
-           target="_blank">
-          India's External Debt: A Status Report 2024-25
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/GeM-Bidding-8206518.pdf" 
-           class="marquee-link" 
-           title="Bid Document for Automatic Box Strapping Machine" 
-           target="_blank">
-          Bid Document for Automatic Box Strapping Machine
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/GeM-Bidding-8206228.pdf" 
-           class="marquee-link" 
-           title="Bid Document For Printing Machine and Equipment" 
-           target="_blank">
-          Bid Document For Printing Machine and Equipment
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/Budget_Circular202627.pdf" 
-           class="marquee-link" 
-           title="Budget Circular 2026-27" 
-           target="_blank">
-          Budget Circular 2026-27
-        </a><span class="marquee-separator">•</span>
-        <a href="files/announcements_documents/FinalMER_July2025.pdf" 
-           class="marquee-link" 
-           title="Monthly Economic Review July 2025" 
-           target="_blank">
-          Monthly Economic Review July 2025
-        </a>
-      `;
-    }
-
-    // Add hover functionality to pause marquee
-    setupMarqueeHover();
-  }
+  // Keep server-rendered announcements; do not overwrite with static content.
+  // Only (re)apply marquee hover behavior if needed.
+  setupMarqueeHover();
 }
 
 // Function to setup marquee hover functionality

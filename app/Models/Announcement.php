@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Announcement extends Model
 {
+    public $timestamps = true;
+    
     protected $fillable = [
         'title',
         'url',
@@ -15,6 +17,8 @@ class Announcement extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     /**
@@ -30,6 +34,6 @@ class Announcement extends Model
      */
     public function scopeOrdered($query)
     {
-        return $query->orderBy('sort_order')->orderBy('created_at', 'desc');
+        return $query->orderBy('sort_order')->orderBy('id', 'desc');
     }
 }

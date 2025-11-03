@@ -250,7 +250,7 @@
                     <div class="section-content">
                         <p>
                             You have the right to view, update, correct, or delete your personal information. To exercise 
-                            these rights, please contact us at <a href="mailto:contact@iies.ind.in" style="color: #1a365d; text-decoration: underline;">contact@iies.ind.in</a>.
+                            these rights, please contact us at <a href="mailto:contact@iies.org.in" style="color: #1a365d; text-decoration: underline;">contact@iies.org.in</a>.
                         </p>
                     </div>
                 </div>

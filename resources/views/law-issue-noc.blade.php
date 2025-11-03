@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Law & Act - Law Before Issuing NOC</title>
+    <title>Law Before Issuing NOC</title>
+    @include('partials.favicons')
        <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"

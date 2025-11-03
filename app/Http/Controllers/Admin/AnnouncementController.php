@@ -33,9 +33,13 @@ class AnnouncementController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'url' => 'required|url|max:500',
-            'is_active' => 'boolean',
-            'sort_order' => 'integer|min:0'
+            'is_active' => 'nullable|boolean',
+            'sort_order' => 'nullable|integer|min:0'
         ]);
+
+        // Handle checkbox - if not checked, set to false
+        $validated['is_active'] = $request->has('is_active') ? (bool) $request->input('is_active') : false;
+        $validated['sort_order'] = $request->input('sort_order', 0);
 
         Announcement::create($validated);
 
@@ -68,9 +72,13 @@ class AnnouncementController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'url' => 'required|url|max:500',
-            'is_active' => 'boolean',
-            'sort_order' => 'integer|min:0'
+            'is_active' => 'nullable|boolean',
+            'sort_order' => 'nullable|integer|min:0'
         ]);
+
+        // Handle checkbox - if not checked, set to false
+        $validated['is_active'] = $request->has('is_active') ? (bool) $request->input('is_active') : false;
+        $validated['sort_order'] = $request->input('sort_order', $announcement->sort_order ?? 0);
 
         $announcement->update($validated);
 

@@ -73,8 +73,8 @@
 
       .events-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 24px;
+        grid-template-columns: 1fr; /* one row per event */
+        gap: 16px;
         margin-bottom: 30px;
       }
 
@@ -139,17 +139,26 @@
       .event-description {
         color: #4b5563;
         line-height: 1.7;
-        margin-bottom: 16px;
+        margin: 0;
         font-size: 0.95rem;
+      }
+
+      .event-desc-meta {
+        display: flex;
+        flex-direction: column; /* stack description and meta */
+        align-items: flex-start;
+        gap: 8px;
+        margin: 8px 0 16px 0;
       }
 
       .event-meta {
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-bottom: 16px;
-        padding-top: 16px;
-        border-top: 1px solid #e5e7eb;
+        flex-direction: column; /* time then location on separate lines */
+        align-items: flex-start;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        border-top: none;
       }
 
       .event-meta-item {
@@ -329,30 +338,25 @@
               </div>
               <div class="event-content">
                 <h3 class="event-title">{{ $event->title }}</h3>
-                @if($event->description)
-                  <div class="event-description">{{ $event->description }}</div>
-                @endif
-                <div class="event-meta">
-                  @if($event->event_time)
-                    <div class="event-meta-item">
-                      <i class="fas fa-clock"></i>
-                      <span>{{ \Carbon\Carbon::parse($event->event_time)->format('h:i A') }}</span>
-                    </div>
+                <div class="event-desc-meta">
+                  @if($event->description)
+                    <div class="event-description">{{ $event->description }}</div>
                   @endif
-                  @if($event->location)
-                    <div class="event-meta-item">
-                      <i class="fas fa-map-marker-alt"></i>
-                      <span>{{ $event->location }}</span>
-                    </div>
-                  @endif
-                </div>
-                @if($event->url)
-                  <div class="event-actions">
-                    <a href="{{ $event->url }}" target="_blank" class="event-btn event-btn-primary">
-                      <i class="fas fa-external-link-alt"></i> Learn More
-                    </a>
+                  <div class="event-meta">
+                    @if($event->event_time)
+                      <div class="event-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>{{ \Carbon\Carbon::parse($event->event_time)->format('h:i A') }}</span>
+                      </div>
+                    @endif
+                    @if($event->location)
+                      <div class="event-meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ $event->location }}</span>
+                      </div>
+                    @endif
                   </div>
-                @endif
+                </div>
               </div>
             </div>
           @endforeach
@@ -360,7 +364,7 @@
 
         @if($events->hasPages())
           <div class="pagination-wrapper">
-            {{ $events->links() }}
+            {{ $events->links('pagination::bootstrap-4') }}
           </div>
         @endif
       @else

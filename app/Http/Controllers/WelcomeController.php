@@ -23,7 +23,7 @@ class WelcomeController extends Controller
         $pressReleases = PressRelease::active()->ordered()->limit(5)->get();
         $announcements = Announcement::active()->ordered()->limit(10)->get();
         $vacancies = Vacancy::active()->ordered()->limit(5)->get();
-        $events = Event::active()->upcoming()->ordered()->limit(4)->get();
+        $events = Event::active()->upcoming()->ordered()->limit(2)->get();
         $banners = Banner::active()->ordered()->limit(10)->get();
         $enforcements = Enforcement::active()->ordered()->limit(5)->get();
         $internationalTaxations = InternationalTaxation::active()->ordered()->limit(5)->get();

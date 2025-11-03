@@ -29,7 +29,7 @@ class EventController extends Controller
                   ->orderBy('event_time', 'asc');
         }
 
-        $events = $query->paginate(12)->appends(['sort' => $sort]);
+        $events = $query->paginate(5)->appends(['sort' => $sort]);
         
         return view('events', compact('events', 'sort'));
     }

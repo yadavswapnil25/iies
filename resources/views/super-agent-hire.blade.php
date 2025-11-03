@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hire An Agent for Yourself</title>
+    <title>Engage a Registered Facilitation Agent</title>
+    @include('partials.favicons')
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />

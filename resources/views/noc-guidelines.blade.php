@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guidelines for NOC Applicants - IIES</title>
-
+    @include('partials.favicons')
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />
 
@@ -55,262 +55,125 @@
 
     <div class="row">
         <div class="col-12">
+            <!-- Official PDF Viewer -->
+      
+
             <div class="guidelines-content">
                 <div class="section">
-                    <h2>1. Introduction</h2>
-                    <p>The Indian International Economic Service (IIES) provides No Objection Certificates (NOC) for various international economic activities. This guideline document outlines the procedures, requirements, and best practices for applicants seeking NOC from IIES.</p>
+                    <h2>Guideline for NOC Applicants</h2>
+                    <p><strong>Indian International Economic Service (IIES)</strong></p>
                 </div>
 
                 <div class="section">
-                    <h2>2. Eligibility Criteria</h2>
-                    <h3>2.1 General Requirements</h3>
+                    <h2>1. For Company, Firm, or Institution (Proprietorship / LLP / OPC / Private Limited / Public Limited etc.)</h2>
+                    <p>The applicant must compulsorily submit the following documents:</p>
                     <ul>
-                        <li>Indian citizens or entities registered in India</li>
-                        <li>Valid business registration and tax compliance</li>
-                        <li>Clean financial record and no pending legal issues</li>
-                        <li>Proper documentation as per regulatory requirements</li>
+                        <li>Three years' Audit Report</li>
+                        <li>Three years' Project Report</li>
+                        <li>GST Certificate</li>
+                        <li>Income Tax Return (ITR) – for the last three years</li>
+                        <li>Details of Future Project</li>
+                        <li>Complete details of the investment or expenditure of the fund for which the NOC application is being made</li>
                     </ul>
-
-                    <h3>2.2 Specific Requirements by Category</h3>
-                    <div class="category-box">
-                        <h4>Export/Import Activities</h4>
-                        <ul>
-                            <li>Valid IEC (Import Export Code)</li>
-                            <li>Banking arrangements for international transactions</li>
-                            <li>Compliance with FEMA regulations</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-box">
-                        <h4>Foreign Investment</h4>
-                        <ul>
-                            <li>Approval from relevant regulatory authorities</li>
-                            <li>Source of funds documentation</li>
-                            <li>Investment proposal and business plan</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-box">
-                        <h4>Technology Transfer</h4>
-                        <ul>
-                            <li>Technical collaboration agreement</li>
-                            <li>IPR documentation</li>
-                            <li>Technology assessment report</li>
-                        </ul>
-                    </div>
+                    <h3>Main Documents for Application:</h3>
+                    <ul>
+                        <li>Company's PAN, TAN Certificate, GST Certificate, MOA (Memorandum of Association)</li>
+                        <li>Three years' Audit Report, ITR, and Annual Report</li>
+                        <li>Company's Bank Details</li>
+                        <li>Aadhaar Card of the Treasurer and two Directors (Board Directors)</li>
+                        <li>PAN Card of the Treasurer and two Directors</li>
+                        <li>Three years' Salary Statement of the Treasurer and two Directors</li>
+                        <li>Affidavit regarding the objective of the fund</li>
+                        <li>Other documents may be requested if necessary</li>
+                        <li>Details of the bank and country from which the fund was received</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>3. Application Process</h2>
-                    <h3>3.1 Pre-Application Checklist</h3>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <span class="check-icon">✓</span>
-                            <span>Gather all required documents</span>
-                        </div>
-                        <div class="checklist-item">
-                            <span class="check-icon">✓</span>
-                            <span>Verify eligibility criteria</span>
-                        </div>
-                        <div class="checklist-item">
-                            <span class="check-icon">✓</span>
-                            <span>Prepare detailed business proposal</span>
-                        </div>
-                        <div class="checklist-item">
-                            <span class="check-icon">✓</span>
-                            <span>Ensure compliance with regulations</span>
-                        </div>
-                    </div>
-
-                    <h3>3.2 Application Submission</h3>
-                    <ol>
-                        <li><strong>Online Application:</strong> Submit application through IIES portal</li>
-                        <li><strong>Document Upload:</strong> Upload all required documents in specified format</li>
-                        <li><strong>Fee Payment:</strong> Pay applicable processing fees</li>
-                        <li><strong>Application Number:</strong> Receive unique application number for tracking</li>
-                    </ol>
-
-                    <h3>3.3 Processing Timeline</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker">1</div>
-                            <div class="timeline-content">
-                                <h4>Initial Review (5-7 days)</h4>
-                                <p>Document verification and completeness check</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker">2</div>
-                            <div class="timeline-content">
-                                <h4>Technical Assessment (10-15 days)</h4>
-                                <p>Detailed evaluation by technical team</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker">3</div>
-                            <div class="timeline-content">
-                                <h4>Final Approval (5-7 days)</h4>
-                                <p>Decision and NOC issuance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2>4. Required Documents</h2>
-                    <div class="documents-grid">
-                        <div class="document-category">
-                            <h4>Identity & Registration</h4>
+                    <h2>2. For Non-Governmental Organization (NGO)</h2>
+                    <ul>
+                        <li>NGO's Deed / Bylaws</li>
+                        <li>PAN Card</li>
+                        <li>NITI Aayog Registration Certificate</li>
+                        <li>FCRA Certificate (under the Foreign Contribution (Regulation) Act, 2010)</li>
+                        <li>12A and 80G Registration Certificates</li>
+                        <li>NGO Darpan Registration</li>
+                        <li>Three years' Audit Report, Annual Report, and Project Report</li>
+                        <li>Bank details of fund receipt (from which bank and which country)</li>
+                        <li>Of all NGO Trustees:
                             <ul>
-                                <li>PAN Card</li>
-                                <li>Aadhaar Card</li>
-                                <li>Business Registration Certificate</li>
-                                <li>GST Registration</li>
+                                <li>Passport Size Photo</li>
+                                <li>Aadhaar Card, Passport and PAN Card</li>
+                                <li>Three years' Bank Statement and ITR</li>
                             </ul>
-                        </div>
-                        <div class="document-category">
-                            <h4>Financial Documents</h4>
-                            <ul>
-                                <li>Bank Statements (6 months)</li>
-                                <li>Audited Financial Statements</li>
-                                <li>Income Tax Returns</li>
-                                <li>Source of Funds Declaration</li>
-                            </ul>
-                        </div>
-                        <div class="document-category">
-                            <h4>Business Documents</h4>
-                            <ul>
-                                <li>Business Plan</li>
-                                <li>Project Proposal</li>
-                                <li>Technical Specifications</li>
-                                <li>Market Analysis Report</li>
-                            </ul>
-                        </div>
-                        <div class="document-category">
-                            <h4>Compliance Documents</h4>
-                            <ul>
-                                <li>FEMA Compliance Certificate</li>
-                                <li>Environmental Clearance (if applicable)</li>
-                                <li>Other Regulatory Approvals</li>
-                                <li>Legal Opinion (if required)</li>
-                            </ul>
-                        </div>
-                    </div>
+                        </li>
+                        <li>Affidavit of the fund's objective</li>
+                        <li>Other documents may be requested if necessary</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>5. Fee Structure</h2>
-                    <div class="fee-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Application Type</th>
-                                    <th>Processing Fee</th>
-                                    <th>Additional Charges</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Standard NOC</td>
-                                    <td>₹5,000</td>
-                                    <td>₹1,000 per additional document</td>
-                                </tr>
-                                <tr>
-                                    <td>Priority Processing</td>
-                                    <td>₹10,000</td>
-                                    <td>₹2,000 per additional document</td>
-                                </tr>
-                                <tr>
-                                    <td>Complex Cases</td>
-                                    <td>₹15,000</td>
-                                    <td>As per actual costs</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <h2>3. For Individual or Group (1 to 20 persons)</h2>
+                    <ul>
+                        <li>Passport Size Photo</li>
+                        <li>Aadhaar Card</li>
+                        <li>PAN Card</li>
+                        <li>Voter ID Card</li>
+                        <li>Address Proof</li>
+                        <li>Caste Certificate</li>
+                        <li>Character Certificate</li>
+                        <li>Minimum one year's ITR</li>
+                        <li>Details of the bank and country from which the fund was received</li>
+                        <li>Affidavit regarding the receipt of foreign fund</li>
+                        <li>Affidavit of non-misuse of the fund</li>
+                        <li>Other documents may be requested if necessary</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>6. Common Rejection Reasons</h2>
-                    <div class="rejection-reasons">
-                        <div class="reason-item">
-                            <h4>Incomplete Documentation</h4>
-                            <p>Missing or improperly filled documents lead to immediate rejection.</p>
-                        </div>
-                        <div class="reason-item">
-                            <h4>Non-Compliance</h4>
-                            <p>Failure to meet regulatory requirements or eligibility criteria.</p>
-                        </div>
-                        <div class="reason-item">
-                            <h4>Financial Issues</h4>
-                            <p>Insufficient financial backing or unclear source of funds.</p>
-                        </div>
-                        <div class="reason-item">
-                            <h4>Technical Deficiencies</h4>
-                            <p>Inadequate technical specifications or feasibility concerns.</p>
-                        </div>
-                    </div>
+                    <h2>4. Verification and Legal Provisions</h2>
+                    <ul>
+                        <li>All documents presented by the applicant must be true and certified.</li>
+                        <li>The NOC will be suspended or cancelled if any false information or forged documents are found.</li>
+                        <li>The applicant must not be involved in any illegal activity until the NOC process is complete.</li>
+                        <li>If any criminal case is filed against an applicant, or is filed after the application, the IIES must be compulsorily informed of that situation.</li>
+                        <li>In such cases, the NOC process will be stopped until the matter is disposed of or resolved.</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>7. Best Practices</h2>
-                    <div class="best-practices">
-                        <div class="practice-item">
-                            <h4>Early Preparation</h4>
-                            <p>Start gathering documents and preparing application well in advance.</p>
-                        </div>
-                        <div class="practice-item">
-                            <h4>Accurate Information</h4>
-                            <p>Ensure all information provided is accurate and up-to-date.</p>
-                        </div>
-                        <div class="practice-item">
-                            <h4>Professional Presentation</h4>
-                            <p>Present your case professionally with clear documentation.</p>
-                        </div>
-                        <div class="practice-item">
-                            <h4>Regular Follow-up</h4>
-                            <p>Monitor application status and respond promptly to queries.</p>
-                        </div>
-                    </div>
+                    <h2>5. Investigation and Statutory Compliance related to Foreign Funds</h2>
+                    <p>If a fund is received in India through any foreign institution, company, or NGO, the following provisions will apply:</p>
+                    <ul>
+                        <li>The concerned foreign institution or individual will be investigated through the Embassy of India in that country.</li>
+                        <li>The person or institution sending the fund must be legally registered and in a legal standing in that country.</li>
+                        <li>The information about sending the fund should also be known to the local administration or the financial regulatory authority of that country.</li>
+                        <li>The acceptance and monitoring of such funds in India will be done under the Foreign Contribution (Regulation) Act, 2010 (FCRA Act, 2010).</li>
+                        <li>The validity, purpose, and utility of the fund will be checked according to the rules issued by the Ministry of Finance, Ministry of Home Affairs (MHA), and RBI (Reserve Bank of India).</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>8. Contact Information</h2>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h4>General Inquiries</h4>
-                            <p>Email: noc@iies.gov.in</p>
-                            <p>Phone: +91-11-2345-6789</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Technical Support</h4>
-                            <p>Email: tech-support@iies.gov.in</p>
-                            <p>Phone: +91-11-2345-6790</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Application Status</h4>
-                            <p>Portal: https://iies.gov.in/track-application</p>
-                            <p>Phone: +91-11-2345-6791</p>
-                        </div>
-                    </div>
+                    <h2>6. Applicable Indian Rules and Laws</h2>
+                    <p>The following Acts and Rules of the Government of India will be applicable in this process:</p>
+                    <ul>
+                        <li>Foreign Contribution (Regulation) Act, 2010 (FCRA, 2010)</li>
+                        <li>Companies Act, 2013</li>
+                        <li>Income Tax Act, 1961</li>
+                        <li>Goods and Services Tax Act, 2017</li>
+                        <li>Indian Penal Code, 1860 (for presenting false documents)</li>
+                        <li>Prevention of Money Laundering Act, 2002</li>
+                        <li>Reserve Bank of India Act, 1934 (for matters related to foreign fund transfer)</li>
+                    </ul>
                 </div>
 
                 <div class="section">
-                    <h2>9. Important Notes</h2>
-                    <div class="important-notes">
-                        <div class="note-item warning">
-                            <h4>⚠️ Important</h4>
-                            <p>All applications are subject to verification and may require additional documentation.</p>
-                        </div>
-                        <div class="note-item info">
-                            <h4>ℹ️ Information</h4>
-                            <p>Processing time may vary based on complexity and completeness of application.</p>
-                        </div>
-                        <div class="note-item success">
-                            <h4>✅ Success</h4>
-                            <p>Approved NOCs are valid for 12 months from the date of issuance.</p>
-                        </div>
-                    </div>
+                    <h2>7. Important Instructions</h2>
+                    <ul>
+                        <li>All applicants must ensure that the information presented is complete, accurate, and verified.</li>
+                        <li>The application may be cancelled if any misleading activity or financial irregularity is found before the NOC is issued.</li>
+                        <li>The Indian International Economic Service (IIES) reserves the right to independently verify the authenticity of any document or information if necessary.</li>
+                    </ul>
                 </div>
             </div>
         </div>

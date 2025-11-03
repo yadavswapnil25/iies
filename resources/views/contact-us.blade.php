@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Us - IIES</title>
+    <title>Contact Us</title>
+    @include('partials.favicons')
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />
@@ -475,9 +476,9 @@
         </div>
 
         <!-- Map Section -->
-        <div class="map-container">
+        <!-- <div class="map-container">
           <div class="map-placeholder">Map: North Block, New Delhi-110001</div>
-        </div>
+        </div> -->
       </div>
     </main>
      <!-- FOOTER -->

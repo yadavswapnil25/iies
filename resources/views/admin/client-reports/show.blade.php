@@ -35,9 +35,13 @@
         </div>
     </div>
 
-    <!-- File Information -->
+ 
+
+ 
+
+    <!-- File Details -->
     <div class="detail-section">
-        <h3 class="detail-section-title">1) File Information</h3>
+        <h3 class="detail-section-title">1) File Details</h3>
         <div class="detail-grid">
             <div class="detail-item">
                 <span class="detail-label">Unique ID</span>
@@ -58,9 +62,9 @@
         </div>
     </div>
 
-    <!-- Client Information -->
+    <!-- Personal Details of Applicant -->
     <div class="detail-section">
-        <h3 class="detail-section-title">2) Client Information</h3>
+        <h3 class="detail-section-title">2) Personal Details of Applicant</h3>
         <div class="detail-grid">
             <div class="detail-item">
                 <span class="detail-label">Full Name</span>
@@ -74,12 +78,61 @@
                 <span class="detail-label">Date of Birth</span>
                 <span class="detail-value">{{ $clientReport->date_of_birth ? $clientReport->date_of_birth->format('d M, Y') : 'N/A' }}</span>
             </div>
+            <div class="detail-item">
+                <span class="detail-label">Contact Number</span>
+                <span class="detail-value">{{ $clientReport->contact_number ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email Id</span>
+                <span class="detail-value">{{ $clientReport->email_id ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Permanent Address</span>
+                <span class="detail-value">{{ $clientReport->permanent_address ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">PAN Number</span>
+                <span class="detail-value">{{ $clientReport->pan_number ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Aadhar Number</span>
+                <span class="detail-value">{{ $clientReport->aadhar_number ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Passport Number</span>
+                <span class="detail-value">{{ $clientReport->passport_number ?: 'N/A' }}</span>
+            </div>
         </div>
     </div>
-
-    <!-- Fund & NOC Details -->
+   <!-- Application Type and Work Details -->
+   <div class="detail-section">
+        <h3 class="detail-section-title">3) Application Type and Work Details</h3>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <span class="detail-label">Application Type / Service</span>
+                <span class="detail-value">{{ $clientReport->application_type ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Submission Date</span>
+                <span class="detail-value">{{ $clientReport->submission_date ? $clientReport->submission_date->format('d M, Y') : 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Reference / Application No.</span>
+                <span class="detail-value">{{ $clientReport->reference_application_no ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Nature of Work (Description)</span>
+                <span class="detail-value">{{ $clientReport->nature_of_work ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Verification Level</span>
+                <span class="detail-value">{{ $clientReport->verification_level ?: 'N/A' }}</span>
+            </div>
+        </div>
+    </div>
+    <!-- Details of Fund and NOC -->
     <div class="detail-section">
-        <h3 class="detail-section-title">4) Fund & NOC Details</h3>
+        <h3 class="detail-section-title">4) Details of Fund and NOC</h3>
         <div class="detail-grid">
             <div class="detail-item">
                 <span class="detail-label">Fund Type</span>
@@ -118,7 +171,7 @@
 
     <!-- Beneficiary Bank Details -->
     <div class="detail-section">
-        <h3 class="detail-section-title">5) Beneficiary Bank & Payment Details</h3>
+        <h3 class="detail-section-title">5) Details of Beneficiary Bank</h3>
         <div class="detail-grid">
             <div class="detail-item full-width">
                 <span class="detail-label">Beneficiary Bank Name</span>
@@ -146,17 +199,16 @@
             </div>
         </div>
     </div>
-
-    <!-- Origin/Sender Details -->
-    <div class="detail-section">
-        <h3 class="detail-section-title">6) Origin/Sender Details</h3>
+  <!-- Remitting Bank & Sender Details -->
+  <div class="detail-section">
+        <h3 class="detail-section-title">6) Remitting Bank & Sender Details</h3>
         <div class="detail-grid">
             <div class="detail-item">
                 <span class="detail-label">Origin Country</span>
                 <span class="detail-value">{{ $clientReport->origin_country ?: 'N/A' }}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-label">Sender Name / Institution</span>
+                <span class="detail-label">Sender Individual / Institution Name</span>
                 <span class="detail-value">{{ $clientReport->sender_name ?: 'N/A' }}</span>
             </div>
             <div class="detail-item">
@@ -169,10 +221,42 @@
             </div>
         </div>
     </div>
+    <!-- 05A - CBDT / 05B - PFMS / 05C - Security Fee Deposit -->
+    <!-- <div class="detail-section">
+        <h3 class="detail-section-title">5A - CBDT Approval / 5B - PFMS Approval / 5C - Security Fee Deposit</h3>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <span class="detail-label">CBDT Approval</span>
+                <span class="detail-value">{{ $clientReport->cbdt_approval_status ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">CBDT Notes</span>
+                <span class="detail-value">{{ $clientReport->cbdt_approval_notes ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">PFMS Approval</span>
+                <span class="detail-value">{{ $clientReport->pfms_approval_status ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">PFMS Notes</span>
+                <span class="detail-value">{{ $clientReport->pfms_approval_notes ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Security Fee Deposit</span>
+                <span class="detail-value">{{ $clientReport->security_fee_deposit ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Security Fee Notes</span>
+                <span class="detail-value">{{ $clientReport->security_fee_deposit_notes ?: 'N/A' }}</span>
+            </div>
+        </div>
+    </div> -->
+
+  
 
     <!-- Work Information -->
     <div class="detail-section">
-        <h3 class="detail-section-title">7) Work Information of Client</h3>
+        <h3 class="detail-section-title">7) Work Details of Applicant</h3>
         <div class="detail-grid">
             <div class="detail-item">
                 <span class="detail-label">Type of Work</span>
@@ -196,6 +280,21 @@
             </div>
         </div>
     </div>
+
+    <!-- 07A - NOC Fee -->
+    <!-- <div class="detail-section">
+        <h3 class="detail-section-title">7A) NOC Fee</h3>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <span class="detail-label">NOC Fee Status</span>
+                <span class="detail-value">{{ $clientReport->noc_fee ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">NOC Fee Notes</span>
+                <span class="detail-value">{{ $clientReport->noc_fee_notes ?: 'N/A' }}</span>
+            </div>
+        </div>
+    </div> -->
 
     <!-- File Processing Status -->
     <div class="detail-section">
@@ -262,7 +361,76 @@
             </tbody>
         </table>
     </div>
-
+    <!-- Progress Tracker -->
+    <div class="detail-section">
+         <h3 class="detail-section-title">9) Progress Tracker</h3>
+         <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Stage</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>FEMA Application</td>
+                    <td>{{ $clientReport->fema_application_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->fema_application_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Preliminary Check</td>
+                    <td>{{ $clientReport->preliminary_check_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->preliminary_check_status_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>KYC / Compliance Review</td>
+                    <td>{{ $clientReport->kyc_compliance_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->kyc_compliance_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Bank Verification</td>
+                    <td>{{ $clientReport->bank_verification_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->bank_verification_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Departmental Approval</td>
+                    <td>{{ $clientReport->departmental_approval_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->departmental_approval_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>NOC Draft & Conditions</td>
+                    <td>{{ $clientReport->noc_draft_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->noc_draft_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td>NOC Issuance</td>
+                    <td>{{ $clientReport->noc_issuance_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->noc_issuance_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td>Information Grant</td>
+                    <td>{{ $clientReport->information_grant_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->information_grant_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>09</td>
+                    <td>Follow-up / Closure</td>
+                    <td>{{ $clientReport->followup_closure_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->followup_closure_notes ?: 'N/A' }}</td>
+                </tr>
+            </tbody>
+         </table>
+     </div>
     <!-- Approval & Signature -->
     <div class="detail-section">
         <h3 class="detail-section-title">14) Approval & Signature</h3>

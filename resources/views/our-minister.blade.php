@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Minister</title>
+    @include('partials.favicons')
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />

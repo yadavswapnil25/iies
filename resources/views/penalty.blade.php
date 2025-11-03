@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Penalty (Policy Addition)</title>
+    <title>Penalty</title>
+    @include('partials.favicons')
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/style.css" />
@@ -21,7 +22,7 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Penalty (Policy Addition)</h1>
+          <h1>Penalty</h1>
           <div class="hero-tabs">
             <a href="/penalty" class="hero-tab ">Penalty</a>
             
