@@ -173,3 +173,4 @@ Route::get('/user/login', [UserLoginController::class, 'showLoginForm'])->name('
 Route::post('/user/login', [UserLoginController::class, 'login'])->name('user.login');
 Route::get('/user/dashboard', [UserLoginController::class, 'dashboard'])->name('user.dashboard');
 Route::get('/user/logout', [UserLoginController::class, 'logout'])->name('user.logout');
+Route::get('/user/print', [UserLoginController::class, 'print'])->name('user.print');

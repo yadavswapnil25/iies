@@ -76,6 +76,21 @@ class UserLoginController extends Controller
     }
 
     /**
+     * Render printable view of the user's report
+     */
+    public function print()
+    {
+        if (!Session::get('user_logged_in')) {
+            return redirect()->route('user.login');
+        }
+
+        $clientReportId = Session::get('user_client_report_id');
+        $clientReport = ClientReport::findOrFail($clientReportId);
+
+        return view('user.print', compact('clientReport'));
+    }
+
+    /**
      * Logout user
      */
     public function logout()

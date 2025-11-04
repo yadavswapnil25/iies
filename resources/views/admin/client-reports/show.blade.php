@@ -227,6 +227,18 @@
                 <span class="detail-label">Transaction Reference</span>
                 <span class="detail-value">{{ $clientReport->transaction_reference ?: 'N/A' }}</span>
             </div>
+            @if($clientReport->sender_email)
+            <div class="detail-item">
+                <span class="detail-label">Sender Email</span>
+                <span class="detail-value">{{ $clientReport->sender_email }}</span>
+            </div>
+            @endif
+            @if($clientReport->sender_contact)
+            <div class="detail-item">
+                <span class="detail-label">Sender Contact</span>
+                <span class="detail-value">{{ $clientReport->sender_contact }}</span>
+            </div>
+            @endif
         </div>
     </div>
     <!-- 05A - CBDT / 05B - PFMS / 05C - Security Fee Deposit -->
@@ -313,58 +325,81 @@
                     <th>No.</th>
                     <th>Stage</th>
                     <th>Status</th>
+                    <th>Notes</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>01</td>
                     <td>Payment Book</td>
-                    <td><span class="status-badge status-{{ $clientReport->payment_book_status }}">{{ ucfirst($clientReport->payment_book_status) }}</span></td>
+                    <td><span class="status-badge status-{{ $clientReport->payment_book_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->payment_book_status)) }}</span></td>
+                    <td>{{ $clientReport->payment_book_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>02</td>
-                    <td>NFRA Application Processing</td>
-                    <td><span class="status-badge status-{{ $clientReport->nfra_application_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->nfra_application_status)) }}</span></td>
+                    <td>Payment Book Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->payment_book_status_approval }}">{{ ucfirst(str_replace('_', ' ', $clientReport->payment_book_status_approval)) }}</span></td>
+                    <td>{{ $clientReport->payment_book_status_approval_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>03</td>
-                    <td>NFRA Approval</td>
-                    <td><span class="status-badge status-{{ $clientReport->nfra_approval_status }}">{{ ucfirst($clientReport->nfra_approval_status) }}</span></td>
+                    <td>NFRA Application Processing</td>
+                    <td><span class="status-badge status-{{ $clientReport->nfra_application_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->nfra_application_status)) }}</span></td>
+                    <td>{{ $clientReport->nfra_application_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>04</td>
-                    <td>KYC / Compliance Review</td>
-                    <td><span class="status-badge status-{{ $clientReport->kyc_compliance_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->kyc_compliance_status)) }}</span></td>
+                    <td>NFRA Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->nfra_approval_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->nfra_approval_status)) }}</span></td>
+                    <td>{{ $clientReport->nfra_approval_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>05</td>
-                    <td>Bank Verification</td>
-                    <td><span class="status-badge status-{{ $clientReport->bank_verification_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->bank_verification_status)) }}</span></td>
+                    <td>Form 28 Application Processing</td>
+                    <td><span class="status-badge status-{{ $clientReport->form_28_application_processing }}">{{ ucfirst(str_replace('_', ' ', $clientReport->form_28_application_processing)) }}</span></td>
+                    <td>{{ $clientReport->form_28_application_processing_notes ?: 'N/A' }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>06</td>
-                    <td>Departmental Approval</td>
-                    <td><span class="status-badge status-{{ $clientReport->departmental_approval_status }}">{{ ucfirst($clientReport->departmental_approval_status) }}</span></td>
+                    <td>CBDT Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->cbdt_approval_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->cbdt_approval_status)) }}</span></td>
+                    <td>{{ $clientReport->cbdt_approval_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>07</td>
-                    <td>NOC Draft & Conditions</td>
-                    <td><span class="status-badge status-{{ $clientReport->noc_draft_status }}">{{ ucfirst($clientReport->noc_draft_status) }}</span></td>
+                    <td>PFMS Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->pfms_approval_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->pfms_approval_status)) }}</span></td>
+                    <td>{{ $clientReport->pfms_approval_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>08</td>
-                    <td>NOC Issuance</td>
-                    <td><span class="status-badge status-{{ $clientReport->noc_issuance_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->noc_issuance_status)) }}</span></td>
+                    <td>Security Fee Deposit</td>
+                    <td><span class="status-badge status-{{ $clientReport->security_fee_deposit }}">{{ ucfirst(str_replace('_', ' ', $clientReport->security_fee_deposit)) }}</span></td>
+                    <td>{{ $clientReport->security_fee_deposit_notes ?: 'N/A' }}</td>
+                </tr> -->
+                <tr>
+                    <td>06</td>
+                    <td>FORM 28 Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->form_28_approval }}">{{ ucfirst(str_replace('_', ' ', $clientReport->form_28_approval)) }}</span></td>
+                    <td>{{ $clientReport->form_28_approval_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td>NOC Fee</td>
+                    <td><span class="status-badge status-{{ $clientReport->noc_fee }}">{{ ucfirst(str_replace('_', ' ', $clientReport->noc_fee)) }}</span></td>
+                    <td>{{ $clientReport->noc_fee_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td>Form 28B Application Processing</td>
+                    <td><span class="status-badge status-{{ $clientReport->form_28b_application_processing }}">{{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_application_processing)) }}</span></td>
+                    <td>{{ $clientReport->form_28b_application_processing_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
                     <td>09</td>
-                    <td>Information Grant</td>
-                    <td><span class="status-badge status-{{ $clientReport->information_grant_status }}">{{ ucfirst($clientReport->information_grant_status) }}</span></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Follow-up / Closure</td>
-                    <td><span class="status-badge status-{{ $clientReport->followup_closure_status }}">{{ ucfirst(str_replace('_', ' ', $clientReport->followup_closure_status)) }}</span></td>
+                    <td>Form 28 B Approval</td>
+                    <td><span class="status-badge status-{{ $clientReport->form_28b_approval }}">{{ ucfirst(str_replace('_', ' ', $clientReport->form_28b_approval)) }}</span></td>
+                    <td>{{ $clientReport->form_28b_approval_notes ?: 'N/A' }}</td>
                 </tr>
             </tbody>
         </table>
@@ -414,24 +449,42 @@
                 </tr>
                 <tr>
                     <td>06</td>
+                    <td>CBDT Approval</td>
+                    <td>{{ $clientReport->cbdt_approval_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->cbdt_approval_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td>PFMS Approval</td>
+                    <td>{{ $clientReport->pfms_approval_status ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->pfms_approval_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td>Security Fee Deposit</td>
+                    <td>{{ $clientReport->security_fee_deposit ?: 'N/A' }}</td>
+                    <td>{{ $clientReport->security_fee_deposit_notes ?: 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <td>09</td>
                     <td>NOC Draft & Conditions</td>
                     <td>{{ $clientReport->noc_draft_status ?: 'N/A' }}</td>
                     <td>{{ $clientReport->noc_draft_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
-                    <td>07</td>
+                    <td>10</td>
                     <td>NOC Issuance</td>
                     <td>{{ $clientReport->noc_issuance_status ?: 'N/A' }}</td>
                     <td>{{ $clientReport->noc_issuance_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
-                    <td>08</td>
+                    <td>11</td>
                     <td>Information Grant</td>
                     <td>{{ $clientReport->information_grant_status ?: 'N/A' }}</td>
                     <td>{{ $clientReport->information_grant_notes ?: 'N/A' }}</td>
                 </tr>
                 <tr>
-                    <td>09</td>
+                    <td>12</td>
                     <td>Follow-up / Closure</td>
                     <td>{{ $clientReport->followup_closure_status ?: 'N/A' }}</td>
                     <td>{{ $clientReport->followup_closure_notes ?: 'N/A' }}</td>

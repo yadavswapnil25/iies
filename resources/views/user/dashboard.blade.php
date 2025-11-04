@@ -721,9 +721,9 @@
                     <p>Application ID: {{ $clientReport->unique_id }}</p>
                 </div>
                 <div class="dashboard-actions">
-                    <button onclick="window.print()" class="print-btn">
-                        <i class="fas fa-print"></i> Print Report
-                    </button>
+                    <a href="{{ route('user.print') }}" target="_blank" class="print-btn" style="text-decoration:none; display:inline-block;">
+                        <i class="fas fa-print"></i> Print
+                    </a>
                     <a href="{{ route('user.logout') }}" class="logout-btn">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
@@ -732,7 +732,7 @@
 
             <!-- Section 1: File Information -->
             <div class="report-section">
-                <h2 class="section-title">1) File Information</h2>
+                <h2 class="section-title">1) File Details</h2>
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Unique ID</div>
@@ -755,7 +755,7 @@
 
             <!-- Section 2: Client Information -->
             <div class="report-section">
-                <h2 class="section-title">2) Client Information</h2>
+                <h2 class="section-title">2) Personal Details of Applicant</h2>
                 <div class="info-grid">
                     <div class="info-item" style="grid-column: 1 / -1;">
                         <div class="info-label">Full Name (First + Last)</div>
@@ -798,7 +798,7 @@
 
             <!-- Section 3: Application & Work Details -->
             <div class="report-section">
-                <h2 class="section-title">3) Application & Work Details</h2>
+                <h2 class="section-title">3) Application Type and Work Details</h2>
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Application Type / Service</div>
@@ -825,7 +825,7 @@
 
             <!-- Section 4: Fund & NOC Details -->
             <div class="report-section">
-                <h2 class="section-title">4) Fund & NOC Details</h2>
+                <h2 class="section-title">4) Details of Fund and NOC</h2>
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Fund Type</div>
@@ -864,7 +864,7 @@
 
             <!-- Section 5: Beneficiary Bank & Payment Details -->
             <div class="report-section">
-                <h2 class="section-title">5) Beneficiary Bank & Payment Details</h2>
+                <h2 class="section-title">5) Details of Beneficiary Bank</h2>
                 <div class="info-grid">
                     <div class="info-item" style="grid-column: 1 / -1;">
                         <div class="info-label">Beneficiary Bank Name</div>
@@ -895,7 +895,7 @@
 
             <!-- Section 6: Origin/Sender Details -->
             <div class="report-section">
-                <h2 class="section-title">6) Origin/Sender Details</h2>
+                <h2 class="section-title">6) Remitting Bank & Sender Details</h2>
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Origin Country</div>
@@ -921,24 +921,13 @@
                         <div class="info-label">Transaction Reference / Transfer Trace</div>
                         <div class="info-value">{{ $clientReport->transaction_reference ?: '-' }}</div>
                     </div>
-                    @if($clientReport->sender_email)
-                    <div class="info-item">
-                        <div class="info-label">Sender Email</div>
-                        <div class="info-value">{{ $clientReport->sender_email }}</div>
-                    </div>
-                    @endif
-                    @if($clientReport->sender_contact)
-                    <div class="info-item">
-                        <div class="info-label">Sender Contact</div>
-                        <div class="info-value">{{ $clientReport->sender_contact }}</div>
-                    </div>
-                    @endif
+                   
                 </div>
             </div>
 
             <!-- Section 7: Work Information of Client -->
             <div class="report-section">
-                <h2 class="section-title">7) Work Information of Client</h2>
+                <h2 class="section-title">7) Work Details of Applicant</h2>
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Type of Work</div>
@@ -1046,50 +1035,9 @@
                             </td>
                             <td>{{ $clientReport->form_28_application_processing_notes ?: '-' }}</td>
                         </tr>
+                        
                         <tr>
                             <td>06</td>
-                            <td>CBDT Approval</td>
-                            <td>
-                                @if($clientReport->cbdt_approval_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->cbdt_approval_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->cbdt_approval_status)) }}
-                                    </span>
-                                @else
-                                    <span class="status-badge status-pending">Pending</span>
-                                @endif
-                            </td>
-                            <td>{{ $clientReport->cbdt_approval_notes ?: '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>07</td>
-                            <td>PFMS Approval</td>
-                            <td>
-                                @if($clientReport->pfms_approval_status)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->pfms_approval_status) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->pfms_approval_status)) }}
-                                    </span>
-                                @else
-                                    <span class="status-badge status-pending">Pending</span>
-                                @endif
-                            </td>
-                            <td>{{ $clientReport->pfms_approval_notes ?: '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>08</td>
-                            <td>Security Fee Deposit</td>
-                            <td>
-                                @if($clientReport->security_fee_deposit)
-                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->security_fee_deposit) }}">
-                                        {{ ucfirst(str_replace('_', ' ', $clientReport->security_fee_deposit)) }}
-                                    </span>
-                                @else
-                                    <span class="status-badge status-pending">Pending</span>
-                                @endif
-                            </td>
-                            <td>{{ $clientReport->security_fee_deposit_notes ?: '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>09</td>
                             <td>FORM 28 Approval</td>
                             <td>
                                 @if($clientReport->form_28_approval)
@@ -1103,7 +1051,7 @@
                             <td>{{ $clientReport->form_28_approval_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>10</td>
+                            <td>09</td>
                             <td>NOC Fee</td>
                             <td>
                                 @if($clientReport->noc_fee)
@@ -1117,7 +1065,7 @@
                             <td>{{ $clientReport->noc_fee_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>11</td>
+                            <td>10</td>
                             <td>Form 28B Application Processing</td>
                             <td>
                                 @if($clientReport->form_28b_application_processing)
@@ -1131,7 +1079,7 @@
                             <td>{{ $clientReport->form_28b_application_processing_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>12</td>
+                            <td>11</td>
                             <td>Form 28 B Approval</td>
                             <td>
                                 @if($clientReport->form_28b_approval)
@@ -1233,6 +1181,48 @@
                         </tr>
                         <tr>
                             <td>06</td>
+                            <td>CBDT Approval</td>
+                            <td>
+                                @if($clientReport->cbdt_approval_status)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->cbdt_approval_status) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->cbdt_approval_status)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->cbdt_approval_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>PFMS Approval</td>
+                            <td>
+                                @if($clientReport->pfms_approval_status)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->pfms_approval_status) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->pfms_approval_status)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->pfms_approval_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Security Fee Deposit</td>
+                            <td>
+                                @if($clientReport->security_fee_deposit)
+                                    <span class="status-badge status-{{ str_replace('_', '-', $clientReport->security_fee_deposit) }}">
+                                        {{ ucfirst(str_replace('_', ' ', $clientReport->security_fee_deposit)) }}
+                                    </span>
+                                @else
+                                    <span class="status-badge status-pending">Pending</span>
+                                @endif
+                            </td>
+                            <td>{{ $clientReport->security_fee_deposit_notes ?: '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
                             <td>NOC Draft & Conditions</td>
                             <td>
                                 @if($clientReport->noc_draft_status)
@@ -1246,7 +1236,7 @@
                             <td>{{ $clientReport->noc_draft_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>07</td>
+                            <td>10</td>
                             <td>NOC Issuance</td>
                             <td>
                                 @if($clientReport->noc_issuance_status)
@@ -1260,7 +1250,7 @@
                             <td>{{ $clientReport->noc_issuance_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>08</td>
+                            <td>11</td>
                             <td>Information Grant</td>
                             <td>
                                 @if($clientReport->information_grant_status)
@@ -1274,7 +1264,7 @@
                             <td>{{ $clientReport->information_grant_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>09</td>
+                            <td>12</td>
                             <td>Follow-up / Closure</td>
                             <td>
                                 @if($clientReport->followup_closure_status)
@@ -1419,12 +1409,6 @@
                         Group applications may require additional time (1-2 months) for review when applicable. Sensitive information should only be shared with authorised personnel.
                     </div>
                 </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-                <p style="color: #666; margin: 0;">
-                    Last updated: {{ $clientReport->updated_at->format('d/m/Y H:i') }}
-                </p>
             </div>
         </div>
     </main>

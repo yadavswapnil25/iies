@@ -9,9 +9,8 @@
               <div class="footer-logo">
                 <div class="brand" aria-label="Ministry of Finance">
                   <div class="titles">
-                    <h1 style="color: #fff;">
-                      भारतीय अंतर्राष्ट्रीय आर्थिक सेवा Indian International Economic Service Ministry of Finance, Government of India<br /><span>
-                      </span>
+                    <h1 style="color: #fff; white-space: nowrap;">
+                      भारतीय अंतर्राष्ट्रीय आर्थिक सेवा <br> Indian International Economic Service
                     </h1>
                     <p class="hindi-text" style="color: #fff;">वित्त मंत्रालय, भारत सरकार</p>
                     <p class="english-text" style="color: #fff;">Ministry of Finance, Government of India</p>
@@ -54,12 +53,12 @@
           </div>
 
           <!-- Column 4: Useful Link -->
-          <!-- <div class="footer-col">
+          <div class="footer-col">
             <strong class="footer-title">Useful Link</strong>
             <div class="footer-links">
               <a href="/sitemap">Site Map</a>
             </div>
-          </div> -->
+          </div>
 
           <!-- Column 5: Important Link -->
           <div class="footer-col">

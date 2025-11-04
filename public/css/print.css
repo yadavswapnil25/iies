@@ -1,0 +1,690 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: hsl(220, 13%, 95%);
+    color: hsl(220, 13%, 13%);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Print Button */
+.print-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.btn-print {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: hsl(220, 13%, 13%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-print:hover {
+    background-color: hsl(220, 13%, 20%);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+}
+
+.btn-print svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Document Container */
+.document-container {
+    max-width: 210mm;
+    margin: 2rem auto;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+}
+
+/* Header Section */
+.document-header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.document-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: hsl(220, 13%, 13%);
+    margin-bottom: 0.5rem;
+}
+
+.document-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(220, 13%, 13%);
+    margin-bottom: 0.5rem;
+}
+
+.ministry {
+    font-size: 0.875rem;
+    color: hsl(220, 9%, 46%);
+    font-weight: 500;
+}
+
+/* Introduction Section */
+.intro-section {
+    margin-bottom: 1.5rem;
+}
+
+.intro-section p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.intro-box {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}
+
+.intro-box h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.intro-box h3:first-of-type {
+    margin-top: 0;
+}
+
+.intro-box p {
+    font-size: 0.875rem;
+    color: hsl(220, 9%, 46%);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Main Title */
+.main-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: hsl(220, 13%, 13%);
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+    padding-bottom: 0.5rem;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+/* Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #000;
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.label-cell {
+    width: 50%;
+    padding: 0.6rem 0.8rem;
+    font-weight: 600;
+    background-color: #f5f5f5;
+}
+
+.value-cell {
+    padding: 0.6rem 0.8rem;
+    border-left: 1px solid #000;
+}
+
+/* Table with Header */
+.data-table thead tr {
+    background-color: #f5f5f5;
+}
+
+.header-cell {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+}
+
+.header-cell:not(:first-child) {
+    border-left: 1px solid #000;
+}
+
+.data-cell {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #000;
+}
+
+.data-cell:not(:first-child) {
+    border-left: 1px solid #000;
+}
+
+.data-table tbody tr:last-child .data-cell {
+    border-bottom: none;
+}
+
+/* Status List */
+.status-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.status-list li {
+    margin-bottom: 0.35rem;
+}
+
+.status-label {
+    font-weight: 600;
+}
+
+/* Checklist */
+.checklist {
+    list-style: disc;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.checklist li {
+    margin-bottom: 0.35rem;
+}
+
+.checkbox {
+    display: none;
+}
+
+/* Notes and Remarks Boxes */
+.notes-box {
+    border: 1px solid #000;
+    padding: 0.75rem;
+    min-height: 80px;
+    background-color: transparent;
+}
+
+.notes-box p {
+    font-size: 0.875rem;
+    color: hsl(220, 9%, 46%);
+    font-style: italic;
+}
+
+.officer-note {
+    font-size: 0.875rem;
+    color: hsl(220, 9%, 46%);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.remarks-box {
+    border: 1px solid #000;
+    padding: 0.75rem;
+    min-height: 100px;
+    background-color: transparent;
+}
+
+/* Signature Section */
+.signature-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    margin-top: 0.5rem;
+}
+
+.signature-table tr {
+    border-bottom: 1px solid #000;
+}
+
+.signature-table td {
+    padding: 0.75rem;
+    border-right: 1px solid #000;
+}
+
+.signature-table td:first-child {
+    width: 40%;
+    font-weight: 600;
+}
+
+.signature-table td:last-child {
+    border-right: none;
+}
+
+.signature-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid hsl(220, 13%, 91%);
+    margin-top: 0.5rem;
+}
+
+.signature-box {
+    display: table-row;
+}
+
+.signature-box > * {
+    display: table-cell;
+    padding: 0.75rem;
+    border-right: 1px solid hsl(220, 13%, 91%);
+    vertical-align: top;
+}
+
+.signature-box > *:last-child {
+    border-right: none;
+}
+
+.signature-title {
+    font-weight: 600;
+    width: 40%;
+}
+
+.signature-line {
+    height: 3rem;
+    border-bottom: 1px solid hsl(220, 13%, 91%);
+}
+
+.signature-label {
+    font-size: 0.75rem;
+    color: hsl(220, 9%, 46%);
+    padding-top: 0.25rem;
+}
+
+/* General Notes */
+.general-notes {
+    font-size: 0.875rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.general-notes p {
+    margin-bottom: 0.4rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.general-notes p span:first-child {
+    position: absolute;
+    left: 0;
+}
+
+/* Footer */
+.document-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsl(220, 13%, 91%);
+    text-align: center;
+    font-size: 0.75rem;
+    color: hsl(220, 9%, 46%);
+}
+
+.document-footer p:first-child {
+    margin-bottom: 0.25rem;
+}
+
+/* Page Break Classes */
+.page-break {
+    page-break-after: always;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.page-break-inside-avoid {
+    page-break-inside: avoid;
+}
+
+/* Print Styles */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 0;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .document-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .document-header {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        page-break-after: avoid;
+    }
+
+    .intro-section {
+        margin-bottom: 0.75rem;
+        page-break-after: avoid;
+    }
+
+    .main-title {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.25rem;
+        page-break-after: avoid;
+    }
+    
+    /* Ensure header doesn't break awkwardly */
+    .document-header,
+    .intro-section,
+    .main-title {
+        page-break-inside: avoid;
+    }
+
+    .section {
+        margin-bottom: 0.75rem;
+        page-break-inside: auto;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Allow sections to flow naturally, avoid unnecessary page breaks */
+    .section + .section {
+        margin-top: 0;
+        page-break-before: auto;
+    }
+    
+    /* Allow tables to break across pages if needed to avoid empty pages */
+    .data-table {
+        page-break-inside: auto;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+        margin-bottom: 0.5rem;
+        margin-top: 0.75rem;
+        padding: 0;
+    }
+    
+    .section-title:first-child {
+        margin-top: 0;
+    }
+    
+    /* First section title after page break */
+    .page-break + .section .section-title {
+        margin-top: 0;
+    }
+    
+    .intro-box {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-top: 0.5rem;
+    }
+
+    .page-break {
+        page-break-after: always;
+        break-after: page;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    /* Ensure sections can start immediately after page breaks */
+    .page-break + .section {
+        margin-top: 0;
+        page-break-before: auto;
+    }
+    
+    /* Allow better flow for lists */
+    ul, ol {
+        orphans: 2;
+        widows: 2;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Ensure lists start right after titles */
+    .section-title + ul,
+    .section-title + ol {
+        margin-top: 0.35rem;
+    }
+
+    .page-break-inside-avoid {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    table {
+        page-break-inside: auto;
+        break-inside: auto;
+    }
+
+    .data-table {
+        width: 100%;
+        page-break-inside: auto;
+    }
+    
+    /* Large tables can break to avoid empty pages */
+    .data-table tbody {
+        page-break-inside: auto;
+    }
+
+    .data-table thead {
+        display: table-header-group;
+    }
+
+    .data-table tbody tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Ensure sections start right after tables */
+    .data-table + .section-title,
+    .section-title + .data-table {
+        margin-top: 0.5rem;
+    }
+    
+    /* Prevent orphaned section titles */
+    .section-title {
+        page-break-after: avoid;
+    }
+    
+    /* Keep section title with at least first row of table */
+    .section-title + .data-table {
+        page-break-before: avoid;
+    }
+    
+    /* Keep sections 13 and 14 together on same page */
+    .keep-together {
+        page-break-inside: avoid;
+    }
+    
+    .keep-together + .keep-together {
+        page-break-before: avoid;
+        margin-top: 0;
+    }
+    
+    /* Ensure section 13 and 14 stay together - if they don't fit, move both to next page */
+    .section:nth-of-type(13) {
+        page-break-inside: avoid;
+    }
+    
+    .section:nth-of-type(14) {
+        page-break-inside: avoid;
+        page-break-before: avoid;
+    }
+    
+    /* Group sections 13 and 14 together */
+    .section:nth-of-type(12) + .section:nth-of-type(13),
+    .section:nth-of-type(13) + .section:nth-of-type(14) {
+        page-break-before: auto;
+    }
+    
+    /* If section 12 ends near bottom, move 13 and 14 together to next page */
+    .section:nth-of-type(12) {
+        page-break-after: auto;
+    }
+    
+    .section:empty {
+        display: none;
+    }
+    
+    p {
+        margin-bottom: 0.5rem;
+    }
+    
+    .intro-section p {
+        margin-bottom: 0.75rem;
+    }
+
+    .data-table thead tr {
+        page-break-after: avoid;
+    }
+
+    .document-footer {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        page-break-inside: avoid;
+    }
+
+    .notes-box {
+        min-height: 60px;
+        padding: 0.5rem;
+    }
+
+    .remarks-box {
+        min-height: 80px;
+        padding: 0.5rem;
+    }
+    
+    .label-cell, .value-cell, .header-cell, .data-cell {
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .status-list li {
+        margin-bottom: 0.3rem;
+    }
+    
+    .checklist li {
+        margin-bottom: 0.3rem;
+    }
+    
+    .general-notes p {
+        margin-bottom: 0.4rem;
+    }
+
+    .signature-grid {
+        border: 1px solid #000;
+    }
+
+    .signature-box > * {
+        padding: 0.6rem;
+    }
+
+    .signature-line {
+        height: 2.5rem;
+    }
+    
+    .intro-box {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    @page {
+        size: A4;
+        margin-top: 1.5cm;
+        margin-bottom: 1.5cm;
+        margin-left: 1.5cm;
+        margin-right: 1.5cm;
+    }
+    
+    /* Ensure content uses full page height */
+    .document-container {
+        min-height: auto;
+        padding-top: 0.5cm;
+        padding-bottom: 0.5cm;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Remove any large margins that create gaps */
+    * {
+        max-height: none;
+    }
+    
+    /* Ensure first section on page has proper top spacing */
+    .page-break + .section,
+    .document-header + *,
+    .main-title + .section {
+        margin-top: 0.5rem;
+    }
+    
+    /* Last section on page should have proper bottom spacing */
+    .section:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .document-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .signature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .print-button {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}
