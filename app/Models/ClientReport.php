@@ -54,6 +54,8 @@ class ClientReport extends Model
         'account_type',
         'origin_country',
         'sender_name',
+        'sender_address',
+        'remitting_bank_name',
         'sender_swift_code',
         'transaction_reference',
         'type_of_work',

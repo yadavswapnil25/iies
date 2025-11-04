@@ -211,6 +211,14 @@
                 <span class="detail-label">Sender Individual / Institution Name</span>
                 <span class="detail-value">{{ $clientReport->sender_name ?: 'N/A' }}</span>
             </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Sender Individual / Institution Address</span>
+                <span class="detail-value">{{ $clientReport->sender_address ?: 'N/A' }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Remitting Bank Name</span>
+                <span class="detail-value">{{ $clientReport->remitting_bank_name ?: 'N/A' }}</span>
+            </div>
             <div class="detail-item">
                 <span class="detail-label">SWIFT Code / BIC</span>
                 <span class="detail-value">{{ $clientReport->sender_swift_code ?: 'N/A' }}</span>

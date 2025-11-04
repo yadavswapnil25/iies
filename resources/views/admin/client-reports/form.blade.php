@@ -402,6 +402,26 @@
                     value="{{ old('sender_name', $clientReport->sender_name ?? '') }}">
             </div>
 
+            <div class="form-group full-width">
+                <label for="sender_address" class="form-label">Sender Individual / Institution Address</label>
+                <textarea
+                    id="sender_address"
+                    name="sender_address"
+                    class="form-input"
+                    rows="2"
+                    placeholder="Enter sender address">{{ old('sender_address', $clientReport->sender_address ?? '') }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="remitting_bank_name" class="form-label">Remitting Bank Name</label>
+                <input
+                    type="text"
+                    id="remitting_bank_name"
+                    name="remitting_bank_name"
+                    class="form-input"
+                    value="{{ old('remitting_bank_name', $clientReport->remitting_bank_name ?? '') }}">
+            </div>
+
             <div class="form-group">
                 <label for="sender_swift_code" class="form-label">SWIFT Code / BIC</label>
                 <input

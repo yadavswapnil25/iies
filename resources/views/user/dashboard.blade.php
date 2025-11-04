@@ -905,6 +905,14 @@
                         <div class="info-label">Sender Name / Institution</div>
                         <div class="info-value">{{ $clientReport->sender_name ?: '-' }}</div>
                     </div>
+                    <div class="info-item full-width">
+                        <div class="info-label">Sender Individual / Institution Address</div>
+                        <div class="info-value">{{ $clientReport->sender_address ?: '-' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Remitting Bank Name</div>
+                        <div class="info-value">{{ $clientReport->remitting_bank_name ?: '-' }}</div>
+                    </div>
                     <div class="info-item">
                         <div class="info-label">SWIFT Code / BIC</div>
                         <div class="info-value">{{ $clientReport->sender_swift_code ?: '-' }}</div>
