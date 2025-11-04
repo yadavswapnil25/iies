@@ -141,9 +141,9 @@
                                     @endif
                                 </h3>
                                 <p class="minister-designation">
-                                    <span class="english-text">{{ $minister->designation }}</span>
+                                    <span class="english-text">{{ $minister->designation }} for Finance</span>
                                     @if($minister->hindi_designation)
-                                    <span class="hindi-text">{{ $minister->hindi_designation }}</span>
+                                    <span class="hindi-text">{{ $minister->hindi_designation }} for Finance</span>
                                     @endif
                                 </p>
                                 @if($minister->bio || $minister->hindi_bio)

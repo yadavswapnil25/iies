@@ -22,7 +22,7 @@
                 style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px;"
             >
         </div>
-        <div style="min-width: 200px;">
+        <!-- <div style="min-width: 200px;">
             <label class="form-label">Status</label>
             <select 
                 name="status" 
@@ -36,7 +36,7 @@
                 <option value="on_hold" {{ request('status') == 'on_hold' ? 'selected' : '' }}>On Hold</option>
                 <option value="rejected" {{ request('status') == 'rejected' ? 'selected' : '' }}>Rejected</option>
             </select>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">Search</button>
         <a href="{{ route('admin.client-reports.index') }}" class="btn btn-secondary" style="padding: 10px 20px;">Clear</a>
     </form>
@@ -52,7 +52,7 @@
                     <th>Full Name</th>
                     <th>File No.</th>
                     <th>Amount</th>
-                    <th>Status</th>
+                    <!-- <th>Status</th> -->
                     <th>Created</th>
                     <th style="text-align: center;">Actions</th>
                 </tr>
@@ -64,11 +64,11 @@
                     <td>{{ $report->full_name }}</td>
                     <td>{{ $report->file_no ?? 'N/A' }}</td>
                     <td>{{ $report->currency ?? '' }} {{ number_format($report->amount ?? 0, 2) }}</td>
-                    <td>
+                    <!-- <td>
                         <span class="badge badge-{{ $report->status_color }}">
                             {{ ucfirst(str_replace('_', ' ', $report->status)) }}
                         </span>
-                    </td>
+                    </td> -->
                     <td>{{ $report->created_at->format('M d, Y') }}</td>
                     <td style="text-align: center;">
                         <div style="display: flex; gap: 10px; justify-content: center;">

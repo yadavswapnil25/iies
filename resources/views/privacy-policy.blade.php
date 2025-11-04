@@ -163,7 +163,7 @@
         <div class="privacy-container">
             <div class="privacy-header">
                 <h1 class="privacy-title">IIES Privacy Policy</h1>
-                <p class="privacy-effective-date">Effective Date: 13SEP2023</p>
+                <p class="privacy-effective-date">Effective Date: 13 SEP 2023</p>
             </div>
             
             <div class="privacy-content">

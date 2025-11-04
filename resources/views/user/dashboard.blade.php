@@ -711,19 +711,17 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-bottom: 8px;">
-                    <h2 style="font-size: 14px; font-weight: 700; margin: 0; color: #000;">NOC Progress Report</h2>
+                    <h2 style="font-size: 14px; font-weight: 700; margin: 0; color: #000;">Progress Report of NOC Application</h2>
                 </div>
             </div>
 
             <div class="dashboard-header">
                 <div class="dashboard-title">
-                    <h1>NOC Progress Report</h1>
-                    <p>Application ID: {{ $clientReport->unique_id }}</p>
+                    <h1>Progress Report of NOC Application</h1>
+                    <p>Unique ID: {{ $clientReport->unique_id }}</p>
                 </div>
                 <div class="dashboard-actions">
-                    <a href="{{ route('user.print') }}" target="_blank" class="print-btn" style="text-decoration:none; display:inline-block;">
-                        <i class="fas fa-print"></i> Print
-                    </a>
+                   
                     <a href="{{ route('user.logout') }}" class="logout-btn">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
@@ -1051,7 +1049,7 @@
                             <td>{{ $clientReport->form_28_approval_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>09</td>
+                            <td>07</td>
                             <td>NOC Fee</td>
                             <td>
                                 @if($clientReport->noc_fee)
@@ -1065,7 +1063,7 @@
                             <td>{{ $clientReport->noc_fee_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>10</td>
+                            <td>08</td>
                             <td>Form 28B Application Processing</td>
                             <td>
                                 @if($clientReport->form_28b_application_processing)
@@ -1079,7 +1077,7 @@
                             <td>{{ $clientReport->form_28b_application_processing_notes ?: '-' }}</td>
                         </tr>
                         <tr>
-                            <td>11</td>
+                            <td>09</td>
                             <td>Form 28 B Approval</td>
                             <td>
                                 @if($clientReport->form_28b_approval)
@@ -1409,6 +1407,12 @@
                         Group applications may require additional time (1-2 months) for review when applicable. Sensitive information should only be shared with authorised personnel.
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb;">
+                <a href="{{ route('user.print') }}" target="_blank" class="print-btn" style="text-decoration:none; display:inline-block;">
+                    <i class="fas fa-print"></i> Print
+                </a>
             </div>
         </div>
     </main>

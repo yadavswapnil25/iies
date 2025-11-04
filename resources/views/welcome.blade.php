@@ -201,9 +201,9 @@
             <h4 class="hindi-text">{{ $minister->hindi_name }}</h4>
           @endif
       
-          <p class="english-text">{{ $minister->designation }}</p>
+          <p class="english-text">{{ $minister->designation }} for Finance</p>
           @if($minister->hindi_designation)
-            <p class="hindi-text">{{ $minister->hindi_designation }}</p>
+            <p class="hindi-text">{{ $minister->hindi_designation }} for Finance</p>
           @endif
         </div>
         @empty

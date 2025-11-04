@@ -18,9 +18,9 @@
                 {{ $clientReport->full_name }}
             </h2>
             <div style="display: flex; gap: 15px; align-items: center;">
-                <span class="badge badge-{{ $clientReport->status_color }}" style="font-size: 14px; padding: 6px 14px;">
+                <!-- <span class="badge badge-{{ $clientReport->status_color }}" style="font-size: 14px; padding: 6px 14px;">
                     {{ ucfirst(str_replace('_', ' ', $clientReport->status)) }}
-                </span>
+                </span> -->
                 <span style="color: #6b7280; font-size: 14px;">
                     Created: {{ $clientReport->created_at->format('M d, Y') }}
                 </span>
@@ -492,6 +492,20 @@
             </tbody>
          </table>
      </div>
+         <!-- General Notes -->
+    <div class="detail-section" style="border-bottom: none;">
+        <h3 class="detail-section-title">13) Officer Remarks</h3>
+        <div class="detail-grid">
+            <div class="detail-item full-width">
+                <span class="detail-label">General Notes</span>
+                <span class="detail-value">{{ $clientReport->general_notes ?: 'No notes available' }}</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Officer Remarks</span>
+                <span class="detail-value">{{ $clientReport->officer_remarks ?: 'No remarks provided' }}</span>
+            </div>
+        </div>
+    </div>
     <!-- Approval & Signature -->
     <div class="detail-section">
         <h3 class="detail-section-title">14) Approval & Signature</h3>
@@ -511,20 +525,7 @@
         </div>
     </div>
 
-    <!-- General Notes -->
-    <div class="detail-section" style="border-bottom: none;">
-        <h3 class="detail-section-title">15) General Notes & Officer Remarks</h3>
-        <div class="detail-grid">
-            <div class="detail-item full-width">
-                <span class="detail-label">General Notes</span>
-                <span class="detail-value">{{ $clientReport->general_notes ?: 'No notes available' }}</span>
-            </div>
-            <div class="detail-item full-width">
-                <span class="detail-label">Officer Remarks</span>
-                <span class="detail-value">{{ $clientReport->officer_remarks ?: 'No remarks provided' }}</span>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Delete Button -->
     <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb;">
