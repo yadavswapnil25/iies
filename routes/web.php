@@ -31,9 +31,7 @@ Route::get('/guidelines/noc-guidelines', [\App\Http\Controllers\NocGuidelinesCon
 Route::get('/about/iies', function () {
     return view('about');
 });
-Route::get('/about/our-minister', function () {
-    return view('our-minister');
-});
+Route::get('/about/our-minister', [\App\Http\Controllers\OurMinisterController::class, 'index']);
 Route::get('/about/our-performance', function () {
     return view('our-performance');
 });
@@ -152,6 +150,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Finance Ministers Management
         Route::resource('finance-ministers', \App\Http\Controllers\Admin\FinanceMinisterController::class);
+
+        // Our Minister Document Links (single edit)
+        Route::get('our-minister-links', [\App\Http\Controllers\Admin\OurMinisterLinkController::class, 'edit'])->name('our-minister-links.edit');
+        Route::put('our-minister-links', [\App\Http\Controllers\Admin\OurMinisterLinkController::class, 'update'])->name('our-minister-links.update');
+
+        // Our Minister About (single edit)
+        Route::get('our-minister-about', [\App\Http\Controllers\Admin\OurMinisterAboutController::class, 'edit'])->name('our-minister-about.edit');
+        Route::put('our-minister-about', [\App\Http\Controllers\Admin\OurMinisterAboutController::class, 'update'])->name('our-minister-about.update');
 
         // International Taxation Management
         Route::resource('international-taxations', \App\Http\Controllers\Admin\InternationalTaxationController::class);

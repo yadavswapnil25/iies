@@ -818,6 +818,12 @@
             <a href="{{ route('admin.finance-ministers.index') }}" class="nav-item {{ request()->routeIs('admin.finance-ministers.*') ? 'active' : '' }}">
                 👤 Finance Ministers
             </a>
+            <a href="{{ route('admin.our-minister-links.edit') }}" class="nav-item {{ request()->routeIs('admin.our-minister-links.*') ? 'active' : '' }}">
+                🔗 Our Minister Document Links
+            </a>
+            <a href="{{ route('admin.our-minister-about.edit') }}" class="nav-item {{ request()->routeIs('admin.our-minister-about.*') ? 'active' : '' }}">
+                🏛️ Our Minister About Section
+            </a>
             <a href="{{ route('admin.international-taxations.index') }}" class="nav-item {{ request()->routeIs('admin.international-taxations.*') ? 'active' : '' }}">
                 🌍 International Taxation Management
             </a>

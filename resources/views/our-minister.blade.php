@@ -113,30 +113,58 @@
             <div class="page-main otherpage">
                 <!-- About the Institution -->
                 <h2>
-                    <span class="english-text">Our Minister</span>
-                    <span class="hindi-text">हमारे मंत्री</span>
+                    <span class="english-text">About the Institution</span>
+                    <span class="hindi-text">संस्था के बारे में</span>
                 </h2>
                 <p>
-                    <span class="english-text">The Indian International Economic Service (IIES) functions under
-                        the IIES, Government of India. Although it is a
-                        voluntary organization, it operates under the leadership of
-                        Finance Minister Smt. Nirmala Sitharaman and Minister of State
-                        Shri Pankaj Chaudhary.</span>
-                    <span class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (आईआईईएस) वित्त मंत्रालय, भारत
-                        सरकार के अधीन कार्य करती है। हालाँकि यह एक स्वैच्छिक संगठन है, यह
-                        वित्त मंत्री श्रीमती निर्मला सीतारमण और राज्य मंत्री श्री पंकज
-                        चौधरी के नेतृत्व में संचालित होती है।</span>
+                    <span class="english-text">
+                        {{ optional($about)->about_en ?: 'The Indian International Economic Service (IIES) functions under the IIES, Government of India. Although it is a voluntary organization, it operates under the leadership of Finance Minister Smt. Nirmala Sitharaman and Minister of State Shri Pankaj Chaudhary.' }}
+                    </span>
+                    <span class="hindi-text">
+                        {{ optional($about)->about_hi ?: 'भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (आईआईईएस) वित्त मंत्रालय, भारत सरकार के अधीन कार्य करती है। हालाँकि यह एक स्वैच्छिक संगठन है, यह वित्त मंत्री श्रीमती निर्मला सीतारमण और राज्य मंत्री श्री पंकज चौधरी के नेतृत्व में संचालित होती है।' }}
+                    </span>
                 </p>
 
                 <!-- Minister Cards Section -->
                 <div class="minister-cards-section">
                     <div class="minister-cards-grid">
-                        <!-- Minister Card 1 -->
+                        @forelse($ministers as $minister)
                         <div class="minister-card-full">
                             <div class="minister-image">
-                                <img
-                                    src="/uploads/nirmal-sitaraman-finance-minister_0.jpg"
-                                    alt="Smt. Nirmala Sitharaman" />
+                                <img src="{{ $minister->image_url }}" alt="{{ $minister->name }}" />
+                            </div>
+                            <div class="minister-details">
+                                <h3>
+                                    <span class="english-text">{{ $minister->name }}</span>
+                                    @if($minister->hindi_name)
+                                    <span class="hindi-text">{{ $minister->hindi_name }}</span>
+                                    @endif
+                                </h3>
+                                <p class="minister-designation">
+                                    <span class="english-text">{{ $minister->designation }}</span>
+                                    @if($minister->hindi_designation)
+                                    <span class="hindi-text">{{ $minister->hindi_designation }}</span>
+                                    @endif
+                                </p>
+                                @if($minister->bio || $minister->hindi_bio)
+                                <div class="minister-bio">
+                                    <p>
+                                        @if($minister->bio)
+                                        <span class="english-text">{{ $minister->bio }}</span>
+                                        @endif
+                                        @if($minister->hindi_bio)
+                                        <span class="hindi-text">{{ $minister->hindi_bio }}</span>
+                                        @endif
+                                    </p>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                        @empty
+                        <!-- Fallback static content if no ministers configured -->
+                        <div class="minister-card-full">
+                            <div class="minister-image">
+                                <img src="/uploads/nirmal-sitaraman-finance-minister_0.jpg" alt="Smt. Nirmala Sitharaman" />
                             </div>
                             <div class="minister-details">
                                 <h3>
@@ -147,29 +175,11 @@
                                     <span class="english-text">Minister of Finance and Corporate Affairs</span>
                                     <span class="hindi-text">वित्त और कॉर्पोरेट मामलों की मंत्री</span>
                                 </p>
-                                <div class="minister-bio">
-                                    <p>
-                                        <span class="english-text">Smt. Nirmala Sitharaman is an Indian economist and
-                                            politician serving as the Minister of Finance and
-                                            Minister of Corporate Affairs of the Government of India
-                                            since 2019. She is a member of the Rajya Sabha,
-                                            representing Karnataka, since 2016.</span>
-                                        <span class="hindi-text">श्रीमती निर्मला सीतारमण एक भारतीय अर्थशास्त्री और
-                                            राजनीतिज्ञ हैं जो 2019 से भारत सरकार की वित्त मंत्री और
-                                            कॉर्पोरेट मामलों की मंत्री के रूप में कार्यरत हैं। वह
-                                            2016 से कर्नाटक का प्रतिनिधित्व करते हुए राज्य सभा की
-                                            सदस्य हैं।</span>
-                                    </p>
-                                </div>
                             </div>
                         </div>
-
-                        <!-- Minister Card 2 -->
                         <div class="minister-card-full">
                             <div class="minister-image">
-                                <img
-                                    src="/uploads/pankaj-chaudhary.png"
-                                    alt="Shri Pankaj Chaudhary" />
+                                <img src="/uploads/pankaj-chaudhary.png" alt="Shri Pankaj Chaudhary" />
                             </div>
                             <div class="minister-details">
                                 <h3>
@@ -180,20 +190,9 @@
                                     <span class="english-text">Minister of State for Finance</span>
                                     <span class="hindi-text">वित्त राज्य मंत्री</span>
                                 </p>
-                                <div class="minister-bio">
-                                    <p>
-                                        <span class="english-text">Shri Pankaj Chaudhary is an Indian politician serving
-                                            as the Minister of State for Finance since 2021. He is a
-                                            member of the Lok Sabha, representing Maharajganj
-                                            constituency in Uttar Pradesh since 2014.</span>
-                                        <span class="hindi-text">श्री पंकज चौधरी एक भारतीय राजनीतिज्ञ हैं जो 2021 से
-                                            वित्त राज्य मंत्री के रूप में कार्यरत हैं। वह 2014 से
-                                            उत्तर प्रदेश में महाराजगंज निर्वाचन क्षेत्र का
-                                            प्रतिनिधित्व करते हुए लोकसभा के सदस्य हैं।</span>
-                                    </p>
-                                </div>
                             </div>
                         </div>
+                        @endforelse
                     </div>
                 </div>
 
@@ -206,7 +205,7 @@
                     <div class="pdf-buttons-grid">
                         <!-- PDF Button 1 -->
                         <a
-                            href="https://dea.gov.in/files/inline-documents/ListMinisters.pdf"
+                            href="{{ optional($links)->url1 ?: 'https://dea.gov.in/files/inline-documents/ListMinisters.pdf' }}"
                             class="pdf-button pdf-button-1"
                             target="_blank">
                             <span class="english-text">FORMER MINISTER </span>
@@ -215,7 +214,7 @@
 
                         <!-- PDF Button 2 -->
                         <a
-                            href="https://dea.gov.in/files/inline-documents/02-list-of-council-minister.pdf"
+                            href="{{ optional($links)->url2 ?: 'https://dea.gov.in/files/inline-documents/02-list-of-council-minister.pdf' }}"
                             class="pdf-button pdf-button-2"
                             target="_blank">
                             <span class="english-text">LIST OF COUNCIL OF MINISTER</span>
@@ -224,7 +223,7 @@
 
                         <!-- PDF Button 3 -->
                         <a
-                            href="https://dea.gov.in/files/inline-documents/List_Employees_MINISTRY_FINANCE.pdf"
+                            href="{{ optional($links)->url3 ?: 'https://dea.gov.in/files/inline-documents/List_Employees_MINISTRY_FINANCE.pdf' }}"
                             class="pdf-button pdf-button-3"
                             target="_blank">
                             <span class="english-text">LIST OF OFFICER / STAFF</span>
@@ -233,7 +232,7 @@
 
                         <!-- PDF Button 4 -->
                         <a
-                            href="https://dea.gov.in/files/inline-documents/foreign_visit_details_2025-26_1st_quarter.pdf"
+                            href="{{ optional($links)->url4 ?: 'https://dea.gov.in/files/inline-documents/foreign_visit_details_2025-26_1st_quarter.pdf' }}"
                             class="pdf-button pdf-button-4"
                             target="_blank">
                             <span class="english-text">FOREIGN DEPUTATION JS LEVEL & ABOVE</span>
