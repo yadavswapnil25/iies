@@ -62,7 +62,7 @@ Role of Registered Facilitation Agent</a
             <div class="acts-policy-content">
               <!-- Introduction Section -->
               <section class="intro-section">
-                <h2>List of Support Agent</h2>
+                <h2>List of egistered Facilitation Agent</h2>
                 <h3>Requirement and Procedure of Registered Agent</h3>
                 <p>To obtain a No Objection Certificate (NOC) for any type of foreign fund through the Indian International Economic Service (IIES), it is mandatory to apply through an agent registered under the Department of Economic Affairs (DEA).</p>
                 <p>

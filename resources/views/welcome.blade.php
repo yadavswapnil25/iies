@@ -891,104 +891,14 @@
                 </div>
 
                 <div class="tweets-container">
-                    <!-- Post 1 -->
-                    <div class="tweet-card">
-                        <div class="tweet-header">
-                            <div class="tweet-avatar">
-                                <div style="width:100%;height:100%;background-color:#1a365d;color:white;display:flex;align-items:center;justify-content:center;font-weight:bold"><img src="uploads/finmin-logo.jpg"></div>                           </div>
-                            <div class="tweet-author">
-                                <strong class="english-text">Finance Ministry India</strong>
-                                <strong class="hindi-text">वित्त मंत्रालय भारत</strong>
-                                <span>@FinMinIndia</span>
-                            </div>
-                        </div>
-                        <div class="tweet-content">
-                            <p class="english-text">
-                                Budget 2025-26 focuses on sustainable growth, infrastructure
-                                development, and welfare schemes for all sections of society.
-                                #Budget2025 #AmritKaal
-                            </p>
-                            <p class="hindi-text">
-                                बजट 2025-26 सतत विकास, बुनियादी ढांचे के विकास और समाज के सभी
-                                वर्गों के लिए कल्याणकारी योजनाओं पर केंद्रित है। #Budget2025
-                                #AmritKaal
-                            </p>
-                        </div>
-                        <div class="tweet-meta">
-                            <span class="tweet-time">2 hours ago</span>
-                            <div class="tweet-stats">
-                                <span>🔁 245</span>
-                                <span>❤️ 1.2K</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post 2 -->
-                    <div class="tweet-card">
-                        <div class="tweet-header">
-                            <div class="tweet-avatar">
-                                <div style="width:100%;height:100%;background-color:#1a365d;color:white;display:flex;align-items:center;justify-content:center;font-weight:bold"><img src="uploads/finmin-logo.jpg"></div>
-                            </div>
-                            <div class="tweet-author">
-                                <strong class="english-text">Finance Ministry India</strong>
-                                <strong class="hindi-text">वित्त मंत्रालय भारत</strong>
-                                <span>@FinMinIndia</span>
-                            </div>
-                        </div>
-                        <div class="tweet-content">
-                            <p class="english-text">
-                                New circular released: Guidelines for foreign exchange
-                                management and compliance procedures for international
-                                transactions. #Forex #Compliance
-                            </p>
-                            <p class="hindi-text">
-                                नया परिपत्र जारी: अंतर्राष्ट्रीय लेनदेन के लिए विदेशी मुद्रा
-                                प्रबंधन और अनुपालन प्रक्रियाओं के दिशानिर्देश। #Forex
-                                #Compliance
-                            </p>
-                        </div>
-                        <div class="tweet-meta">
-                            <span class="tweet-time">5 hours ago</span>
-                            <div class="tweet-stats">
-                                <span>🔁 189</span>
-                                <span>❤️ 856</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post 3 -->
-                    <div class="tweet-card">
-                        <div class="tweet-header">
-                            <div class="tweet-avatar">
-                                <div style="width:100%;height:100%;background-color:#1a365d;color:white;display:flex;align-items:center;justify-content:center;font-weight:bold"><img src="uploads/finmin-logo.jpg"></div>
-                            </div>
-                            <div class="tweet-author">
-                                <strong class="english-text">Finance Ministry India</strong>
-                                <strong class="hindi-text">वित्त मंत्रालय भारत</strong>
-                                <span>@FinMinIndia</span>
-                            </div>
-                        </div>
-                        <div class="tweet-content">
-                            <p class="english-text">
-                                Economic Survey 2024-25 highlights India's robust growth
-                                trajectory and fiscal consolidation efforts. Download the full
-                                report from our website. #EconomicSurvey
-                            </p>
-                            <p class="hindi-text">
-                                आर्थिक सर्वेक्षण 2024-25 भारत की मजबूत विकास प्रक्षेपवक्र और
-                                राजकोषीय समेकन प्रयासों को उजागर करता है। हमारी वेबसाइट से
-                                पूरी रिपोर्ट डाउनलोड करें। #EconomicSurvey
-                            </p>
-                        </div>
-                        <div class="tweet-meta">
-                            <span class="tweet-time">1 day ago</span>
-                            <div class="tweet-stats">
-                                <span>🔁 342</span>
-                                <span>❤️ 1.5K</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a class="twitter-timeline"
+                       data-chrome="noheader nofooter noborders"
+                       data-tweet-limit="5"
+                       href="https://twitter.com/FinMinIndia">
+                        Tweets by FinMinIndia
+                    </a>
                 </div>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
     </section>
@@ -1021,34 +931,36 @@
    @include('partials.footer')
 
     <script>
-      // Font size dropdown functionality
+      // Font size dropdown functionality (guarded for pages where controls may be absent)
       const fontBtn = document.getElementById("fontSizeBtn");
       const fontMenu = document.getElementById("fontSizeMenu");
 
-      // Toggle dropdown
-      fontBtn.addEventListener("click", () => {
-        fontMenu.parentElement.classList.toggle("show");
-      });
-
-      // When user selects a font size
-      fontMenu.querySelectorAll("div").forEach((item) => {
-        item.addEventListener("click", () => {
-          const scale = parseFloat(item.dataset.size);
-
-          // Apply font size to entire page
-          document.body.style.fontSize = scale * 1 + "em";
-
-          // Close the dropdown
-          fontMenu.parentElement.classList.remove("show");
+      if (fontBtn && fontMenu && fontMenu.parentElement) {
+        // Toggle dropdown
+        fontBtn.addEventListener("click", () => {
+          fontMenu.parentElement.classList.toggle("show");
         });
-      });
 
-      // Close dropdown if clicked outside
-      document.addEventListener("click", (e) => {
-        if (!fontMenu.parentElement.contains(e.target)) {
-          fontMenu.parentElement.classList.remove("show");
-        }
-      });
+        // When user selects a font size
+        fontMenu.querySelectorAll("div").forEach((item) => {
+          item.addEventListener("click", () => {
+            const scale = parseFloat(item.dataset.size);
+
+            // Apply font size to entire page
+            document.body.style.fontSize = scale * 1 + "em";
+
+            // Close the dropdown
+            fontMenu.parentElement.classList.remove("show");
+          });
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener("click", (e) => {
+          if (!fontMenu.parentElement.contains(e.target)) {
+            fontMenu.parentElement.classList.remove("show");
+          }
+        });
+      }
 
       // Language dropdown logic is centralized in /js/language-switcher.js
 

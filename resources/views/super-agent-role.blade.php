@@ -60,7 +60,7 @@ Role of Registered Facilitation Agent</a
             <div class="acts-policy-content">
               <!-- Introduction Section -->
               <section class="intro-section">
-                <h2>Support Agent Role</h2>
+                <h2>Role of Registered Facilitation Agent</h2>
                 <h3>The Crucial Role of Private Agents in the Indian International Economic Service (IIES)</h3>
                 <p>
                   Private support agents play an extremely important role in the Indian International Economic Service (IIES). These agents are registered under the Department of Economic Affairs and their main function is to help clients obtain an NOC (No Objection Certificate) for their foreign funds. Without an agent, no individual can obtain an NOC for their foreign funds. The agent not only compiles and verifies all of the client's documents but also acts as the first identifier in the process, presenting the client's fund details to the authorities. Furthermore, the agent handles all responsibilities from preparing the NOC application, filing, monitoring the approval, and guiding the client after the NOC is received. Without them, completing the NOC process becomes difficult and complicated.

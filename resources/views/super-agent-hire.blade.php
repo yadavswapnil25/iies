@@ -61,7 +61,7 @@ Role of Registered Facilitation Agent</a
             <div class="acts-policy-content">
               <!-- Hire An Agent for Yourself -->
               <section class="intro-section">
-                <h2>Hire An Agent for Yourself</h2>
+                <h2>Engage a Registered Facilitation Agent</h2>
                 <h3>Requirement of a Support Agent for Obtaining No Objection Certificate (NOC) from Indian International Economic Service (IIES)</h3>
               
               <p>A Support Agent (Assistant Representative) is required to obtain any type of No Objection Certificate (NOC) from the Indian International Economic Service (IIES). This agent plays a crucial role in the process of obtaining the NOC. The NOC is not issued to any large firm, group, proprietorship, or individual client without an agent.</p>

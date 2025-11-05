@@ -899,12 +899,6 @@
             from the receipt of the application to the completion of the process, ensuring transparency and timely
             execution of all tasks.</p>
 
-        <p><strong>Brief Introductory Description:</strong><br>
-            This report is prepared by the Indian International Economic Service
-            (IIES) to record and present the current status of an applicant/client's work. The report includes the
-            client's complete information, the nature of the work, details of the fund for which NOC is sought
-            (amount, currency, purpose), the beneficiary bank where funds were received, the origin country of the
-            funds, and a step-by-step progress record of the process.</p>
      </div>
      <br>
      <!-- Form Actions -->

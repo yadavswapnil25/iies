@@ -18,39 +18,16 @@
         <header class="document-header">
             <img src="/uploads/main-logo.jpg" alt="IIES Logo" class="logo">
             <h1>Indian International Economic Service</h1>
-            <h2>भारतीय अंतरााष्ट्रीय आर्थिक सेवा</h2>
+            <h2>भारतीय अंतर्राष्ट्रीय आर्थिक सेवा</h2>
             <p class="ministry">Ministry of Finance, Government of India</p>
         </header>
 
         
-        <section class="intro-section">
-            <p>
-                This progress report has been prepared by the Indian International Economic Service (IIES) 
-                to reflect the current status of a client's application or task. It provides detailed updates 
-                from the initial submission to the final stage of completion. The purpose of this report is 
-                to maintain transparency and ensure that every process is completed efficiently within the 
-                prescribed timeline.
-            </p>
-            
-            <div class="intro-box">
-                <h3>Brief Introductory Description:</h3>
-                <p>
-                    This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective of presenting the current status of a client's or applicant's work. It includes detailed progress information from the receipt of the application to the completion of the process, ensuring transparency and timely execution of all tasks.
-                </p>
-                <h3>Brief Introductory Description:</h3>
-                <p>
-                    This report is prepared by the Indian International Economic Service (IIES) to record and 
-                    present the current status of an applicant/client's work. The report includes the client's 
-                    complete information, the nature of the work, details of the fund for which NOC is sought 
-                    (amount, currency, purpose), the beneficiary bank where funds were received, the origin 
-                    country of the funds, and a step-by-step progress record of the process.
-                </p>
-            </div>
-        </section>
+  
 
         <!-- Main Title -->
-        <h2 class="main-title">Client Work Progress Report</h2>
-        <p style="text-align:center; margin: 0 0 10px 0; font-size: 12px;">Application ID: {{ $clientReport->unique_id }}</p>
+        <h2 class="main-title">Progress Report of NOC Application</h2>
+        <p style="text-align:center; margin: 0 0 10px 0; font-size: 12px;">Unique ID: {{ $clientReport->unique_id }}</p>
 
         <!-- Section 1: File Information -->
         <section class="section">
@@ -561,7 +538,22 @@
                 </p>
             </div>
         </section>
-
+        <section class="intro-section">
+            <p>
+                This progress report has been prepared by the Indian International Economic Service (IIES) 
+                to reflect the current status of a client's application or task. It provides detailed updates 
+                from the initial submission to the final stage of completion. The purpose of this report is 
+                to maintain transparency and ensure that every process is completed efficiently within the 
+                prescribed timeline.
+            </p>
+            
+            <div class="intro-box">
+                <h3>Brief Introductory Description:</h3>
+                <p>
+                    This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective of presenting the current status of a client's or applicant's work. It includes detailed progress information from the receipt of the application to the completion of the process, ensuring transparency and timely execution of all tasks.
+                </p>
+            </div>
+        </section>
         <!-- Footer -->
         <footer class="document-footer">
             <p>This is an official document of Indian International Economic Service (IIES)</p>
