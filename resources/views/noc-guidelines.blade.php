@@ -25,13 +25,16 @@
     <section class="page-hero">
         <div class="hero-inner">
             <div class="hero-content">
-                <h1>Guidelines</h1>
+                <h1>
+                    <span class="english-text">Guidelines</span>
+                    <span class="hindi-text">दिशा‑निर्देश</span>
+                </h1>
 
                 <div class="hero-tabs">
-                    <a href="/guidelines/issuance-noc" class="hero-tab">Guideline for Issuance NOC</a>
-                    <a href="/guidelines/iies-officials" class="hero-tab">Guidelines for IIES Officials</a>
-                    <a href="/guidelines/register-fac-agent" class="hero-tab">Guidelines for Registered Facilitation Agent</a>
-                    <a href="/guidelines/noc-guidelines" class="hero-tab active">Guidelines for NOC Applicants</a>
+                    <a href="/guidelines/issuance-noc" class="hero-tab"><span class="english-text">Guideline for Issuance NOC</span><span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/iies-officials" class="hero-tab"><span class="english-text">Guidelines for IIES Officials</span><span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/register-fac-agent" class="hero-tab"><span class="english-text">Guidelines for Registered Facilitation Agent</span><span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/noc-guidelines" class="hero-tab active"><span class="english-text">Guidelines for NOC Applicants</span><span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span></a>
                 </div>
             </div>
         </div>
@@ -41,11 +44,20 @@
     <div class="breadcrumb-section">
         <div class="breadcrumb-inner">
             <div class="breadcrumb">
-                <a href="/">Home</a>
+                <a href="/">
+                    <span class="english-text">Home</span>
+                    <span class="hindi-text">मुखपृष्ठ</span>
+                </a>
                 <span class="separator">/</span>
-                <a href="#">Guidelines</a>
+                <a href="#">
+                    <span class="english-text">Guidelines</span>
+                    <span class="hindi-text">दिशा‑निर्देश</span>
+                </a>
                 <span class="separator">/</span>
-                <span>Guidelines for NOC Applicants</span>
+                <span>
+                    <span class="english-text">Guidelines for NOC Applicants</span>
+                    <span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span>
+                </span>
             </div>
         </div>
     </div>
@@ -60,13 +72,20 @@
 
             <div class="guidelines-content">
                 <div class="section">
-                    <h2>Guideline for NOC Applicants</h2>
-                    <p><strong>Indian International Economic Service (IIES)</strong></p>
+                    <h2>
+                        <span class="english-text">Guideline for NOC Applicants</span>
+                        <span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span>
+                    </h2>
+                    <p><strong class="english-text">Indian International Economic Service (IIES)</strong><strong class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES)</strong></p>
                 </div>
 
                 <div class="section">
-                    <h2>1. For Company, Firm, or Institution (Proprietorship / LLP / OPC / Private Limited / Public Limited etc.)</h2>
-                    <p>The applicant must compulsorily submit the following documents:</p>
+                    <h2>
+                        <span class="english-text">1. For Company, Firm, or Institution (Proprietorship / LLP / OPC / Private Limited / Public Limited etc.)</span>
+                        <span class="hindi-text">1. कंपनी, फर्म या संस्थान हेतु (प्रोप्राइटरशिप/एलएलपी/ओपीसी/प्रा. लि./लि.)</span>
+                    </h2>
+                    <p class="english-text">The applicant must compulsorily submit the following documents:</p>
+                    <p class="hindi-text">आवेदक को निम्नलिखित दस्तावेज़ अनिवार्य रूप से प्रस्तुत करने होंगे:</p>
                     <ul>
                         <li>Three years' Audit Report</li>
                         <li>Three years' Project Report</li>
@@ -75,7 +94,10 @@
                         <li>Details of Future Project</li>
                         <li>Complete details of the investment or expenditure of the fund for which the NOC application is being made</li>
                     </ul>
-                    <h3>Main Documents for Application:</h3>
+                    <h3>
+                        <span class="english-text">Main Documents for Application:</span>
+                        <span class="hindi-text">आवेदन हेतु मुख्य दस्तावेज़:</span>
+                    </h3>
                     <ul>
                         <li>Company's PAN, TAN Certificate, GST Certificate, MOA (Memorandum of Association)</li>
                         <li>Three years' Audit Report, ITR, and Annual Report</li>
@@ -90,7 +112,10 @@
                 </div>
 
                 <div class="section">
-                    <h2>2. For Non-Governmental Organization (NGO)</h2>
+                    <h2>
+                        <span class="english-text">2. For Non-Governmental Organization (NGO)</span>
+                        <span class="hindi-text">2. गैर-सरकारी संगठन (NGO) हेतु</span>
+                    </h2>
                     <ul>
                         <li>NGO's Deed / Bylaws</li>
                         <li>PAN Card</li>
@@ -113,7 +138,10 @@
                 </div>
 
                 <div class="section">
-                    <h2>3. For Individual or Group (1 to 20 persons)</h2>
+                    <h2>
+                        <span class="english-text">3. For Individual or Group (1 to 20 persons)</span>
+                        <span class="hindi-text">3. व्यक्तिगत/समूह (1 से 20 व्यक्ति) हेतु</span>
+                    </h2>
                     <ul>
                         <li>Passport Size Photo</li>
                         <li>Aadhaar Card</li>
@@ -131,7 +159,10 @@
                 </div>
 
                 <div class="section">
-                    <h2>4. Verification and Legal Provisions</h2>
+                    <h2>
+                        <span class="english-text">4. Verification and Legal Provisions</span>
+                        <span class="hindi-text">4. सत्यापन एवं विधिक प्रावधान</span>
+                    </h2>
                     <ul>
                         <li>All documents presented by the applicant must be true and certified.</li>
                         <li>The NOC will be suspended or cancelled if any false information or forged documents are found.</li>
@@ -142,8 +173,12 @@
                 </div>
 
                 <div class="section">
-                    <h2>5. Investigation and Statutory Compliance related to Foreign Funds</h2>
-                    <p>If a fund is received in India through any foreign institution, company, or NGO, the following provisions will apply:</p>
+                    <h2>
+                        <span class="english-text">5. Investigation and Statutory Compliance related to Foreign Funds</span>
+                        <span class="hindi-text">5. विदेशी धन से संबंधित जाँच व वैधानिक अनुपालन</span>
+                    </h2>
+                    <p class="english-text">If a fund is received in India through any foreign institution, company, or NGO, the following provisions will apply:</p>
+                    <p class="hindi-text">यदि भारत में किसी विदेशी संस्था/कंपनी/NGO के माध्यम से धन प्राप्त होता है, तो निम्नलिखित प्रावधान लागू होंगे:</p>
                     <ul>
                         <li>The concerned foreign institution or individual will be investigated through the Embassy of India in that country.</li>
                         <li>The person or institution sending the fund must be legally registered and in a legal standing in that country.</li>
@@ -154,8 +189,12 @@
                 </div>
 
                 <div class="section">
-                    <h2>6. Applicable Indian Rules and Laws</h2>
-                    <p>The following Acts and Rules of the Government of India will be applicable in this process:</p>
+                    <h2>
+                        <span class="english-text">6. Applicable Indian Rules and Laws</span>
+                        <span class="hindi-text">6. लागू भारतीय नियम एवं कानून</span>
+                    </h2>
+                    <p class="english-text">The following Acts and Rules of the Government of India will be applicable in this process:</p>
+                    <p class="hindi-text">इस प्रक्रिया में भारत सरकार के निम्न अधिनियम एवं नियम लागू होंगे:</p>
                     <ul>
                         <li>Foreign Contribution (Regulation) Act, 2010 (FCRA, 2010)</li>
                         <li>Companies Act, 2013</li>
@@ -168,7 +207,10 @@
                 </div>
 
                 <div class="section">
-                    <h2>7. Important Instructions</h2>
+                    <h2>
+                        <span class="english-text">7. Important Instructions</span>
+                        <span class="hindi-text">7. महत्वपूर्ण निर्देश</span>
+                    </h2>
                     <ul>
                         <li>All applicants must ensure that the information presented is complete, accurate, and verified.</li>
                         <li>The application may be cancelled if any misleading activity or financial irregularity is found before the NOC is issued.</li>

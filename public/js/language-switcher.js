@@ -28,7 +28,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to switch language
-    function switchLanguage(lang) {
+    const i18nCache = {};
+
+    async function loadDictionary(lang) {
+        if (i18nCache[lang]) return i18nCache[lang];
+        try {
+            const res = await fetch(`/js/i18n/${lang}.json?v=${Date.now()}`, { cache: 'no-store' });
+            if (!res.ok) throw new Error('dict load failed');
+            const dict = await res.json();
+            i18nCache[lang] = dict;
+            return dict;
+        } catch (_) {
+            i18nCache[lang] = {};
+            return {};
+        }
+    }
+
+    async function applyDictionary(dict) {
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+            const key = el.getAttribute('data-i18n');
+            if (!key) return;
+            const value = key.split('.').reduce((o, k) => (o && o[k] != null ? o[k] : undefined), dict);
+            if (typeof value === 'string') {
+                el.textContent = value;
+            }
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+            const key = el.getAttribute('data-i18n-html');
+            if (!key) return;
+            const value = key.split('.').reduce((o, k) => (o && o[k] != null ? o[k] : undefined), dict);
+            if (typeof value === 'string') {
+                el.innerHTML = value;
+            }
+        });
+    }
+
+    async function switchLanguage(lang) {
         // Set the lang attribute on the body
         document.body.setAttribute("lang", lang);
         document.documentElement.lang = lang;
@@ -47,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (hindiText) hindiText.textContent = 'हिन्दी';
             }
         }
+
+        // Apply i18n dictionary
+        const dict = await loadDictionary(lang);
+        await applyDictionary(dict);
 
         // Update dynamic content if function exists
         if (typeof updateDynamicContent === 'function') {

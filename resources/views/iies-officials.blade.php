@@ -24,13 +24,16 @@
     <section class="page-hero">
         <div class="hero-inner">
             <div class="hero-content">
-                <h1>Guidelines</h1>
+                <h1>
+                    <span class="english-text">Guidelines</span>
+                    <span class="hindi-text">दिशा‑निर्देश</span>
+                </h1>
 
                 <div class="hero-tabs">
-                    <a href="/guidelines/issuance-noc" class="hero-tab">Guideline for Issuance NOC</a>
-                    <a href="/guidelines/iies-officials" class="hero-tab active">Guidelines for IIES Officials</a>
-                    <a href="/guidelines/register-fac-agent" class="hero-tab">Guidelines for Registered Facilitation Agent </a>
-                    <a href="/guidelines/noc-guidelines" class="hero-tab">Guidelines for NOC Applicants</a>
+                    <a href="/guidelines/issuance-noc" class="hero-tab"><span class="english-text">Guideline for Issuance NOC</span><span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/iies-officials" class="hero-tab active"><span class="english-text">Guidelines for IIES Officials</span><span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/register-fac-agent" class="hero-tab"><span class="english-text">Guidelines for Registered Facilitation Agent</span><span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span></a>
+                    <a href="/guidelines/noc-guidelines" class="hero-tab"><span class="english-text">Guidelines for NOC Applicants</span><span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span></a>
                 </div>
             </div>
         </div>
@@ -40,11 +43,14 @@
     <div class="breadcrumb-section">
         <div class="breadcrumb-inner">
             <div class="breadcrumb">
-                <a href="/">Home</a>
+                <a href="/">
+                    <span class="english-text">Home</span>
+                    <span class="hindi-text">मुखपृष्ठ</span>
+                </a>
                 <span class="separator">/</span>
-                <a href="#">Guidelines</a>
+                <a href="#"><span class="english-text">Guidelines</span><span class="hindi-text">दिशा‑निर्देश</span></a>
                 <span class="separator">/</span>
-                <span>Guidelines for IIES Officials</span>
+                <span><span class="english-text">Guidelines for IIES Officials</span><span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span></span>
             </div>
         </div>
     </div>
@@ -54,10 +60,16 @@
         <div class="page-container">
             <div class="page-main otherpage">
                 <div class="officials-content">
-                    <h2>Guidelines for IIES Officials</h2>
+                    <h2>
+                        <span class="english-text">Guidelines for IIES Officials</span>
+                        <span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span>
+                    </h2>
 
                     <div class="preamble-section">
-                        <h3>IIES Code of Conduct for Officials and Employees</h3>
+                        <h3>
+                            <span class="english-text">IIES Code of Conduct for Officials and Employees</span>
+                            <span class="hindi-text">अधिकारियों एवं कर्मचारियों के लिए IIES आचार संहिता</span>
+                        </h3>
                         <p>
                             <strong>Preamble:</strong><br />
                             All officials and employees working at IIES are committed to
@@ -69,7 +81,10 @@
 
                     <!-- Code of Conduct Sections -->
                     <div class="conduct-section">
-                        <h3>General Code of Conduct</h3>
+                        <h3>
+                            <span class="english-text">General Code of Conduct</span>
+                            <span class="hindi-text">सामान्य आचार संहिता</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 <strong>Work Ethics:</strong> All employees must be punctual
@@ -129,9 +144,15 @@
                     </div>
 
                     <!-- Specific Role-Based Instructions -->
-                    <h3>Specific Role-Based Instructions</h3>
+                    <h3>
+                        <span class="english-text">Specific Role-Based Instructions</span>
+                        <span class="hindi-text">भूमिका‑आधारित विशिष्ट निर्देश</span>
+                    </h3>
                     <div class="final-note">
-                        <h3>Final Note</h3>
+                        <h3>
+                            <span class="english-text">Final Note</span>
+                            <span class="hindi-text">अंतिम टिप्पणी</span>
+                        </h3>
                         <p>
                             Every member of IIES must follow this Code of Conduct and
                             contribute to maintaining the dignity and reputation of the
@@ -139,7 +160,10 @@
                         </p>
                     </div>
                     <div class="role-section">
-                        <h3>General Code of Conduct</h3>
+                        <h3>
+                            <span class="english-text">General Code of Conduct</span>
+                            <span class="hindi-text">सामान्य आचार संहिता</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 All officials must work with honesty, transparency, and
@@ -161,7 +185,10 @@
                     </div>
 
                     <div class="role-section role-senior">
-                        <h3>Senior Officials (Director / Head)</h3>
+                        <h3>
+                            <span class="english-text">Senior Officials (Director / Head)</span>
+                            <span class="hindi-text">वरिष्ठ अधिकारी (निदेशक/प्रमुख)</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 Oversee the entire NOC process and make decisions according to
@@ -183,7 +210,10 @@
                     </div>
 
                     <div class="role-section role-mid">
-                        <h3>Mid-Level Officials (Manager / Officer)</h3>
+                        <h3>
+                            <span class="english-text">Mid-Level Officials (Manager / Officer)</span>
+                            <span class="hindi-text">मध्य‑स्तरीय अधिकारी (प्रबंधक/अधिकारी)</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 Conduct the initial review and document verification of NOC
@@ -206,7 +236,10 @@
                     </div>
 
                     <div class="role-section role-junior">
-                        <h3>Junior Officials / Assistants</h3>
+                        <h3>
+                            <span class="english-text">Junior Officials / Assistants</span>
+                            <span class="hindi-text">कनिष्ठ अधिकारी/सहायक</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 Collect, classify, and digitally record application documents.
@@ -230,7 +263,10 @@
                     </div>
 
                     <div class="role-section role-group">
-                        <h3>Group Work and Team Coordination</h3>
+                        <h3>
+                            <span class="english-text">Group Work and Team Coordination</span>
+                            <span class="hindi-text">समूह कार्य एवं टीम समन्वय</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 All officials must ensure teamwork and timeliness in the NOC
@@ -251,7 +287,10 @@
                     </div>
 
                     <div class="role-section role-training">
-                        <h3>Training and Updates</h3>
+                        <h3>
+                            <span class="english-text">Training and Updates</span>
+                            <span class="hindi-text">प्रशिक्षण और अद्यतन</span>
+                        </h3>
                         <ol class="numbered-list">
                             <li>
                                 Officials must regularly receive training on the NOC process

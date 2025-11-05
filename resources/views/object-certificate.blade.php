@@ -20,16 +20,24 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Fee of No Objection Certificate</h1>
+          <h1>
+            <span class="english-text">Fee of No Objection Certificate</span>
+            <span class="hindi-text">अनापत्ति प्रमाणपत्र (NOC) शुल्क</span>
+          </h1>
 
           <div class="hero-tabs">
-            <a href="/noc-process" class="hero-tab">NOC Process</a>
-            <a href="/proc-guide" class="hero-tab"
-              >Procedure &amp; Guidelines</a
-            >
-            <a href="/object-certificate" class="hero-tab active"
-              >Fee of No Objection Certificate</a
-            >
+            <a href="/services/noc-process" class="hero-tab">
+              <span class="english-text">NOC Process</span>
+              <span class="hindi-text">एनओसी प्रक्रिया</span>
+            </a>
+            <a href="/services/proc-guide" class="hero-tab">
+              <span class="english-text">Procedure &amp; Guidelines</span>
+              <span class="hindi-text">प्रक्रिया और दिशानिर्देश</span>
+            </a>
+            <a href="/services/object-certificate" class="hero-tab active">
+              <span class="english-text">Fee of No Objection Certificate</span>
+              <span class="hindi-text">अनापत्ति प्रमाणपत्र (NOC) शुल्क</span>
+            </a>
           </div>
         </div>
       </div>
@@ -39,11 +47,20 @@
     <div class="breadcrumb-section">
       <div class="breadcrumb-inner">
         <div class="breadcrumb">
-          <a href="/">Home</a>
+          <a href="/">
+            <span class="english-text">Home</span>
+            <span class="hindi-text">मुखपृष्ठ</span>
+          </a>
           <span class="separator">/</span>
-          <span>Services</span>
+          <span>
+            <span class="english-text">Services</span>
+            <span class="hindi-text">सेवाएँ</span>
+          </span>
           <span class="separator">/</span>
-          <span>Fee of No Objection Certificate</span>
+          <span>
+            <span class="english-text">Fee of No Objection Certificate</span>
+            <span class="hindi-text">अनापत्ति प्रमाणपत्र (NOC) शुल्क</span>
+          </span>
         </div>
       </div>
     </div>
@@ -56,11 +73,18 @@
              <div class="law-content">
                 <!-- Fee of No Objection Certificate -->
                 <div class="regulation-section">
-                  <h3>Fee of No Objection Certificate</h3>
-                  <p>This document outlines the No Objection Certificate (NOC) fees established by the Indian International Economic Service (IIES). These fees are designed to cover the administrative costs, document verification, and certification expenses associated with the process. The fee structure not only streamlines the application process but also ensures that applications are treated seriously and dealt with in a timely manner.</p>
-                  <p>The IIES issues NOCs and has set specific fees which may vary based on the type of international transaction or the amount of funds involved. According to IIES policies, the organization issues an NOC for a maximum amount of ₹25,000 crores at one time. This means that if an individual or institution requires a certificate for a higher amount, they must obtain the NOC through separate applications or in a phased manner.</p>
-                  <p>The NOC fee structure is generally determined by the application amount, the complexity of the process, and the documentation involved. The purpose of this fee is not just to cover administrative costs but also to ensure that applicants comply with the necessary legal and financial standards. The IIES conducts this process with complete transparency and according to standard rules to prevent any kind of fraud or financial irregularity.</p>
-                  <p>In summary, the fee set by the IIES for obtaining an NOC is part of an essential administrative process, and the certificate can be issued for a maximum amount of ₹25,000 crores at a time. This limit and fee policy reflect the institution's responsibility for financial control and monitoring international monetary flows.</p>
+                  <h3>
+                    <span class="english-text">Fee of No Objection Certificate</span>
+                    <span class="hindi-text">अनापत्ति प्रमाणपत्र (NOC) शुल्क</span>
+                  </h3>
+                  <p class="english-text">This document outlines the No Objection Certificate (NOC) fees established by the Indian International Economic Service (IIES). These fees are designed to cover the administrative costs, document verification, and certification expenses associated with the process. The fee structure not only streamlines the application process but also ensures that applications are treated seriously and dealt with in a timely manner.</p>
+                  <p class="hindi-text">यह दस्तावेज भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES) द्वारा निर्धारित अनापत्ति प्रमाणपत्र (NOC) शुल्क का विवरण प्रस्तुत करता है। ये शुल्क प्रशासनिक लागत, दस्तावेज़ सत्यापन और प्रमाणन व्यय को कवर करने के लिए निर्धारित हैं। शुल्क संरचना आवेदन प्रक्रिया को सुव्यवस्थित करती है और यह सुनिश्चित करती है कि आवेदनों का समयबद्ध और गंभीरता से निस्तारण हो।</p>
+                  <p class="english-text">The IIES issues NOCs and has set specific fees which may vary based on the type of international transaction or the amount of funds involved. According to IIES policies, the organization issues an NOC for a maximum amount of ₹25,000 crores at one time. This means that if an individual or institution requires a certificate for a higher amount, they must obtain the NOC through separate applications or in a phased manner.</p>
+                  <p class="hindi-text">IIES एनओसी जारी करता है और इसके लिए विशिष्ट शुल्क निर्धारित हैं, जो अंतर्राष्ट्रीय लेनदेन के प्रकार या धनराशि के आधार पर बदल सकते हैं। IIES की नीति अनुसार, एक बार में अधिकतम ₹25,000 करोड़ तक की राशि के लिए NOC जारी किया जा सकता है; इससे अधिक राशि के लिए चरणबद्ध/अलग-अलग आवेदन आवश्यक हैं।</p>
+                  <p class="english-text">The NOC fee structure is generally determined by the application amount, the complexity of the process, and the documentation involved. The purpose of this fee is not just to cover administrative costs but also to ensure that applicants comply with the necessary legal and financial standards. The IIES conducts this process with complete transparency and according to standard rules to prevent any kind of fraud or financial irregularity.</p>
+                  <p class="hindi-text">NOC शुल्क संरचना सामान्यतः आवेदन राशि, प्रक्रिया की जटिलता और संलग्न दस्तावेजों के आधार पर तय होती है। इसका उद्देश्य केवल प्रशासनिक खर्चों की पूर्ति नहीं, बल्कि आवश्यक विधिक व वित्तीय मानकों के अनुपालन को सुनिश्चित करना भी है। IIES इस प्रक्रिया को पूर्ण पारदर्शिता और मानक नियमों के अनुसार संचालित करता है ताकि किसी प्रकार की धोखाधड़ी या वित्तीय अनियमितता रोकी जा सके।</p>
+                  <p class="english-text">In summary, the fee set by the IIES for obtaining an NOC is part of an essential administrative process, and the certificate can be issued for a maximum amount of ₹25,000 crores at a time. This limit and fee policy reflect the institution's responsibility for financial control and monitoring international monetary flows.</p>
+                  <p class="hindi-text">संक्षेप में, IIES द्वारा निर्धारित NOC शुल्क आवश्यक प्रशासनिक प्रक्रिया का हिस्सा है तथा एक बार में अधिकतम ₹25,000 करोड़ तक के प्रमाणपत्र जारी किए जा सकते हैं। यह सीमा और शुल्क नीति अंतर्राष्ट्रीय धन प्रवाह के वित्तीय नियंत्रण व पर्यवेक्षण के प्रति संस्थान की जिम्मेदारी को दर्शाती है।</p>
                 </div>
 
                       
@@ -68,35 +92,43 @@
           
           
               <!--Key Points on IIES NOC Fees -->
-              <h2>Key Points on IIES NOC Fees</h2>
-              <h3>Fee Category:</h3>
+              <h2>
+                <span class="english-text">Key Points on IIES NOC Fees</span>
+                <span class="hindi-text">IIES NOC शुल्क के मुख्य बिंदु</span>
+              </h2>
+              <h3>
+                <span class="english-text">Fee Category:</span>
+                <span class="hindi-text">शुल्क श्रेणी:</span>
+              </h3>
 
               <table class="fee-table mobile-stack">
                 <tr>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Estimated Fee</th>
+                  <th><span class="english-text">Category</span><span class="hindi-text">श्रेणी</span></th>
+                  <th><span class="english-text">Description</span><span class="hindi-text">विवरण</span></th>
+                  <th><span class="english-text">Estimated Fee</span><span class="hindi-text">अनुमानित शुल्क</span></th>
                 </tr>
                 <tr>
-                  <td data-label="Category">General Applicants</td>
-                  <td data-label="Description">General fee for smaller amounts.</td>
+                  <td data-label="Category"><span class="english-text">General Applicants</span><span class="hindi-text">सामान्य आवेदक</span></td>
+                  <td data-label="Description"><span class="english-text">General fee for smaller amounts.</span><span class="hindi-text">कम राशि के लिए सामान्य शुल्क।</span></td>
                   <td data-label="Estimated Fee">Approximately ₹10,000</td>
                 </tr>
                 <tr>
                   <td data-label="Category">
-                    Large Amounts or Special Purpose Cases
+                    <span class="english-text">Large Amounts or Special Purpose Cases</span>
+                    <span class="hindi-text">उच्च राशि या विशेष प्रयोजन के मामले</span>
                   </td>
                   <td data-label="Description">
-                    For amounts of ₹ 1 Crore or more or special purpose
-                    applications..
+                    <span class="english-text">For amounts of ₹ 1 Crore or more or special purpose applications.</span>
+                    <span class="hindi-text">₹1 करोड़ या अधिक राशि अथवा विशेष प्रयोजन के आवेदन हेतु।</span>
                   </td>
                   <td data-label="Estimated Fee">₹2,17,500 or more</td>
                 </tr>
 
                 <tr>
-                  <td data-label="Category">Foreign Citizens or Institutions</td>
+                  <td data-label="Category"><span class="english-text">Foreign Citizens or Institutions</span><span class="hindi-text">विदेशी नागरिक/संस्थाएँ</span></td>
                   <td data-label="Description">
-                    Fees may be charged in USD as per international
+                    <span class="english-text">Fees may be charged in USD as per international</span>
+                    <span class="hindi-text">शुल्क अंतर्राष्ट्रीय प्रचलन के अनुसार USD में लिया जा सकता है</span>
                   </td>
                   <td data-label="Estimated Fee"></td>
                 </tr>
@@ -106,56 +138,64 @@
               <div class="law-content">
                 <!-- Payment Process:-->
                 <div class="regulation-section">
-                  <h3>Payment Process:</h3>
+                  <h3>
+                    <span class="english-text">Payment Process:</span>
+                    <span class="hindi-text">भुगतान प्रक्रिया:</span>
+                  </h3>
 
                    <ul>
                     <li>
-                      The fee must be paid through the official online portal or website
-                      authorized by the IIES.
+                      <span class="english-text">The fee must be paid through the official online portal or website authorized by the IIES.</span>
+                      <span class="hindi-text">शुल्क IIES द्वारा अधिकृत आधिकारिक ऑनलाइन पोर्टल/वेबसाइट के माध्यम से जमा करना आवश्यक है।</span>
                     </li>
                     <li>
-                      After payment, the applicant receives a Payment Reference ID,
-                      which is mandatory to attach with the application form.
+                      <span class="english-text">After payment, the applicant receives a Payment Reference ID, which is mandatory to attach with the application form.</span>
+                      <span class="hindi-text">भुगतान के बाद आवेदक को भुगतान संदर्भ आईडी प्राप्त होती है, जिसे आवेदन पत्र के साथ संलग्न करना अनिवार्य है।</span>
                     </li>
                   </ul>
                   
                 </div>
                  <div class="regulation-section">
-                  <h3>Fee Refund Policy:</h3>
+                  <h3>
+                    <span class="english-text">Fee Refund Policy:</span>
+                    <span class="hindi-text">शुल्क वापसी नीति:</span>
+                  </h3>
 
                     <ul>
-                    <li>The fee will not be refunded if the application is rejected due to
-                    technical reasons or incomplete documentation.
+                    <li><span class="english-text">The fee will not be refunded if the application is rejected due to technical reasons or incomplete documentation.</span><span class="hindi-text">तकनीकी कारणों या अपूर्ण दस्तावेज़ों के कारण आवेदन अस्वीकार होने पर शुल्क वापस नहीं किया जाएगा।</span>
                   </li>
-                  <li>
-                    A refund may be issued only if the application is canceled due to
-                    an institutional error.
-                  </li>
+                  <li><span class="english-text">A refund may be issued only if the application is canceled due to an institutional error.</span><span class="hindi-text">केवल संस्थागत त्रुटि के कारण आवेदन निरस्त होने पर ही शुल्क वापसी संभव है।</span></li>
                 </ul>
                   
                 </div>
                   <div class="regulation-section">
-                  <h3>Additional Charges (If Applicable):</h3>
+                  <h3>
+                    <span class="english-text">Additional Charges (If Applicable):</span>
+                    <span class="hindi-text">अतिरिक्त शुल्क (यदि लागू हो):</span>
+                  </h3>
 
                   <ul>
                   <li>
-                    Additional fees may apply if the application requires a special
-                    investigation or additional certification.
+                    <span class="english-text">Additional fees may apply if the application requires a special investigation or additional certification.</span>
+                    <span class="hindi-text">विशेष जांच या अतिरिक्त प्रमाणन की आवश्यकता होने पर अतिरिक्त शुल्क लागू हो सकता है।</span>
                   </li>
                   <li>These charges are communicated separately.</li>
                 </ul>
                   
                 </div>
                     <div class="regulation-section">
-                  <h3>Role of the Fee in the Process:</h3>
+                  <h3>
+                    <span class="english-text">Role of the Fee in the Process:</span>
+                    <span class="hindi-text">प्रक्रिया में शुल्क की भूमिका:</span>
+                  </h3>
 
                    <ul>
                     <li>
-                      The NOC application process does not proceed without fee payment.
+                      <span class="english-text">The NOC application process does not proceed without fee payment.</span><span class="hindi-text">शुल्क भुगतान के बिना NOC प्रक्रिया आगे नहीं बढ़ती।</span>
                     </li>
                     <li>
-                      It is mandatory to ensure the validity and official scrutiny of
-                      the NOC process.
+                      <span class="english-text">It is mandatory to ensure the validity and official scrutiny of the NOC process.</span>
+                      <span class="hindi-text">NOC प्रक्रिया की वैधता और आधिकारिक परीक्षण सुनिश्चित करना अनिवार्य है।</span>
                     </li>
                   </ul>
                   
@@ -166,20 +206,23 @@
  <!-- NOC Fee Table -->
           <div class="noc-fee-container">
         <div class="table-header">
-            <h2>NOC Fee</h2>
+            <h2>
+              <span class="english-text">NOC Fee</span>
+              <span class="hindi-text">NOC शुल्क</span>
+            </h2>
         </div>
 
         <div class="table-responsive">
             <table class="noc-fee-table" id="nocFeeTable">
                 <thead>
                     <tr>
-                        <th>Sl. No</th>
-                        <th>Fund Bracket</th>
-                        <th>Base NOC Fee</th>
-                        <th>Surcharge</th>
-                        <th>Total Payable</th>
-                        <th>Subsidy on Surcharge</th>
-                        <th>Depositor</th>
+                        <th><span class="english-text">Sl. No</span><span class="hindi-text">क्रम संख्या</span></th>
+                        <th><span class="english-text">Fund Bracket</span><span class="hindi-text">निधि श्रेणी</span></th>
+                        <th><span class="english-text">Base NOC Fee</span><span class="hindi-text">मूल NOC शुल्क</span></th>
+                        <th><span class="english-text">Surcharge</span><span class="hindi-text">अधिभार</span></th>
+                        <th><span class="english-text">Total Payable</span><span class="hindi-text">कुल देय</span></th>
+                        <th><span class="english-text">Subsidy on Surcharge</span><span class="hindi-text">अधिभार पर सब्सिडी</span></th>
+                        <th><span class="english-text">Depositor</span><span class="hindi-text">जमा कर्ता</span></th>
                     </tr>
                 </thead>
                 <tbody>

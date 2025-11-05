@@ -20,21 +20,28 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Guideline for Issuance NOC</h1>
+          <h1>
+            <span class="english-text">Guideline for Issuance NOC</span>
+            <span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span>
+          </h1>
 
           <div class="hero-tabs">
-            <a href="/guidelines/issuance-noc" class="hero-tab active"
-              >Guideline for Issuance NOC</a
-            >
-            <a href="/guidelines/iies-officials" class="hero-tab"
-              >Guidelines for IIES Officials</a
-            >
-            <a href="/guidelines/super-agent" class="hero-tab"
-              >Guidelines for Registered Facilitation Agent </a
-            >
-            <a href="/guidelines/noc-guidelines" class="hero-tab"
-              >Guidelines for NOC Applicants</a
-            >
+            <a href="/guidelines/issuance-noc" class="hero-tab active">
+              <span class="english-text">Guideline for Issuance NOC</span>
+              <span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span>
+            </a>
+            <a href="/guidelines/iies-officials" class="hero-tab">
+              <span class="english-text">Guidelines for IIES Officials</span>
+              <span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span>
+            </a>
+            <a href="/guidelines/super-agent" class="hero-tab">
+              <span class="english-text">Guidelines for Registered Facilitation Agent</span>
+              <span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span>
+            </a>
+            <a href="/guidelines/noc-guidelines" class="hero-tab">
+              <span class="english-text">Guidelines for NOC Applicants</span>
+              <span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span>
+            </a>
           </div>
         </div>
       </div>
@@ -44,11 +51,20 @@
     <div class="breadcrumb-section">
       <div class="breadcrumb-inner">
         <div class="breadcrumb">
-          <a href="/">Home</a>
+          <a href="/">
+            <span class="english-text">Home</span>
+            <span class="hindi-text">मुखपृष्ठ</span>
+          </a>
           <span class="separator">/</span>
-          <a href="#">Guidelines</a>
+          <a href="#">
+            <span class="english-text">Guidelines</span>
+            <span class="hindi-text">दिशा‑निर्देश</span>
+          </a>
           <span class="separator">/</span>
-          <span>Guideline for Issuance NOC</span>
+          <span>
+            <span class="english-text">Guideline for Issuance NOC</span>
+            <span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span>
+          </span>
         </div>
       </div>
     </div>
@@ -61,102 +77,104 @@
             <!-- Notification Header -->
             <div class="notification-header">
               <h2>
-                IIES<br />Indian International Economic Service
-                (IIES)
+                <span class="english-text">IIES<br />Indian International Economic Service (IIES)</span>
+                <span class="hindi-text">IIES<br />भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES)</span>
               </h2>
               <div class="notification-meta">
-                <strong>Notification No. IIES/FIN/INTL/NOC/2025-26</strong
+                <strong class="english-text">Notification No. IIES/FIN/INTL/NOC/2025-26</strong>
+                <strong class="hindi-text">अधिसूचना सं.: IIES/FIN/INTL/NOC/2025-26</strong>
                 ><br />
-                <strong>Date:</strong> 07 October 2025
+                <span class="english-text"><strong>Date:</strong> 07 October 2025</span>
+                <span class="hindi-text"><strong>दिनांक:</strong> 07 अक्टूबर 2025</span>
               </div>
             </div>
 
             <h2>
-              Guidelines for Issuance of No Objection Certificate (NOC) for
-              International Funds
+              <span class="english-text">Guidelines for Issuance of No Objection Certificate (NOC) for International Funds</span>
+              <span class="hindi-text">अंतर्राष्ट्रीय धन हेतु अनापत्ति प्रमाणपत्र (NOC) जारी करने के दिशा‑निर्देश</span>
             </h2>
 
-            <p>
-              In accordance with the instructions issued by the Ministry of
-              Finance, Government of India, the Indian International Economic
-              Service (IIES) shall regulate and supervise the issuance of the No
-              Objection Certificate (NOC) for all international or
-              foreign-origin monetary inflows belonging to Indian and non-Indian
-              origin citizens. The following step-by-step procedure and
-              compliance guidelines must be strictly adhered to by all
-              applicants seeking NOC for international funds.
+            <p class="english-text">
+              In accordance with the instructions issued by the Ministry of Finance, Government of India, the Indian International Economic Service (IIES) shall regulate and supervise the issuance of the No Objection Certificate (NOC) for all international or foreign-origin monetary inflows belonging to Indian and non-Indian origin citizens. The following step-by-step procedure and compliance guidelines must be strictly adhered to by all applicants seeking NOC for international funds.
+            </p>
+            <p class="hindi-text">
+              भारत सरकार के वित्त मंत्रालय द्वारा जारी निर्देशों के अनुसार, भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES) भारतीय एवं गैर‑भारतीय मूल के नागरिकों से संबंधित सभी अंतर्राष्ट्रीय/विदेशी धन प्रवाह के लिए अनापत्ति प्रमाणपत्र (NOC) के निर्गमन को विनियमित एवं पर्यवेक्षित करेगी। नीचे दिए गए चरणबद्ध प्रक्रिया एवं अनुपालन दिशा‑निर्देशों का सभी आवेदकों द्वारा कड़ाई से पालन करना अनिवार्य होगा।
             </p>
 
             <!-- Section I -->
             <div class="guideline-section">
-              <h3>I. Objective of NOC Issuance</h3>
-              <p>The purpose of the NOC is:</p>
+              <h3>
+                <span class="english-text">I. Objective of NOC Issuance</span>
+                <span class="hindi-text">I. NOC जारी करने का उद्देश्य</span>
+              </h3>
+              <p class="english-text">The purpose of the NOC is:</p>
+              <p class="hindi-text">NOC का उद्देश्य:</p>
               <ul>
-                <li>
-                  To verify and approve the legitimacy of all international
-                  funds received within India.
-                </li>
-                <li>
-                  To ensure compliance with the Foreign Exchange Management Act
-                  (FEMA), Foreign Contribution Regulation Act (FCRA), and other
-                  financial laws.
-                </li>
-                <li>
-                  To prevent misuse of foreign funds and maintain transparency
-                  in cross-border financial transactions.
-                </li>
-                <li>
-                  To grant official clearance for withdrawal, transfer, or
-                  utilization of international funds.
-                </li>
+                <li><span class="english-text">To verify and approve the legitimacy of all international funds received within India.</span><span class="hindi-text">भारत में प्राप्त सभी अंतर्राष्ट्रीय धन की वैधता का सत्यापन एवं अनुमोदन करना।</span></li>
+                <li><span class="english-text">To ensure compliance with the Foreign Exchange Management Act (FEMA), Foreign Contribution Regulation Act (FCRA), and other financial laws.</span><span class="hindi-text">विदेशी मुद्रा प्रबंधन अधिनियम (FEMA), विदेशी अंशदान विनियमन अधिनियम (FCRA) एवं अन्य वित्तीय कानूनों का पालन सुनिश्चित करना।</span></li>
+                <li><span class="english-text">To prevent misuse of foreign funds and maintain transparency in cross-border financial transactions.</span><span class="hindi-text">विदेशी धन के दुरुपयोग को रोकना तथा सीमा‑पार वित्तीय लेनदेन में पारदर्शिता बनाए रखना।</span></li>
+                <li><span class="english-text">To grant official clearance for withdrawal, transfer, or utilization of international funds.</span><span class="hindi-text">अंतर्राष्ट्रीय धन की निकासी, हस्तांतरण या उपयोग हेतु आधिकारिक स्वीकृति देना।</span></li>
               </ul>
             </div>
 
             <!-- Section II -->
             <div class="guideline-section">
-              <h3>II. Eligibility Criteria</h3>
+              <h3>
+                <span class="english-text">II. Eligibility Criteria</span>
+                <span class="hindi-text">II. पात्रता मानदंड</span>
+              </h3>
 
-              <h4>1. Eligible Persons:</h4>
+              <h4>
+                <span class="english-text">1. Eligible Persons:</span>
+                <span class="hindi-text">1. पात्र व्यक्ति:</span>
+              </h4>
               <ul>
-                <li>Indian Citizens.</li>
-                <li>Non-Resident Indians (NRIs).</li>
-                <li>Persons of Indian Origin (PIOs).</li>
-                <li>
-                  Registered Organizations, Trusts, or Companies receiving funds
-                  from abroad.
-                </li>
+                <li><span class="english-text">Indian Citizens.</span><span class="hindi-text">भारतीय नागरिक।</span></li>
+                <li><span class="english-text">Non-Resident Indians (NRIs).</span><span class="hindi-text">गैर‑आवासी भारतीय (NRI)।</span></li>
+                <li><span class="english-text">Persons of Indian Origin (PIOs).</span><span class="hindi-text">भारतीय मूल के व्यक्ति (PIO)।</span></li>
+                <li><span class="english-text">Registered Organizations, Trusts, or Companies receiving funds from abroad.</span><span class="hindi-text">विदेश से धन प्राप्त करने वाले पंजीकृत संगठन, ट्रस्ट या कंपनियाँ।</span></li>
               </ul>
 
-              <h4>2. Nature of Funds Covered:</h4>
+              <h4>
+                <span class="english-text">2. Nature of Funds Covered:</span>
+                <span class="hindi-text">2. आच्छादित धन की प्रकृति:</span>
+              </h4>
               <ul>
-                <li>Foreign Investment (FDI / Venture Capital).</li>
-                <li>Foreign Donations / Grants.</li>
-                <li>International Aid or Scholarships.</li>
-                <li>Inheritance or Personal Remittance from abroad.</li>
+                <li><span class="english-text">Foreign Investment (FDI / Venture Capital).</span><span class="hindi-text">विदेशी निवेश (FDI/वेंचर कैपिटल)।</span></li>
+                <li><span class="english-text">Foreign Donations / Grants.</span><span class="hindi-text">विदेशी दान/अनुदान।</span></li>
+                <li><span class="english-text">International Aid or Scholarships.</span><span class="hindi-text">अंतर्राष्ट्रीय सहायता या छात्रवृत्तियाँ।</span></li>
+                <li><span class="english-text">Inheritance or Personal Remittance from abroad.</span><span class="hindi-text">विदेश से विरासत या व्यक्तिगत प्रेषण।</span></li>
               </ul>
             </div>
 
             <!-- Section III -->
             <div class="guideline-section">
-              <h3>III. Step-by-Step NOC Process</h3>
+              <h3>
+                <span class="english-text">III. Step-by-Step NOC Process</span>
+                <span class="hindi-text">III. चरणबद्ध NOC प्रक्रिया</span>
+              </h3>
 
               <div class="step-process">
                 <div class="step-item">
-                  <h4>Obtain Payment Ledger Book</h4>
+                  <h4>
+                    <span class="english-text">Obtain Payment Ledger Book</span>
+                    <span class="hindi-text">पेमेंट लेजर बुक प्राप्त करें</span>
+                  </h4>
                   <p>
                     The applicant shall apply to the Indian International
                     Finance Commission (IIFC) for a Payment Ledger Book.
                   </p>
-                  <p>The ledger will include details such as:</p>
+                  <p class="english-text">The ledger will include details such as:</p>
+                  <p class="hindi-text">लेजर में निम्न विवरण शामिल होंगे:</p>
                   <ul>
-                    <li>Source country of the funds,</li>
-                    <li>Total amount received,</li>
+                    <li><span class="english-text">Source country of the funds,</span><span class="hindi-text">धन का स्रोत देश,</span></li>
+                    <li><span class="english-text">Total amount received,</span><span class="hindi-text">प्राप्त कुल राशि,</span></li>
                     <li>
                       Mode of transfer (SWIFT / Wire / PayPal / Bank Transfer /
                       Payment Gateway),
                     </li>
-                    <li>Purpose of remittance,</li>
-                    <li>Beneficiary's account details.</li>
+                    <li><span class="english-text">Purpose of remittance,</span><span class="hindi-text">प्रेषण का उद्देश्य,</span></li>
+                    <li><span class="english-text">Beneficiary's account details.</span><span class="hindi-text">लाभार्थी के खाते का विवरण।</span></li>
                   </ul>
                   <p>
                     <strong
@@ -167,7 +185,10 @@
                 </div>
 
                 <div class="step-item">
-                  <h4>Financial Audit by NFRA</h4>
+                  <h4>
+                    <span class="english-text">Financial Audit by NFRA</span>
+                    <span class="hindi-text">NFRA द्वारा वित्तीय लेखा परीक्षा</span>
+                  </h4>
                   <p>
                     The applicant must submit the ledger copy to the National
                     Financial Reporting Authority (NFRA) for verification.
@@ -189,7 +210,10 @@
                 </div>
 
                 <div class="step-item">
-                  <h4>Apply for Form-28 Certificate</h4>
+                  <h4>
+                    <span class="english-text">Apply for Form-28 Certificate</span>
+                    <span class="hindi-text">फॉर्म‑28 प्रमाणपत्र के लिए आवेदन</span>
+                  </h4>
                   <p>
                     Upon receiving NFRA clearance, the applicant must apply to
                     the Indian International Finance Commission (IIFC) for a
@@ -202,7 +226,10 @@
                 </div>
 
                 <div class="step-item">
-                  <h4>Payment of NOC Fee</h4>
+                  <h4>
+                    <span class="english-text">Payment of NOC Fee</span>
+                    <span class="hindi-text">NOC शुल्क का भुगतान</span>
+                  </h4>
                   <p>
                     After approval of Form-28, the applicant must deposit the
                     NOC Fee prescribed by the IIES.
@@ -223,7 +250,10 @@
                 </div>
 
                 <div class="step-item">
-                  <h4>Issuance of Final NOC (Form-28B)</h4>
+                  <h4>
+                    <span class="english-text">Issuance of Final NOC (Form-28B)</span>
+                    <span class="hindi-text">अंतिम NOC (फॉर्म‑28B) का निर्गमन</span>
+                  </h4>
                   <p>
                     Once the NOC fee has been successfully paid, the Final No
                     Objection Certificate (Form-28B) shall be issued by IIES.
@@ -248,31 +278,16 @@
 
             <!-- Section IV -->
             <div class="important-notes">
-              <h3>IV. Important Notes and Compliance Requirements</h3>
+              <h3>
+                <span class="english-text">IV. Important Notes and Compliance Requirements</span>
+                <span class="hindi-text">IV. महत्वपूर्ण टिप्पणियाँ एवं अनुपालन आवश्यकताएँ</span>
+              </h3>
               <ol>
-                <li>
-                  Any discrepancy found during verification may lead to
-                  suspension or rejection of the NOC application.
-                </li>
-                <li>
-                  Funds originating from jurisdictions classified as high-risk
-                  or non-cooperative by the Financial Action Task Force (FATF)
-                  shall undergo enhanced scrutiny.
-                </li>
-                <li>
-                  The NOC is valid for 12 months from the date of issuance.
-                  Renewal is required if the fund remains unutilized.
-                </li>
-                <li>
-                  All applicants must maintain transaction records for a minimum
-                  of five years for audit and inspection purposes.
-                </li>
-                <li>
-                  Misrepresentation of facts, falsified documents, or misuse of
-                  NOC will attract penal action under Section 13 of the
-                  Prevention of Money Laundering Act (PMLA) and relevant
-                  provisions of the FEMA Act.
-                </li>
+                <li><span class="english-text">Any discrepancy found during verification may lead to suspension or rejection of the NOC application.</span><span class="hindi-text">सत्यापन के दौरान किसी भी विसंगति पाए जाने पर NOC आवेदन निलंबित/अस्वीकृत किया जा सकता है।</span></li>
+                <li><span class="english-text">Funds originating from jurisdictions classified as high-risk or non-cooperative by the Financial Action Task Force (FATF) shall undergo enhanced scrutiny.</span><span class="hindi-text">वे धन जो FATF द्वारा उच्च जोखिम/असहयोगी घोषित क्षेत्राधिकार से प्राप्त हों, उन पर उन्नत जांच लागू होगी।</span></li>
+                <li><span class="english-text">The NOC is valid for 12 months from the date of issuance. Renewal is required if the fund remains unutilized.</span><span class="hindi-text">NOC निर्गमन तिथि से 12 महीनों के लिए मान्य है। धन अप्रयुक्त रहने पर नवीनीकरण आवश्यक है।</span></li>
+                <li><span class="english-text">All applicants must maintain transaction records for a minimum of five years for audit and inspection purposes.</span><span class="hindi-text">सभी आवेदकों को लेखा परीक्षा/निरीक्षण हेतु कम से कम पाँच वर्षों तक अभिलेख सुरक्षित रखने होंगे।</span></li>
+                <li><span class="english-text">Misrepresentation of facts, falsified documents, or misuse of NOC will attract penal action under Section 13 of the Prevention of Money Laundering Act (PMLA) and relevant provisions of the FEMA Act.</span><span class="hindi-text">तथ्यों की गलत प्रस्तुति, जाली दस्तावेज़ या NOC का दुरुपयोग, धन शोधन निवारण अधिनियम (PMLA) की धारा 13 तथा FEMA के प्रासंगिक प्रावधानों के अंतर्गत दंडनीय होगा।</span></li>
               </ol>
             </div>
           </div>

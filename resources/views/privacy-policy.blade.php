@@ -162,105 +162,167 @@
     <main id="maincontent">
         <div class="privacy-container">
             <div class="privacy-header">
-                <h1 class="privacy-title">IIES Privacy Policy</h1>
-                <p class="privacy-effective-date">Effective Date: 13 SEP 2023</p>
+                <h1 class="privacy-title">
+                  <span class="english-text">IIES Privacy Policy</span>
+                  <span class="hindi-text">IIES गोपनीयता नीति</span>
+                </h1>
+                <p class="privacy-effective-date">
+                  <span class="english-text">Effective Date: 13 SEP 2023</span>
+                  <span class="hindi-text">प्रभावी तिथि: 13 सितंबर 2023</span>
+                </p>
             </div>
             
             <div class="privacy-content">
                 <div class="privacy-section">
-                    <h2 class="section-number">1. Introduction</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">1. Introduction</span>
+                      <span class="hindi-text">1. परिचय</span>
+                    </h2>
                     <div class="section-content">
-                        <p>
+                        <p class="english-text">
                             The Indian International Economic Services (IIES) takes the privacy and security of your 
                             personal and financial information very seriously. IIES issues No Objection Certificates (NOC) 
                             and other official documents in accordance with the guidelines of the IIES and 
                             relevant governmental authorities. This Privacy Policy explains how we collect, use, and 
                             safeguard your information.
                         </p>
+                        <p class="hindi-text">
+                            भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES) आपकी व्यक्तिगत और वित्तीय जानकारी की गोपनीयता और सुरक्षा को बहुत गंभीरता से लेती है। IIES IIES के दिशानिर्देशों और प्रासंगिक सरकारी अधिकारियों के अनुसार अनापत्ति प्रमाणपत्र (NOC) और अन्य आधिकारिक दस्तावेज़ जारी करती है। यह गोपनीयता नीति बताती है कि हम आपकी जानकारी को कैसे एकत्र करते हैं, उपयोग करते हैं और सुरक्षित रखते हैं।
+                        </p>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">2. Information We Collect</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">2. Information We Collect</span>
+                      <span class="hindi-text">2. जानकारी जो हम एकत्र करते हैं</span>
+                    </h2>
                     <div class="section-content">
-                        <p>We may collect the following types of information for providing our services:</p>
+                        <p class="english-text">We may collect the following types of information for providing our services:</p>
+                        <p class="hindi-text">हम अपनी सेवाएं प्रदान करने के लिए निम्नलिखित प्रकार की जानकारी एकत्र कर सकते हैं:</p>
                         <ul>
-                            <li><strong>Personal Information:</strong> Indian International Economic Service</li>
-                            <li><strong>Financial Information:</strong> Bank account details, transaction-related documents, 
+                            <li class="english-text"><strong>Personal Information:</strong> Indian International Economic Service</li>
+                            <li class="hindi-text"><strong>व्यक्तिगत जानकारी:</strong> भारतीय अंतर्राष्ट्रीय आर्थिक सेवा</li>
+                            <li class="english-text"><strong>Financial Information:</strong> Bank account details, transaction-related documents, 
                             information related to international funds.</li>
-                            <li><strong>Website and Service Usage Data:</strong> IP address, browser type, login times, usage patterns.</li>
-                            <li><strong>Documents and Certificates:</strong> Required documents for NOC or No Objection 
+                            <li class="hindi-text"><strong>वित्तीय जानकारी:</strong> बैंक खाता विवरण, लेनदेन से संबंधित दस्तावेज़, अंतर्राष्ट्रीय धन से संबंधित जानकारी।</li>
+                            <li class="english-text"><strong>Website and Service Usage Data:</strong> IP address, browser type, login times, usage patterns.</li>
+                            <li class="hindi-text"><strong>वेबसाइट और सेवा उपयोग डेटा:</strong> IP पता, ब्राउज़र प्रकार, लॉगिन समय, उपयोग पैटर्न।</li>
+                            <li class="english-text"><strong>Documents and Certificates:</strong> Required documents for NOC or No Objection 
                             Certificates.</li>
+                            <li class="hindi-text"><strong>दस्तावेज़ और प्रमाणपत्र:</strong> NOC या अनापत्ति प्रमाणपत्र के लिए आवश्यक दस्तावेज़।</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">3. Use of Information</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">3. Use of Information</span>
+                      <span class="hindi-text">3. जानकारी का उपयोग</span>
+                    </h2>
                     <div class="section-content">
-                        <p>The information collected may be used for the following purposes:</p>
+                        <p class="english-text">The information collected may be used for the following purposes:</p>
+                        <p class="hindi-text">एकत्र की गई जानकारी का उपयोग निम्नलिखित उद्देश्यों के लिए किया जा सकता है:</p>
                         <ul>
-                            <li>To issue NOCs and other official certificates.</li>
-                            <li>To verify the authenticity of applications and comply with government regulations.</li>
-                            <li>To implement security measures and prevent fraud.</li>
-                            <li>To improve services and website experience.</li>
-                            <li>To comply with legal and regulatory requirements.</li>
+                            <li class="english-text">To issue NOCs and other official certificates.</li>
+                            <li class="hindi-text">NOC और अन्य आधिकारिक प्रमाणपत्र जारी करने के लिए।</li>
+                            <li class="english-text">To verify the authenticity of applications and comply with government regulations.</li>
+                            <li class="hindi-text">आवेदनों की प्रामाणिकता सत्यापित करने और सरकारी नियमों का पालन करने के लिए।</li>
+                            <li class="english-text">To implement security measures and prevent fraud.</li>
+                            <li class="hindi-text">सुरक्षा उपाय लागू करने और धोखाधड़ी को रोकने के लिए।</li>
+                            <li class="english-text">To improve services and website experience.</li>
+                            <li class="hindi-text">सेवाओं और वेबसाइट अनुभव में सुधार करने के लिए।</li>
+                            <li class="english-text">To comply with legal and regulatory requirements.</li>
+                            <li class="hindi-text">कानूनी और नियामक आवश्यकताओं का पालन करने के लिए।</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">4. Sharing of Information</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">4. Sharing of Information</span>
+                      <span class="hindi-text">4. जानकारी साझा करना</span>
+                    </h2>
                     <div class="section-content">
-                        <p>
+                        <p class="english-text">
                             IIES does not share your personal information with third parties without your consent, except in 
                             the following cases:
                         </p>
+                        <p class="hindi-text">
+                            IIES आपकी सहमति के बिना तीसरे पक्ष के साथ आपकी व्यक्तिगत जानकारी साझा नहीं करती है, निम्नलिखित मामलों को छोड़कर:
+                        </p>
                         <ul>
-                            <li>To comply with legal requirements or governmental orders.</li>
-                            <li>With trusted third-party service providers for processing and delivering services.</li>
-                            <li>For financial audits by the National Financial Reporting Authority (NFRA) or other 
+                            <li class="english-text">To comply with legal requirements or governmental orders.</li>
+                            <li class="hindi-text">कानूनी आवश्यकताओं या सरकारी आदेशों का पालन करने के लिए।</li>
+                            <li class="english-text">With trusted third-party service providers for processing and delivering services.</li>
+                            <li class="hindi-text">सेवाओं को संसाधित करने और वितरित करने के लिए विश्वसनीय तृतीय-पक्ष सेवा प्रदाताओं के साथ।</li>
+                            <li class="english-text">For financial audits by the National Financial Reporting Authority (NFRA) or other 
                             government authorities.</li>
+                            <li class="hindi-text">राष्ट्रीय वित्तीय रिपोर्टिंग प्राधिकरण (NFRA) या अन्य सरकारी अधिकारियों द्वारा वित्तीय ऑडिट के लिए।</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">5. Data Security</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">5. Data Security</span>
+                      <span class="hindi-text">5. डेटा सुरक्षा</span>
+                    </h2>
                     <div class="section-content">
-                        <p>
+                        <p class="english-text">
                             IIES employs advanced technical and administrative measures to ensure the security of your 
                             information, including encryption, secure servers, and regular security audits.
                         </p>
+                        <p class="hindi-text">
+                            IIES आपकी जानकारी की सुरक्षा सुनिश्चित करने के लिए उन्नत तकनीकी और प्रशासनिक उपायों का उपयोग करती है, जिसमें एन्क्रिप्शन, सुरक्षित सर्वर और नियमित सुरक्षा ऑडिट शामिल हैं।
+                        </p>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">6. Cookies and Tracking Technologies</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">6. Cookies and Tracking Technologies</span>
+                      <span class="hindi-text">6. कुकीज़ और ट्रैकिंग तकनीकें</span>
+                    </h2>
                     <div class="section-content">
-                        <p>
+                        <p class="english-text">
                             We may use cookies, log files, and other tracking technologies to enhance user experience and 
                             analyze website performance.
                         </p>
-                    </div>
-                </div>
-
-                <div class="privacy-section">
-                    <h2 class="section-number">7. Your Rights</h2>
-                    <div class="section-content">
-                        <p>
-                            You have the right to view, update, correct, or delete your personal information. To exercise 
-                            these rights, please contact us at <a href="mailto:contact@iies.org.in" style="color: #1a365d; text-decoration: underline;">contact@iies.org.in</a>.
+                        <p class="hindi-text">
+                            हम उपयोगकर्ता अनुभव को बेहतर बनाने और वेबसाइट प्रदर्शन का विश्लेषण करने के लिए कुकीज़, लॉग फाइलें और अन्य ट्रैकिंग तकनीकों का उपयोग कर सकते हैं।
                         </p>
                     </div>
                 </div>
 
                 <div class="privacy-section">
-                    <h2 class="section-number">8. Changes to This Policy</h2>
+                    <h2 class="section-number">
+                      <span class="english-text">7. Your Rights</span>
+                      <span class="hindi-text">7. आपके अधिकार</span>
+                    </h2>
                     <div class="section-content">
-                        <p>
+                        <p class="english-text">
+                            You have the right to view, update, correct, or delete your personal information. To exercise 
+                            these rights, please contact us at <a href="mailto:contact@iies.org.in" style="color: #1a365d; text-decoration: underline;">contact@iies.org.in</a>.
+                        </p>
+                        <p class="hindi-text">
+                            आपको अपनी व्यक्तिगत जानकारी देखने, अपडेट करने, सही करने या हटाने का अधिकार है। इन अधिकारों का उपयोग करने के लिए, कृपया <a href="mailto:contact@iies.org.in" style="color: #1a365d; text-decoration: underline;">contact@iies.org.in</a> पर हमसे संपर्क करें।
+                        </p>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-number">
+                      <span class="english-text">8. Changes to This Policy</span>
+                      <span class="hindi-text">8. इस नीति में परिवर्तन</span>
+                    </h2>
+                    <div class="section-content">
+                        <p class="english-text">
                             IIES may update this Privacy Policy periodically. All changes will be posted on the official 
                             website and will take effect immediately upon publication.
+                        </p>
+                        <p class="hindi-text">
+                            IIES इस गोपनीयता नीति को समय-समय पर अपडेट कर सकती है। सभी परिवर्तन आधिकारिक वेबसाइट पर पोस्ट किए जाएंगे और प्रकाशन पर तुरंत प्रभावी होंगे।
                         </p>
                     </div>
                 </div>

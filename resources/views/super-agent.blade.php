@@ -21,21 +21,16 @@
     <section class="page-hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Guideline for Support Agent</h1>
+          <h1>
+            <span class="english-text">Guideline for Support Agent</span>
+            <span class="hindi-text">सहायता एजेंट हेतु दिशा‑निर्देश</span>
+          </h1>
 
           <div class="hero-tabs">
-            <a href="/guidelines/issuance-noc" class="hero-tab"
-              >Guideline for Issuance NOC</a
-            >
-            <a href="/guidelines/iies-officials" class="hero-tab"
-              >Guidelines for IIES Officials</a
-            >
-            <a href="/guidelines/register-fac-agent" class="hero-tab active"
-              >Guidelines for Registered Facilitation Agent </a
-            >
-            <a href="/guidelines/noc-guidelines" class="hero-tab"
-              >Guidelines for NOC Applicants</a
-            >
+            <a href="/guidelines/issuance-noc" class="hero-tab"><span class="english-text">Guideline for Issuance NOC</span><span class="hindi-text">एनओसी जारी करने हेतु दिशा‑निर्देश</span></a>
+            <a href="/guidelines/iies-officials" class="hero-tab"><span class="english-text">Guidelines for IIES Officials</span><span class="hindi-text">IIES अधिकारियों हेतु दिशा‑निर्देश</span></a>
+            <a href="/guidelines/register-fac-agent" class="hero-tab active"><span class="english-text">Guidelines for Registered Facilitation Agent</span><span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span></a>
+            <a href="/guidelines/noc-guidelines" class="hero-tab"><span class="english-text">Guidelines for NOC Applicants</span><span class="hindi-text">NOC आवेदकों हेतु दिशा‑निर्देश</span></a>
           </div>
         </div>
       </div>
@@ -45,11 +40,14 @@
     <div class="breadcrumb-section">
       <div class="breadcrumb-inner">
         <div class="breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="/">
+            <span class="english-text">Home</span>
+            <span class="hindi-text">मुखपृष्ठ</span>
+          </a>
           <span class="separator">/</span>
-          <a href="#">Guideline</a>
+          <a href="#"><span class="english-text">Guidelines</span><span class="hindi-text">दिशा‑निर्देश</span></a>
           <span class="separator">/</span>
-          <span>Guidelines for Registered Facilitation Agent </span>
+          <span><span class="english-text">Guidelines for Registered Facilitation Agent</span><span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span></span>
         </div>
       </div>
     </div>
@@ -59,11 +57,17 @@
       <div class="page-container">
         <div class="page-main otherpage">
           <div class="officials-content">
-            <h2>Guidelines for Registered Facilitation Agent </h2>
+            <h2>
+              <span class="english-text">Guidelines for Registered Facilitation Agent</span>
+              <span class="hindi-text">पंजीकृत सुविधा एजेंट हेतु दिशा‑निर्देश</span>
+            </h2>
 
             <!-- Code of Conduct Sections -->
             <div class="conduct-section">
-              <h3>Indian International Economic Service (IIES) Agent</h3>
+              <h3>
+                <span class="english-text">Indian International Economic Service (IIES) Agent</span>
+                <span class="hindi-text">भारतीय अंतर्राष्ट्रीय आर्थिक सेवा (IIES) एजेंट</span>
+              </h3>
               Agents play a vital role in the Indian International Economic
               Service (IIES). These agents are registered under the
               <strong>Department of Economic Affairs</strong> and their main
@@ -79,10 +83,16 @@
             </div>
 
             <!-- IIES Agent Guidelines -->
-            <h3>IIES Agent Guidelines</h3>
+            <h3>
+              <span class="english-text">IIES Agent Guidelines</span>
+              <span class="hindi-text">IIES एजेंट हेतु दिशा‑निर्देश</span>
+            </h3>
 
             <div class="role-section">
-              <h3>Registration and Qualification</h3>
+              <h3>
+                <span class="english-text">Registration and Qualification</span>
+                <span class="hindi-text">पंजीकरण एवं योग्यताएँ</span>
+              </h3>
               <ol class="numbered-list">
                 <li>
                   The agent must be registered only with the Department of
@@ -100,7 +110,10 @@
             </div>
 
             <div class="role-section role-senior">
-              <h3>Document Collection and Verification</h3>
+              <h3>
+                <span class="english-text">Document Collection and Verification</span>
+                <span class="hindi-text">दस्तावेज़ संग्रह एवं सत्यापन</span>
+              </h3>
               <ol class="numbered-list">
                 <li>
                   Collecting all necessary documents from the client, such as:
@@ -115,7 +128,10 @@
             </div>
 
             <div class="role-section role-mid">
-              <h3>NOC Application Preparation and Filing</h3>
+              <h3>
+                <span class="english-text">NOC Application Preparation and Filing</span>
+                <span class="hindi-text">NOC आवेदन की तैयारी एवं फाइलिंग</span>
+              </h3>
               <ol class="numbered-list">
                 <li>
                   Filling the NOC application and submitting it to the IIES on
@@ -130,7 +146,10 @@
             </div>
 
             <div class="role-section role-junior">
-              <h3>Client Representation</h3>
+              <h3>
+                <span class="english-text">Client Representation</span>
+                <span class="hindi-text">ग्राहक का प्रतिनिधित्व</span>
+              </h3>
               <ol class="numbered-list">
                 <li>
                   Becoming the client's official representative in the
@@ -147,7 +166,10 @@
             </div>
 
             <div class="role-section role-group">
-              <h3>Approval and Follow-up</h3>
+              <h3>
+                <span class="english-text">Approval and Follow-up</span>
+                <span class="hindi-text">अनुमोदन एवं अनुक्रमण</span>
+              </h3>
               <ol class="numbered-list">
                 <li>Monitoring every stage of the application.</li>
                 <li>
@@ -161,7 +183,10 @@
             </div>
 
             <div class="role-section role-training">
-              <h3>Responsibilities After NOC Receipt</h3>
+              <h3>
+                <span class="english-text">Responsibilities After NOC Receipt</span>
+                <span class="hindi-text">NOC प्राप्ति के बाद की जिम्मेदारियाँ</span>
+              </h3>
               <ol class="numbered-list">
                 <li>
                   Ensuring that all details in the NOC are correct and complete.
@@ -174,7 +199,10 @@
             </div>
 
             <div class="role-section">
-              <h3>Other Responsibilities</h3>
+              <h3>
+                <span class="english-text">Other Responsibilities</span>
+                <span class="hindi-text">अन्य जिम्मेदारियाँ</span>
+              </h3>
               <ol class="numbered-list">
                 <li>Providing financial and legal advice to the client.</li>
                 <li>
@@ -188,7 +216,10 @@
               </ol>
             </div>
             <div class="role-section role-group">
-              <h3>Rules and Discipline</h3>
+              <h3>
+                <span class="english-text">Rules and Discipline</span>
+                <span class="hindi-text">नियम एवं अनुशासन</span>
+              </h3>
               <ol class="numbered-list">
                 <li>Not presenting false or misleading documents.</li>
                 <li>
@@ -202,7 +233,10 @@
               </ol>
             </div>
             <div class="final-note">
-              <h3>Conclusion</h3>
+              <h3>
+                <span class="english-text">Conclusion</span>
+                <span class="hindi-text">निष्कर्ष</span>
+              </h3>
               <p>
                 The agent is not just an assistant in the NOC process but also
                 the client's guardian, representative, and guide. A correct and

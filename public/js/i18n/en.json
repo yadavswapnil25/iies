@@ -1,0 +1,137 @@
+{
+  "common": {
+    "home": "Home"
+  },
+  "about": {
+    "hero_title": "About IIES",
+    "breadcrumb": "About IIES",
+    "intro": {
+      "title": "Indian International Economic Service (IIES)",
+      "year": "Year of Establishment: 1961",
+      "registration": "Registration: Registered under The Indian Trusts Act, 1882",
+      "control": "Administrative Control: IIES, Government of India"
+    },
+    "about_institution": {
+      "title": "About the Institution",
+      "p1": "The Indian International Economic Service (IIES) is a premier Group 'A' Central Service of the Government of India, established in the year 1961 with the objective of developing professional expertise in the fields of economic policy formulation, analysis, and international financial cooperation within the government framework.",
+      "p2": "The service operates across various ministries and departments of the Government of India, providing economic analysis, advisory support, and policy inputs on matters related to both domestic and international finance.",
+      "li1": "Foreign exchange transactions are governed under the Foreign Exchange Management Act (FEMA), 1999.",
+      "li2": "IIES ensures that the source of foreign funds is legitimate and all transactions comply with FEMA rules.",
+      "li3": "Compliance with RBI-prescribed limits for foreign currency, permissions for foreign investments, and NRI/PIO fund transfer regulations is mandatory.",
+      "li4": "For large sums of funds, RBI requires verification and reporting."
+    },
+    "objectives": {
+      "title": "Objectives",
+      "li1": "To provide expert advice to the Government of India on issues related to international funding, investment, and financial assistance.",
+      "li2": "To offer analytical and policy support for development policies, economic reforms, and global cooperation programs.",
+      "li3": "To assist various ministries and departments in reviewing foreign funding proposals and investment plans.",
+      "li4": "To align India's economic strategies with global financial standards and international frameworks."
+    },
+    "powers": {
+      "title": "Special Powers (Granted in 2017)",
+      "p": "In the year 2017, the Government of India conferred Special Powers upon the Indian International Economic Service (IIES), authorizing it to undertake the following functions:",
+      "li1": "<strong>Audit & Verification</strong> To audit, verify, and examine any type of funds or financial assistance entering India from foreign sources.",
+      "li2": "<strong>Due Diligence</strong> To conduct legal, financial, and procedural compliance checks (Due Diligence) of such funds.",
+      "li3": "<strong>NOC Issuance</strong> Upon completion of due process, to issue the No Objection Certificate (NOC) for the disbursement or utilization of the verified funds.",
+      "li4": "<strong>Transparency & Accountability</strong> To ensure transparency, accountability, and lawful utilization of all international funds entering India."
+    },
+    "collab": {
+      "title": "Institutional Collaborations",
+      "p": "The IIES functions in close coordination with several key agencies and institutions of the Government of India, including:",
+      "li1": "Income Tax Department",
+      "li2": "Foreign Exchange Management Act (FEMA) Division",
+      "li3": "Central Board of Direct Taxes (CBDT)",
+      "li4": "Reserve Bank of India (RBI)",
+      "li5": "Central Bureau of Investigation (CBI)",
+      "li6": "IIES",
+      "li7": "Ministry of Home Affairs (MHA)",
+      "li8": "National Financial Reporting Authority (NFRA)",
+      "foot": "Through this collaborative framework, IIES ensures the investigation, monitoring, verification, and compliance of all foreign funds entering India."
+    },
+    "audit": {
+      "title": "Audit Process",
+      "lead": "Foreign Funds Audit Procedure",
+      "li1": "Funds Enter India",
+      "li2": "NFRA Audit",
+      "li3": "IIES Coordination",
+      "li4": "NOC Issuance",
+      "p": "All foreign funds entering India are subject to financial audit and verification conducted by the National Financial Reporting Authority (NFRA). The IIES acts as the coordinating authority for this process and, based on NFRA's audit reports, issues the final No Objection Certificate (NOC) for the release or utilization of funds."
+    },
+    "roles": {
+      "title": "Roles and Contributions",
+      "li1": "<strong>Economic Guidance</strong> Providing economic and policy guidance to the Government of India.",
+      "li2": "<strong>Transparency Assurance</strong> Ensuring transparency and accountability in the inflow and utilization of foreign funds.",
+      "li3": "<strong>International Coordination</strong> Coordinating policy-level discussions with international financial institutions such as the IMF, World Bank, ADB, and OECD.",
+      "li4": "<strong>Development Support</strong> Supporting national development programs and projects through expert economic analysis."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "p": "\"To establish India as a transparent, accountable, and globally responsible economic power.\""
+    }
+  },
+  "tabs": {
+    "about_iies": "About IIES",
+    "our_minister": "Our Minister",
+    "our_performance": "Our Performance",
+    "our_fin_min": "Office of The Finance Minister"
+  },
+  "performance": {
+    "hero_title": "Our Performance",
+    "breadcrumb": "Our Performance",
+    "summary": {
+      "title": "Summary (Paragraph):",
+      "p": "The Indian International Economic Service (IIES), operating under the supervision of the IIES, has played a crucial role in managing and issuing NOCs (No Objection Certificates) for foreign funds between the years 2017 and 2025–26. During this period, IIES has issued NOCs for foreign funds amounting to approximately ₹12 lakh crore (1.2 trillion rupees). In recognition of its transparent and efficient functioning, officers of IIES have been honored by the IIES. Additionally, any illegal or suspicious funds identified during investigations were seized and handed over to the Government of India, ensuring compliance with financial regulations and contributing to national financial security."
+    },
+    "achievements": {
+      "title": "Major Achievements:",
+      "li1": "Total NOC Value Issued: Approximately ₹12,00,000 crore between 2017 and 2025/26 (as per your information).",
+      "li2": "Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.",
+      "li3": "Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance.",
+      "li4": "Action Against Illegal Funds: Any funds found to be illegitimate or non-compliant were confiscated and handed over to the government, strengthening anti-money laundering measures."
+    },
+    "impact": {
+      "title": "Impact and Significance:",
+      "li1": "<strong>Economic Oversight:</strong> The issuance of NOCs for large-scale foreign funds ensured government supervision and legitimacy in the flow of capital.",
+      "li2": "<strong>Credibility Growth:</strong> Approval of funds from major countries and the Ministry’s recognition enhanced the institution’s credibility both nationally and internationally.",
+      "li3": "<strong>Legal Compliance:</strong> By seizing illegal funds, IIES demonstrated its commitment not only to approval but also to strict enforcement of regulations.",
+      "li4": "<strong>Transparency & Auditability:</strong> Managing such a large volume of funds required transparency and audit mechanisms, which helped in maintaining reliable data for policy decisions."
+    },
+    "challenges": {
+      "title": "Challenges and Key Considerations:",
+      "li1": "Total NOC Value Issued: Approximately ₹12,00,000 crore between 2017 and 2025/26 (as per your information).",
+      "li2": "Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.",
+      "li3": "Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance."
+    },
+    "conclusion": {
+      "title": "Conclusion:",
+      "p": "Based on the details provided, IIES has shown remarkable performance between 2017 and 2025/26 by issuing NOCs worth ₹12 lakh crore in foreign funds. At the same time, by taking firm action against illegal inflows, the institution has helped protect national interests and maintain financial discipline. Its recognition by the IIES highlights the institution’s credibility, efficiency, and regulatory alignment."
+    }
+  }
+  ,
+  "fin_min": {
+    "hero_title": "Office of The Finance Minister",
+    "breadcrumb": "Office of The Finance Minister",
+    "iies": {
+      "title": "Indian International Economic Service (IIES)",
+      "p1": "The <strong>Office of the Finance Minister</strong>, under whose purview the <strong>Indian International Economic Service (IIES)</strong>operates, serves as the central authority for supervising and guiding all financial, economic, and international fund regulatory functions. This office ensures that every financial operation, including the issuance of No Objection Certificates (NOCs) for foreign funds, remains aligned with the fiscal policies and regulatory framework of the Government of India.",
+      "p2": "The Finance Minister’s office plays a vital role in maintaining transparency, accountability, and financial integrity all economic activities connected with international fund movements. All key directives, approvals, and policy guidelines concerning IIES originate from this office."
+    },
+    "oversight": {
+      "title": "The Finance Minister, along with the Minister of State for Finance, provides oversight on the following areas:",
+      "li1": "Approval of major financial regulations related to international funding.",
+      "li2": "Monitoring the overall performance of IIES in compliance with government objectives.",
+      "li3": "Ensuring that foreign fund inflows are legitimate, traceable, and used for lawful purposes.",
+      "li4": "Encouraging transparency in the NOC issuance process.",
+      "li5": "Reviewing annual financial progress and national revenue contributions made through IIES operations."
+    },
+    "challenges": {
+      "title": "Challenges and Key Considerations:",
+      "li1": "Total NOC Value Issued: Approximately ₹12,00,000 crore between 2017 and 2025/26 (as per your information).",
+      "li2": "Countries Involved: NOCs were granted for funds originating from major countries including the United States, China, England, Russia, the UAE, Kuwait, Sri Lanka, France, and Germany, among others.",
+      "li3": "Official Recognition: Officers of IIES have been honored by the IIES for their exemplary contribution in managing foreign fund compliance.",
+      "p1": "In addition, the office works closely with the <strong>Department of Economic Affairs (DEA)</strong>, the <strong>Reserve Bank of India (RBI)</strong>, and other financial institutions to ensure proper implementation of foreign fund policies under IIES supervision.",
+      "p2": "Through this integrated system, the <strong>Office of the Finance Minister </strong> ensures that every NOC- related activity of IIES contributes effectively to the nation’s economic stability, fiscal discipline, and international credibility."
+    }
+  }
+}
+
