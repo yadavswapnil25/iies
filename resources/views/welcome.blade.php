@@ -891,14 +891,31 @@
                 </div>
 
                 <div class="tweets-container">
-                    <a class="twitter-timeline"
-                       data-chrome="noheader nofooter noborders"
-                       data-tweet-limit="5"
-                       href="https://twitter.com/FinMinIndia">
-                        Tweets by FinMinIndia
-                    </a>
+                    <div id="xTimeline" style="min-height: 520px;"></div>
                 </div>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script>
+                  (function initXTimeline(){
+                    const mount = document.getElementById('xTimeline');
+                    if (!mount) return;
+                    const handle = 'FinMinIndia'; // change to desired handle
+                    function tryRender(attempt){
+                      if (!window.twttr || !window.twttr.widgets) {
+                        if (attempt < 20) return setTimeout(() => tryRender(attempt + 1), 300);
+                        mount.innerHTML = '<a href="https://twitter.com/'+handle+'">Tweets by '+handle+'</a>';
+                        return;
+                      }
+                      window.twttr.widgets.createTimeline(
+                        { sourceType: 'profile', screenName: handle },
+                        mount,
+                        { chrome: 'noheader nofooter noborders', tweetLimit: 5, height: 520 }
+                      ).catch(() => {
+                        mount.innerHTML = '<a href="https://twitter.com/'+handle+'">Tweets by '+handle+'</a>';
+                      });
+                    }
+                    tryRender(0);
+                  })();
+                </script>
             </div>
         </div>
     </section>

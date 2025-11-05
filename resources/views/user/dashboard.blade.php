@@ -1408,7 +1408,22 @@
                     </div>
                 </div>
             </div>
-
+            <section class="intro-section">
+            <p>
+                This progress report has been prepared by the Indian International Economic Service (IIES) 
+                to reflect the current status of a client's application or task. It provides detailed updates 
+                from the initial submission to the final stage of completion. The purpose of this report is 
+                to maintain transparency and ensure that every process is completed efficiently within the 
+                prescribed timeline.
+            </p>
+            
+            <div class="intro-box">
+                <h3>Brief Introductory Description:</h3>
+                <p>
+                    This report has been prepared by the <em>Indian International Economic Service (IIES)</em> with the objective of presenting the current status of a client's or applicant's work. It includes detailed progress information from the receipt of the application to the completion of the process, ensuring transparency and timely execution of all tasks.
+                </p>
+            </div>
+        </section>
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb;">
                 <a href="{{ route('user.print') }}" target="_blank" class="print-btn" style="text-decoration:none; display:inline-block;">
                     <i class="fas fa-print"></i> Print
