@@ -714,6 +714,16 @@
                     <h2 style="font-size: 14px; font-weight: 700; margin: 0; color: #000;">Progress Report of NOC Application</h2>
                 </div>
             </div>
+            <div class="form-header-logo" style="text-align: center; padding: 30px 20px; margin-bottom: 30px;">
+        <div class="form-logo-container">
+            <img src="/uploads/main-logo.jpg" alt="IIES Logo" class="form-logo" onerror="this.style.display='none'" style="max-width: 100px; height: auto;">
+        </div>
+        <div class="form-brand-text">
+        <h1>Indian International Economic Service</h1>
+            <h2>भारतीय अंतर्राष्ट्रीय आर्थिक सेवा</h2>
+            <p class="ministry">Ministry of Finance, Government of India</p>
+        </div>
+    </div>
 
             <div class="dashboard-header">
                 <div class="dashboard-title">
