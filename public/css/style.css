@@ -974,7 +974,8 @@ footer.page-footer {
   padding: 40px 20px 20px;
 }
 
-/* Top Section: Logo and Navigation Links */
+/* Enhanced Footer Responsive Styles */
+/* Footer Top Section - Improved Responsive Grid */
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
@@ -1118,8 +1119,9 @@ footer.page-footer {
 .footer-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   transition: color 0.3s;
+  text-align: left;
 }
 
 .footer-links a:hover {
@@ -1151,7 +1153,7 @@ footer.page-footer {
 
 .disclaimer-text {
   color: #fff;
-  font-size: 12px;
+   font-size: 16px; 
   line-height: 1.6;
   margin: 0;
 }
@@ -1171,15 +1173,16 @@ footer.page-footer {
 
 .copyright-text {
   color: #fff;
-  font-size: 12px;
+   font-size: 14px; 
 }
 
 .last-update {
   color: #fff;
-  font-size: 12px;
+   font-size: 14px; 
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design for Footer */
+/* Tablet: 3 columns */
 @media (max-width: 1200px) {
   .footer-top {
     grid-template-columns: 1fr 1fr 1fr;
@@ -1189,14 +1192,16 @@ footer.page-footer {
   .logo-col {
     grid-column: 1 / -1;
     justify-content: center;
+    text-align: center;
     margin-bottom: 20px;
   }
 }
 
+/* Mobile Large: 2 columns */
 @media (max-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 25px;
   }
   
   .logo-col {
@@ -1204,23 +1209,105 @@ footer.page-footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 15px;
+  }
+  
+  .footer-logo-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .footer-links a {
+    text-align: center;
+    font-size: 14px;
   }
   
   .footer-bottom-content {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     text-align: center;
+  }
+  
+  .footer-disclaimer {
+    margin: 25px 0;
+    padding: 15px 0;
+  }
+  
+  .disclaimer-title {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .disclaimer-text {
+    font-size: 13px;
+    text-align: justify;
   }
 }
 
+/* Mobile Small: 1 column */
 @media (max-width: 480px) {
   .footer-top {
     grid-template-columns: 1fr;
     gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-col {
+    align-items: center;
+  }
+  
+  .footer-title {
+    font-size: 15px;
+  }
+  
+  .footer-links a {
+    font-size: 14px;
+  }
+  
+  .copyright-text,
+  .last-update {
+    font-size: 12px;
+  }
+  
+  .brand .titles h1 {
+    font-size: 16px !important;
+    line-height: 1.3;
+  }
+  
+  .brand .titles .hindi-text,
+  .brand .titles .english-text {
+    font-size: 12px !important;
   }
   
   .footer-inner {
     padding: 20px 15px;
+  }
+}
+
+/* Ensure proper spacing on very small screens */
+@media (max-width: 360px) {
+  .footer-inner {
+    padding: 20px 15px;
+  }
+  
+  .footer-top {
+    gap: 15px;
+  }
+}
+
+/* Hindi Text Support for Footer */
+@media (max-width: 768px) {
+  body[lang="hi"] .footer-links a {
+    font-size: 13px;
+  }
+  
+  body[lang="hi"] .brand .titles h1 {
+    font-size: 15px !important;
   }
 }
 
@@ -4498,22 +4585,6 @@ footer.page-footer {
     font-size: 17px;
   }
 
-  /* Footer responsive */
-  .footer-inner {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 equal columns on tablet */
-    gap: 30px;
-  }
-
-  .acts-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-  }
-
-  .acts-policy-header h1 {
-    font-size: 2.2rem;
-  }
-
   /* scrvices */
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -4634,26 +4705,6 @@ footer.page-footer {
   .dept-thumb {
     width: 100%;
     height: 120px;
-  }
-
-  /* Footer responsive */
-  .footer-inner {
-    grid-template-columns: 1fr;
-    /* 1 column on mobile */
-    gap: 30px;
-    text-align: center;
-  }
-
-  .footer-col {
-    align-items: center;
-  }
-
-  .social-icons-row {
-    justify-content: center;
-  }
-
-  .footer-links {
-    align-items: center;
   }
 
   .divisions-grid {
@@ -5490,7 +5541,7 @@ footer.page-footer {
 
   .footer-title,
   .footer-links a {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .brand-name {
@@ -5506,12 +5557,12 @@ footer.page-footer {
   }
 
   .disclaimer-text {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .copyright-text,
   .last-update {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .social-icon {
@@ -5523,91 +5574,421 @@ footer.page-footer {
     gap: 10px;
   }
 
-  /* issuance-noc */
-  .guidelines-content h2 {
-    font-size: 22px;
+  /* Stack table on very small mobile */
+  .fee-table.mobile-stack,
+  .default-table.mobile-stack {
+    display: block;
+    white-space: normal;
   }
 
-  .guidelines-content h3 {
-    font-size: 19px;
+  .fee-table.mobile-stack thead,
+  .default-table.mobile-stack thead {
+    display: none;
   }
 
-  .guidelines-content h4 {
-    font-size: 16px;
+  .fee-table.mobile-stack tr,
+  .default-table.mobile-stack tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    padding: 12px;
+    background: white;
   }
 
-  .guideline-section {
-    padding: 18px;
+  .fee-table.mobile-stack td,
+  .default-table.mobile-stack td {
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    white-space: normal;
+  }
+
+  .fee-table.mobile-stack td:before,
+  .default-table.mobile-stack td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--brand-dark);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .fee-table.mobile-stack td:last-child,
+  .default-table.mobile-stack td:last-child {
+    border-bottom: none;
+  }
+
+  .guidelines-content ul,
+  .guidelines-content ol {
+    padding-left: 20px;
   }
 
   .step-item {
-    padding: 15px 15px 15px 65px;
+    padding: 15px 15px 15px 60px;
   }
 
-  .notification-header {
-    padding: 15px;
+  .step-item:before {
+    left: 10px;
+    top: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
   }
 
-  .officials-content h2 {
-    font-size: 22px;
+  /* issuance -noc */
+  .guidelines-content ul,
+  .guidelines-content ol {
+    padding-left: 20px;
   }
 
-  .officials-content h3 {
-    font-size: 19px;
+  .step-item {
+    padding: 15px 15px 15px 60px;
   }
 
-  .officials-content h4 {
-    font-size: 16px;
+  .step-item:before {
+    left: 10px;
+    top: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
   }
 
-  .conduct-section,
-  .role-section {
-    padding: 18px;
+  .officials-content ul,
+  .officials-content ol {
+    padding-left: 20px;
   }
 
   .numbered-list li {
-    padding-left: 32px;
-    margin-bottom: 10px;
+    padding-left: 28px;
   }
 
   .numbered-list li:before {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
   }
 
-  .agents-table {
-    display: block;
-    white-space: nowrap;
+  .preamble-section,
+  .final-note {
+    padding: 18px;
+  }
+
+  .role-section h3 {
+    font-size: 18px;
+  }
+
+  .table-header h2 {
+    font-size: 18px;
   }
 
   .agents-table th,
   .agents-table td {
-    padding: 10px 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .pagination-btn {
+    padding: 6px 12px;
     font-size: 13px;
   }
 
-  .pagination-controls {
-    flex-wrap: wrap;
+  .page-number {
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
-  .pagination-numbers {
-    order: -1;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
+  .modal-header h2 {
+    font-size: 20px;
   }
 
-  .law-content h2 {
+  .form-section h3 {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .success-content {
+    padding: 30px 20px;
+  }
+
+  .success-content h3 {
+    font-size: 20px;
+  }
+
+  .enquiry-header h2 {
     font-size: 22px;
   }
 
-  .law-content h3 {
-    font-size: 19px;
+  .section-title {
+    font-size: 18px;
   }
 
-  .law-content ul,
-  .law-content ol {
-    padding-left: 20px;
+  .form-group input:not([type="checkbox"]):not([type="file"]),
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .file-upload-area {
+    padding: 20px;
+  }
+
+  .success-content {
+    padding: 30px 20px;
+  }
+
+  .success-content h3 {
+    font-size: 20px;
+  }
+
+  .acts-policy-page {
+    padding: 0 15px;
+  }
+
+  .acts-policy-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .acts-policy-header p {
+    font-size: 1rem;
+  }
+
+  .intro-section,
+  .practice-section,
+  .compliance-section {
+    padding: 20px;
+  }
+
+  .act-card {
+    padding: 25px;
+  }
+
+  .key-features {
+    padding: 25px;
+  }
+
+  .feature-item {
+    padding: 20px;
+  }
+
+  .quick-link {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .quick-link-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .english-text {
+    font-size: 12px;
+  }
+
+  .hindi-text {
+    font-size: 14px;
+  }
+
+  /* services  */
+  .services-section {
+    margin: 0px auto;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-card {
+    padding: 20px;
+    min-height: auto;
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .service-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .service-content {
+    text-align: left;
+  }
+
+  .service-content h3 {
+    font-size: 1rem;
+  }
+
+  /* social media */
+  .social-media-section {
+    margin: 50px auto;
+  }
+
+  .social-links-container {
+    padding: 18px;
+  }
+
+  .social-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .social-platform-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .platform-info {
+    text-align: center;
+  }
+
+  .tweet-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .tweet-meta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .tweet-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* cta */
+  .events-cta-section {
+    padding: 50px 0;
+    /* margin: 50px 0; */
+  }
+
+  .events-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .events-header p {
+    font-size: 1rem;
+  }
+
+  .event-card {
+    padding: 20px 15px;
+  }
+
+  .event-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .events-cta-footer {
+    padding: 25px 20px;
+  }
+
+  /* PM Modi Section Responsive */
+  .pm-quotes-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .pm-image-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .quote-event-section {
+    gap: 15px;
+  }
+
+  .quote-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .event-meta {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .cta-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .cta-content p {
+    font-size: 0.95rem;
+  }
+
+  /* PM Modi Section Mobile Responsive */
+  .pm-quotes-section {
+    padding: 30px 0;
+  }
+
+  .pm-quotes-container {
+    padding: 0 15px;
+  }
+
+  .pm-quotes-content {
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .pm-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pm-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .quote-icon {
+    font-size: 2.5rem;
+  }
+
+  .quote-text p {
+    font-size: 1rem;
+  }
+
+  .event-header h4 {
+    font-size: 0.9rem;
+  }
+
+  .view-event-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .law-content h2 {
+    font-size: 20px;
+  }
+
+  .law-content h3 {
+    font-size: 18px;
+  }
+
+  .intro-section,
+  .regulation-section,
+  .conclusion-section {
+    padding: 20px;
   }
 }
 
@@ -5855,7 +6236,7 @@ footer.page-footer {
   }
 
   .footer-links a {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .footer-social h4 {
